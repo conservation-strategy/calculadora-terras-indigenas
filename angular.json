@@ -98,7 +98,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/calc-gestao-terras-indigenas/"
+            "baseHref": "/calculadora-terras-indigenas/"
           }
         }
       }
