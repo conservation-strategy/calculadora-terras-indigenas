@@ -30,7 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/css/styles.scss"
             ],
             "scripts": []
           },
@@ -93,6 +93,12 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/calc-gestao-terras-indigenas/"
           }
         }
       }
