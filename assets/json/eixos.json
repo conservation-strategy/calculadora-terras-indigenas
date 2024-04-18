@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "Governança",
+    "descricao": "Governança das organizações indígenas visando o efetivo fortalecimento institucional.",
+    "valor": 0
+  },
+  {
+    "nome": "Fiscalização e Proteção",
+    "descricao": "Estratégias de proteção, defesa e mitigação dos impactos existentes nas TIs",
+    "valor": 0
+  },
+  {
+    "nome": "Fortalecimento Cultural",
+    "descricao": "Ações voltadas à resistência e fortalecimento cultural dos Povos",
+    "valor": 0
+  },
+  {
+    "nome": "Geração de renda",
+    "descricao": "Estratégias de geração de renda com alternativas econômicas que valorizem, fortaleçam e protejam a cultura e o meio ambiente",
+    "valor": 0
+  },
+  {
+    "nome": "Soberania Alimentar",
+    "descricao": "Estratégias para a garantia da alimentação saudável, visando o fortalecimento da agroecologia, culinária tradicional e pequenas criações.",
+    "valor": 0
+  },
+  {
+    "nome": "Infraestrutura complementares",
+    "descricao": "Investimentos em infraestrutura visando, inclusive, a implementação das atividades propostas nos PGTAs",
+    "valor": 0
+  },
+  {
+    "nome": "Saúde e saneamento",
+    "descricao": "Desenvolvimento de ações complementares relativas aos principais problemas de saúde e saneamento das comunidades",
+    "valor": 0
+  },
+  {
+    "nome": "Educação",
+    "descricao": "Aprimoramento da gestão, dos aspectos curriculares e didáticos das escolas indígenas e outras atividades de formação relacionadas à educação.",
+    "valor": 0
+  }
+]
