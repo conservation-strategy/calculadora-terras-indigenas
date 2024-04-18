@@ -1,0 +1,23 @@
+form label {
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: var(--bs-body-color);
+}
+
+.card {
+  border: none;
+  box-shadow: 5px 10px 15px gray;
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "nome": "Baú",
+    "tamanho": 1540930,
+    "aldeias": 7,
+    "populacao": 624,
+    "grauDiversidade": 1,
+    "grauAmeaca": 2,
+    "complexidadeAcesso": 1,
+    "localSede": 1,
+    "situacaoAtual": 5
+  },
+  {
+    "id": 2,
+    "nome": "Capoto/Jarina",
+    "tamanho": 634915,
+    "aldeias": 16,
+    "populacao": 1935,
+    "grauDiversidade": 4,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 2,
+    "localSede": 1,
+    "situacaoAtual": 5
+  },
+  {
+    "id": 3,
+    "nome": "Trincheira/Bacajá",
+    "tamanho": 1650939,
+    "aldeias": 32,
+    "populacao": 1163,
+    "grauDiversidade": 1,
+    "grauAmeaca": 2,
+    "complexidadeAcesso": 2,
+    "localSede": 1,
+    "situacaoAtual": 5
+  },
+  {
+    "id": 4,
+    "nome": "Apyterewa",
+    "tamanho": 773470,
+    "aldeias": 22,
+    "populacao": 823,
+    "grauDiversidade": 1,
+    "grauAmeaca": 3,
+    "complexidadeAcesso": 2,
+    "localSede": 1,
+    "situacaoAtual": 5
+  },
+  {
+    "id": 5,
+    "nome": "Panará",
+    "tamanho": 499740,
+    "aldeias": 7,
+    "populacao": 704,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 0,
+    "localSede": 0,
+    "situacaoAtual": 5
+  },
+  {
+    "id": 6,
+    "nome": "TIX (Batovi, Pequizal do Naruvôtu, Xingu e Wawi)",
+    "tamanho": 2825370,
+    "aldeias": 147,
+    "populacao": 7997,
+    "grauDiversidade": 20,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 2,
+    "localSede": 1,
+    "situacaoAtual": 5
+  },
+  {
+    "id": 7,
+    "nome": "Menkragnoti",
+    "tamanho": 4914254,
+    "aldeias": 17,
+    "populacao": 1670,
+    "grauDiversidade": 4,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 1,
+    "localSede": 1,
+    "situacaoAtual": 5
+  },
+  {
+    "id": 8,
+    "nome": "Kayapó",
+    "tamanho": 3284004,
+    "aldeias": 80,
+    "populacao": 6350,
+    "grauDiversidade": 1,
+    "grauAmeaca": 3,
+    "complexidadeAcesso": 1,
+    "localSede": 1,
+    "situacaoAtual": 5
+  }
+]
