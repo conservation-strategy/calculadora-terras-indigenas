@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "terraIndigena": "Baú",
+    "nome": "Baú",
     "tamanho": 1540930,
     "aldeias": 7,
     "populacao": 624,
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "terraIndigena": "Capoto/Jarina",
+    "nome": "Capoto/Jarina",
     "tamanho": 634915,
     "aldeias": 16,
     "populacao": 1935,
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "terraIndigena": "Trincheira/Bacajá",
+    "nome": "Trincheira/Bacajá",
     "tamanho": 1650939,
     "aldeias": 32,
     "populacao": 1163,
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "terraIndigena": "Apyterewa",
+    "nome": "Apyterewa",
     "tamanho": 773470,
     "aldeias": 22,
     "populacao": 823,
@@ -49,7 +49,7 @@
   },
   {
     "id": 5,
-    "terraIndigena": "Panará",
+    "nome": "Panará",
     "tamanho": 499740,
     "aldeias": 7,
     "populacao": 704,
@@ -61,7 +61,7 @@
   },
   {
     "id": 6,
-    "terraIndigena": "TIX (Batovi, Pequizal do Naruvôtu, Xingu e Wawi)",
+    "nome": "TIX (Batovi, Pequizal do Naruvôtu, Xingu e Wawi)",
     "tamanho": 2825370,
     "aldeias": 147,
     "populacao": 7997,
@@ -73,7 +73,7 @@
   },
   {
     "id": 7,
-    "terraIndigena": "Menkragnoti",
+    "nome": "Menkragnoti",
     "tamanho": 4914254,
     "aldeias": 17,
     "populacao": 1670,
@@ -85,7 +85,7 @@
   },
   {
     "id": 8,
-    "terraIndigena": "Kayapó",
+    "nome": "Kayapó",
     "tamanho": 3284004,
     "aldeias": 80,
     "populacao": 6350,
