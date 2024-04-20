@@ -1,13 +1,13 @@
-interface Eixo {
+export interface Eixo {
   nome: string;
   descricao: string;
   valor: number;
-  listaConteudo: listaConteudo[];
-};
-
-type listaConteudo = {
-  textoNegrito: string;
-  texto: string
+  atividades: Atividade[];
 }
 
-export default Eixo;
+export interface Atividade {
+  posicao: number;
+  nome: string;
+  descricao: string;
+}
+

@@ -1,0 +1,22 @@
+<div class="modal-body">
+    <form [formGroup]="formulario">
+        <select class="form-select form-select-sm" required (change)="selecionarAtividade()" formControlName="atividade"
+            [ngClass]="{ 'is-invalid': formularioEnviado&&formulario.controls.atividade.invalid}">
+            <option value="" disabled selected>Selecione a atividade</option>
+            <optgroup *ngFor="let eixo of eixos" [label]="eixo.nome">
+                <option *ngFor="let atividade of eixo.atividades" [ngValue]="atividade">{{atividade.nome}}</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <div class="mt-5" *ngIf="atividadeSelecionada">
+        <div class="alert alert-info">
+            <strong>{{atividadeSelecionada.nome}}</strong>
+            <p>{{atividadeSelecionada.descricao}}</p>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-sm btn-secondary" (click)="continuar()">Continuar</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="fechar()">Cancelar</button>
+</div>

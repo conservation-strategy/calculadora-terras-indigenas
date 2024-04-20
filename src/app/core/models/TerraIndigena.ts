@@ -1,4 +1,4 @@
-type TerraIndigena = {
+interface TerraIndigena {
   id: number;
   nome: string;
   tamanho: number;

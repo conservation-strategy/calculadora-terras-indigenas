@@ -2,26 +2,459 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <section>
-                <h1 class="section-title">Guia de Uso</h1>
-                <div class="alert alert-info">
-                    <p>
-                        Calcula o custo de implementação por atividade de uma Terra Indígena, podendo o usuário alterar
-                        os valores das características da Terra Indígena (tamanho, população, aldeia, complexidade de
-                        acesso, grau de ameaça, grau de diversidade e localização da sede da associação) e também
-                        definir o nível de implementação desejado para cada atividade em uma escala de 0 a 20 (em que 10
-                        é “básico” e 20 é “bom”). Os níveis de implementação foram definidos apenas para os níveis
-                        básico (10) e bom (20). Caso o usuário defina um valor diferente de 10 ou 20, deve-se considerar
-                        que se estará "no meio do caminho" entre um nível e outro. Por exemplo, o 15 está na metade do
-                        caminho entre o nível básico e bom, mas não há uma definição exata da lista de itens desse meio
-                        caminho, que pode variar. Essa versão é indicada para usuários que atuam em atividades
-                        específicas em uma Terra Indígena e que busca informações mais detalhadas sobre o custo para a
-                        implementação de cada atividade, incluindo em termos intermediários, de avanço gradual entre um
-                        nível e outro.
-                    </p>
+            <div class="card">
+                <div class="card-body">
+                    <section>
+                        <h1 class="section-title">Guia de Uso</h1>
+                        <div class="alert alert-info">
+                            <small>
+                                Calcula o custo de implementação por atividade de uma Terra Indígena, podendo o usuário
+                                alterar os valores das características da Terra Indígena (tamanho, população, aldeia,
+                                complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da
+                                associação) e também definir o nível de implementação desejado para cada atividade em
+                                uma escala de 0 a 20 (em que 10 é “básico” e 20 é “bom”). Os níveis de implementação
+                                foram definidos apenas para os níveis básico (10) e bom (20). Caso o usuário defina um
+                                valor diferente de 10 ou 20, deve-se considerar que se estará "no meio do caminho" entre
+                                um nível e outro. Por exemplo, o 15 está na metade do caminho entre o nível básico e
+                                bom, mas não há uma definição exata da lista de itens desse meio caminho, que pode
+                                variar. Essa versão é indicada para usuários que atuam em atividades específicas em uma
+                                Terra Indígena e que busca informações mais detalhadas sobre o custo para a
+                                implementação de cada atividade, incluindo em termos intermediários, de avanço gradual
+                                entre um nível e outro.
+                            </small>
+                        </div>
+                    </section>
+                    <section>
+                        <div ngbAccordion>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Atividade</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            São as ações a serem realizadas para o alcance dos eixos temáticos. São 29
+                                            atividades.
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Tipo de custo</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            <p>
+                                                Os custos foram categorizados em dois tipos: custos correntes que são
+                                                compostos por custos anuais de implementação de atividades, como
+                                                salários, manutenção de equipamentos, compra de gasolina, capacitações
+                                                anuais.
+                                            </p>
+                                            <p>
+                                                Os custos não recorrentes envolvem despesas que não são anuais, como
+                                                investimentos em equipamentos e construções, materiais didáticos,
+                                                elaboração de PGTAs.
+                                            </p>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Tamanho da TI</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Extensão da Terra Indígena em hectares (fonte FUNAI)
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Número de aldeias</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Quantidade de aldeias na Terra Indígena (atualizado em 2022/fonte: SESAI
+                                            Organizações de Apoio)
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>População</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Quantidade de pessoas de pessoas residentes na Terra Indígena (atualizado em
+                                            2022/fonte: SESAI e Organizações de Apoio)
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Grau de diversidade</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Número de povos que vivem na Terra Indígena
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Grau de ameaça</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Classificação baseada no tipo e intensidade das ameaças para a Terra
+                                            Indígena (como garimpo, roubo de madeira, incêndios, grilagem, desmatamento,
+                                            pendências de regularização fundiária, obras de infraestrutura e
+                                            agrotóxicos). Os níveis de classificação são: baixíssimo, baixo, médio, alto
+                                            e altíssimo.
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Complexidade de acesso</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Classificação do nível de dificuldade de acesso para a maioria das aldeias
+                                            da Terra Indígena, baseada na distância dos municípios, na existência e
+                                            condição de estradas, pistas de pouso e navegabilidade dos rios. Os níveis
+                                            de classificação são: Fácil, Médio ou Difícil.
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Localização da sede</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Onde está situada a sede da associação: cidade ou aldeia
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Nível de implementação atual</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Situação atual de implementação da atividade, em uma escala de 0 a 20
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Nível de implementação almejado</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Situação desejada de implementação da atividade, em uma escala de 0 a 20
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Inflação acumulada desde 2023</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        <ng-template>
+                                            Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
+                                            desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
+                                            cálculo, a partir do IPCA (IBGE)
+                                            <a href="https://www.ibge.gov.br/explica/inflacao.php">
+                                                https://www.ibge.gov.br/explica/inflacao.php
+                                            </a>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
+            </div>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="calculadoraForm">
+                        <div class="row">
+                            <!-- TERRA INDIGENA -->
+                            <div class="col-12">
+                                <label class="form-label">
+                                    <span>Selecione a terra indígena</span>
+                                </label>
+                                <select class="form-select form-select-sm" required (change)="selecionarTerraIndigena()"
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid}"
+                                    formControlName="terraIndigena">
+                                    <option value="" disabled selected>Selecione a terra indígena</option>
+                                    <option *ngFor="let terraIndigena of terrasIndigenas" [ngValue]="terraIndigena">
+                                        {{terraIndigena.nome}}
+                                    </option>
+                                </select>
+                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="terraIndigenaSelecionada">
+                            <!-- TAMANHO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Tamanho da tera indigena</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Extensão da Terra Indígena, em hectares"></fa-icon>
+                                </label>
+                                <input type="text" class="form-control form-control-sm"
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid}"
+                                    formControlName="tamanho">
+                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- ALDEIAS -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Número de aldeias</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Quantidade de aldeias na Terra Indígena"></fa-icon>
+                                </label>
+                                <input type="text" class="form-control form-control-sm"
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid}"
+                                    formControlName="aldeias">
+                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- POPULAÇÃO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>População</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Quantidade de pessoas residentes na Terra Indígena"></fa-icon>
+                                </label>
+                                <input type="text" class="form-control form-control-sm"
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid}"
+                                    formControlName="populacao">
+                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- GRAU DIVERSIDADE -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Grau de diversidade</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Número de povos que vivem na Terra Indígena"></fa-icon>
+                                </label>
+                                <input type="text" class="form-control form-control-sm"
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid}"
+                                    formControlName="grauDiversidade">
+                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- GRAU AMEAÇA -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Grau de ameaça</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Classificação baseada no tipo e intensidade das ameaças para a Terra Indígena"></fa-icon>
+                                </label>
+                                <select class="form-select form-select-sm" required
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid}"
+                                    formControlName="grauAmeaca">
+                                    <option value="" disabled selected>Grau de Ameaça</option>
+                                    <option *ngFor="let item of listaGrauAmeaca" [ngValue]="item.value">
+                                        {{item.label}}
+                                    </option>
+                                </select>
+                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- COMPLEXIDADE ACESSO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Complexidade de acesso</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena"></fa-icon>
+                                </label>
+                                <select class="form-select form-select-sm" required
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid}"
+                                    formControlName="complexidadeAcesso">
+                                    <option value="" disabled selected>Complexidade de Acesso</option>
+                                    <option *ngFor="let item of listaComplexidadeAcesso" [ngValue]="item.value">
+                                        {{item.label}}
+                                    </option>
+                                </select>
+                                <small
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- LOCAL SEDE -->
+                            <div class="col-12 mt-3">
+                                <label class="form-label">
+                                    <span>Localização da sede</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Onde está situada a sede da associação: cidade ou aldeia"></fa-icon>
+                                </label>
+                                <select class="form-select form-select-sm" required
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid}"
+                                    formControlName="localSede">
+                                    <option value="" disabled selected>Localização da sede</option>
+                                    <option *ngFor="let item of listaLocalSede" [ngValue]="item.value">
+                                        {{item.label}}
+                                    </option>
+                                </select>
+                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- ATIVIDADE -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Atividade</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos"></fa-icon>
+                                </label>
+                                <div *ngIf="!atividadeSelecionada">
+                                    <button class="btn btn-sm btn-outline-secondary" (click)="openModal()">Selecionar
+                                        Atividade</button>
+                                </div>
+                                <div *ngIf="atividadeSelecionada" class="d-flex flex-column">
+                                    <label class="border p-1 mb-1 d-flex flex-column" (click)="openModal()"
+                                        style="cursor: pointer;">
+                                        <span>{{atividadeSelecionada.nome}}</span>
+                                        <small class="text-primary text-underline mt-1">
+                                            <strong>Alterar Atividade</strong>
+                                        </small>
+                                    </label>
+                                </div>
+                                <small *ngIf="calculadoraFormEnviado&&!atividadeSelecionada" class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- TIPO GASTO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Tipo de custo</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
+                                </label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" value="1" formControlName="tipoCusto">
+                                    <label class="form-check-label">Recorrente</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" value="2" formControlName="tipoCusto">
+                                    <label class="form-check-label">Não Recorrente</label>
+                                </div>
+                                <div *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid">
+                                    <small class="text-danger">
+                                        Campo Obrigatório.
+                                    </small>
+                                </div>
+
+                            </div>
+                            <!-- NIVEL IMPLEMENTAÇÃO ATUAL -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Nível de implementação atual</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Situação atual de implementação da atividade, em uma escala de 0 a 20"></fa-icon>
+                                </label>
+                                <input type="text" class="form-control form-control-sm"
+                                    formControlName="nivelImplementacaoAtual">
+                                <small class="text-danger"
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- NIVEL IMPLEMENTAÇÃO ALMEJADO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Nìvel de implementação almejado</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Situação desejada de implementação da atividade, em uma escala de 0 a 20"></fa-icon>
+                                </label>
+                                <input type="text" class="form-control form-control-sm"
+                                    formControlName="nivelImplementacaoAlmejado">
+                                <small class="text-danger"
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- INFLAÇÃO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Inflação acumulada desde 2023 (%)</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."></fa-icon>
+                                </label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Inflação %">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="mostrarResultado">
+        <div class="row mt-5">
+            <div class="col-6">
+                <h1 class="section-title">Resultado</h1>
+                <p>
+                    O custo <strong>{{resultado.tipoCusto}}</strong> previsto para
+                    <strong>{{atividadeSelecionada?.nome}}</strong>, na
+                    Terra Indígena <strong>{{terraIndigenaSelecionada?.nome}}</strong> com o nível de implementação
+                    da qualidade <strong>{{resultado.nivelImplementacaoAtual}}</strong> para
+                    <strong>{{resultado.nivelImplementacaoAlmejado}}</strong>, é de:
+                </p>
+                <h2 class="result-price">{{resultado.valorCusto | currency:'BRL':'symbol':'1.0-0' }}</h2>
+                <button class="btn btn-secondary mt-3" (click)="downloadPdf()">Download PDF</button>
+            </div>
+        </div>
     </div>
 </div>

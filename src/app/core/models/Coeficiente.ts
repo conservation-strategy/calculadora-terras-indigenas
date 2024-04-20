@@ -1,4 +1,4 @@
-type Coeficiente = {
+interface Coeficiente {
   Atividade: string;
   ln_sit_depois: string;
   ln_quali_var: string;

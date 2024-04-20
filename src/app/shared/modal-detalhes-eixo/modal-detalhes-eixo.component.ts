@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, inject } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import Eixo from '../../core/models/Eixo';
+import { Eixo } from '../../core/models/Eixo';
 
 @Component({
   selector: 'app-modal-governanca',
@@ -13,10 +13,5 @@ import Eixo from '../../core/models/Eixo';
 export class ModalDetalhesEixoComponent {
   activeModal = inject(NgbActiveModal);
 
-  @Input() eixo: Eixo = {
-    nome: '',
-    descricao: '',
-    valor: 0,
-    listaConteudo: [{ textoNegrito: '', texto: '' }],
-  };
+  @Input() eixo: Eixo | null = null;
 }
