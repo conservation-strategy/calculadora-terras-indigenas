@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PartnersComponent } from '../../shared/partners/partners.component';
-import { CalculatorListComponent } from '../../shared/calculator-list/calculator-list.component';
+import { PartnersComponent } from '../../shared/components/partners/partners.component';
+import { CalculatorListComponent } from '../../shared/components/calculator-list/calculator-list.component';
 
 @Component({
   selector: 'app-home',

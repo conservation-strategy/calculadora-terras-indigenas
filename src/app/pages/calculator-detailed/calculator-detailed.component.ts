@@ -1,37 +1,44 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { HeaderComponent } from '../../core/layout/header/header.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   NgbAccordionModule,
   NgbModal,
   NgbTooltipModule,
 } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
-import TerraIndigena from '../../core/models/TerraIndigena';
+
+import { HeaderComponent } from '../../core/layout/header/header.component';
+import { ModalSelecaoEixoComponent } from '../../shared/components/modal-selecao-eixo/modal-selecao-eixo.component';
 import { CalculatorService } from '../../core/services/calculator.service';
+import { NumbersOnlyDirective } from '../../shared/numbers-only.directive';
+import { rangeValidator } from '../../shared/range.validator';
+
+import TerraIndigena from '../../core/models/TerraIndigena';
 import Coeficiente from '../../core/models/Coeficiente';
-import { Atividade, Eixo } from '../../core/models/Eixo';
-import { ModalSelecaoEixoComponent } from '../../shared/modal-selecao-eixo/modal-selecao-eixo.component';
+import Atividade from '../../core/models/Atividade';
+import Eixo from '../../core/models/Eixo';
 
 @Component({
   selector: 'app-calculator-detailed',
   standalone: true,
   imports: [
-    HeaderComponent,
     CommonModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     NgbTooltipModule,
     NgbAccordionModule,
-    HttpClientModule,
+    HeaderComponent,
+    NumbersOnlyDirective,
   ],
   providers: [CalculatorService],
   templateUrl: './calculator-detailed.component.html',
@@ -78,8 +85,14 @@ export class CalculatorDetailedComponent implements OnInit {
     complexidadeAcesso: new FormControl('', Validators.required),
     localSede: new FormControl('', Validators.required),
     tipoCusto: new FormControl('', Validators.required),
-    nivelImplementacaoAtual: new FormControl('', Validators.required),
-    nivelImplementacaoAlmejado: new FormControl('', Validators.required),
+    nivelImplementacaoAtual: new FormControl('', [
+      Validators.required,
+      rangeValidator(0, 20),
+    ]),
+    nivelImplementacaoAlmejado: new FormControl('', [
+      Validators.required,
+      rangeValidator(0, 20),
+    ]),
   });
 
   mostrarResultado = false;
@@ -95,33 +108,33 @@ export class CalculatorDetailedComponent implements OnInit {
   constructor(private calculatorService: CalculatorService) {}
 
   ngOnInit() {
-    this.getTerrasIndigenas();
-    this.getCoeficientes();
-    this.getEixos();
+    this.obterTerrasIndigenas();
+    this.obterCoeficientes();
+    this.obterEixos();
   }
 
-  getTerrasIndigenas() {
-    this.calculatorService.getTerrasIndigenas().subscribe((response) => {
+  obterTerrasIndigenas() {
+    this.calculatorService.obterTerrasIndigenas().subscribe((response) => {
       this.terrasIndigenas = response;
     });
   }
 
-  getCoeficientes() {
+  obterCoeficientes() {
     this.calculatorService
-      .getCoeficientesRecorrentes()
+      .obterCoeficientesRecorrentes()
       .subscribe((response) => {
         this.coeficientesRecorrentes = response;
       });
 
     this.calculatorService
-      .getCoeficientesNaoRecorrentes()
+      .obterCoeficientesNaoRecorrentes()
       .subscribe((response) => {
         this.coeficientesNaoRecorrentes = response;
       });
   }
 
-  getEixos() {
-    this.calculatorService.getEixos().subscribe((response) => {
+  obterEixos() {
+    this.calculatorService.obterEixos().subscribe((response) => {
       this.eixos = response;
     });
   }
@@ -129,8 +142,8 @@ export class CalculatorDetailedComponent implements OnInit {
   selecionarTerraIndigena() {
     const terraIndigena: any =
       this.calculadoraForm.controls.terraIndigena.value;
-    
-      this.calculadoraForm.patchValue({
+
+    this.calculadoraForm.patchValue({
       tamanho: terraIndigena.tamanho,
       aldeias: terraIndigena.aldeias,
       populacao: terraIndigena.populacao,
@@ -178,7 +191,9 @@ export class CalculatorDetailedComponent implements OnInit {
       Number(complexidadeAcesso)
     );
 
-    const posicao = this.atividadeSelecionada? this.atividadeSelecionada.posicao : 0;
+    const posicao = this.atividadeSelecionada
+      ? this.atividadeSelecionada.posicao
+      : 0;
 
     this.resultado = {
       terraIndigena: this.terraIndigenaSelecionada?.nome,
@@ -192,7 +207,7 @@ export class CalculatorDetailedComponent implements OnInit {
     this.mostrarResultado = true;
   }
 
-  openModal() {
+  abrirModal() {
     const modalRef = this.modalService.open(ModalSelecaoEixoComponent, {
       size: 'lg',
     });
@@ -203,7 +218,7 @@ export class CalculatorDetailedComponent implements OnInit {
     });
   }
 
-  downloadPdf() {
+  gerarPdf() {
     alert('Em Breve!');
   }
 }

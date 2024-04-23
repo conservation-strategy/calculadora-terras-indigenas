@@ -234,7 +234,7 @@
                                 </label>
                                 <input type="text" class="form-control form-control-sm"
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid}"
-                                    formControlName="tamanho">
+                                    formControlName="tamanho" numbersOnly>
                                 <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid"
                                     class="text-danger">
                                     Campo Obrigatório.
@@ -249,7 +249,7 @@
                                 </label>
                                 <input type="text" class="form-control form-control-sm"
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid}"
-                                    formControlName="aldeias">
+                                    formControlName="aldeias" numbersOnly>
                                 <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid"
                                     class="text-danger">
                                     Campo Obrigatório.
@@ -264,7 +264,7 @@
                                 </label>
                                 <input type="text" class="form-control form-control-sm"
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid}"
-                                    formControlName="populacao">
+                                    formControlName="populacao" numbersOnly>
                                 <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid"
                                     class="text-danger">
                                     Campo Obrigatório.
@@ -279,7 +279,7 @@
                                 </label>
                                 <input type="text" class="form-control form-control-sm"
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid}"
-                                    formControlName="grauDiversidade">
+                                    formControlName="grauDiversidade" numbersOnly>
                                 <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid"
                                     class="text-danger">
                                     Campo Obrigatório.
@@ -356,11 +356,11 @@
                                         ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos"></fa-icon>
                                 </label>
                                 <div *ngIf="!atividadeSelecionada">
-                                    <button class="btn btn-sm btn-outline-secondary" (click)="openModal()">Selecionar
+                                    <button class="btn btn-sm btn-outline-secondary" (click)="abrirModal()">Selecionar
                                         Atividade</button>
                                 </div>
                                 <div *ngIf="atividadeSelecionada" class="d-flex flex-column">
-                                    <label class="border p-1 mb-1 d-flex flex-column" (click)="openModal()"
+                                    <label class="border p-1 mb-1 d-flex flex-column" (click)="abrirModal()"
                                         style="cursor: pointer;">
                                         <span>{{atividadeSelecionada.nome}}</span>
                                         <small class="text-primary text-underline mt-1">
@@ -402,10 +402,14 @@
                                         ngbTooltip="Situação atual de implementação da atividade, em uma escala de 0 a 20"></fa-icon>
                                 </label>
                                 <input type="text" class="form-control form-control-sm"
-                                    formControlName="nivelImplementacaoAtual">
+                                    formControlName="nivelImplementacaoAtual" numbersOnly>
                                 <small class="text-danger"
-                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid">
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.errors?.['required']">
                                     Campo Obrigatório.
+                                </small>
+                                <small class="text-danger"
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.errors?.['range']">
+                                    Nível de implementação deve ser entre 0 e 20.
                                 </small>
                             </div>
                             <!-- NIVEL IMPLEMENTAÇÃO ALMEJADO -->
@@ -416,10 +420,14 @@
                                         ngbTooltip="Situação desejada de implementação da atividade, em uma escala de 0 a 20"></fa-icon>
                                 </label>
                                 <input type="text" class="form-control form-control-sm"
-                                    formControlName="nivelImplementacaoAlmejado">
+                                    formControlName="nivelImplementacaoAlmejado" numbersOnly>
                                 <small class="text-danger"
-                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid">
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.errors?.['required']">
                                     Campo Obrigatório.
+                                </small>
+                                <small class="text-danger"
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.errors?.['range']">
+                                    Atenção, nível de implementação deve ser entre 0 e 20.
                                 </small>
                             </div>
                             <!-- INFLAÇÃO -->
@@ -453,7 +461,7 @@
                     <strong>{{resultado.nivelImplementacaoAlmejado}}</strong>, é de:
                 </p>
                 <h2 class="result-price">{{resultado.valorCusto | currency:'BRL':'symbol':'1.0-0' }}</h2>
-                <button class="btn btn-secondary mt-3" (click)="downloadPdf()">Download PDF</button>
+                <button class="btn btn-secondary mt-3" (click)="gerarPdf()">Download PDF</button>
             </div>
         </div>
     </div>

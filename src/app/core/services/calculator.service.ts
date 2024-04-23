@@ -9,23 +9,23 @@ import Coeficiente from '../models/Coeficiente';
 export class CalculatorService {
   constructor(private http: HttpClient) {}
 
-  getTerrasIndigenas(): Observable<any> {
+  obterTerrasIndigenas(): Observable<any> {
     return this.http.get('./assets/json/terras_indigenas.json');
   }
 
-  getCoeficientesRecorrentes(): Observable<any> {
+  obterCoeficientesRecorrentes(): Observable<any> {
     return this.http.get('./assets/json/coeficientes_recorrentes.json');
   }
 
-  getCoeficientesNaoRecorrentes(): Observable<any> {
+  obterCoeficientesNaoRecorrentes(): Observable<any> {
     return this.http.get('./assets/json/coeficientes_nao_recorrentes.json');
   }
 
-  getEixos(): Observable<any> {
+  obterEixos(): Observable<any> {
     return this.http.get('./assets/json/eixos.json');
   }
 
-  getIPAddress() {
+  obterIPAddress() {
     return this.http.get('http://api.ipify.org/?format=json');
   }
 

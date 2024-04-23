@@ -1,5 +1,4 @@
 import { Component, Input, inject } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -7,7 +6,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Atividade, Eixo } from '../../core/models/Eixo';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import Atividade from '../../../core/models/Atividade';
+import Eixo from '../../../core/models/Eixo';
 
 @Component({
   selector: 'app-modal-selecao-eixo',

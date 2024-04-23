@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../core/layout/header/header.component';
-import { PartnersComponent } from '../../shared/partners/partners.component';
+import { PartnersComponent } from '../../shared/components/partners/partners.component';
 
 @Component({
   selector: 'app-team',

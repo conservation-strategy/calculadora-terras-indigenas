@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../core/layout/header/header.component';
-import { CalculatorListComponent } from '../../shared/calculator-list/calculator-list.component';
+import { CalculatorListComponent } from '../../shared/components/calculator-list/calculator-list.component';
 
 @Component({
   selector: 'app-calculator',

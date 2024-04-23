@@ -113,7 +113,7 @@
                             <input type="text" class="form-control form-control-sm" placeholder="Inflação %">
                         </div>
                         <div class="form-group mt-3">
-                            <button class="btn btn-secondary" (click)="handleFormButton()">Calcular</button>
+                            <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
                         </div>
                     </form>
                 </div>
@@ -122,7 +122,7 @@
         </div>
     </div>
 
-    <div *ngIf="resultado.mostrar">
+    <div *ngIf="mostrarResultado">
         <div class="row mt-5">
             <div class="col-6">
                 <section class="mt-3">
@@ -132,12 +132,12 @@
                         com o nível de implementação <strong>{{resultado.situacaoAlmejada}}</strong>, por ano, é de:
                     </p>
                     <h2 class="result-price">{{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}</h2>
-                    <button class="btn btn-secondary mt-3" (click)="downloadPdf()">Download PDF</button>
+                    <button class="btn btn-secondary mt-3" (click)="gerarPdf()">Download PDF</button>
                 </section>
             </div>
             <div class="col-6">
                 <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'300px'}"
-                    (chartInstance)="getChartInstance($event)"></canvasjs-chart>
+                    (chartInstance)="obterReferenciaGrafico($event)"></canvasjs-chart>
             </div>
         </div>
 
@@ -155,7 +155,7 @@
 
                         </div>
                         <div class="card-footer d-flex justify-content-end">
-                            <button class="btn btn-sm btn-secondary" (click)="openModal(eixo)">Saiba mais</button>
+                            <button class="btn btn-sm btn-secondary" (click)="abrirModal(eixo)">Saiba mais</button>
                         </div>
                     </div>
                 </div>
