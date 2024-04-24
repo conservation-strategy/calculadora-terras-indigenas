@@ -9,7 +9,15 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 1,
     "localSede": 1,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
+      0, 0, 0, 0, 1, 0, 0
+    ],
+    "nivelImplementacaoAlmejado": [
+      13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
+      0, 0, 0, 0, 1, 0, 0
+    ]
   },
   {
     "id": 2,
@@ -21,7 +29,15 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 1,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
+      0, 0, 0, 0, 1, 0, 0
+    ],
+    "nivelImplementacaoAlmejado": [
+      13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
+      0, 0, 0, 0, 1, 0, 0
+    ]
   },
   {
     "id": 3,
@@ -33,7 +49,15 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 2,
     "localSede": 1,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      3, 15, 10, 3, 4, 0, 5, 2, 2, 0, 0, 6, 5, 0, 4, 0, 9, 7, 0, 0, 0, 0, 1, 0,
+      0, 0, 0, 0, 0
+    ],
+    "nivelImplementacaoAlmejado": [
+      3, 15, 10, 3, 4, 0, 5, 2, 2, 0, 0, 6, 5, 0, 4, 0, 9, 7, 0, 0, 0, 0, 1, 0,
+      0, 0, 0, 0, 0
+    ]
   },
   {
     "id": 4,
@@ -45,7 +69,15 @@
     "grauAmeaca": 3,
     "complexidadeAcesso": 2,
     "localSede": 1,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      2, 6, 0, 8, 10, 0, 2, 1, 1, 1, 0, 0, 0, 9, 4, 0, 8, 6, 0, 0, 0, 0, 2, 0,
+      0, 0, 0, 0, 0
+    ],
+    "nivelImplementacaoAlmejado": [
+      2, 6, 0, 8, 10, 0, 2, 1, 1, 1, 0, 0, 0, 9, 4, 0, 8, 6, 0, 0, 0, 0, 2, 0,
+      0, 0, 0, 0, 0
+    ]
   },
   {
     "id": 5,
@@ -57,7 +89,15 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 0,
     "localSede": 0,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      5, 9, 3, 4, 7, 0, 6, 0, 4, 0, 0, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 7, 1, 1, 0,
+      1, 0, 0, 0
+    ],
+    "nivelImplementacaoAlmejado": [
+      5, 9, 3, 4, 7, 0, 6, 0, 4, 0, 0, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 7, 1, 1, 0,
+      1, 0, 0, 0
+    ]
   },
   {
     "id": 6,
@@ -69,7 +109,15 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 1,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      7, 16, 1, 12, 5, 0, 12, 4, 3, 3, 2, 5, 5, 6, 0, 0, 15, 6, 5, 0, 0, 8, 0,
+      4, 4, 2, 0, 0, 0
+    ],
+    "nivelImplementacaoAlmejado": [
+      7, 16, 1, 12, 5, 0, 12, 4, 3, 3, 2, 5, 5, 6, 0, 0, 15, 6, 5, 0, 0, 8, 0,
+      4, 4, 2, 0, 0, 0
+    ]
   },
   {
     "id": 7,
@@ -81,7 +129,15 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 1,
     "localSede": 1,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      6, 9, 1, 6, 8, 0, 11, 0, 9, 1, 0, 10, 3, 1, 0, 0, 10, 2, 9, 2, 0, 0, 1, 2,
+      0, 0, 2, 0, 1
+    ],
+    "nivelImplementacaoAlmejado": [
+      6, 9, 1, 6, 8, 0, 11, 0, 9, 1, 0, 10, 3, 1, 0, 0, 10, 2, 9, 2, 0, 0, 1, 2,
+      0, 0, 2, 0, 1
+    ]
   },
   {
     "id": 8,
@@ -93,6 +149,14 @@
     "grauAmeaca": 3,
     "complexidadeAcesso": 1,
     "localSede": 1,
-    "situacaoAtual": 5
+    "situacaoAtual": 5,
+    "nivelImplementacaoAtual": [
+      7, 10, 3, 5, 8, 0, 13, 5, 7, 0, 0, 5, 7, 5, 7, 0, 5, 4, 12, 0, 0, 1, 6, 3,
+      0, 0, 0, 0, 0
+    ],
+    "nivelImplementacaoAlmejado": [
+      7, 10, 3, 5, 8, 0, 13, 5, 7, 0, 0, 5, 7, 5, 7, 0, 5, 4, 12, 0, 0, 1, 6, 3,
+      0, 0, 0, 0, 0
+    ]
   }
 ]
