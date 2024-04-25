@@ -1,5 +1,5 @@
 interface Coeficiente {
-  Atividade: string;
+  atividade: string;
   ln_sit_depois: string;
   ln_quali_var: string;
   int_situacao: string;

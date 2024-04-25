@@ -1,8 +1,9 @@
 <div class="modal-body">
     <form [formGroup]="formulario">
+        <label>Atividades</label>
         <select class="form-select form-select-sm" required (change)="selecionarAtividade()" formControlName="atividade"
             [ngClass]="{ 'is-invalid': formularioEnviado&&formulario.controls.atividade.invalid}">
-            <option value="" disabled selected>Selecione a atividade</option>
+            
             <optgroup *ngFor="let eixo of eixos" [label]="eixo.nome">
                 <option *ngFor="let atividade of eixo.atividades" [ngValue]="atividade">{{atividade.nome}}</option>
             </optgroup>

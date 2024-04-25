@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {
   FormControl,
@@ -22,6 +22,11 @@ import Coeficiente from '../../core/models/Coeficiente';
 import Eixo from '../../core/models/Eixo';
 import TerraIndigena from '../../core/models/TerraIndigena';
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { Alignment } from 'pdfmake/interfaces';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-calculator-basic',
   standalone: true,
@@ -35,7 +40,7 @@ import TerraIndigena from '../../core/models/TerraIndigena';
     CanvasJSAngularChartsModule,
     HeaderComponent,
   ],
-  providers: [CalculatorService],
+  providers: [CalculatorService, CurrencyPipe],
   templateUrl: './calculator-basic.component.html',
   styleUrl: './calculator-basic.component.scss',
 })
@@ -45,7 +50,8 @@ export class CalculatorBasicComponent implements OnInit {
   faQuestionCircle = faQuestionCircle;
 
   terrasIndigenas: TerraIndigena[] = [];
-  coeficientes: Coeficiente[] = [];
+  coeficientesRecorrentes: Coeficiente[] = [];
+  coeficientesNaoRecorrentes: Coeficiente[] = [];
   eixos: Eixo[] = [];
   niveisImplementacao: NivelImplementacao[] = [
     { text: 'Básico', value: 10 },
@@ -58,8 +64,8 @@ export class CalculatorBasicComponent implements OnInit {
     situacaoAlmejada: new FormControl('', Validators.required),
   });
 
-  chart: any;
-  chartOptions = {
+  chartRecorrente: any;
+  chartRecorrenteOptions = {
     animationEnabled: true,
     data: [
       {
@@ -69,24 +75,48 @@ export class CalculatorBasicComponent implements OnInit {
       },
     ],
   };
-
+  chartNaoRecorrente: any;
+  chartNaoRecorrenteOptions = {
+    animationEnabled: true,
+    data: [
+      {
+        type: 'pie',
+        indexLabel: '{name}: {y}%',
+        dataPoints: [{ name: 'y', y: 1 }],
+      },
+    ],
+  };
   mostrarResultado = false;
   resultado = {
     valorTotal: 0,
+    valorRecorrente: 0,
+    valorNaoRecorrente: 0,
     terraIndigena: '',
-    situacaoAlmejada: '',
+    nivelImplementacaoAlmejado: '',
   };
 
-  constructor(private calculatorService: CalculatorService) {}
+  ipUsuario = '';
+
+  constructor(
+    private calculatorService: CalculatorService,
+    private currencyPipe: CurrencyPipe
+  ) {}
 
   ngOnInit() {
     this.obterTerrasIndigenas();
     this.obterCoeficientes();
     this.obterEixos();
+    this.calculatorService.obterIPAddress().subscribe((response: any) => {
+      this.ipUsuario = response ? response?.ip : '';
+    });
   }
 
-  obterReferenciaGrafico(chart: object) {
-    this.chart = chart;
+  obterReferenciaGraficoRecorrente(chart: object) {
+    this.chartRecorrente = chart;
+  }
+
+  obterReferenciaGraficoNaoRecorrente(chart: object) {
+    this.chartNaoRecorrente = chart;
   }
 
   obterTerrasIndigenas() {
@@ -99,7 +129,13 @@ export class CalculatorBasicComponent implements OnInit {
     this.calculatorService
       .obterCoeficientesRecorrentes()
       .subscribe((response) => {
-        this.coeficientes = response;
+        this.coeficientesRecorrentes = response;
+      });
+
+    this.calculatorService
+      .obterCoeficientesNaoRecorrentes()
+      .subscribe((response) => {
+        this.coeficientesNaoRecorrentes = response;
       });
   }
 
@@ -138,7 +174,6 @@ export class CalculatorBasicComponent implements OnInit {
     situacaoAlmejada: NivelImplementacao
   ) {
     const {
-      situacaoAtual,
       tamanho,
       populacao,
       aldeias,
@@ -148,10 +183,10 @@ export class CalculatorBasicComponent implements OnInit {
       complexidadeAcesso,
     } = terraIndigenaSelecionada;
 
-    const resultados = this.calculatorService.calcularCoeficientes(
-      this.coeficientes,
+    const resultadoRecorrentes = this.calculatorService.calculadoraBasica(
+      this.coeficientesRecorrentes,
       situacaoAlmejada.value,
-      situacaoAtual,
+      terraIndigenaSelecionada.nivelImplementacaoAtual,
       tamanho,
       populacao,
       aldeias,
@@ -161,61 +196,117 @@ export class CalculatorBasicComponent implements OnInit {
       complexidadeAcesso
     );
 
-    const valorTotal = this.obterSomatoria(resultados);
+    const resultadoNaoRecorrentes = this.calculatorService.calculadoraBasica(
+      this.coeficientesNaoRecorrentes,
+      situacaoAlmejada.value,
+      terraIndigenaSelecionada.nivelImplementacaoAtual,
+      tamanho,
+      populacao,
+      aldeias,
+      grauDiversidade,
+      localSede,
+      grauAmeaca,
+      complexidadeAcesso
+    );
+
+    const valorRecorrente = this.obterSomatoria(resultadoRecorrentes);
+    const valorNaoRecorrente = this.obterSomatoria(resultadoNaoRecorrentes);
 
     this.mostrarResultado = true;
     this.resultado = {
+      valorTotal: valorRecorrente + valorNaoRecorrente,
+      valorRecorrente,
+      valorNaoRecorrente,
       terraIndigena: terraIndigenaSelecionada.nome,
-      valorTotal,
-      situacaoAlmejada: situacaoAlmejada.text,
+      nivelImplementacaoAlmejado: situacaoAlmejada.text,
     };
 
-    this.atualizarEixos(resultados, valorTotal);
+    this.atualizarEixos(resultadoRecorrentes, resultadoNaoRecorrentes);
+    setTimeout(() => {
+      document.getElementById('resultado')?.scrollIntoView();
+    }, 10);
   }
 
-  atualizarEixos(resultados: number[], valorTotal: number) {
-    const eixosValues = [
-      this.obterSomatoria(resultados.slice(0, 7)),
-      this.obterSomatoria(resultados.slice(7, 13)),
-      this.obterSomatoria(resultados.slice(13, 16)),
-      this.obterSomatoria(resultados.slice(16, 18)),
-      this.obterSomatoria(resultados.slice(18, 21)),
-      this.obterSomatoria(resultados.slice(21, 25)),
-      this.obterSomatoria(resultados.slice(25, 27)),
-      this.obterSomatoria(resultados.slice(27)),
+  atualizarEixos(
+    resultadoRecorrentes: number[],
+    resultadoNaoRecorrentes: number[]
+  ) {
+    const valoresEixosRecorrentes = [
+      this.obterSomatoria(resultadoRecorrentes.slice(0, 7)),
+      this.obterSomatoria(resultadoRecorrentes.slice(7, 13)),
+      this.obterSomatoria(resultadoRecorrentes.slice(13, 16)),
+      this.obterSomatoria(resultadoRecorrentes.slice(16, 18)),
+      this.obterSomatoria(resultadoRecorrentes.slice(18, 21)),
+      this.obterSomatoria(resultadoRecorrentes.slice(21, 25)),
+      this.obterSomatoria(resultadoRecorrentes.slice(25, 27)),
+      this.obterSomatoria(resultadoRecorrentes.slice(27)),
+    ];
+
+    const valoresEixosNaoRecorrentes = [
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(0, 7)),
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(7, 13)),
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(13, 16)),
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(16, 18)),
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(18, 21)),
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(21, 25)),
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(25, 27)),
+      this.obterSomatoria(resultadoNaoRecorrentes.slice(27)),
     ];
 
     this.eixos = this.eixos.map((eixo, index) => ({
       ...eixo,
-      valor: eixosValues[index],
+      valorTotal:
+        valoresEixosRecorrentes[index] + valoresEixosNaoRecorrentes[index],
+      valorRecorrente: valoresEixosRecorrentes[index],
+      valorNaoRecorrente: valoresEixosNaoRecorrentes[index],
     }));
 
     setTimeout(() => {
-      this.atualizarGrafico(valorTotal);
+      this.atualizarGraficoRecorrente();
+      this.atualizarGraficoNaoRecorrente();
     }, 10);
   }
 
-  atualizarGrafico(valorTotal: number) {
-    this.chartOptions.data[0].dataPoints = [];
+  atualizarGraficoRecorrente() {
+    const valorTotal = this.resultado.valorRecorrente;
+    this.chartRecorrenteOptions.data[0].dataPoints = [];
     this.eixos.forEach((eixo: any) => {
-      this.chartOptions.data[0].dataPoints.push({
+      this.chartRecorrenteOptions.data[0].dataPoints.push({
         name: eixo.nome,
-        y: parseFloat(((eixo.valor / valorTotal) * 100).toFixed(2)),
+        y: parseFloat(((eixo.valorRecorrente / valorTotal) * 100).toFixed(2)),
       });
     });
-    this.chart.render();
+    this.chartRecorrente.render();
+  }
+
+  atualizarGraficoNaoRecorrente() {
+    const valorTotal = this.resultado.valorNaoRecorrente;
+    this.chartNaoRecorrenteOptions.data[0].dataPoints = [];
+    this.eixos.forEach((eixo: any) => {
+      this.chartNaoRecorrenteOptions.data[0].dataPoints.push({
+        name: eixo.nome,
+        y: parseFloat(
+          ((eixo.valorNaoRecorrente / valorTotal) * 100).toFixed(2)
+        ),
+      });
+    });
+    this.chartNaoRecorrente.render();
   }
 
   obterSomatoria(arr: number[]): number {
-    return arr.reduce((sum, current) => sum + current, 0);
+    return arr.reduce((sum, current) => {
+      return sum + (isNaN(current) || !isFinite(current) ? 0 : current);
+    }, 0);
   }
 
   limparResultado() {
     this.mostrarResultado = false;
     this.resultado = {
       valorTotal: 0,
+      valorRecorrente: 0,
+      valorNaoRecorrente: 0,
       terraIndigena: '',
-      situacaoAlmejada: '',
+      nivelImplementacaoAlmejado: '',
     };
   }
 
@@ -227,7 +318,117 @@ export class CalculatorBasicComponent implements OnInit {
   }
 
   gerarPdf() {
-    alert('Em Breve!');
+    const dataHora = new Date().toLocaleString();
+    var docDefinition = {
+      header: [
+        {
+          text: 'Calculadora Básica',
+          alignment: 'center' as Alignment,
+          fontSize: 24,
+          bold: true,
+        },
+      ],
+      content: [
+        {
+          text: [
+            'O custo O custo previsto para a Terra Indígena',
+            { text: ` ${this.resultado.terraIndigena} `, bold: true },
+            'com o nível de implementação',
+            {
+              text: ` ${this.resultado.nivelImplementacaoAlmejado} `,
+              bold: true,
+            },
+            ', por ano, é de:',
+            '\n\n',
+            {
+              text: `${this.currencyPipe.transform(
+                this.resultado.valorTotal,
+                'BRL',
+                'symbol',
+                '1.0-0'
+              )}`,
+              fontSize: 20,
+              bold: true,
+            },
+            '\n',
+            {
+              text: `${this.currencyPipe.transform(
+                this.resultado.valorRecorrente,
+                'BRL',
+                'symbol',
+                '1.0-0'
+              )} recorrente`,
+              fontSize: 12
+            },
+            '\n',
+            {
+              text: `${this.currencyPipe.transform(
+                this.resultado.valorNaoRecorrente,
+                'BRL',
+                'symbol',
+                '1.0-0'
+              )} não recorrente`,
+              fontSize: 12
+            },
+          ],
+        },
+        '\n\n',
+        {
+          text: [
+            'Considerando que as métricas do básico e do bom são:',
+            '{Texto do nível de implementação básico}',
+            '{Texto do nível de implementação bom}.',
+          ],
+        },
+        '\n',
+        {
+          text: [
+            'Importante ressaltar que as “métricas”, ou seja, o que a Terra Indígena precisa ter para estar no nível de implementação básico ou bom, foram construídas apenas para estes níveis. ',
+            'Caso o usuário defina um valor diferente de 10 ou 20 será necessário avaliar o conjunto de métricas para identificar quais custos o resultado poderá abranger.',
+          ],
+        },
+        '\n',
+        {
+          text: [
+            'O valor acima foi construído a partir das seguintes variáveis:',
+            '{Lista com todas as variáveis, como na calculadora do Garimpo}',
+          ],
+        },
+        '\n',
+        {
+          ul: [
+            'item 1',
+            {
+              text: 'item 2 (Informação alterada pelo usuário)',
+              color: 'red',
+            },
+            'item 3',
+            'item 4',
+            {
+              text: 'item 5 (Informação alterada pelo usuário)',
+              color: 'red',
+            },
+            'item 6',
+          ],
+        },
+        '\n\n',
+        {
+          text: 'A CSF, o ISA e a Rede Xingu+ não se responsabilizam pelas consequências do uso da calculadora.',
+        },
+        '\n',
+        {
+          text: '*Caso as características originais da Terra Indígena sejam alteradas no modelo pelo usuário, a CSF, o ISA e Rede Xingu+ não se responsabilizam pelos resultados*.',
+        },
+      ],
+      footer: [
+        {
+          text: `Relatório gerado em ${dataHora} por ${this.ipUsuario}\n https://conservation-strategy.github.io/calculadora-terras-indigenas`,
+          alignment: 'center' as Alignment,
+          fontSize: 10,
+        },
+      ],
+    };
+    pdfMake.createPdf(docDefinition).download('Calculadora Básica');
   }
 }
 

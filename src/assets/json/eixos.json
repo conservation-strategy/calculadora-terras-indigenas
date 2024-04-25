@@ -1,18 +1,17 @@
 [
   {
     "nome": "Governança",
-    "descricao": "Governança das organizações indígenas visando o efetivo fortalecimento institucional.",
-    "valor": 0,
+    "descricao": "Estruturas e processos das associações que orientam a tomada de decisões e a gestão das Terras Indígenas",
     "atividades": [
       {
         "posicao": 0,
         "nome": "Infraestrutura das associações",
-        "descricao": "Sede da associação (espaço físico, equipamentos, computadores, materiais de escritório e manutenções); Meio de transporte para a realização das atividades (carros, caminhões, embarcações e manutenções); Meio de comunicação da sede (telefone, internet ou rádio e manutenções) "
+        "descricao": "Recursos para a sede da associação (espaço físico, equipamentos, computadores, materiais de escritório e manutenções); meio de transporte para a realização das atividades (carros, caminhões, embarcações e manutenções); meio de comunicação da sede (telefone, internet ou rádio e manutenções)"
       },
       {
         "posicao": 1,
         "nome": "Funcionamento das associações",
-        "descricao": "Recursos para desenvolver os projetos; Recursos para desenvolver as atividades para o funcionamento da Associação (aluguel, materiais, inclusive de comunicação, assessorias jurídica/tributária/fiscal/técnica/comunicação, despesas cartoriais, correio, despesa com reuniões, manutenção de site)"
+        "descricao": "Recursos para desenvolver as atividades e o funcionamento da Associação (assembleia, aluguel, materiais, inclusive de comunicação, assessorias jurídica/tributária/fiscal/técnica/comunicação, despesas cartoriais, correio, despesa com reuniões, manutenção de site)"
       },
       {
         "posicao": 2,
@@ -22,7 +21,7 @@
       {
         "posicao": 3,
         "nome": "Articulação interna",
-        "descricao": "Instâncias de governanças e controle social que reúne o coletivo de povos, lideranças e comunidades (assembleias, reuniões em aldeias), visando a ampla discussão sobre as ações relacionadas à governança e ao PGTA"
+        "descricao": "Instâncias de governanças e controle social que reúne o coletivo de povos, lideranças e comunidades (reuniões e visitas nas aldeias), visando a ampla discussão sobre as ações relacionadas à governança e ao PGTA"
       },
       {
         "posicao": 4,
@@ -32,7 +31,7 @@
       {
         "posicao": 5,
         "nome": "Instrumentos de governança",
-        "descricao": "PGTAs - elaboração e atualização do PGTA e seus instrumentos; Protocolos de consulta - elaboração e atualização"
+        "descricao": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)"
       },
       {
         "posicao": 6,
@@ -43,8 +42,7 @@
   },
   {
     "nome": "Fiscalização e Proteção",
-    "descricao": "Estratégias de proteção, defesa e mitigação dos impactos existentes nas TIs",
-    "valor": 0,
+    "descricao": "Estratégias e infraestruturas de proteção, defesa e mitigação dos impactos existentes nas Terras Indígenas",
     "atividades": [
       {
         "posicao": 7,
@@ -54,7 +52,7 @@
       {
         "posicao": 8,
         "nome": "Fiscalização e monitoramento territorial (atividades ilegais - desmatamento, garimpo, madeira, estradas)",
-        "descricao": "Expedições de vigilância visando proteger e fiscalizar o território contra atividades ilegais na TI e no seu entorno e manutenção dos limites, incluindo o uso de ferramentas de monitoramento remoto (ex. SIG, ODK, Drone)"
+        "descricao": "Expedições de vigilância visando proteger e fiscalizar o território contra atividades ilegais na TI e no seu entorno e manutenção dos limites, incluindo o uso de ferramentas de monitoramento remoto (SIG)"
       },
       {
         "posicao": 9,
@@ -69,7 +67,7 @@
       {
         "posicao": 11,
         "nome": "Equipamentos",
-        "descricao": "Aquisição/manutenção/reposição de equipamentos básicos indispensáveis para as atividades de proteção e fiscalização da TI e seu entorno (veículos, drone, notebook, GPS) e equipamentos para o monitoramento e manejo ambiental"
+        "descricao": "Aquisição/manutenção/reposição de equipamentos básicos indispensáveis para as atividades de proteção e fiscalização da TI e seu entorno (veículos, drone, notebook, GPS), infraestrutura de vigilância e equipamentos para o monitoramento e manejo ambiental"
       },
       {
         "posicao": 12,
@@ -80,8 +78,7 @@
   },
   {
     "nome": "Fortalecimento Cultural",
-    "descricao": "Ações voltadas à resistência e fortalecimento cultural dos Povos",
-    "valor": 0,
+    "descricao": "Ações voltadas à resistência e fortalecimento cultural dos Povos Indígenas",
     "atividades": [
       {
         "posicao": 13,
@@ -102,25 +99,23 @@
   },
   {
     "nome": "Geração de renda",
-    "descricao": "Estratégias de geração de renda com alternativas econômicas que valorizem, fortaleçam e protejam a cultura e o meio ambiente",
-    "valor": 0,
+    "descricao": "Estratégias e infraestruturas para promover alternativas econômicas que valorizem e fortaleçam a realidade socioambiental das Terras Indígenas",
     "atividades": [
       {
         "posicao": 16,
         "nome": "Apoio a alternativas econômicas sustentáveis",
-        "descricao": "Mapeamento, adequação, ampliação e/ou prospecção de recursos das TIs que tenham interface com o mercado, desenvolvimento do produto, cadeia de valor e seus elos, como beneficiamento, comercialização. Incluindo aquisição de equipamentos, como caminhão e construção de UBAs"
+        "descricao": "Mapeamento, adequação, ampliação e/ou prospecção de recursos das TIs que tenham interface com o mercado, desenvolvimento do produto, cadeia de valor e seus elos, como beneficiamento e comercialização, incluindo aquisição de equipamentos, como caminhão e construção de UBAs"
       },
       {
         "posicao": 17,
         "nome": "Corpo técnico",
-        "descricao": "Equipe necessária para o desenvolvimento do produto e da gestão logística e financeira das alternativas econômicas"
+        "descricao": "Equipe necessária para a realização das atividades de geração de renda e alternativas econômicas"
       }
     ]
   },
   {
     "nome": "Soberania Alimentar",
-    "descricao": "Estratégias para a garantia da alimentação saudável, visando o fortalecimento da agroecologia, culinária tradicional e pequenas criações.",
-    "valor": 0,
+    "descricao": "Ações para a garantia da alimentação saudável, fortalecimento da agroecologia, culinária tradicional e pequenas criações",
     "atividades": [
       {
         "posicao": 18,
@@ -140,9 +135,8 @@
     ]
   },
   {
-    "nome": "Infraestrutura complementares",
-    "descricao": "Investimentos em infraestrutura visando, inclusive, a implementação das atividades propostas nos PGTAs",
-    "valor": 0,
+    "nome": "Infraestruturas complementares",
+    "descricao": "Investimentos complementares em infraestrutura e ações de comunicação, energia e transporte",
     "atividades": [
       {
         "posicao": 21,
@@ -162,19 +156,18 @@
       {
         "posicao": 24,
         "nome": "Corpo técnico",
-        "descricao": "Equipe necessárias para apoiar na manutenção dos equipamentos relacionados à energia, comunicação e transporte"
+        "descricao": "Equipe necessária para apoiar na manutenção dos equipamentos relacionados à energia, comunicação e transporte"
       }
     ]
   },
   {
-    "nome": "Saúde e saneamento",
-    "descricao": "Desenvolvimento de ações complementares relativas aos principais problemas de saúde e saneamento das comunidades",
-    "valor": 0,
+    "nome": "Saúde e saneamento complementar",
+    "descricao": "Ações complementares à assistência usual do governo sobre saúde e saneamento",
     "atividades": [
       {
         "posicao": 25,
         "nome": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
-        "descricao": "Atividades, eventos e capacitações complementares de saúde e relacionados ao conhecimento e medicina tradicional "
+        "descricao": "Atividades, eventos e capacitações complementares de saúde e relacionados ao conhecimento e medicina tradicional"
       },
       {
         "posicao": 26,
@@ -184,9 +177,8 @@
     ]
   },
   {
-    "nome": "Educação",
-    "descricao": "Aprimoramento da gestão, dos aspectos curriculares e didáticos das escolas indígenas e outras atividades de formação relacionadas à educação.",
-    "valor": 0,
+    "nome": "Educação complementar",
+    "descricao": "Aprimoramento da gestão, aspectos curriculares e didáticos das escolas indígenas e outras atividades de formação relacionadas à educação",
     "atividades": [
       {
         "posicao": 27,

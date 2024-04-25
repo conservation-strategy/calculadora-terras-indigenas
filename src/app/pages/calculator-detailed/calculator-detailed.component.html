@@ -7,21 +7,28 @@
                     <section>
                         <h1 class="section-title">Guia de Uso</h1>
                         <div class="alert alert-info">
-                            <small>
-                                Calcula o custo de implementação por atividade de uma Terra Indígena, podendo o usuário
-                                alterar os valores das características da Terra Indígena (tamanho, população, aldeia,
-                                complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da
-                                associação) e também definir o nível de implementação desejado para cada atividade em
-                                uma escala de 0 a 20 (em que 10 é “básico” e 20 é “bom”). Os níveis de implementação
-                                foram definidos apenas para os níveis básico (10) e bom (20). Caso o usuário defina um
-                                valor diferente de 10 ou 20, deve-se considerar que se estará "no meio do caminho" entre
-                                um nível e outro. Por exemplo, o 15 está na metade do caminho entre o nível básico e
-                                bom, mas não há uma definição exata da lista de itens desse meio caminho, que pode
-                                variar. Essa versão é indicada para usuários que atuam em atividades específicas em uma
-                                Terra Indígena e que busca informações mais detalhadas sobre o custo para a
-                                implementação de cada atividade, incluindo em termos intermediários, de avanço gradual
-                                entre um nível e outro.
-                            </small>
+                            <p>
+                                <small>
+                                    Calcula o custo de implementação por atividade de uma Terra Indígena, podendo o
+                                    usuário alterar os valores das características da Terra Indígena (tamanho,
+                                    população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e
+                                    localização da sede da associação) e também definir o nível de implementação
+                                    desejado para cada atividade em uma escala de 0 a 20 (em que 10 é “básico” e 20 é
+                                    “bom”). Os níveis de implementação foram definidos apenas para os níveis básico (10)
+                                    e bom (20). Caso o usuário defina um valor diferente de 10 ou 20, deve-se considerar
+                                    que se estará "no meio do caminho" entre um nível e outro. Por exemplo, o 15 está na
+                                    metade do caminho entre o nível básico e bom, mas não há uma definição exata da
+                                    lista de itens desse meio caminho, que pode variar.
+                                </small>
+                            </p>
+                            <p>
+                                <small>
+                                    Essa versão é indicada para usuários que atuam em atividades específicas em uma
+                                    Terra Indígena e que busca informações mais detalhadas sobre o custo para a
+                                    implementação de cada atividade, incluindo em termos intermediários, de avanço
+                                    gradual entre um nível e outro.
+                                </small>
+                            </p>
                         </div>
                     </section>
                     <section>
@@ -348,6 +355,27 @@
                             </div>
                         </div>
                         <div class="row">
+                            <!-- TIPO GASTO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Tipo de custo</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
+                                </label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" value="1" formControlName="tipoCusto">
+                                    <label class="form-check-label">Recorrente</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" value="2" formControlName="tipoCusto">
+                                    <label class="form-check-label">Não Recorrente</label>
+                                </div>
+                                <div *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid">
+                                    <small class="text-danger">
+                                        Campo Obrigatório.
+                                    </small>
+                                </div>
+                            </div>
                             <!-- ATIVIDADE -->
                             <div class="col-md-6 mt-3">
                                 <label class="form-label">
@@ -371,28 +399,6 @@
                                 <small *ngIf="calculadoraFormEnviado&&!atividadeSelecionada" class="text-danger">
                                     Campo Obrigatório.
                                 </small>
-                            </div>
-                            <!-- TIPO GASTO -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Tipo de custo</span>
-                                    <fa-icon [icon]="faQuestionCircle"
-                                        ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
-                                </label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" value="1" formControlName="tipoCusto">
-                                    <label class="form-check-label">Recorrente</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" value="2" formControlName="tipoCusto">
-                                    <label class="form-check-label">Não Recorrente</label>
-                                </div>
-                                <div *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid">
-                                    <small class="text-danger">
-                                        Campo Obrigatório.
-                                    </small>
-                                </div>
-
                             </div>
                             <!-- NIVEL IMPLEMENTAÇÃO ATUAL -->
                             <div class="col-md-6 mt-3">
@@ -449,10 +455,13 @@
         </div>
     </div>
 
-    <div *ngIf="mostrarResultado">
+    <div *ngIf="mostrarResultado" id="resultado">
         <div class="row mt-5">
             <div class="col-6">
                 <h1 class="section-title">Resultado</h1>
+                <div class="alert alert-warning" *ngIf="resultado.valorCusto < 1000">
+                    Essa atividade não é representativa comparada com outras atividades do eixo
+                </div>
                 <p>
                     O custo <strong>{{resultado.tipoCusto}}</strong> previsto para
                     <strong>{{atividadeSelecionada?.nome}}</strong>, na

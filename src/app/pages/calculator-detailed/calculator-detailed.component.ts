@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {
   FormControl,
@@ -27,6 +27,11 @@ import Coeficiente from '../../core/models/Coeficiente';
 import Atividade from '../../core/models/Atividade';
 import Eixo from '../../core/models/Eixo';
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { Alignment } from 'pdfmake/interfaces';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-calculator-detailed',
   standalone: true,
@@ -40,7 +45,7 @@ import Eixo from '../../core/models/Eixo';
     HeaderComponent,
     NumbersOnlyDirective,
   ],
-  providers: [CalculatorService],
+  providers: [CalculatorService, CurrencyPipe],
   templateUrl: './calculator-detailed.component.html',
   styleUrl: './calculator-detailed.component.scss',
 })
@@ -77,9 +82,10 @@ export class CalculatorDetailedComponent implements OnInit {
   calculadoraFormEnviado = false;
   calculadoraForm = new FormGroup({
     terraIndigena: new FormControl('', Validators.required),
-    tamanho: new FormControl('', Validators.required),
+    tamanho: new FormControl<number | 0>(0, { nonNullable: true }),
+    populacao: new FormControl<number>(0, Validators.required),
     aldeias: new FormControl('', Validators.required),
-    populacao: new FormControl('', Validators.required),
+
     grauDiversidade: new FormControl('', Validators.required),
     grauAmeaca: new FormControl('', Validators.required),
     complexidadeAcesso: new FormControl('', Validators.required),
@@ -104,13 +110,20 @@ export class CalculatorDetailedComponent implements OnInit {
     nivelImplementacaoAtual: 0,
     nivelImplementacaoAlmejado: 0,
   };
+  ipUsuario = '';
 
-  constructor(private calculatorService: CalculatorService) {}
+  constructor(
+    private calculatorService: CalculatorService,
+    private currencyPipe: CurrencyPipe
+  ) {}
 
   ngOnInit() {
     this.obterTerrasIndigenas();
     this.obterCoeficientes();
     this.obterEixos();
+    this.calculatorService.obterIPAddress().subscribe((response: any) => {
+      this.ipUsuario = response ? response?.ip : '';
+    });
   }
 
   obterTerrasIndigenas() {
@@ -176,35 +189,41 @@ export class CalculatorDetailedComponent implements OnInit {
       tipoCusto,
     } = this.calculadoraForm.value;
 
-    const resultados = this.calculatorService.calcularCoeficientes(
+    const atividade = this.atividadeSelecionada
+      ? this.atividadeSelecionada.posicao
+      : 0;
+    const coeficientes =
       tipoCusto == '1'
         ? this.coeficientesRecorrentes
-        : this.coeficientesNaoRecorrentes,
-      Number(nivelImplementacaoAlmejado),
+        : this.coeficientesNaoRecorrentes;
+
+    const valorCusto = this.calculatorService.calculadoraDetalhada(
+      coeficientes,
+      atividade,
       Number(nivelImplementacaoAtual),
+      Number(nivelImplementacaoAlmejado),
       Number(tamanho),
       Number(populacao),
       Number(aldeias),
       Number(grauDiversidade),
-      Number(localSede),
       Number(grauAmeaca),
-      Number(complexidadeAcesso)
+      Number(complexidadeAcesso),
+      Number(localSede)
     );
-
-    const posicao = this.atividadeSelecionada
-      ? this.atividadeSelecionada.posicao
-      : 0;
 
     this.resultado = {
       terraIndigena: this.terraIndigenaSelecionada?.nome,
       atividade: this.atividadeSelecionada?.nome,
       tipoCusto: tipoCusto == '1' ? 'recorrente' : 'não recorrente',
-      valorCusto: resultados[posicao],
+      valorCusto: valorCusto,
       nivelImplementacaoAtual: Number(nivelImplementacaoAtual),
       nivelImplementacaoAlmejado: Number(nivelImplementacaoAlmejado),
     };
 
     this.mostrarResultado = true;
+    setTimeout(() => {
+      document.getElementById("resultado")?.scrollIntoView();
+    }, 10);
   }
 
   abrirModal() {
@@ -214,12 +233,107 @@ export class CalculatorDetailedComponent implements OnInit {
     modalRef.componentInstance.eixos = this.eixos;
 
     modalRef.result.then((atividade) => {
-      if (atividade) this.atividadeSelecionada = atividade;
+      if (atividade) {
+        this.atividadeSelecionada = atividade;
+        this.calculadoraForm.patchValue({
+          nivelImplementacaoAtual:
+            this.terraIndigenaSelecionada?.nivelImplementacaoAtual[
+              atividade.posicao
+            ].toString(),
+        });
+      }
     });
   }
 
   gerarPdf() {
-    alert('Em Breve!');
+    const dataHora = new Date().toLocaleString();
+    var docDefinition = {
+      content: [
+        {
+          text: [
+            'O custo',
+            { text: ` ${this.resultado.tipoCusto} `, bold: true },
+            'previsto para',
+            { text: ` ${this.resultado.atividade} `, bold: true },
+            'na Terra Indígena',
+            { text: ` ${this.resultado.terraIndigena} `, bold: true },
+            'com o nível de implementação',
+            { text: ` ${this.resultado.nivelImplementacaoAtual} `, bold: true },
+            'para',
+            {
+              text: ` ${this.resultado.nivelImplementacaoAlmejado} `,
+              bold: true,
+            },
+            'é de:',
+          ],
+        },
+        '\n\n',
+        {
+          text: `${this.currencyPipe.transform(
+            this.resultado.valorCusto,
+            'BRL',
+            'symbol',
+            '1.0-0'
+          )}`,
+          fontSize: 20,
+          bold: true,
+        },
+        '\n\n',
+        {
+          text: [
+            'Considerando que as métricas do básico e do bom são:',
+            '{Texto do nível de implementação básico}',
+            '{Texto do nível de implementação bom}.',
+          ],
+        },
+        '\n',
+        {
+          text: [
+            'Importante ressaltar que as “métricas”, ou seja, o que a Terra Indígena precisa ter para estar no nível de implementação básico ou bom, foram construídas apenas para estes níveis. ',
+            'Caso o usuário defina um valor diferente de 10 ou 20 será necessário avaliar o conjunto de métricas para identificar quais custos o resultado poderá abranger.',
+          ],
+        },
+        '\n',
+        {
+          text: [
+            'O valor acima foi construído a partir das seguintes variáveis:',
+            '{Lista com todas as variáveis, como na calculadora do Garimpo}',
+          ],
+        },
+        '\n',
+        {
+          ul: [
+            'item 1',
+            {
+              text: 'item 2 (Informação alterada pelo usuário)',
+              color: 'red',
+            },
+            'item 3',
+            'item 4',
+            {
+              text: 'item 5 (Informação alterada pelo usuário)',
+              color: 'red',
+            },
+            'item 6',
+          ],
+        },
+        '\n\n',
+        {
+          text: 'A CSF, o ISA e a Rede Xingu+ não se responsabilizam pelas consequências do uso da calculadora.',
+        },
+        '\n',
+        {
+          text: '*Caso as características originais da Terra Indígena sejam alteradas no modelo pelo usuário, a CSF, o ISA e Rede Xingu+ não se responsabilizam pelos resultados*.',
+        },
+      ],
+      footer: [
+        {
+          text: `Relatório gerado em ${dataHora} por ${this.ipUsuario}\n https://conservation-strategy.github.io/calculadora-terras-indigenas`,
+          alignment: 'center' as Alignment,
+        },
+      ],
+    };
+    pdfMake.createPdf(docDefinition).download('Calculadora Detalhada');
   }
 }
 

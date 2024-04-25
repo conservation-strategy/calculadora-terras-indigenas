@@ -3,7 +3,9 @@ import Atividade from "./Atividade";
 interface Eixo {
   nome: string;
   descricao: string;
-  valor: number;
+  valorTotal?: number;
+  valorRecorrente?: number;
+  valorNaoRecorrente?: number;
   atividades: Atividade[];
 }
 

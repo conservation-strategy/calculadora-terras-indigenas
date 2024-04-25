@@ -9,6 +9,8 @@ interface TerraIndigena {
   complexidadeAcesso: number;
   localSede: number;
   situacaoAtual: number;
+  nivelImplementacaoAtual: number[];
+  nivelImplementacaoAlmejado: number[];
 };
 
 export default TerraIndigena;
