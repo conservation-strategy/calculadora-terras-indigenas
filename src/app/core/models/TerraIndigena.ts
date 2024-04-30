@@ -1,5 +1,6 @@
 interface TerraIndigena {
   id: number;
+  selecionada?: boolean;
   nome: string;
   tamanho: number;
   aldeias: number;
@@ -11,6 +12,6 @@ interface TerraIndigena {
   situacaoAtual: number;
   nivelImplementacaoAtual: number[];
   nivelImplementacaoAlmejado: number[];
-};
+}
 
 export default TerraIndigena;

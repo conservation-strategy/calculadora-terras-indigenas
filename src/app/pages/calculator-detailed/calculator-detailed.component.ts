@@ -222,7 +222,7 @@ export class CalculatorDetailedComponent implements OnInit {
 
     this.mostrarResultado = true;
     setTimeout(() => {
-      document.getElementById("resultado")?.scrollIntoView();
+      document.getElementById('resultado')?.scrollIntoView();
     }, 10);
   }
 
@@ -247,8 +247,35 @@ export class CalculatorDetailedComponent implements OnInit {
 
   gerarPdf() {
     const dataHora = new Date().toLocaleString();
-    var docDefinition = {
+    const variaveis = this.obterVariaveisUtilizadas();
+    const caracteristicasAlteradas = variaveis
+      .filter((x) => x.alterada)
+      .map((x) => x.variavel);
+    const docDefinition = {
+      header: [
+        {
+          text: ['Calculadora Detalhada'],
+          alignment: 'center' as Alignment,
+          fontSize: 24,
+          bold: true,
+        },
+      ],
       content: [
+        '\n',
+        {
+          text:
+            caracteristicasAlteradas.length > 0
+              ? [
+                  'As características originais da Terra Indígena foram alteradas:',
+                  '\n',
+                  {
+                    text: ` (${caracteristicasAlteradas.join(', ')})`,
+                    background: '#fafad2',
+                  },
+                  '\n\n',
+                ]
+              : '',
+        },
         {
           text: [
             'O custo',
@@ -267,7 +294,7 @@ export class CalculatorDetailedComponent implements OnInit {
             'é de:',
           ],
         },
-        '\n\n',
+        '\n',
         {
           text: `${this.currencyPipe.transform(
             this.resultado.valorCusto,
@@ -278,12 +305,14 @@ export class CalculatorDetailedComponent implements OnInit {
           fontSize: 20,
           bold: true,
         },
-        '\n\n',
+        '\n',
         {
           text: [
             'Considerando que as métricas do básico e do bom são:',
-            '{Texto do nível de implementação básico}',
-            '{Texto do nível de implementação bom}.',
+            '\n',
+            'O nível de implementação básico atende ao mínimo necessário para a realização da atividade.',
+            '\n',
+            'O nível de implementação bom vai um pouco além, adicionando novas ações e melhorias. No entanto, é importante ressaltar que o nível bom, mesmo sendo melhor que o básico, ainda apresenta limitações ou aspectos que precisam ser aprimorados, indicando que há espaço para melhorar o desempenho das atividades',
           ],
         },
         '\n',
@@ -297,25 +326,26 @@ export class CalculatorDetailedComponent implements OnInit {
         {
           text: [
             'O valor acima foi construído a partir das seguintes variáveis:',
-            '{Lista com todas as variáveis, como na calculadora do Garimpo}',
           ],
         },
         '\n',
         {
-          ul: [
-            'item 1',
-            {
-              text: 'item 2 (Informação alterada pelo usuário)',
-              color: 'red',
-            },
-            'item 3',
-            'item 4',
-            {
-              text: 'item 5 (Informação alterada pelo usuário)',
-              color: 'red',
-            },
-            'item 6',
-          ],
+          ul: variaveis.map((x) => {
+            return {
+              text: [
+                {
+                  text: `${x.variavel}: `,
+                  bold: true,
+                },
+                String(x.valor),
+                {
+                  text: x.alterada ? ' (Informação alterada pelo usuário)' : '',
+                  // color: 'red',
+                  background: '#fafad2',
+                },
+              ],
+            };
+          }),
         },
         '\n\n',
         {
@@ -328,12 +358,70 @@ export class CalculatorDetailedComponent implements OnInit {
       ],
       footer: [
         {
-          text: `Relatório gerado em ${dataHora} por ${this.ipUsuario}\n https://conservation-strategy.github.io/calculadora-terras-indigenas`,
+          text: `Relatório gerado em ${dataHora} IP: ${this.ipUsuario}\n https://conservation-strategy.github.io/calculadora-terras-indigenas`,
           alignment: 'center' as Alignment,
         },
       ],
     };
     pdfMake.createPdf(docDefinition).download('Calculadora Detalhada');
+  }
+
+  obterVariaveisUtilizadas(): Variavel[] {
+    const {
+      tamanho,
+      aldeias,
+      populacao,
+      grauDiversidade,
+      grauAmeaca,
+      complexidadeAcesso,
+      localSede,
+    } = this.calculadoraForm.value;
+
+    return [
+      {
+        variavel: 'Tamanho TI',
+        valor: String(tamanho),
+        alterada: tamanho != this.terraIndigenaSelecionada?.tamanho,
+      },
+      {
+        variavel: 'Número de aldeias',
+        valor: String(aldeias),
+        alterada: aldeias != this.terraIndigenaSelecionada?.aldeias,
+      },
+      {
+        variavel: 'População',
+        valor: String(populacao),
+        alterada: populacao != this.terraIndigenaSelecionada?.populacao,
+      },
+      {
+        variavel: 'Grau de diversidade',
+        valor: String(grauDiversidade),
+        alterada:
+          grauDiversidade != this.terraIndigenaSelecionada?.grauDiversidade,
+      },
+      {
+        variavel: 'Grau de ameaça',
+        valor: this.listaComplexidadeAcesso.find(
+          (x) => x.value === Number(grauAmeaca)
+        )?.label,
+        alterada: grauAmeaca != this.terraIndigenaSelecionada?.grauAmeaca,
+      },
+      {
+        variavel: 'Complexidade de acesso',
+        valor: this.listaComplexidadeAcesso.find(
+          (x) => x.value === Number(complexidadeAcesso)
+        )?.label,
+        alterada:
+          complexidadeAcesso !=
+          this.terraIndigenaSelecionada?.complexidadeAcesso,
+      },
+      {
+        variavel: 'Localização da sede da associação',
+        valor: this.listaLocalSede.find((x) => x.value === Number(localSede))
+          ?.label,
+        alterada: localSede != this.terraIndigenaSelecionada?.localSede,
+      },
+    ];
   }
 }
 
@@ -349,4 +437,10 @@ type Resultado = {
   valorCusto: number;
   nivelImplementacaoAtual: number;
   nivelImplementacaoAlmejado: number;
+};
+
+type Variavel = {
+  variavel: string;
+  valor?: string;
+  alterada: boolean;
 };

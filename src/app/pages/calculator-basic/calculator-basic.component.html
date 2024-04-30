@@ -1,8 +1,8 @@
 <app-header title="Versão Básica"></app-header>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-lg-6 mb-3">
+            <div class="card card-main">
                 <div class="card-body">
                     <section>
                         <h1 class="section-title">Guia de Uso</h1>
@@ -66,8 +66,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-lg-6 mb-3">
+            <div class="card card-main">
                 <div class="card-body">
                     <form [formGroup]="calculatorForm">
                         <div class="form-group">
@@ -118,82 +118,79 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 
     <div *ngIf="mostrarResultado" id="resultado">
-        <div class="row mt-5">
-            <div class="col-6">
-                <section class="mt-3">
-                    <h1 class="section-title">Resultado</h1>
-                    <p>
-                        O custo previsto para a Terra Indígena <strong>{{resultado.terraIndigena}}</strong><br>
-                        com o nível de implementação <strong>{{resultado.nivelImplementacaoAlmejado}}</strong>, por ano, é de:
-                    </p>
-                    <h2 class="result-price">{{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}</h2>
-                    <h6 class="text-muted">
-                        {{resultado.valorRecorrente | currency:'BRL':'symbol':'1.0-0' }} <small>Recorrente</small><br>
-                        {{resultado.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0' }} <small>Não
-                            Recorrente</small>
-                    </h6>
-                    <button class="btn btn-secondary mt-3" (click)="gerarPdf()">Download PDF</button>
-                </section>
+        <div class="card card-main mt-3">
+            <div class="card-body">
+                <h1 class="section-title mt-3 mb-3">Resultado</h1>
+                <button class="btn btn-sm btn-secondary mb-3" (click)="gerarPdf()">Download PDF</button>
+                <p>
+                    O custo previsto para a Terra Indígena <strong>{{resultado.terraIndigena}}</strong><br>
+                    com o nível de implementação <strong>{{resultado.nivelImplementacaoAlmejado}}</strong>, por ano, é
+                    de:
+                </p>
+                <h2 class="result-price">{{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}</h2>
+                <h6 class="text-muted">
+                    {{resultado.valorRecorrente | currency:'BRL':'symbol':'1.0-0' }} <small>Recorrente</small><br>
+                    {{resultado.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0' }} <small>Não
+                        Recorrente</small>
+                </h6>
             </div>
         </div>
-        <div class="row mt-5">
-
-            <div class="col-md-6">
-                <div class="card">
+        <div class="row mt-3">
+            <div class="col-lg-6 mb-3">
+                <div class="card card-main">
                     <div class="card-body">
-                        <h5 class="card-title">Recorrente</h5>
-                        <canvasjs-chart [options]="chartRecorrenteOptions" [styles]="{width: '100%', height:'300px'}"
+                        <h1 class="section-title mt-3 mb-3">Recorrente</h1>
+                        <canvasjs-chart [options]="chartRecorrenteOptions" id="chartRecorrente" [styles]="{width: '100%', height:'300px'}"
                             (chartInstance)="obterReferenciaGraficoRecorrente($event)"></canvasjs-chart>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-6">
-                <div class="card">
+            <div class="col-lg-6  mb-3">
+                <div class="card card-main">
                     <div class="card-body">
-                        <h5 class="card-title">Não Recorrente</h5>
-                        <canvasjs-chart [options]="chartNaoRecorrenteOptions" [styles]="{width: '100%', height:'300px'}"
+                        <h1 class="section-title mt-3 mb-3">Não Recorrente</h1>
+                        <canvasjs-chart [options]="chartNaoRecorrenteOptions" id="chartNaoRecorrente" [styles]="{width: '100%', height:'300px'}"
                             (chartInstance)="obterReferenciaGraficoNaoRecorrente($event)"></canvasjs-chart>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <section class="mt-5">
-            <h1 class="section-title">Descrição por eixo temático</h1>
-            <div class="row">
-                <div class="col-3 mb-5" *ngFor="let eixo of eixos">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">{{eixo.nome}}</h5>
-                            <h5 class="text-success">{{ eixo.valorTotal | currency:'BRL':'symbol':'1.0-0'}}</h5>
-                            <div style="font-size: 14px; line-height: 14px;">
-                                <p class="mb-0">
-                                    <strong>{{ eixo.valorRecorrente | currency:'BRL':'symbol':'1.0-0'}}</strong>
-                                    <small class="text-muted ms-1">Recorrente</small>
-                                </p>
+        <div class="card card-main mt-3">
+            <div class="card-body">
+                <h1 class="section-title mt-3 mb-3">Descrição Por Eixo Temático</h1>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of eixos">
+                        <div class="card h-100">
+                            <div class="card-header">{{eixo.nome}}</div>
+                            <div class="card-body">
+                                <!-- <h5 class="card-title">{{eixo.nome}}</h5> -->
+                                <h5 class="text-success">{{ eixo.valorTotal | currency:'BRL':'symbol':'1.0-0'}}</h5>
+                                <div style="font-size: 14px; line-height: 14px;">
+                                    <p class="mb-0">
+                                        <strong>{{ eixo.valorRecorrente | currency:'BRL':'symbol':'1.0-0'}}</strong>
+                                        <small class="text-muted ms-1">Recorrente</small>
+                                    </p>
+                                    <p>
+                                        <strong>{{ eixo.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0'}}</strong>
+                                        <small class="text-muted ms-1">Não Recorrente</small>
+                                    </p>
+                                </div>
                                 <p>
-                                    <strong>{{ eixo.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0'}}</strong>
-                                    <small class="text-muted ms-1">Não Recorrente</small>
+                                    {{eixo.descricao}}
                                 </p>
                             </div>
-                            <p>
-                                {{eixo.descricao}}
-                            </p>
-
-                        </div>
-                        <div class="card-footer d-flex justify-content-end">
-                            <button class="btn btn-sm btn-secondary" (click)="abrirModal(eixo)">Saiba mais</button>
+                            <div class="card-footer d-flex justify-content-end">
+                                <button class="btn btn-sm btn-secondary" (click)="abrirModal(eixo)">Saiba mais</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </div>

@@ -1,8 +1,8 @@
 <app-header title="Versão Detalhada"></app-header>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-lg-6 mb-3">
+            <div class="card card-main">
                 <div class="card-body">
                     <section>
                         <h1 class="section-title">Guia de Uso</h1>
@@ -207,8 +207,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-lg-6 mb-3">
+            <div class="card card-main">
                 <div class="card-body">
                     <form [formGroup]="calculadoraForm">
                         <div class="row">
@@ -456,13 +456,14 @@
     </div>
 
     <div *ngIf="mostrarResultado" id="resultado">
-        <div class="row mt-5">
-            <div class="col-6">
-                <h1 class="section-title">Resultado</h1>
-                <div class="alert alert-warning" *ngIf="resultado.valorCusto < 1000">
+        <div class="card card-main mt-3">
+            <div class="card-body">
+                <h1 class="section-title mt-3 mb-3">Resultado</h1>                
+                <button class="btn btn-sm btn-secondary mb-3" (click)="gerarPdf()">Download PDF</button>                
+                <div class="alert alert-warning mb-3" *ngIf="resultado.valorCusto < 1000">
                     Essa atividade não é representativa comparada com outras atividades do eixo
                 </div>
-                <p>
+                <p class="mb-3">
                     O custo <strong>{{resultado.tipoCusto}}</strong> previsto para
                     <strong>{{atividadeSelecionada?.nome}}</strong>, na
                     Terra Indígena <strong>{{terraIndigenaSelecionada?.nome}}</strong> com o nível de implementação
@@ -470,7 +471,6 @@
                     <strong>{{resultado.nivelImplementacaoAlmejado}}</strong>, é de:
                 </p>
                 <h2 class="result-price">{{resultado.valorCusto | currency:'BRL':'symbol':'1.0-0' }}</h2>
-                <button class="btn btn-secondary mt-3" (click)="gerarPdf()">Download PDF</button>
             </div>
         </div>
     </div>
