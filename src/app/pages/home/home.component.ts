@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalculatorListComponent } from '../../shared/components/calculator-list/calculator-list.component';
+import { CalculadoraListaComponent } from '../../shared/components/calculadora-lista/calculadora-lista.component';
 import { RealizacaoComponent } from '../../shared/components/realizacao/realizacao.component';
 import { ApoioComponent } from '../../shared/components/apoio/apoio.component';
 import { ParceirosComponent } from '../../shared/components/parceiros/parceiros.component';
@@ -8,7 +8,7 @@ import { ParceirosComponent } from '../../shared/components/parceiros/parceiros.
   selector: 'app-home',
   standalone: true,
   imports: [
-    CalculatorListComponent,
+    CalculadoraListaComponent,
     RealizacaoComponent,
     ApoioComponent,
     ParceirosComponent,

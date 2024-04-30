@@ -1,9 +1,31 @@
 .logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 img {
-    max-width: 200px;
+  max-width: 180px;
+}
+
+#floresta-protegida {
+  max-width: 200px;
+}
+
+#kabu {
+  margin-top: -25px;
+}
+
+#raoni {
+  margin-top: -15px;
+}
+
+#atix {
+  max-height: 100px;
+  filter: grayscale(1);
+}
+
+#yakio {
+  max-height: 150px;
+  margin-top: -20px;
 }

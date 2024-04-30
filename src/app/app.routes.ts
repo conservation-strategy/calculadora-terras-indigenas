@@ -14,61 +14,61 @@ export const routes: Routes = [
   {
     path: 'calculadora',
     loadComponent: () =>
-      import('./pages/calculator/calculator.component').then(
-        (c) => c.CalculatorComponent
+      import('./pages/calculadora/calculadora.component').then(
+        (c) => c.CalculadoraComponent
       ),
   },
   {
     path: 'calculadora-basica',
     loadComponent: () =>
-      import('./pages/calculator-basic/calculator-basic.component').then(
-        (c) => c.CalculatorBasicComponent
+      import('./pages/calculadora-basica/calculadora-basica.component').then(
+        (c) => c.CalculadoraBasicaComponent
       ),
   },
   {
     path: 'calculadora-agrupada',
     loadComponent: () =>
-      import('./pages/calculator-grouped/calculator-grouped.component').then(
-        (c) => c.CalculatorGroupedComponent
+      import('./pages/calculadora-agrupada/calculadora-agrupada.component').then(
+        (c) => c.CalculadoraAgrupadaComponent
       ),
   },
   {
     path: 'calculadora-detalhada',
     loadComponent: () =>
-      import('./pages/calculator-detailed/calculator-detailed.component').then(
-        (c) => c.CalculatorDetailedComponent
+      import('./pages/calculadora-detalhada/calculadora-detalhada.component').then(
+        (c) => c.CalculadoraDetalhadaComponent
       ),
   },
   {
     path: 'metodologia',
     loadComponent: () =>
-      import('./pages/metodology/metodology.component').then(
-        (c) => c.MetodologyComponent
+      import('./pages/metodologia/metodologia.component').then(
+        (c) => c.MetodologiaComponent
       ),
   },
   {
     path: 'publicacoes',
     loadComponent: () =>
-      import('./pages/publications/publications.component').then(
-        (c) => c.PublicationsComponent
+      import('./pages/publicacoes/publicacoes.component').then(
+        (c) => c.PublicacoesComponent
       ),
   },
   {
     path: 'equipe',
     loadComponent: () =>
-      import('./pages/team/team.component').then((c) => c.TeamComponent),
+      import('./pages/time/time.component').then((c) => c.TimeComponent),
   },
   {
     path: 'contato',
     loadComponent: () =>
-      import('./pages/contact/contact.component').then(
-        (c) => c.ContactComponent
+      import('./pages/contato/contato.component').then(
+        (c) => c.ContatoComponent
       ),
   },
   {
     path: 'sobre',
     loadComponent: () =>
-      import('./pages/about/about.component').then((c) => c.AboutComponent),
+      import('./pages/sobre/sobre.component').then((c) => c.SobreComponent),
   },
   {
     path: 'not-found',
