@@ -6,37 +6,80 @@
       {
         "posicao": 0,
         "nome": "Infraestrutura das associações",
-        "descricao": "Recursos para a sede da associação (espaço físico, equipamentos, computadores, materiais de escritório e manutenções); meio de transporte para a realização das atividades (carros, caminhões, embarcações e manutenções); meio de comunicação da sede (telefone, internet ou rádio e manutenções)"
+        "descricao": "Recursos para a sede da associação (espaço físico, equipamentos, computadores, materiais de escritório e manutenções); meio de transporte para a realização das atividades (carros, caminhões, embarcações e manutenções); meio de comunicação da sede (telefone, internet ou rádio e manutenções)",
+        "custoBasico": [
+          "Não recorrente: sede / meio de comunicação / meio de transporte",
+          "Corrente: manutenção"
+        ],
+        "custoBom": [
+          "Não recorrente: sede própria / loja / espaço para armazenamento da produção / caminhão / ônibus / garagem de veículo / equipamento de audiovisual / espaço para realização das reuniões / alojamento ",
+          "Corrente: manutenção / seguro para os veículos"
+        ]
       },
       {
         "posicao": 1,
         "nome": "Funcionamento das associações",
-        "descricao": "Recursos para desenvolver as atividades e o funcionamento da Associação (assembleia, aluguel, materiais, inclusive de comunicação, assessorias jurídica/tributária/fiscal/técnica/comunicação, despesas cartoriais, correio, despesa com reuniões, manutenção de site)"
+        "descricao": "Recursos para desenvolver as atividades e o funcionamento da Associação (assembleia, aluguel, materiais, inclusive de comunicação, assessorias jurídica/tributária/fiscal/técnica/comunicação, despesas cartoriais, correio, despesa com reuniões, manutenção de site)",
+        "custoBasico": [
+          "Corrente: assembleia estatutária / recurso para despesas de aluguel, água, luz, internet, correios / frete de caminhão, ônibus e barco / material de escritório / assessoria contábil        "
+        ],
+        "custoBom": [
+          "Corrente: assessoria jurídica / assessoria de comunicação / manutenção do site / produção de materiais de comunicação"
+        ]
       },
       {
         "posicao": 2,
         "nome": "Treinamento e formação contínua",
-        "descricao": "Cursos, capacitações, atividades e elaboração de materiais didáticos, visando o apoio às associações sobre gestão administrativa, financeira e de comunicação"
+        "descricao": "Cursos, capacitações, atividades e elaboração de materiais didáticos, visando o apoio às associações sobre gestão administrativa, financeira e de comunicação",
+        "custoBasico": [
+          "Corrente: participar e/ou realizar capacitações: pelo menos 1 a cada 3 anos (gestão administrativa, financeira e de comunicação) / assessoria técnica (profissionais contratados para a realização dos cursos)"
+        ],
+        "custoBom": [
+          "Corrente: formação contínua",
+          "Não recorrentes: material didático sobre gestão organizacional"
+        ]
       },
       {
         "posicao": 3,
         "nome": "Articulação interna",
-        "descricao": "Instâncias de governanças e controle social que reúne o coletivo de povos, lideranças e comunidades (reuniões e visitas nas aldeias), visando a ampla discussão sobre as ações relacionadas à governança e ao PGTA"
+        "descricao": "Instâncias de governanças e controle social que reúne o coletivo de povos, lideranças e comunidades (reuniões e visitas nas aldeias), visando a ampla discussão sobre as ações relacionadas à governança e ao PGTA",
+        "custoBasico": [
+          "Corrente: reuniões nas aldeias para compartilhamento e discussão das ações das associações (além da Assembleia)"
+        ],
+        "custoBom": [
+          "Corrente: recurso para reuniões emergenciais (situacionais de conflitos, etc.)"
+        ]
       },
       {
         "posicao": 4,
         "nome": "Articulação externa",
-        "descricao": "Mobilizações regionais, nacionais e internacionais que contemplem as pautas amplas voltadas aos direitos dos povos indígenas (saúde, educação, território)"
+        "descricao": "Mobilizações regionais, nacionais e internacionais que contemplem as pautas amplas voltadas aos direitos dos povos indígenas (saúde, educação, território)",
+        "custoBasico": [
+          "Corrente: reunião anual com a articulação indígena estadual, regional / mobilizações em nível nacional (ex. Abril Indígena)"
+        ],
+        "custoBom": [
+          "Corrente: projeto específico para participação em mobilizações (ex. ATL) / mobilizações anuais em nível nacional (PECs, licenciamento) para TI's com elevado grau de ameaça / fundo para mobilizações regionais, nacionais e/ou internacionais"
+        ]
       },
       {
         "posicao": 5,
         "nome": "Instrumentos de governança",
-        "descricao": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)"
+        "descricao": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)",
+        "custoBasico": ["Não recorrente: PGTA / Protocolo de consulta"],
+        "custoBom": [
+          "Não recorrente: atualização do PGTA a cada 3 anos / atualização do Protocolo de consulta a cada 5 anos"
+        ]
       },
       {
         "posicao": 6,
         "nome": "Corpo técnico",
-        "descricao": "Capacidade dos quadros técnicos mínimos necessários para a gestão da Associação e desenvolvimento dos projetos"
+        "descricao": "Capacidade dos quadros técnicos mínimos necessários para a gestão da Associação e desenvolvimento dos projetos",
+        "custoBasico": [
+          "Corrente: equipe (diretivo/político; administrativo/financeiro; operacional {ex. motorista etc.}) / em projetos ter corpo técnico específico"
+        ],
+        "custoBom": [
+          "Corrente: equipe diretivo/político / equipe administrativo/financeiro / equipe operacional / equipe de comunicadores indígenas"
+        ]
       }
     ]
   },
@@ -47,32 +90,70 @@
       {
         "posicao": 7,
         "nome": "Elaboração e atualização de diagnóstico dos vetores de ameaça e plano de fiscalização",
-        "descricao": "Construção dos diagnósticos e reuniões para a atualização dos mesmos (discussão de ameaças e estratégias)"
+        "descricao": "Construção dos diagnósticos e reuniões para a atualização dos mesmos (discussão de ameaças e estratégias)",
+        "custoBasico": [
+          "Corrente: reuniões para levantamento/discussão de ameaças e estratégias, conforme grau de ameaça da TI (Baixo: 1 reunião por ano / Médio: 2 reuniões por ano / Alto: 3 reuniões por ano / Altíssimo: 4 ou mais reuniões por ano)"
+        ],
+        "custoBom": [
+          "Não recorrente: documento de apoio e referência para o monitoramento e atualização dos vetores de ameaça"
+        ]
       },
       {
         "posicao": 8,
         "nome": "Fiscalização e monitoramento territorial (atividades ilegais - desmatamento, garimpo, madeira, estradas)",
-        "descricao": "Expedições de vigilância visando proteger e fiscalizar o território contra atividades ilegais na TI e no seu entorno e manutenção dos limites, incluindo o uso de ferramentas de monitoramento remoto (SIG)"
+        "descricao": "Expedições de vigilância visando proteger e fiscalizar o território contra atividades ilegais na TI e no seu entorno e manutenção dos limites, incluindo o uso de ferramentas de monitoramento remoto (SIG)",
+        "custoBasico": [
+          "Corrente: expedições de vigilância/manutenção de limites da TI, conforme grau de ameaça da TI (Baixo: 1 expedição por ano / Médio: 2 expedições por ano / Alto: 3 expedições por ano / Altíssimo: 4 expedições por ano) / sobrevoo anual (TIs de grau de ameaça alto e altíssimo)"
+        ],
+        "custoBom": [
+          "Corrente: Mais expedições de vigilância por ano / monitoramento remoto em tempo real / sobrevoo anual (TIs de grau de ameaça médio)"
+        ]
       },
       {
         "posicao": 9,
         "nome": "Monitoramento e manejo ambiental (qualidade ambiental)",
-        "descricao": "Construção dos diagnósticos, ações de proteção, restauração, conservação, monitoramento de impactos e manejo dos recursos naturais (como qualidade da água, fauna, flora, controle do fogo e uso de agrotóxicos)"
+        "descricao": "Construção dos diagnósticos, ações de proteção, restauração, conservação, monitoramento de impactos e manejo dos recursos naturais (como qualidade da água, fauna, flora, controle do fogo e uso de agrotóxicos)",
+        "custoBasico": [
+          "Corrente: reuniões para levantamento/discussão de necessidades, impactos e estratégias para o monitoramento ambiental conforme grau de ameaça da TI (Baixo: 1 reunião por ano / Médio: 2 reuniões por ano / Alto: 3  reuniões por ano / Altíssimo: 4 ou mais reuniões por ano) / projeto de monitoramento e manejo ambiental conforme grau de ameaça da TI (Baixo: 1 projeto / Médio: 2 projetos / Alto: 3 projetos / Altíssimo: 4 ou mais projetos por ano)"
+        ],
+        "custoBom": [
+          "Corrente: projeto de monitoramento e manejo ambiental por ameaça ambiental / assessoria técnica necessária para o monitoramento ambiental",
+          "Não recorrente: documento de apoio e referência para o monitoramento e manejo"
+        ]
       },
       {
         "posicao": 10,
         "nome": "Capacitações e elaboração de materiais relacionados à fiscalização territorial e proteção ambiental",
-        "descricao": "Eventos, cursos e capacitações (ex.: Agentes Ambientais Indígenas) e elaboração de materiais didáticos voltados à fiscalização, proteção territorial, monitoramento e manejo ambiental"
+        "descricao": "Eventos, cursos e capacitações (ex.: Agentes Ambientais Indígenas) e elaboração de materiais didáticos voltados à fiscalização, proteção territorial, monitoramento e manejo ambiental",
+        "custoBasico": [
+          "Corrente: formações sobre a fiscalização e proteção territorial (Ex. Agentes Ambientais Indígenas) conforme de grau de ameaça da TI (Baixo: 1 formações a cada 2 anos / Médio: 1 formação por ano / Alto: 2 formações por ano / Altíssimo: 3 ou mais formações por ano) / formação anual específica sobre monitoramento e manejo ambiental (ex. controle do fogo)"
+        ],
+        "custoBom": [
+          "Corrente: reunião ou intercâmbio anual com outros povos para aprimorar o conhecimento e técnicas sobre proteção e fiscalização",
+          "Não recorrente: material didático para formações"
+        ]
       },
       {
         "posicao": 11,
         "nome": "Equipamentos",
-        "descricao": "Aquisição/manutenção/reposição de equipamentos básicos indispensáveis para as atividades de proteção e fiscalização da TI e seu entorno (veículos, drone, notebook, GPS), infraestrutura de vigilância e equipamentos para o monitoramento e manejo ambiental"
+        "descricao": "Aquisição/manutenção/reposição de equipamentos básicos indispensáveis para as atividades de proteção e fiscalização da TI e seu entorno (veículos, drone, notebook, GPS), infraestrutura de vigilância e equipamentos para o monitoramento e manejo ambiental",
+        "custoBasico": [
+          "Não recorrente: kit de equipamento para as expedições (GPS, drone, EPI, celular, meio de transporte)",
+          "Corrente: manutenção dos equipamentos"
+        ],
+        "custoBom": [
+          "Não recorrente: estrutura por sub-região para vigilância constante na TI / meios de transporte específicos para as atividades de fiscalização",
+          "Corrente: manutenção dos equipamentos e infraestruturas"
+        ]
       },
       {
         "posicao": 12,
         "nome": "Corpo técnico",
-        "descricao": "Equipe necessária para a realização das atividades de fiscalização e proteção ambiental"
+        "descricao": "Equipe necessária para a realização das atividades de fiscalização e proteção ambiental",
+        "custoBasico": ["Corrente: equipe de agentes ambientais indígenas"],
+        "custoBom": [
+          "Corrente: agente ambiental por aldeia / corpo técnico para o monitoramento remoto (SIG, ODK, Drone)"
+        ]
       }
     ]
   },
@@ -83,17 +164,32 @@
       {
         "posicao": 13,
         "nome": "Apoio à atividades culturais tradicionais",
-        "descricao": "Iniciativas de fortalecimento e/ou resgate do patrimônio cultural e manifestações culturais tradicionais (eventos, registros audiovisuais, livros, equipamentos)"
+        "descricao": "Iniciativas de fortalecimento e/ou resgate do patrimônio cultural e manifestações culturais tradicionais (eventos, registros audiovisuais, livros, equipamentos)",
+        "custoBasico": [
+          "Corrente: encontro anual cultural geral da TI /  cumprir os calendários tradicionais  de atividades culturais da TI"
+        ],
+        "custoBom": [
+          "Corrente: projetos específicos para apoiar a realização das atividades culturais tradicionais (e/ou de resgate da cultura material) / oficina anual para o fortalecimento e/ou resgate das atividades culturais",
+          "Não recorrente: instrumento próprio de divulgação das ações culturais da TI (rádio, site, podcast, etc.)"
+        ]
       },
       {
         "posicao": 14,
         "nome": "Apoio a atividades interculturais (pesquisas, intercâmbios e/ou eventos)",
-        "descricao": "Ações de pesquisas interculturais e intercâmbios, visando o fortalecimento cultural"
+        "descricao": "Ações de pesquisas interculturais e intercâmbios, visando o fortalecimento cultural",
+        "custoBasico": [
+          "Corrente: projeto de pesquisa cultural realizado por pesquisadores indígenas / participação anual em atividade de intercâmbio"
+        ],
+        "custoBom": ["Corrente: promoção anual de evento de intercâmbio"]
       },
       {
         "posicao": 15,
         "nome": "Corpo técnico",
-        "descricao": "Equipe necessárias para a realização das atividades voltadas à cultura"
+        "descricao": "Equipe necessárias para a realização das atividades voltadas à cultura",
+        "custoBasico": ["Corrente: agente cultural indígena na TI"],
+        "custoBom": [
+          "Corrente: equipe de agentes culturais indígenas, por povo, atuando em patrimônio cultural"
+        ]
       }
     ]
   },
@@ -104,12 +200,24 @@
       {
         "posicao": 16,
         "nome": "Apoio a alternativas econômicas sustentáveis",
-        "descricao": "Mapeamento, adequação, ampliação e/ou prospecção de recursos das TIs que tenham interface com o mercado, desenvolvimento do produto, cadeia de valor e seus elos, como beneficiamento e comercialização, incluindo aquisição de equipamentos, como caminhão e construção de UBAs"
+        "descricao": "Mapeamento, adequação, ampliação e/ou prospecção de recursos das TIs que tenham interface com o mercado, desenvolvimento do produto, cadeia de valor e seus elos, como beneficiamento e comercialização, incluindo aquisição de equipamentos, como caminhão e construção de UBAs",
+        "custoBasico": [
+          "Corrente: logística de transporte (escoamento) / manutenção de equipamentos e veículos / material e insumos de campo / auxílio financeiro",
+          "Não recorrente: diagnóstico sobre o potencial dos produtos e/ou serviços (turismo, carbono, etc.) da terra indígena / cadeia estruturada (diagnóstico do produto e/ou serviço, estratégia comercial, estrutura de beneficiamento da produção)"
+        ],
+        "custoBom": [
+          "Corrente: assistência técnica continuada",
+          "Não recorrente: contrato de comercialização (PNAE, Origens, empresas, cooperativas) / selo de certificação (ex. Origens, orgânico) / associação com estrutura para viabilizar a produção (em todas as etapas) / 02 ou mais cadeias estruturadas (diagnósticos do produtos e/ou serviço, estratégia comercial, estrutura de beneficiamento da produção)"
+        ]
       },
       {
         "posicao": 17,
         "nome": "Corpo técnico",
-        "descricao": "Equipe necessária para a realização das atividades de geração de renda e alternativas econômicas"
+        "descricao": "Equipe necessária para a realização das atividades de geração de renda e alternativas econômicas",
+        "custoBasico": ["Corrente: assessoria técnica continuada"],
+        "custoBom": [
+          "Corrente: equipe indígena de assessoria técnica com formação específica"
+        ]
       }
     ]
   },
@@ -120,17 +228,33 @@
       {
         "posicao": 18,
         "nome": "Iniciativas relacionadas à soberania alimentar",
-        "descricao": "Diversidade de iniciativas que visam a soberania e segurança alimentar das comunidades por meio do fortalecimento da agrobiodiversidade, agroecologia, culinária tradicional e pequenas criações"
+        "descricao": "Diversidade de iniciativas que visam a soberania e segurança alimentar das comunidades por meio do fortalecimento da agrobiodiversidade, agroecologia, culinária tradicional e pequenas criações",
+        "custoBasico": [
+          "Corrente: material e insumos de campo / consumo de proteína (criação e/ou caça e pesca) / logística / manutenção de equipamentos e veículos",
+          "Não recorrente: roça por família e/ou comunitária / 01 ou mais casas de farinha comunitárias /  viveiro familiar / pomar familiar"
+        ],
+        "custoBom": [
+          "Corrente: feira anual de troca de sementes",
+          "Não recorrente: banco de sementes / certificação sobre o modo de produção (ex. certificação do sistema alimentar)"
+        ]
       },
       {
         "posicao": 19,
         "nome": "Capacitações relacionadas a soberania alimentar",
-        "descricao": "Atividades, eventos, cursos, capacitações e elaboração de materiais didáticos relacionados à soberania alimentar"
+        "descricao": "Atividades, eventos, cursos, capacitações e elaboração de materiais didáticos relacionados à soberania alimentar",
+        "custoBasico": [
+          "Corrente: oficina anual de fortalecimento da culinária tradicional"
+        ],
+        "custoBom": ["Não recorrente: material didático de apoio"]
       },
       {
         "posicao": 21,
         "nome": "Corpo técnico",
-        "descricao": "Equipe necessária para realização das ações de soberania alimentar"
+        "descricao": "Equipe necessária para realização das ações de soberania alimentar",
+        "custoBasico": [
+          "Corrente: Agente na TI para atuar no tema de soberania alimentar"
+        ],
+        "custoBom": []
       }
     ]
   },
@@ -141,22 +265,52 @@
       {
         "posicao": 21,
         "nome": "Acesso a energia",
-        "descricao": "Projetos e manutenção dos sistemas de energia adaptados à região com aquisição de equipamentos, implantação e distribuição do sistema (diferentes fontes como eólica, solar, motor a diesel, hídrica)"
+        "descricao": "Projetos e manutenção dos sistemas de energia adaptados à região com aquisição de equipamentos, implantação e distribuição do sistema (diferentes fontes como eólica, solar, motor a diesel, hídrica)",
+        "custoBasico": [
+          "Corrente: manutenção anual dos equipamentos e sistema de energia",
+          "Não recorrente: fonte de energia por aldeia (gerador, solar ou rede elétrica)"
+        ],
+        "custoBom": [
+          "Corrente: manutenção semestral dos equipamentos e sistema de energia",
+          "Não recorrente: sistema de energia solar"
+        ]
       },
       {
         "posicao": 22,
         "nome": "Acesso à comunicação",
-        "descricao": "Implantação e manutenção dos sistemas de radiofonia, internet, visando a ampliação do acesso à comunicação"
+        "descricao": "Implantação e manutenção dos sistemas de radiofonia, internet, visando a ampliação do acesso à comunicação",
+        "custoBasico": [
+          "Corrente: manutenção anual dos equipamentos e sistema de comunicação",
+          "Não recorrente: 01 ponto de internet por aldeia / 01 rádio por aldeia"
+        ],
+        "custoBom": [
+          "Corrente: manutenção semestral dos equipamentos e sistema de comunicação",
+          "Não recorrente: 02 ou mais pontos de internet por aldeia com qualidade"
+        ]
       },
       {
         "posicao": 23,
         "nome": "Acesso a transporte",
-        "descricao": "Aquisição e manutenção de meios de transporte adequados à região, limpeza de igarapés e estradas"
+        "descricao": "Aquisição e manutenção de meios de transporte adequados à região, limpeza de igarapés e estradas",
+        "custoBasico": [
+          "Corrente: mutirão comunitário anual para limpeza das vias de acesso (estrada e rios) / manutenção de transporte",
+          "Não recorrente: meio de transporte (barco/carro)"
+        ],
+        "custoBom": [
+          "Corrente: transporte mensal da TI para o município mais próximo (para resolver pendências em banco, supermercado, etc.)",
+          "Não recorrente: meio de transporte (ônibus, van, etc)"
+        ]
       },
       {
         "posicao": 24,
         "nome": "Corpo técnico",
-        "descricao": "Equipe necessária para apoiar na manutenção dos equipamentos relacionados à energia, comunicação e transporte"
+        "descricao": "Equipe necessária para apoiar na manutenção dos equipamentos relacionados à energia, comunicação e transporte",
+        "custoBasico": [
+          "Corrente: 01 pessoa referência para apoiar nas manutenções emergenciais"
+        ],
+        "custoBom": [
+          "Corrente: 01 agente índígena de infraestrutura capacitado por aldeia"
+        ]
       }
     ]
   },
@@ -167,12 +321,27 @@
       {
         "posicao": 25,
         "nome": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
-        "descricao": "Atividades, eventos e capacitações complementares de saúde e relacionados ao conhecimento e medicina tradicional"
+        "descricao": "Atividades, eventos e capacitações complementares de saúde e relacionados ao conhecimento e medicina tradicional",
+        "custoBasico": [
+          "Corrente: oficina anual sobre as práticas complementares de saúde (Cuidadores tradicionais {ex.raizeiros, fitoterápicos, etc)}) / oficina anual sobre as práticas complementares de saúde (Parteiras {cuidado com a gestante}) / roda de conversa anual sobre o Bem Viver e os temas sensíveis (ex. uso abusivo de álcool e outras drogas, epidemias, etc.)",
+          "Não recorrente: diagnóstico sobre a saúde complementar (ex. quantas parteiras, raizeiros, etc. onde estão {qual aldeia, TI, etc.}, quais são os pontos sensíveis {ex. abuso de álcool e drogas, saúde mental, desnutrição infantil, medicalização, etc.})"
+        ],
+        "custoBom": [
+          "Corrente: 02 oficinas anuais sobre as práticas complementares de saúde (Cuidadores tradicionais {ex.raizeiros, fitoterápicos, etc}) / 02 oficinas anuais sobre as práticas complementares de saúde (Parteiras {cuidado com a gestante}) / 02 rodas de conversa anuais sobre o Bem Viver e os temas sensíveis (ex. uso abusivo de álcool e outras drogas, epidemias, etc.)",
+          "Não recorrente: documento de apoio e referência sobre saúde complementar (para apoiar, inclusive, na visibilidade e valorização do trabalho dos cuidadores tradicionais) / estratégia de valorização dos profissionais relacionados à saúde complementar"
+        ]
       },
       {
         "posicao": 26,
         "nome": "Iniciativas complementares à assistência usual do governo relacionadas a saneamento",
-        "descricao": "Atividades, eventos e capacitações complementares de saneamento (poço semiartesiano, coleta e tratamento de lixo, banheiros ecológicos)"
+        "descricao": "Atividades, eventos e capacitações complementares de saneamento (poço semiartesiano, coleta e tratamento de lixo, banheiros ecológicos)",
+        "custoBasico": [
+          "Corrente: oficina anual sobre o descarte e separação correta do lixo / coleta seletiva por aldeia / oficina anual de boas práticas sobre o uso dos equipamentos de saneamento",
+          "Não recorrente: diagnóstico sobre o saneamento complementar / transporte adequado para a destinação correta dos resíduos por aldeia / poço semiartesiano"
+        ],
+        "custoBom": [
+          "Não recorrente: documento de apoio e referência sobre saneamento complementar (estratégia)"
+        ]
       }
     ]
   },
@@ -183,12 +352,24 @@
       {
         "posicao": 27,
         "nome": "Iniciativas complementares à educação usual implementada pelo governo",
-        "descricao": "Acompanhamento das atividades e eventos relacionados à educação e realização de iniciativas complementares à educação usual do governo"
+        "descricao": "Acompanhamento das atividades e eventos relacionados à educação e realização de iniciativas complementares à educação usual do governo",
+        "custoBasico": [
+          "Corrente: 03 bolsas complementares por TI para viabilizar a permanência do estudante indígena nas universidades/cursos técnicos"
+        ],
+        "custoBom": [
+          "Corrente: 04 ou mais bolsas complementares por TI para viabilizar a permanência do estudante indígena nas universidades/cursos técnicos"
+        ]
       },
       {
         "posicao": 28,
         "nome": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
-        "descricao": "Processos formativos relacionados à educação para professores indígenas e  elaboração e publicação de materiais didáticos complementares relacionados à educação"
+        "descricao": "Processos formativos relacionados à educação para professores indígenas e  elaboração e publicação de materiais didáticos complementares relacionados à educação",
+        "custoBasico": [
+          "Corrente: Formação relacionada à educação complementar por ano (ex.: formação sobre a pauta indígena para professores, oficina sobre materiais didáticos na língua materna, etc.)"
+        ],
+        "custoBom": [
+          "Não recorrente: documento de apoio e referência sobre educação indígena"
+        ]
       }
     ]
   }
