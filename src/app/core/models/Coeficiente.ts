@@ -1,20 +1,20 @@
 interface Coeficiente {
-  atividade: string;
-  ln_sit_depois: string;
-  ln_quali_var: string;
-  int_situacao: string;
-  ln_tamanho_TI: string;
-  ln_populacao: string;
-  aldeia: string;
-  Ameaca_Media: string;
-  Ameaca_Alta: string;
-  Ameaca_Altissima: string;
-  Acesso_Medio: string;
-  Acesso_Dificil: string;
-  grau_divers: string;
-  d_loc_sede1: string;
-  int_ln_ameaca: string;
-  ln_aldeia: string;
+  atividade: number;
+  ln_sit_depois: number;
+  ln_quali_var: number;
+  int_situacao: number;
+  ln_tamanho_TI: number;
+  ln_populacao: number;
+  aldeia: number;
+  Ameaca_Media: number;
+  Ameaca_Alta: number;
+  Ameaca_Altissima: number;
+  Acesso_Medio: number;
+  Acesso_Dificil: number;
+  grau_divers: number;
+  d_loc_sede: number;
+  int_ln_ameaca: number;
+  ln_aldeia: number;
 };
 
 export default Coeficiente;

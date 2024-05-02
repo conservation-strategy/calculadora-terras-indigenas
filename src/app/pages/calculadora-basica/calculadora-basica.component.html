@@ -6,15 +6,13 @@
                 <div class="card-body">
                     <section>
                         <h1 class="section-title">Guia de Uso</h1>
-                        <div class="alert alert-info">
-                            <small>
-                                Calcula o custo total de implementação de todos os eixos temáticos em uma Terra Indígena
-                                selecionada. O usuário escolhe apenas se o objetivo é que todas as atividades da Terra
-                                Indígena selecionada atinjam o nível de implementação básico ou bom. Nessa versão não é
-                                possível selecionar apenas uma atividade ou eixo temático, nem mais de uma Terra
-                                Indígena.
-                            </small>
-                        </div>
+                        <p>
+                            Calcula o custo total de implementação de todos os eixos temáticos em uma Terra Indígena
+                            selecionada. O usuário escolhe apenas se o objetivo é que todas as atividades da Terra
+                            Indígena selecionada atinjam o nível de implementação básico ou bom. Nessa versão não é
+                            possível selecionar apenas uma atividade ou eixo temático, nem mais de uma Terra
+                            Indígena.
+                        </p>
                     </section>
                     <section>
                         <div ngbAccordion>
@@ -52,11 +50,16 @@
                                 <div ngbAccordionCollapse>
                                     <div ngbAccordionBody>
                                         <ng-template>
-                                            Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
-                                            desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
-                                            cálculo, a partir do IPCA (IBGE)
-                                            <a
-                                                href="https://www.ibge.gov.br/explica/inflacao.php">https://www.ibge.gov.br/explica/inflacao.php</a>
+                                            <p>
+                                                Os valores devem ser corrigidos pela inflação. Calcule a inflação
+                                                acumulada
+                                                desde 01/2023 utilizando como base o período de 01/2023 até a data
+                                                presedo
+                                                cálculo, a partir do IPCA (IBGE)
+                                                <a href="https://www.ibge.gov.br/explica/inflacao.php">
+                                                    https://www.ibge.gov.br/explica/inflacao.php
+                                                </a>
+                                            </p>
                                         </ng-template>
                                     </div>
                                 </div>
@@ -110,7 +113,8 @@
                                 <fa-icon [icon]="faQuestionCircle"
                                     ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Inflação %">
+                            <input type="text" class="form-control form-control-sm" placeholder="Inflação %"
+                                formControlName="inflacao" numbersOnly>
                         </div>
                         <div class="form-group mt-3">
                             <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
@@ -144,7 +148,8 @@
                 <div class="card card-main">
                     <div class="card-body">
                         <h1 class="section-title mt-3 mb-3">Recorrente</h1>
-                        <canvasjs-chart [options]="chartRecorrenteOptions" id="chartRecorrente" [styles]="{width: '100%', height:'300px'}"
+                        <canvasjs-chart [options]="chartRecorrenteOptions" id="chartRecorrente"
+                            [styles]="{width: '100%', height:'300px'}"
                             (chartInstance)="obterReferenciaGraficoRecorrente($event)"></canvasjs-chart>
                     </div>
                 </div>
@@ -153,7 +158,8 @@
                 <div class="card card-main">
                     <div class="card-body">
                         <h1 class="section-title mt-3 mb-3">Não Recorrente</h1>
-                        <canvasjs-chart [options]="chartNaoRecorrenteOptions" id="chartNaoRecorrente" [styles]="{width: '100%', height:'300px'}"
+                        <canvasjs-chart [options]="chartNaoRecorrenteOptions" id="chartNaoRecorrente"
+                            [styles]="{width: '100%', height:'300px'}"
                             (chartInstance)="obterReferenciaGraficoNaoRecorrente($event)"></canvasjs-chart>
                     </div>
                 </div>
@@ -168,7 +174,6 @@
                         <div class="card h-100">
                             <div class="card-header">{{eixo.nome}}</div>
                             <div class="card-body">
-                                <!-- <h5 class="card-title">{{eixo.nome}}</h5> -->
                                 <h5 class="text-success">{{ eixo.valorTotal | currency:'BRL':'symbol':'1.0-0'}}</h5>
                                 <div style="font-size: 14px; line-height: 14px;">
                                     <p class="mb-0">

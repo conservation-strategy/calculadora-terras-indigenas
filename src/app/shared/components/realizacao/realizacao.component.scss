@@ -1,9 +1,34 @@
 .logos {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 65%;
 }
 
 .logos img {
-    max-height: 80px;
+  max-height: 80px;
+}
+
+@media (max-width: 700px) {
+  img {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 990px) {
+  .logos {
+    width: 100%;
+  }
+  img {
+    max-height: 70px;
+  }
+
+  #floresta-protegida {
+    max-width: 180px;
+  }
+
+  #yakio {
+    max-height: 130px;
+  }
 }

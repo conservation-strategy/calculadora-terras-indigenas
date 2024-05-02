@@ -98,6 +98,7 @@ export class CalculadoraDetalhadaComponent implements OnInit {
       Validators.required,
       rangeValidator(0, 20),
     ]),
+    inflacao: new FormControl(''),
   });
 
   mostrarResultado = false;
@@ -186,6 +187,7 @@ export class CalculadoraDetalhadaComponent implements OnInit {
       grauAmeaca,
       complexidadeAcesso,
       tipoCusto,
+      inflacao,
     } = this.calculadoraForm.value;
 
     const atividade = this.atividadeSelecionada
@@ -207,7 +209,8 @@ export class CalculadoraDetalhadaComponent implements OnInit {
       Number(grauDiversidade),
       Number(grauAmeaca),
       Number(complexidadeAcesso),
-      Number(localSede)
+      Number(localSede),
+      Number(inflacao)
     );
 
     this.resultado = {

@@ -39,12 +39,13 @@ export class CalculadoraService {
     grauDiversidade: number,
     localSede: number,
     grauAmeaca: number,
-    complexidadeAcesso: number
+    complexidadeAcesso: number,
+    inflacao: number
   ): number[] {
     const resultados: number[] = [];
 
     coeficientes.forEach((coeficiente: any, index: number) => {
-      const resultado = this.__calcularCoeficiente(
+      let resultado = this.__calcularCoeficiente(
         coeficiente,
         nivelImplementacaoAtual[index],
         nivelImplementacaoAlmejado,
@@ -56,6 +57,9 @@ export class CalculadoraService {
         complexidadeAcesso,
         localSede
       );
+      if(inflacao > 0) {
+        resultado = resultado + (resultado*(inflacao/100));
+      }
 
       resultados.push(resultado);
     });
@@ -73,10 +77,11 @@ export class CalculadoraService {
     grauDiversidade: number,
     grauAmeaca: number,
     complexidadeAcesso: number,
-    localSede: number
+    localSede: number,
+    inflacao: number
   ): number {
     const coeficiente: Coeficiente = coeficientes[atividade];
-    const resultado = this.__calcularCoeficiente(
+    let resultado = this.__calcularCoeficiente(
       coeficiente,
       nivelImplementacaoAtual,
       nivelImplementacaoAlmejado,
@@ -88,6 +93,9 @@ export class CalculadoraService {
       complexidadeAcesso,
       localSede
     );
+    if(inflacao > 0) {
+      resultado = resultado + (resultado*(inflacao/100));
+    }
 
     return resultado;
   }
@@ -112,44 +120,32 @@ export class CalculadoraService {
   ): number {
     const resultado =
       Math.exp(
-        parseFloat(coeficiente.ln_sit_depois) *
-          Math.log(nivelImplementacaoAlmejado)
+        coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado)
       ) +
       Math.exp(
-        parseFloat(coeficiente.ln_quali_var) *
+        coeficiente.ln_quali_var *
           Math.log(nivelImplementacaoAlmejado - nivelImplementacaoAtual)
       ) +
       Math.exp(
-        parseFloat(coeficiente.int_situacao) *
+        coeficiente.int_situacao *
           (nivelImplementacaoAlmejado - nivelImplementacaoAtual)
       ) +
-      Math.exp(parseFloat(coeficiente.ln_tamanho_TI) * Math.log(tamanho)) +
-      Math.exp(parseFloat(coeficiente.ln_populacao) * Math.log(populacao)) +
-      Math.exp(parseFloat(coeficiente.aldeia) * aldeias) +
+      Math.exp(coeficiente.ln_tamanho_TI * Math.log(tamanho)) +
+      Math.exp(coeficiente.ln_populacao * Math.log(populacao)) +
+      Math.exp(coeficiente.aldeia * aldeias) +
+      Math.exp(coeficiente.Ameaca_Media * (grauAmeaca === 1 ? 1 : 0)) +
+      Math.exp(coeficiente.Ameaca_Alta * (grauAmeaca === 2 ? 1 : 0)) +
+      Math.exp(coeficiente.Ameaca_Altissima * (grauAmeaca === 3 ? 1 : 0)) +
+      Math.exp(coeficiente.Acesso_Medio * (complexidadeAcesso === 1 ? 1 : 0)) +
       Math.exp(
-        parseFloat(coeficiente.Ameaca_Media) * (grauAmeaca === 1 ? 1 : 0)
+        coeficiente.Acesso_Dificil * (complexidadeAcesso === 2 ? 1 : 0)
       ) +
-      Math.exp(
-        parseFloat(coeficiente.Ameaca_Alta) * (grauAmeaca === 2 ? 1 : 0)
-      ) +
-      Math.exp(
-        parseFloat(coeficiente.Ameaca_Altissima) * (grauAmeaca === 3 ? 1 : 0)
-      ) +
-      Math.exp(
-        parseFloat(coeficiente.Acesso_Medio) *
-          (complexidadeAcesso === 1 ? 1 : 0)
-      ) +
-      Math.exp(
-        parseFloat(coeficiente.Acesso_Dificil) *
-          (complexidadeAcesso === 2 ? 1 : 0)
-      ) +
-      Math.exp(parseFloat(coeficiente.grau_divers) * grauDiversidade) +
-      Math.exp(parseFloat(coeficiente.d_loc_sede1) * localSede) +
-      Math.exp(parseFloat(coeficiente.int_ln_ameaca) * Math.log(grauAmeaca));
+      Math.exp(coeficiente.grau_divers * grauDiversidade) +
+      Math.exp(coeficiente.d_loc_sede * localSede) +
+      Math.exp(coeficiente.int_ln_ameaca * Math.log(grauAmeaca));
 
-    let resultadoCalculado = 0;
-    if (!isNaN(resultado) && isFinite(resultado))
-      resultadoCalculado = Number(resultado.toString().split('e')[0]);
-    return resultadoCalculado;
+    if (isNaN(resultado) || !isFinite(resultado)) return 0;
+
+    return Number(resultado.toString().split('e')[0]);
   }
 }

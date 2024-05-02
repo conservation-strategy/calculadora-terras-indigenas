@@ -16,3 +16,7 @@ option[value=""][disabled] {
 option {
   color: var(--bs-body-color);
 }
+
+.table {
+  caption-side: top;
+}

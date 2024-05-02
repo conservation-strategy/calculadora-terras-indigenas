@@ -112,7 +112,7 @@
                                 <fa-icon [icon]="faQuestionCircle"
                                     ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Inflação %">
+                            <input type="text" class="form-control form-control-sm" placeholder="Inflação %" formControlName="inflacao" numbersOnly>
                         </div>
                         <div class="form-group mt-3">
                             <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>

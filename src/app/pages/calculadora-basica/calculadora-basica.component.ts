@@ -65,6 +65,7 @@ export class CalculadoraBasicaComponent implements OnInit {
   calculatorForm = new FormGroup({
     terraIndigenaId: new FormControl('', Validators.required),
     situacaoAlmejada: new FormControl('', Validators.required),
+    inflacao: new FormControl('')
   });
 
   chartRecorrente: any;
@@ -156,7 +157,7 @@ export class CalculadoraBasicaComponent implements OnInit {
 
     if (this.calculatorForm.invalid) return;
 
-    const { terraIndigenaId, situacaoAlmejada } = this.calculatorForm.value;
+    const { terraIndigenaId, situacaoAlmejada, inflacao } = this.calculatorForm.value;
     const terraIndigenaSelecionada = this.terrasIndigenas.find(
       (terraIndigena) => terraIndigena.id === Number(terraIndigenaId)
     );
@@ -169,14 +170,16 @@ export class CalculadoraBasicaComponent implements OnInit {
     if (terraIndigenaSelecionada && situacaoAlmejadaSelecionada) {
       this.calcularResultado(
         terraIndigenaSelecionada,
-        situacaoAlmejadaSelecionada
+        situacaoAlmejadaSelecionada,
+        Number(inflacao)
       );
     }
   }
 
   calcularResultado(
     terraIndigenaSelecionada: TerraIndigena,
-    situacaoAlmejada: NivelImplementacao
+    situacaoAlmejada: NivelImplementacao,
+    inflacao: number
   ) {
     const {
       tamanho,
@@ -199,7 +202,8 @@ export class CalculadoraBasicaComponent implements OnInit {
       grauDiversidade,
       localSede,
       grauAmeaca,
-      complexidadeAcesso
+      complexidadeAcesso,
+      inflacao
     );
 
     const resultadoNaoRecorrentes = this.calculatorService.calculadoraBasica(
@@ -212,7 +216,8 @@ export class CalculadoraBasicaComponent implements OnInit {
       grauDiversidade,
       localSede,
       grauAmeaca,
-      complexidadeAcesso
+      complexidadeAcesso,
+      inflacao
     );
 
     const valorRecorrente =

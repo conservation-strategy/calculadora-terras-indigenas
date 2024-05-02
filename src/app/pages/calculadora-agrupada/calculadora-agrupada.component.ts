@@ -61,6 +61,7 @@ export class CalculadoraAgrupadaComponent implements OnInit {
   calculatorFormSubmitted = false;
   calculatorForm = new FormGroup({
     nivelImplementacaoAlmejado: new FormControl('', Validators.required),
+    inflacao: new FormControl(''),
   });
 
   resultado: any = {};
@@ -186,12 +187,14 @@ export class CalculadoraAgrupadaComponent implements OnInit {
     const terrasIndigenasSelecionadas = this.terrasIndigenas.filter(
       (x) => x.selecionada
     );
+    const { inflacao } = this.calculatorForm.value;
     terrasIndigenasSelecionadas.forEach((terraIndigena: TerraIndigena) => {
       if (terraIndigena.selecionada) {
         resultadoTerrasIndigenas.push(
           this.calcularResultadoTerraIndigena(
             terraIndigena,
-            nivelImplementacaoAlmejado
+            nivelImplementacaoAlmejado,
+            Number(inflacao)
           )
         );
       }
@@ -214,7 +217,8 @@ export class CalculadoraAgrupadaComponent implements OnInit {
 
   calcularResultadoTerraIndigena(
     terraIndigenaSelecionada: TerraIndigena,
-    nivelImplementacaoAlmejado: NivelImplementacao
+    nivelImplementacaoAlmejado: NivelImplementacao,
+    inflacao: number
   ) {
     const {
       tamanho,
@@ -237,7 +241,8 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       grauDiversidade,
       localSede,
       grauAmeaca,
-      complexidadeAcesso
+      complexidadeAcesso,
+      inflacao
     );
     const resultadoNaoRecorrentes = this.calculatorService.calculadoraBasica(
       this.coeficientesNaoRecorrentes,
@@ -249,7 +254,8 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       grauDiversidade,
       localSede,
       grauAmeaca,
-      complexidadeAcesso
+      complexidadeAcesso,
+      inflacao
     );
     const valorRecorrente =
       this.calculatorService.obterSomatoria(resultadoRecorrentes);
