@@ -31,7 +31,7 @@ import { Alignment, PageBreak } from 'pdfmake/interfaces';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
-  selector: 'app-calculadora-basica',
+  selector: 'app-calculadora-simplificada',
   standalone: true,
   imports: [
     CommonModule,
@@ -44,10 +44,10 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     HeaderComponent,
   ],
   providers: [CalculadoraService, CurrencyPipe],
-  templateUrl: './calculadora-basica.component.html',
-  styleUrl: './calculadora-basica.component.scss',
+  templateUrl: './calculadora-simplificada.component.html',
+  styleUrl: './calculadora-simplificada.component.scss',
 })
-export class CalculadoraBasicaComponent implements OnInit {
+export class CalculadoraSimplificadaComponent implements OnInit {
   private modalService = inject(NgbModal);
 
   faQuestionCircle = faQuestionCircle;

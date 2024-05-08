@@ -59,6 +59,7 @@ export class CalculadoraDetalhadaComponent implements OnInit {
 
   terraIndigenaSelecionada: TerraIndigena | null = null;
   atividadeSelecionada: Atividade | null = null;
+  eixoSelecionado: Eixo | null = null;
 
   listaGrauAmeaca: SelectOption[] = [
     { label: 'Baixo', value: 0 },
@@ -78,6 +79,19 @@ export class CalculadoraDetalhadaComponent implements OnInit {
     { label: 'Cidade', value: 1 },
   ];
 
+  listaNivelImplementacaoAtual: SelectOption[] = [
+    { label: 'Nula', value: 0 },
+    { label: 'Pré-Básico', value: 5 },
+    { label: 'Básico', value: 10 },
+    { label: 'Intermediario', value: 15 },
+    { label: 'Bom', value: 20 },
+  ];
+
+  listaNivelImplementacaoAlmejado: SelectOption[] = [
+    { label: 'Básico', value: 10 },
+    { label: 'Bom', value: 20 },
+  ];
+
   calculadoraFormEnviado = false;
   calculadoraForm = new FormGroup({
     terraIndigena: new FormControl('', Validators.required),
@@ -90,23 +104,19 @@ export class CalculadoraDetalhadaComponent implements OnInit {
     complexidadeAcesso: new FormControl('', Validators.required),
     localSede: new FormControl('', Validators.required),
     tipoCusto: new FormControl('', Validators.required),
-    nivelImplementacaoAtual: new FormControl('', [
-      Validators.required,
-      rangeValidator(0, 20),
-    ]),
-    nivelImplementacaoAlmejado: new FormControl('', [
-      Validators.required,
-      rangeValidator(0, 20),
-    ]),
+    nivelImplementacaoAtual: new FormControl('', Validators.required),
+    nivelImplementacaoAlmejado: new FormControl('', Validators.required),
     inflacao: new FormControl(''),
   });
 
+  erroNivelImplementacao = false;
   mostrarResultado = false;
   resultado: Resultado = {
     terraIndigena: '',
     atividade: '',
     tipoCusto: '',
     valorCusto: 0,
+    textoNivelImplementacao: '',
     nivelImplementacaoAtual: 0,
     nivelImplementacaoAlmejado: 0,
   };
@@ -171,8 +181,16 @@ export class CalculadoraDetalhadaComponent implements OnInit {
   botaoCalcular() {
     this.calculadoraFormEnviado = true;
     this.mostrarResultado = false;
+    const calcularResultado = false;
 
-    if (this.calculadoraForm.valid) this.calcularResultado();
+    const { nivelImplementacaoAtual, nivelImplementacaoAlmejado } =
+      this.calculadoraForm.value;
+
+    this.erroNivelImplementacao =
+      Number(nivelImplementacaoAtual) > Number(nivelImplementacaoAlmejado);
+
+    if (this.calculadoraForm.valid && !this.erroNivelImplementacao)
+      this.calcularResultado();
   }
 
   calcularResultado() {
@@ -216,8 +234,13 @@ export class CalculadoraDetalhadaComponent implements OnInit {
     this.resultado = {
       terraIndigena: this.terraIndigenaSelecionada?.nome,
       atividade: this.atividadeSelecionada?.nome,
-      tipoCusto: tipoCusto == '1' ? 'recorrente' : 'não recorrente',
+      tipoCusto:
+        tipoCusto == '1'
+          ? 'recorrente (anual)'
+          : 'não recorrente (investimento)',
       valorCusto: valorCusto,
+      textoNivelImplementacao:
+        Number(nivelImplementacaoAlmejado) == 10 ? 'Básico' : 'Bom',
       nivelImplementacaoAtual: Number(nivelImplementacaoAtual),
       nivelImplementacaoAlmejado: Number(nivelImplementacaoAlmejado),
     };
@@ -234,17 +257,32 @@ export class CalculadoraDetalhadaComponent implements OnInit {
     });
     modalRef.componentInstance.eixos = this.eixos;
 
-    modalRef.result.then((atividade) => {
-      if (atividade) {
-        this.atividadeSelecionada = atividade;
-        this.calculadoraForm.patchValue({
-          nivelImplementacaoAtual:
-            this.terraIndigenaSelecionada?.nivelImplementacaoAtual[
-              atividade.posicao
-            ].toString(),
-        });
+    modalRef.result.then(
+      (atividadeEixo: { atividade: Atividade; eixo: Eixo } | null) => {
+        if (atividadeEixo) {
+          console.log(atividadeEixo);
+          this.atividadeSelecionada = atividadeEixo.atividade;
+          this.eixoSelecionado = atividadeEixo.eixo;
+
+          if (this.terraIndigenaSelecionada) {
+            const nivelAtual =
+              this.terraIndigenaSelecionada.nivelImplementacaoAtual[
+                atividadeEixo.atividade.posicao
+              ];
+            let nivelAjustado = '0';
+
+            if (nivelAtual > 0 && nivelAtual <= 9) nivelAjustado = '5';
+            else if (nivelAtual == 10) nivelAjustado = '10';
+            else if (nivelAtual > 10 && nivelAtual <= 19) nivelAjustado = '15';
+            else if (nivelAtual == 20) nivelAjustado = '20';
+            else nivelAjustado = '0';
+            this.calculadoraForm.patchValue({
+              nivelImplementacaoAtual: nivelAjustado,
+            });
+          }
+        }
       }
-    });
+    );
   }
 
   gerarPdf() {
@@ -437,6 +475,7 @@ type Resultado = {
   atividade: string | undefined;
   tipoCusto: string | undefined;
   valorCusto: number;
+  textoNivelImplementacao: string;
   nivelImplementacaoAtual: number;
   nivelImplementacaoAlmejado: number;
 };

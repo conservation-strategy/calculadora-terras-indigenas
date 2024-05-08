@@ -19,25 +19,25 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'calculadora-basica',
+    path: 'calculadora-simplificada',
     loadComponent: () =>
-      import('./pages/calculadora-basica/calculadora-basica.component').then(
-        (c) => c.CalculadoraBasicaComponent
-      ),
+      import(
+        './pages/calculadora-simplificada/calculadora-simplificada.component'
+      ).then((c) => c.CalculadoraSimplificadaComponent),
   },
   {
     path: 'calculadora-agrupada',
     loadComponent: () =>
-      import('./pages/calculadora-agrupada/calculadora-agrupada.component').then(
-        (c) => c.CalculadoraAgrupadaComponent
-      ),
+      import(
+        './pages/calculadora-agrupada/calculadora-agrupada.component'
+      ).then((c) => c.CalculadoraAgrupadaComponent),
   },
   {
     path: 'calculadora-detalhada',
     loadComponent: () =>
-      import('./pages/calculadora-detalhada/calculadora-detalhada.component').then(
-        (c) => c.CalculadoraDetalhadaComponent
-      ),
+      import(
+        './pages/calculadora-detalhada/calculadora-detalhada.component'
+      ).then((c) => c.CalculadoraDetalhadaComponent),
   },
   {
     path: 'metodologia',

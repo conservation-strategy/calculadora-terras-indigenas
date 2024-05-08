@@ -22,22 +22,30 @@ export class ModalEixoSelecaoComponent {
 
   @Input() eixos: Eixo[] = [];
   atividadeSelecionada: Atividade | null = null;
+  eixoSelecionado: Eixo | null = null;
 
   formularioEnviado = false;
   formulario = new FormGroup({
-    atividade: new FormControl('', Validators.required),
+    atividade: new FormControl<Atividade | null>(null, Validators.required),
   });
 
   selecionarAtividade() {
-    const atividade: any = this.formulario.controls.atividade.value;
+    const atividade = this.formulario.controls.atividade.value;
+    const eixo: any = this.eixos.find((e: Eixo) =>
+      e.atividades.find((a: Atividade) => a.posicao == atividade!.posicao)
+    );
     this.atividadeSelecionada = atividade;
+    this.eixoSelecionado = eixo;
   }
 
   continuar() {
-    this.activeModal.close(this.atividadeSelecionada);
+    this.activeModal.close({
+      atividade: this.atividadeSelecionada,
+      eixo: this.eixoSelecionado,
+    });
   }
 
   fechar() {
-    this.activeModal.close(false);
+    this.activeModal.close(null);
   }
 }

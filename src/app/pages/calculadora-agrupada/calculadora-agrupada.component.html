@@ -6,19 +6,13 @@
                 <div class="card-body">
                     <section>
                         <h1 class="section-title mt-3 mb-3">Guia de Uso</h1>
-                        <div class="alert alert-info">
-                            <small>
-                                Calcula o custo total de implementação de eixos temáticos selecionados em uma ou mais
-                                Terras
-                                Indígenas. O usuário pode escolher o nível de implementação desejado (básico ou bom)
-                                para cada
-                                um dos eixos selecionados. Essa versão é indicada para quem atua em mais de uma Terra
-                                Tndígena e
-                                pretende ter informações gerais de custo de implementação das atividades em mais de uma
-                                Terra
-                                Indígena selecionada.
-                            </small>
-                        </div>
+                        <p>
+                            Calcula o custo total de implementação de eixos temáticos selecionados em uma ou mais Terras
+                            Indígenas. O usuário pode escolher o nível de implementação desejado (básico ou bom) para
+                            cada um dos eixos selecionados. Essa versão é indicada para quem atua em mais de uma Terra
+                            Tndígena e pretende ter informações gerais de custo de implementação das atividades em mais
+                            de uma Terra Indígena selecionada.
+                        </p>
                     </section>
                     <section>
                         <div ngbAccordion>
@@ -28,24 +22,22 @@
                                 </h2>
                                 <div ngbAccordionCollapse>
                                     <div ngbAccordionBody>
-                                        <ng-template>
-                                            <p>
-                                                O nível de implementação é definido para cada atividade segundo métricas
-                                                diferentes. Após selecionada a atividade, é exibida uma lista de itens
-                                                que definem o nível de implementação básico e o nível de implementação
-                                                bom. Essa lista de itens é apenas uma referência e pode variar de acordo
-                                                com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
-                                                características dos níveis de implementação.
-                                            </p>
-                                            <p>
-                                                O nível de implementação básico atende ao mínimo necessário para a
-                                                realização da atividade. O nível de implementação bom vai um pouco além,
-                                                adicionando novas ações e melhorias. No entanto, é importante ressaltar
-                                                que o nível bom, mesmo sendo melhor que o básico, ainda apresenta
-                                                limitações ou aspectos que precisam ser aprimorados, indicando que há
-                                                espaço para melhorar o desempenho das atividades.
-                                            </p>
-                                        </ng-template>
+                                        <p>
+                                            O nível de implementação é definido para cada atividade segundo métricas
+                                            diferentes. Após selecionada a atividade, é exibida uma lista de itens
+                                            que definem o nível de implementação básico e o nível de implementação
+                                            bom. Essa lista de itens é apenas uma referência e pode variar de acordo
+                                            com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
+                                            características dos níveis de implementação.
+                                        </p>
+                                        <p>
+                                            O nível de implementação básico atende ao mínimo necessário para a
+                                            realização da atividade. O nível de implementação bom vai um pouco além,
+                                            adicionando novas ações e melhorias. No entanto, é importante ressaltar
+                                            que o nível bom, mesmo sendo melhor que o básico, ainda apresenta
+                                            limitações ou aspectos que precisam ser aprimorados, indicando que há
+                                            espaço para melhorar o desempenho das atividades.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -55,13 +47,12 @@
                                 </h2>
                                 <div ngbAccordionCollapse>
                                     <div ngbAccordionBody>
-                                        <ng-template>
-                                            Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
-                                            desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
-                                            cálculo, a partir do IPCA (IBGE)
-                                            <a
-                                                href="https://www.ibge.gov.br/explica/inflacao.php">https://www.ibge.gov.br/explica/inflacao.php</a>
-                                        </ng-template>
+                                        Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
+                                        desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
+                                        cálculo, a partir do IPCA (IBGE)
+                                        <a href="https://www.ibge.gov.br/explica/inflacao.php">
+                                            https://www.ibge.gov.br/explica/inflacao.php
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +64,7 @@
         <div class="col-lg-6 mb-3">
             <div class="card card-main">
                 <div class="card-body">
-                    <form [formGroup]="calculatorForm">
+                    <form [formGroup]="calculadoraForm">
                         <div class="form-group">
                             <label class="form-label">
                                 <span>Selecione a terra indígena</span>
@@ -94,14 +85,14 @@
                                 </fa-icon>
                             </label>
                             <select class="form-select form-select-sm" required
-                                [ngClass]="{ 'is-invalid': calculatorFormSubmitted&&calculatorForm.controls.nivelImplementacaoAlmejado.invalid}"
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid}"
                                 formControlName="nivelImplementacaoAlmejado"
                                 placeHolder="Selecione o Nível de implementação">
                                 <option value="" disabled selected>Selecione o nível de implementação</option>
                                 <option *ngFor="let item of niveisImplementacao" [ngValue]="item">{{item.text}}
                             </select>
                             <small
-                                *ngIf="calculatorFormSubmitted&&calculatorForm.controls.nivelImplementacaoAlmejado.invalid"
+                                *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid"
                                 class="text-danger">
                                 Campo Obrigatório.
                             </small>
@@ -112,7 +103,8 @@
                                 <fa-icon [icon]="faQuestionCircle"
                                     ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Inflação %" formControlName="inflacao" numbersOnly>
+                            <input type="text" class="form-control form-control-sm" placeholder="Inflação %"
+                                formControlName="inflacao" numbersOnly>
                         </div>
                         <div class="form-group mt-3">
                             <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
@@ -133,8 +125,8 @@
                     <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>
                     com o nível de implementação <strong>{{resultado.nivelImplementacao}}</strong> , por ano, é de:
                 </p>
-                <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)"
-                    id="chartAgrupado" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
+                <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chartAgrupado"
+                    [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
             </div>
         </div>
         <div class="card mt-3">

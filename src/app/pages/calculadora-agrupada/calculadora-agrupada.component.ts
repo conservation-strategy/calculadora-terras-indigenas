@@ -58,8 +58,8 @@ export class CalculadoraAgrupadaComponent implements OnInit {
     { text: 'Bom', value: 20 },
   ];
 
-  calculatorFormSubmitted = false;
-  calculatorForm = new FormGroup({
+  calculadoraFormEnviado = false;
+  calculadoraForm = new FormGroup({
     nivelImplementacaoAlmejado: new FormControl('', Validators.required),
     inflacao: new FormControl(''),
   });
@@ -70,8 +70,8 @@ export class CalculadoraAgrupadaComponent implements OnInit {
 
   chart: any;
   chartBase64String = '';
-  dataPoints1: any[] = [];
-  dataPoints2: any[] = [];
+  dataPointsRecorrentes: any[] = [];
+  dataPointsNaoRecorrentes: any[] = [];
 
   chartOptions = {
     animationEnabled: true,
@@ -111,16 +111,16 @@ export class CalculadoraAgrupadaComponent implements OnInit {
     data: [
       {
         type: 'bar',
-        showInLegend: true,
         legendText: 'Recorrentes',
-        dataPoints: this.dataPoints1,
+        showInLegend: true,
+
+        dataPoints: this.dataPointsRecorrentes,
       },
       {
         type: 'bar',
-        axisYType: 'secondary',
-        showInLegend: true,
         legendText: 'Não Recorrentes',
-        dataPoints: this.dataPoints2,
+        showInLegend: true,
+        dataPoints: this.dataPointsNaoRecorrentes,
       },
     ],
   };
@@ -174,20 +174,20 @@ export class CalculadoraAgrupadaComponent implements OnInit {
   }
 
   botaoCalcular() {
-    this.calculatorFormSubmitted = true;
+    this.calculadoraFormEnviado = true;
     this.mostrarResultado = false;
     this.resultado = {};
 
-    if (this.calculatorForm.invalid) return;
+    if (this.calculadoraForm.invalid) return;
 
     const nivelImplementacaoAlmejado: any =
-      this.calculatorForm.controls.nivelImplementacaoAlmejado.value;
+      this.calculadoraForm.controls.nivelImplementacaoAlmejado.value;
 
     const resultadoTerrasIndigenas: any = [];
     const terrasIndigenasSelecionadas = this.terrasIndigenas.filter(
       (x) => x.selecionada
     );
-    const { inflacao } = this.calculatorForm.value;
+    const { inflacao } = this.calculadoraForm.value;
     terrasIndigenasSelecionadas.forEach((terraIndigena: TerraIndigena) => {
       if (terraIndigena.selecionada) {
         resultadoTerrasIndigenas.push(

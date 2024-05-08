@@ -9,6 +9,10 @@ import Coeficiente from '../models/Coeficiente';
 export class CalculadoraService {
   constructor(private http: HttpClient) {}
 
+  obterSiteConfig(): Observable<any> {
+    return this.http.get('./assets/json/site_config.json');
+  }
+
   obterTerrasIndigenas(): Observable<any> {
     return this.http.get('./assets/json/terras_indigenas.json');
   }
@@ -57,8 +61,8 @@ export class CalculadoraService {
         complexidadeAcesso,
         localSede
       );
-      if(inflacao > 0) {
-        resultado = resultado + (resultado*(inflacao/100));
+      if (inflacao > 0) {
+        resultado = resultado + resultado * (inflacao / 100);
       }
 
       resultados.push(resultado);
@@ -93,8 +97,8 @@ export class CalculadoraService {
       complexidadeAcesso,
       localSede
     );
-    if(inflacao > 0) {
-      resultado = resultado + (resultado*(inflacao/100));
+    if (inflacao > 0) {
+      resultado = resultado + resultado * (inflacao / 100);
     }
 
     return resultado;
