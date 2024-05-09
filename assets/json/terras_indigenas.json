@@ -7,7 +7,7 @@
     "populacao": 624,
     "grauDiversidade": 1,
     "grauAmeaca": 1,
-    "complexidadeAcesso": 1,
+    "complexidadeAcesso": 2,
     "localSede": 0,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
@@ -27,7 +27,7 @@
     "populacao": 1935,
     "grauDiversidade": 4,
     "grauAmeaca": 1,
-    "complexidadeAcesso": 1,
+    "complexidadeAcesso": 2,
     "localSede": 0,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
@@ -47,7 +47,7 @@
     "populacao": 1163,
     "grauDiversidade": 1,
     "grauAmeaca": 2,
-    "complexidadeAcesso": 2,
+    "complexidadeAcesso": 3,
     "localSede": 0,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
@@ -67,7 +67,7 @@
     "populacao": 823,
     "grauDiversidade": 1,
     "grauAmeaca": 3,
-    "complexidadeAcesso": 2,
+    "complexidadeAcesso": 3,
     "localSede": 0,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
@@ -87,7 +87,7 @@
     "populacao": 704,
     "grauDiversidade": 1,
     "grauAmeaca": 1,
-    "complexidadeAcesso": 0,
+    "complexidadeAcesso": 1,
     "localSede": 1,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
@@ -107,7 +107,7 @@
     "populacao": 8000,
     "grauDiversidade": 16,
     "grauAmeaca": 1,
-    "complexidadeAcesso": 1,
+    "complexidadeAcesso": 2,
     "localSede": 0,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
@@ -127,7 +127,7 @@
     "populacao": 1670,
     "grauDiversidade": 1,
     "grauAmeaca": 1,
-    "complexidadeAcesso": 1,
+    "complexidadeAcesso": 2,
     "localSede": 0,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
@@ -147,7 +147,7 @@
     "populacao": 2448,
     "grauDiversidade": 1,
     "grauAmeaca": 3,
-    "complexidadeAcesso": 1,
+    "complexidadeAcesso": 2,
     "localSede": 0,
     "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
