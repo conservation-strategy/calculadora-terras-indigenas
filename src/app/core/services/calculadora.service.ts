@@ -122,34 +122,51 @@ export class CalculadoraService {
     complexidadeAcesso: number,
     localSede: number
   ): number {
-    const resultado =
-      Math.exp(
-        coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado)
-      ) +
-      Math.exp(
-        coeficiente.ln_quali_var *
-          Math.log(nivelImplementacaoAlmejado - nivelImplementacaoAtual)
-      ) +
-      Math.exp(
-        coeficiente.int_situacao *
-          (nivelImplementacaoAlmejado - nivelImplementacaoAtual)
-      ) +
-      Math.exp(coeficiente.ln_tamanho_TI * Math.log(tamanho)) +
-      Math.exp(coeficiente.ln_populacao * Math.log(populacao)) +
-      Math.exp(coeficiente.aldeia * aldeias) +
-      Math.exp(coeficiente.Ameaca_Media * (grauAmeaca === 1 ? 1 : 0)) +
-      Math.exp(coeficiente.Ameaca_Alta * (grauAmeaca === 2 ? 1 : 0)) +
-      Math.exp(coeficiente.Ameaca_Altissima * (grauAmeaca === 3 ? 1 : 0)) +
-      Math.exp(coeficiente.Acesso_Medio * (complexidadeAcesso === 1 ? 1 : 0)) +
-      Math.exp(
-        coeficiente.Acesso_Dificil * (complexidadeAcesso === 2 ? 1 : 0)
-      ) +
-      Math.exp(coeficiente.grau_divers * grauDiversidade) +
-      Math.exp(coeficiente.d_loc_sede * localSede) +
-      Math.exp(coeficiente.int_ln_ameaca * Math.log(grauAmeaca));
+    const exp1 =
+      coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado + 0.01);
+    const exp2 =
+      coeficiente.ln_quali_var *
+      Math.log(nivelImplementacaoAlmejado - nivelImplementacaoAtual + 0.01);
+    const exp3 =
+      coeficiente.int_situacao *
+      (nivelImplementacaoAlmejado *
+        (nivelImplementacaoAlmejado - nivelImplementacaoAtual));
+    const exp4 = coeficiente.ln_tamanho_TI * Math.log(tamanho);
+    const exp5 = coeficiente.ln_populacao * Math.log(populacao);
+    const exp6 = coeficiente.aldeia * aldeias;
+    const exp7 = coeficiente.Ameaca_Media * (grauAmeaca === 1 ? 1 : 0);
+    const exp8 = coeficiente.Ameaca_Alta * (grauAmeaca === 2 ? 1 : 0);
+    const exp9 = coeficiente.Ameaca_Altissima * (grauAmeaca === 3 ? 1 : 0);
+    const exp10 = coeficiente.Acesso_Medio * (complexidadeAcesso === 1 ? 1 : 0);
+    const exp11 =
+      coeficiente.Acesso_Dificil * (complexidadeAcesso === 2 ? 1 : 0);
+    const exp12 = coeficiente.grau_divers * grauDiversidade;
+    const exp13 = coeficiente.d_loc_sede * localSede;
+    const exp14 =
+      coeficiente.int_ln_ameaca *
+      Math.log(grauAmeaca) *
+      nivelImplementacaoAlmejado;
+    const exp15 = coeficiente.ln_aldeia * Math.log(aldeias);
+
+    const resultado = Math.exp(
+      exp1 +
+        exp2 +
+        exp3 +
+        exp4 +
+        exp5 +
+        exp6 +
+        exp7 +
+        exp8 +
+        exp9 +
+        exp10 +
+        exp11 +
+        exp12 +
+        exp13 +
+        exp14 +
+        exp15
+    );
 
     if (isNaN(resultado) || !isFinite(resultado)) return 0;
-
     return Number(resultado.toString().split('e')[0]);
   }
 }

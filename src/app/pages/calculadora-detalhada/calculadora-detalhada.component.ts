@@ -75,8 +75,8 @@ export class CalculadoraDetalhadaComponent implements OnInit {
   ];
 
   listaLocalSede: SelectOption[] = [
-    { label: 'Aldeia', value: 0 },
-    { label: 'Cidade', value: 1 },
+    { label: 'Cidade', value: 0 },
+    { label: 'Aldeia', value: 1 },
   ];
 
   listaNivelImplementacaoAtual: SelectOption[] = [
@@ -260,7 +260,6 @@ export class CalculadoraDetalhadaComponent implements OnInit {
     modalRef.result.then(
       (atividadeEixo: { atividade: Atividade; eixo: Eixo } | null) => {
         if (atividadeEixo) {
-          console.log(atividadeEixo);
           this.atividadeSelecionada = atividadeEixo.atividade;
           this.eixoSelecionado = atividadeEixo.eixo;
 
