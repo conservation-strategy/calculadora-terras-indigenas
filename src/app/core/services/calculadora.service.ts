@@ -122,6 +122,17 @@ export class CalculadoraService {
     complexidadeAcesso: number,
     localSede: number
   ): number {
+    console.log('coeficiente', coeficiente);
+    console.log('nivelImplementacaoAtual', nivelImplementacaoAtual);
+    console.log('nivelImplementacaoAlmejado', nivelImplementacaoAlmejado);
+    console.log('tamanho', tamanho);
+    console.log('populacao', populacao);
+    console.log('aldeias', aldeias);
+    console.log('grauDiversidade', grauDiversidade);
+    console.log('grauAmeaca', grauAmeaca);
+    console.log('complexidadeAcesso', complexidadeAcesso);
+    console.log('localSede', localSede);
+
     const exp1 =
       coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado + 0.01);
     const exp2 =
@@ -134,19 +145,36 @@ export class CalculadoraService {
     const exp4 = coeficiente.ln_tamanho_TI * Math.log(tamanho);
     const exp5 = coeficiente.ln_populacao * Math.log(populacao);
     const exp6 = coeficiente.aldeia * aldeias;
-    const exp7 = coeficiente.Ameaca_Media * (grauAmeaca === 1 ? 1 : 0);
-    const exp8 = coeficiente.Ameaca_Alta * (grauAmeaca === 2 ? 1 : 0);
-    const exp9 = coeficiente.Ameaca_Altissima * (grauAmeaca === 3 ? 1 : 0);
-    const exp10 = coeficiente.Acesso_Medio * (complexidadeAcesso === 1 ? 1 : 0);
+    const exp7 = coeficiente.Ameaca_Media * (grauAmeaca === 2 ? 1 : 0);
+    const exp8 = coeficiente.Ameaca_Alta * (grauAmeaca === 3 ? 1 : 0);
+    const exp9 = coeficiente.Ameaca_Altissima * (grauAmeaca === 4 ? 1 : 0);
+    const exp10 = coeficiente.Acesso_Medio * (complexidadeAcesso === 2 ? 1 : 0);
     const exp11 =
-      coeficiente.Acesso_Dificil * (complexidadeAcesso === 2 ? 1 : 0);
+      coeficiente.Acesso_Dificil * (complexidadeAcesso === 3 ? 1 : 0);
     const exp12 = coeficiente.grau_divers * grauDiversidade;
     const exp13 = coeficiente.d_loc_sede * localSede;
     const exp14 =
       coeficiente.int_ln_ameaca *
-      Math.log(grauAmeaca) *
-      nivelImplementacaoAlmejado;
+      (Math.log(grauAmeaca) * nivelImplementacaoAlmejado);
     const exp15 = coeficiente.ln_aldeia * Math.log(aldeias);
+    console.log(coeficiente.grau_divers * grauDiversidade);
+    console.log(
+      exp1,
+      exp2,
+      exp3,
+      exp4,
+      exp5,
+      exp6,
+      exp7,
+      exp8,
+      exp9,
+      exp10,
+      exp11,
+      exp12,
+      exp13,
+      exp14,
+      exp15
+    );
 
     const resultado = Math.exp(
       exp1 +
@@ -165,6 +193,7 @@ export class CalculadoraService {
         exp14 +
         exp15
     );
+    console.log(resultado);
 
     if (isNaN(resultado) || !isFinite(resultado)) return 0;
     return Number(resultado.toString().split('e')[0]);

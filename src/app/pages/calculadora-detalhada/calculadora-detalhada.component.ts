@@ -62,10 +62,10 @@ export class CalculadoraDetalhadaComponent implements OnInit {
   eixoSelecionado: Eixo | null = null;
 
   listaGrauAmeaca: SelectOption[] = [
-    { label: 'Baixo', value: 0 },
-    { label: 'Médio', value: 1 },
-    { label: 'Alto', value: 2 },
-    { label: 'Altíssimo', value: 3 },
+    { label: 'Baixo', value: 1 },
+    { label: 'Médio', value: 2 },
+    { label: 'Alto', value: 3 },
+    { label: 'Altíssimo', value: 4 },
   ];
 
   listaComplexidadeAcesso: SelectOption[] = [
@@ -103,7 +103,7 @@ export class CalculadoraDetalhadaComponent implements OnInit {
     grauAmeaca: new FormControl('', Validators.required),
     complexidadeAcesso: new FormControl('', Validators.required),
     localSede: new FormControl('', Validators.required),
-    tipoCusto: new FormControl('', Validators.required),
+    tipoCusto: new FormControl('1', Validators.required),
     nivelImplementacaoAtual: new FormControl('', Validators.required),
     nivelImplementacaoAlmejado: new FormControl('', Validators.required),
     inflacao: new FormControl(''),
@@ -176,6 +176,19 @@ export class CalculadoraDetalhadaComponent implements OnInit {
       localSede: terraIndigena.localSede,
     });
     this.terraIndigenaSelecionada = terraIndigena;
+  }
+
+  trocarTipoCusto() {
+    const { tipoCusto } = this.calculadoraForm.value;
+    if (tipoCusto === '1')
+      this.listaNivelImplementacaoAlmejado = [
+        { label: 'Básico', value: 10 },
+        { label: 'Bom', value: 20 },
+      ];
+    else
+      this.listaNivelImplementacaoAlmejado = [{ label: 'Básico', value: 10 }];
+
+    this.calculadoraForm.patchValue({ nivelImplementacaoAlmejado: '' });
   }
 
   botaoCalcular() {
@@ -440,9 +453,8 @@ export class CalculadoraDetalhadaComponent implements OnInit {
       },
       {
         variavel: 'Grau de ameaça',
-        valor: this.listaComplexidadeAcesso.find(
-          (x) => x.value === Number(grauAmeaca)
-        )?.label,
+        valor: this.listaGrauAmeaca.find((x) => x.value === Number(grauAmeaca))
+          ?.label,
         alterada: grauAmeaca != this.terraIndigenaSelecionada?.grauAmeaca,
       },
       {

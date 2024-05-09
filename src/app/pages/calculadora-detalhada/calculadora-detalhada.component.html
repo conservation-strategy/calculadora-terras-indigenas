@@ -7,16 +7,10 @@
                     <section>
                         <h1 class="section-title">Guia de Uso</h1>
                         <p>
-                            Calcula o custo de implementação por atividade de uma Terra Indígena, podendo o
-                            usuário alterar os valores das características da Terra Indígena (tamanho,
-                            população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e
-                            localização da sede da associação) e também definir o nível de implementação
-                            desejado para cada atividade em uma escala de 0 a 20 (em que 10 é “básico” e 20 é
-                            “bom”). Os níveis de implementação foram definidos apenas para os níveis básico (10)
-                            e bom (20). Caso o usuário defina um valor diferente de 10 ou 20, deve-se considerar
-                            que se estará "no meio do caminho" entre um nível e outro. Por exemplo, o 15 está na
-                            metade do caminho entre o nível básico e bom, mas não há uma definição exata da
-                            lista de itens desse meio caminho, que pode variar.
+                            Calcula o custo de implementação por atividade de uma Terra Indígena, podendo o usuário
+                            alterar os valores das características da Terra Indígena (tamanho, população, aldeia,
+                            complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da
+                            associação) e também definir o nível de implementação desejado.
                         </p>
                         <p>
                             Essa versão é indicada para usuários que atuam em atividades específicas em uma
@@ -396,8 +390,7 @@
                                 </label>
                                 <select class="form-select form-select-sm" required
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
-                                    formControlName="tipoCusto">
-                                    <option value="" disabled selected>Tipo de custo</option>
+                                    formControlName="tipoCusto" (change)="trocarTipoCusto()">
                                     <option value="1">Recorrente (anual)</option>
                                     <option value="2">Não recorrente (investimento)</option>
                                 </select>
@@ -406,26 +399,6 @@
                                     Campo Obrigatório.
                                 </small>
                             </div>
-                            <!-- <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Tipo de custo</span>
-                                    <fa-icon [icon]="faQuestionCircle"
-                                        ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
-                                </label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" value="1" formControlName="tipoCusto">
-                                    <label class="form-check-label">Recorrente</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" value="2" formControlName="tipoCusto">
-                                    <label class="form-check-label">Não Recorrente</label>
-                                </div>
-                                <div *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid">
-                                    <small class="text-danger">
-                                        Campo Obrigatório.
-                                    </small>
-                                </div>
-                            </div> -->
                             <!-- NIVEL IMPLEMENTAÇÃO ATUAL -->
                             <div class="col-md-6 mt-3">
                                 <label class="form-label">
@@ -515,17 +488,22 @@
                         < R$1.000</span>
                 </h2>
                 <p>Esses valores calculados considerando que a Terra Indígena tenha os seguintes parâmetros:</p>
-                <ul>
-                    <li *ngFor="let item of obterVariaveisUtilizadas()">
-                        <strong>{{item.variavel}}: </strong>
-                        <span>{{item.valor}}</span>
-                        <span *ngIf="item.alterada" style="background: lightyellow;
-                        font-style: italic;
-                        font-size: 14px;">
-                            (Informação alterada pelo usuário)
-                        </span>
-                    </li>
-                </ul>
+                <div class="table-responsive col-md-6">
+                    <table class="table table-bordered table-sm">
+                        <tbody>
+                            <tr *ngFor="let item of obterVariaveisUtilizadas()">
+                                <td>{{item.variavel}}</td>
+                                <td>
+                                    <span>{{item.valor}}</span>
+                                    <span *ngIf="item.alterada"
+                                        style="background: lightyellow; font-style: italic; font-size: 14px;">
+                                        (Informação alterada pelo usuário)
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

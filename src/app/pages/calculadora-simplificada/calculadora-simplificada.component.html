@@ -135,12 +135,20 @@
                     com o nível de implementação <strong>{{resultado.nivelImplementacaoAlmejado}}</strong>, por ano, é
                     de:
                 </p>
-                <h2 class="result-price">{{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}</h2>
-                <h6 class="text-muted">
-                    {{resultado.valorRecorrente | currency:'BRL':'symbol':'1.0-0' }} <small>Recorrente</small><br>
-                    {{resultado.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0' }} <small>Não
-                        Recorrente</small>
-                </h6>
+                <div class="mt-3">
+                    <h2 class="result-price mb-0">
+                        {{resultado.valorRecorrente | currency:'BRL':'symbol':'1.0-0' }}
+                        <small class="text-muted"> /ano</small>
+                    </h2>
+                    <h6 class="text-muted">Recorrente (Anual)</h6>
+                </div>
+                <div class="mt-3">
+                    <h2 class="result-price mb-0">
+                        {{resultado.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0' }}
+                        <small class="text-muted"> (1x)</small>
+                    </h2>
+                    <h6 class="text-muted">Não Recorrente (Investimento)</h6>
+                </div>
             </div>
         </div>
         <div class="row mt-3">
@@ -174,8 +182,7 @@
                         <div class="card h-100">
                             <div class="card-header">{{eixo.nome}}</div>
                             <div class="card-body">
-                                <h5 class="text-success">{{ eixo.valorTotal | currency:'BRL':'symbol':'1.0-0'}}</h5>
-                                <div style="font-size: 14px; line-height: 14px;">
+                                <div class="text-success" style="font-size: 1.25rem; line-height: 1.25rem;">
                                     <p class="mb-0">
                                         <strong>{{ eixo.valorRecorrente | currency:'BRL':'symbol':'1.0-0'}}</strong>
                                         <small class="text-muted ms-1">Recorrente</small>

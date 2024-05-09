@@ -58,14 +58,14 @@ export class CalculadoraSimplificadaComponent implements OnInit {
   eixos: Eixo[] = [];
   niveisImplementacao: NivelImplementacao[] = [
     { text: 'Básico', value: 10 },
-    { text: 'Bom', value: 20 },
+    // { text: 'Bom', value: 20 },
   ];
 
   calculatorFormSubmitted = false;
   calculatorForm = new FormGroup({
     terraIndigenaId: new FormControl('', Validators.required),
     situacaoAlmejada: new FormControl('', Validators.required),
-    inflacao: new FormControl('')
+    inflacao: new FormControl(''),
   });
 
   chartRecorrente: any;
@@ -157,7 +157,8 @@ export class CalculadoraSimplificadaComponent implements OnInit {
 
     if (this.calculatorForm.invalid) return;
 
-    const { terraIndigenaId, situacaoAlmejada, inflacao } = this.calculatorForm.value;
+    const { terraIndigenaId, situacaoAlmejada, inflacao } =
+      this.calculatorForm.value;
     const terraIndigenaSelecionada = this.terrasIndigenas.find(
       (terraIndigena) => terraIndigena.id === Number(terraIndigenaId)
     );
