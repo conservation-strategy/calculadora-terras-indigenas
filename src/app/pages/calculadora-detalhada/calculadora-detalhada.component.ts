@@ -69,9 +69,9 @@ export class CalculadoraDetalhadaComponent implements OnInit {
   ];
 
   listaComplexidadeAcesso: SelectOption[] = [
-    { label: 'Baixo', value: 0 },
-    { label: 'Médio', value: 1 },
-    { label: 'Alto', value: 2 },
+    { label: 'Fácil', value: 1 },
+    { label: 'Médio', value: 2 },
+    { label: 'Difícil', value: 3 },
   ];
 
   listaLocalSede: SelectOption[] = [
