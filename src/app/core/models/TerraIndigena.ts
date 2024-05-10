@@ -1,5 +1,4 @@
 interface TerraIndigena {
-  id: number;
   selecionada?: boolean;
   nome: string;
   tamanho: number;
@@ -9,9 +8,8 @@ interface TerraIndigena {
   grauAmeaca: number;
   complexidadeAcesso: number;
   localSede: number;
-  situacaoAtual: number;
   nivelImplementacaoAtual: number[];
-  nivelImplementacaoAlmejado: number[];
+  custoContexto: boolean;
 }
 
 export default TerraIndigena;

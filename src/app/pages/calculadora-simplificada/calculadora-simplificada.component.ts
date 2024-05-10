@@ -63,7 +63,7 @@ export class CalculadoraSimplificadaComponent implements OnInit {
 
   calculatorFormSubmitted = false;
   calculatorForm = new FormGroup({
-    terraIndigenaId: new FormControl('', Validators.required),
+    terraIndigena: new FormControl('', Validators.required),
     situacaoAlmejada: new FormControl('', Validators.required),
     inflacao: new FormControl(''),
   });
@@ -119,7 +119,9 @@ export class CalculadoraSimplificadaComponent implements OnInit {
 
   obterTerrasIndigenas() {
     this.calculatorService.obterTerrasIndigenas().subscribe((response) => {
-      this.terrasIndigenas = response;
+      this.terrasIndigenas = response.filter(
+        (x: TerraIndigena) => x.custoContexto
+      );
     });
   }
 
@@ -157,11 +159,9 @@ export class CalculadoraSimplificadaComponent implements OnInit {
 
     if (this.calculatorForm.invalid) return;
 
-    const { terraIndigenaId, situacaoAlmejada, inflacao } =
-      this.calculatorForm.value;
-    const terraIndigenaSelecionada = this.terrasIndigenas.find(
-      (terraIndigena) => terraIndigena.id === Number(terraIndigenaId)
-    );
+    const { situacaoAlmejada, inflacao } = this.calculatorForm.value;
+    const terraIndigenaSelecionada: any =
+      this.calculatorForm.controls.terraIndigena.value;
 
     const situacaoAlmejadaSelecionada = this.niveisImplementacao.find(
       (nivelImplementacao) =>

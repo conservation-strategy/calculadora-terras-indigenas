@@ -122,17 +122,6 @@ export class CalculadoraService {
     complexidadeAcesso: number,
     localSede: number
   ): number {
-    console.log('coeficiente', coeficiente);
-    console.log('nivelImplementacaoAtual', nivelImplementacaoAtual);
-    console.log('nivelImplementacaoAlmejado', nivelImplementacaoAlmejado);
-    console.log('tamanho', tamanho);
-    console.log('populacao', populacao);
-    console.log('aldeias', aldeias);
-    console.log('grauDiversidade', grauDiversidade);
-    console.log('grauAmeaca', grauAmeaca);
-    console.log('complexidadeAcesso', complexidadeAcesso);
-    console.log('localSede', localSede);
-
     const exp1 =
       coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado + 0.01);
     const exp2 =
@@ -157,24 +146,6 @@ export class CalculadoraService {
       coeficiente.int_ln_ameaca *
       (Math.log(grauAmeaca) * nivelImplementacaoAlmejado);
     const exp15 = coeficiente.ln_aldeia * Math.log(aldeias);
-    console.log(coeficiente.grau_divers * grauDiversidade);
-    console.log(
-      exp1,
-      exp2,
-      exp3,
-      exp4,
-      exp5,
-      exp6,
-      exp7,
-      exp8,
-      exp9,
-      exp10,
-      exp11,
-      exp12,
-      exp13,
-      exp14,
-      exp15
-    );
 
     const resultado = Math.exp(
       exp1 +
@@ -193,7 +164,6 @@ export class CalculadoraService {
         exp14 +
         exp15
     );
-    console.log(resultado);
 
     if (isNaN(resultado) || !isFinite(resultado)) return 0;
     return Number(resultado.toString().split('e')[0]);

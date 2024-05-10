@@ -22,7 +22,7 @@
       "ES2022",
       "dom"
     ],
-    "types": ["pdfmake"]
+    "types": ["pdfmake","jest", "node"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

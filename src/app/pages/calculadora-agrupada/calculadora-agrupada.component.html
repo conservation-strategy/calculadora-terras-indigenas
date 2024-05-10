@@ -79,6 +79,24 @@
                         </div>
                         <div class="form-group mt-3">
                             <label class="form-label d-flex justify-content-between">
+                                <span>Eixo temático</span>
+                                <fa-icon [icon]="faQuestionCircle"
+                                    ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos">
+                                </fa-icon>
+                            </label>
+                            <select class="form-select form-select-sm" required
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.eixo.invalid}"
+                                formControlName="eixo" placeHolder="Selecione o eixo">
+                                <option value="" disabled selected>Selecione o eixo</option>
+                                <option *ngFor="let item of eixos" [ngValue]="item">{{item.nome}}
+                            </select>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.eixo.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label class="form-label d-flex justify-content-between">
                                 <span>Nível de implementação</span>
                                 <fa-icon [icon]="faQuestionCircle"
                                     ngbTooltip="Situação atual de implementação da atividade">
@@ -123,7 +141,8 @@
                 <p class=" mb-3">
                     O custo previsto para as Terras Indígenas
                     <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>
-                    com o nível de implementação <strong>{{resultado.nivelImplementacao}}</strong> , por ano, é de:
+                    para o eixo temático <strong>{{eixoSelecionado?.nome}}</strong> com o nível de implementação
+                    <strong>{{resultado.nivelImplementacao}}</strong> , por ano, é de:
                 </p>
                 <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chartAgrupado"
                     [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
@@ -136,38 +155,23 @@
                     <table class="table table-sm table-bordered">
                         <thead>
                             <tr>
-                                <th>Terra indigena</th>
-                                <th>Total</th>
-                                <th>Tipo</th>
-                                <th>Governança</th>
-                                <th>Fiscalização e Proteção</th>
-                                <th>Fortalecimento Cultural</th>
-                                <th>Geração de renda</th>
-                                <th>Soberania Alimentar</th>
-                                <th>Infraestruturas complementares</th>
-                                <th>Saúde e saneamento complementar</th>
-                                <th>Educação complementar</th>
+                                <th rowspan="2">Terra indigena</th>
+                                <th colspan="2">{{eixoSelecionado?.nome}}</th>
+                            </tr>
+                            <tr>
+                                <th>Recorrente</th>
+                                <th>Não Recorrente</th>
                             </tr>
                         </thead>
                         <tbody *ngFor="let terraIndigena of resultado.terrasIndigenas">
                             <tr>
-                                <td rowspan="2">{{terraIndigena.nome}}</td>
-                                <td rowspan="2">{{terraIndigena.valorTotal | currency:'BRL':'symbol':'1.0-0'}}</td>
-                                <td>Recorrente</td>
-                                <td *ngFor="let eixo of terraIndigena.valoresEixosRecorrentes">
-                                    {{eixo | currency:'BRL':'symbol':'1.0-0'}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Não Recorrente</td>
-                                <td *ngFor="let eixo of terraIndigena.valoresEixosNaoRecorrentes">
-                                    {{eixo | currency:'BRL':'symbol':'1.0-0'}}
-                                </td>
+                                <td>{{terraIndigena.nome}}</td>
+                                <td>{{terraIndigena.valorRecorrente | currency:'BRL':'symbol':'1.0-0'}}</td>
+                                <td>{{terraIndigena.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0'}}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>

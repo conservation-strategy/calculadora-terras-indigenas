@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "custoContexto": true,
     "nome": "Baú",
     "tamanho": 1540930.16,
     "aldeias": 7,
@@ -13,14 +13,10 @@
     "nivelImplementacaoAtual": [
       13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
       0, 0, 0, 0, 1, 0, 0
-    ],
-    "nivelImplementacaoAlmejado": [
-      13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
-      0, 0, 0, 0, 1, 0, 0
     ]
   },
   {
-    "id": 2,
+    "custoContexto": true,
     "nome": "Capoto/Jarina",
     "tamanho": 634715.23,
     "aldeias": 16,
@@ -29,18 +25,13 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 0,
-    "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
-      13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
-      0, 0, 0, 0, 1, 0, 0
-    ],
-    "nivelImplementacaoAlmejado": [
       13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
       0, 0, 0, 0, 1, 0, 0
     ]
   },
   {
-    "id": 3,
+    "custoContexto": true,
     "nome": "Trincheira/Bacajá",
     "tamanho": 1650939.26,
     "aldeias": 16,
@@ -49,18 +40,13 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 3,
     "localSede": 0,
-    "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
-      3, 15, 10, 3, 4, 0, 5, 2, 2, 0, 0, 6, 5, 0, 4, 0, 9, 7, 0, 0, 0, 0, 1, 0,
-      0, 0, 0, 0, 0
-    ],
-    "nivelImplementacaoAlmejado": [
       3, 15, 10, 3, 4, 0, 5, 2, 2, 0, 0, 6, 5, 0, 4, 0, 9, 7, 0, 0, 0, 0, 1, 0,
       0, 0, 0, 0, 0
     ]
   },
   {
-    "id": 4,
+    "custoContexto": true,
     "nome": "Apyterewa",
     "tamanho": 773470.03,
     "aldeias": 22,
@@ -69,18 +55,13 @@
     "grauAmeaca": 3,
     "complexidadeAcesso": 3,
     "localSede": 0,
-    "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
-      2, 6, 0, 8, 10, 0, 2, 1, 1, 1, 0, 0, 0, 9, 4, 0, 8, 6, 0, 0, 0, 0, 2, 0,
-      0, 0, 0, 0, 0
-    ],
-    "nivelImplementacaoAlmejado": [
       2, 6, 0, 8, 10, 0, 2, 1, 1, 1, 0, 0, 0, 9, 4, 0, 8, 6, 0, 0, 0, 0, 2, 0,
       0, 0, 0, 0, 0
     ]
   },
   {
-    "id": 5,
+    "custoContexto": true,
     "nome": "Panará",
     "tamanho": 499740.01,
     "aldeias": 7,
@@ -89,18 +70,13 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 1,
     "localSede": 1,
-    "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
-      5, 9, 3, 4, 7, 0, 6, 0, 4, 0, 0, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 7, 1, 1, 0,
-      1, 0, 0, 0
-    ],
-    "nivelImplementacaoAlmejado": [
       5, 9, 3, 4, 7, 0, 6, 0, 4, 0, 0, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 7, 1, 1, 0,
       1, 0, 0, 0
     ]
   },
   {
-    "id": 6,
+    "custoContexto": true,
     "nome": "TIX (Batovi, Pequizal do Naruvôtu, Xingu e Wawi)",
     "tamanho": 2825370,
     "aldeias": 196,
@@ -109,18 +85,13 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 0,
-    "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
-      7, 16, 1, 12, 5, 0, 12, 4, 3, 3, 2, 5, 5, 6, 0, 0, 15, 6, 5, 0, 0, 8, 0,
-      4, 4, 2, 0, 0, 0
-    ],
-    "nivelImplementacaoAlmejado": [
       7, 16, 1, 12, 5, 0, 12, 4, 3, 3, 2, 5, 5, 6, 0, 0, 15, 6, 5, 0, 0, 8, 0,
       4, 4, 2, 0, 0, 0
     ]
   },
   {
-    "id": 7,
+    "custoContexto": true,
     "nome": "Menkragnoti",
     "tamanho": 4914254.82,
     "aldeias": 17,
@@ -129,18 +100,13 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 0,
-    "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
-      6, 9, 1, 6, 8, 0, 11, 0, 9, 1, 0, 10, 3, 1, 0, 0, 10, 2, 9, 2, 0, 0, 1, 2,
-      0, 0, 2, 0, 1
-    ],
-    "nivelImplementacaoAlmejado": [
       6, 9, 1, 6, 8, 0, 11, 0, 9, 1, 0, 10, 3, 1, 0, 0, 10, 2, 9, 2, 0, 0, 1, 2,
       0, 0, 2, 0, 1
     ]
   },
   {
-    "id": 8,
+    "custoContexto": true,
     "nome": "Kayapó",
     "tamanho": 1266022.7,
     "aldeias": 35,
@@ -149,14 +115,189 @@
     "grauAmeaca": 3,
     "complexidadeAcesso": 2,
     "localSede": 0,
-    "situacaoAtual": 5,
     "nivelImplementacaoAtual": [
       7, 10, 3, 5, 8, 0, 13, 5, 7, 0, 0, 5, 7, 5, 7, 0, 5, 4, 12, 0, 0, 1, 6, 3,
       0, 0, 0, 0, 0
-    ],
-    "nivelImplementacaoAlmejado": [
-      7, 10, 3, 5, 8, 0, 13, 5, 7, 0, 0, 5, 7, 5, 7, 0, 5, 4, 12, 0, 0, 1, 6, 3,
-      0, 0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Cachoeira Seca do Iriri",
+    "tamanho": 733688,
+    "aldeias": 5,
+    "populacao": 590,
+    "grauDiversidade": 1,
+    "grauAmeaca": 3,
+    "complexidadeAcesso": 3,
+    "localSede": 1,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Ituna-Itatá",
+    "tamanho": 142402,
+    "aldeias": 0,
+    "populacao": 0,
+    "grauDiversidade": 0,
+    "grauAmeaca": 4,
+    "complexidadeAcesso": 2,
+    "localSede": 0,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Paquiçamba",
+    "tamanho": 4384,
+    "aldeias": 7,
+    "populacao": 315,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 1,
+    "localSede": 1,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Arara",
+    "tamanho": 274010,
+    "aldeias": 6,
+    "populacao": 378,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 2,
+    "localSede": 0,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Arara da Volta Grande do Xingu",
+    "tamanho": 25524,
+    "aldeias": 4,
+    "populacao": 254,
+    "grauDiversidade": 1,
+    "grauAmeaca": 2,
+    "complexidadeAcesso": 2,
+    "localSede": 0,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Araweté/Igarapé Ipixuna",
+    "tamanho": 940900,
+    "aldeias": 21,
+    "populacao": 590,
+    "grauDiversidade": 2,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 3,
+    "localSede": 0,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Badjônkôre",
+    "tamanho": 221981,
+    "aldeias": 1,
+    "populacao": 140,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 2,
+    "localSede": 0,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Kararaô",
+    "tamanho": 330837,
+    "aldeias": 4,
+    "populacao": 85,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 2,
+    "localSede": 0,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Koatinemo",
+    "tamanho": 387834,
+    "aldeias": 6,
+    "populacao": 200,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 2,
+    "localSede": 1,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Kuruáya",
+    "tamanho": 166784,
+    "aldeias": 4,
+    "populacao": 164,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 3,
+    "localSede": 1,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Terena Gleba Iriri",
+    "tamanho": 30588,
+    "aldeias": 4,
+    "populacao": 271,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 1,
+    "localSede": 1,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
+    ]
+  },
+  {
+    "custoContexto": false,
+    "nome": "Xipaya",
+    "tamanho": 178723,
+    "aldeias": 5,
+    "populacao": 207,
+    "grauDiversidade": 1,
+    "grauAmeaca": 1,
+    "complexidadeAcesso": 3,
+    "localSede": 0,
+    "nivelImplementacaoAtual": [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0
     ]
   }
 ]

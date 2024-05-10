@@ -78,13 +78,13 @@
                                 <span>Selecione a terra indígena</span>
                             </label>
                             <select class="form-select form-select-sm" required
-                                [ngClass]="{ 'is-invalid': calculatorFormSubmitted&&calculatorForm.controls.terraIndigenaId.invalid}"
-                                formControlName="terraIndigenaId">
+                                [ngClass]="{ 'is-invalid': calculatorFormSubmitted&&calculatorForm.controls.terraIndigena.invalid}"
+                                formControlName="terraIndigena">
                                 <option value="" disabled selected>Selecione a terra indígena</option>
-                                <option *ngFor="let ti of terrasIndigenas" [ngValue]="ti.id">{{ti.nome}}
+                                <option *ngFor="let item of terrasIndigenas" [ngValue]="item">{{item.nome}}
                                 </option>
                             </select>
-                            <small *ngIf="calculatorFormSubmitted&&calculatorForm.controls.terraIndigenaId.invalid"
+                            <small *ngIf="calculatorFormSubmitted&&calculatorForm.controls.terraIndigena.invalid"
                                 class="text-danger">
                                 Campo Obrigatório.
                             </small>

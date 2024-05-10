@@ -53,14 +53,16 @@ export class CalculadoraAgrupadaComponent implements OnInit {
   coeficientesRecorrentes: Coeficiente[] = [];
   coeficientesNaoRecorrentes: Coeficiente[] = [];
   eixos: Eixo[] = [];
+  eixoSelecionado: Eixo | null = null;
   niveisImplementacao: NivelImplementacao[] = [
     { text: 'Básico', value: 10 },
-    { text: 'Bom', value: 20 },
+    // { text: 'Bom', value: 20 },
   ];
 
   calculadoraFormEnviado = false;
   calculadoraForm = new FormGroup({
     nivelImplementacaoAlmejado: new FormControl('', Validators.required),
+    eixo: new FormControl('', Validators.required),
     inflacao: new FormControl(''),
   });
 
@@ -141,7 +143,9 @@ export class CalculadoraAgrupadaComponent implements OnInit {
 
   obterTerrasIndigenas() {
     this.calculatorService.obterTerrasIndigenas().subscribe((response) => {
-      this.terrasIndigenas = response;
+      this.terrasIndigenas = response.filter(
+        (x: TerraIndigena) => x.custoContexto
+      );
     });
   }
 
@@ -182,6 +186,9 @@ export class CalculadoraAgrupadaComponent implements OnInit {
 
     const nivelImplementacaoAlmejado: any =
       this.calculadoraForm.controls.nivelImplementacaoAlmejado.value;
+
+    const eixoSelecionado: any = this.calculadoraForm.controls.eixo.value;
+    this.eixoSelecionado = eixoSelecionado;
 
     const resultadoTerrasIndigenas: any = [];
     const terrasIndigenasSelecionadas = this.terrasIndigenas.filter(
@@ -257,55 +264,24 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       complexidadeAcesso,
       inflacao
     );
-    const valorRecorrente =
-      this.calculatorService.obterSomatoria(resultadoRecorrentes);
-    const valorNaoRecorrente = this.calculatorService.obterSomatoria(
-      resultadoNaoRecorrentes
+
+    const posicaoInicial = this.eixoSelecionado?.atividades[0].posicao;
+    const posicaoFinal =
+      this.eixoSelecionado!.atividades[
+        this.eixoSelecionado!.atividades.length - 1
+      ].posicao + 1;
+
+    const valorRecorrente = this.calculatorService.obterSomatoria(
+      resultadoRecorrentes.slice(posicaoInicial, posicaoFinal)
     );
-
-    const valoresEixosRecorrentes = [
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(0, 7)),
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(7, 13)),
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(13, 16)),
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(16, 18)),
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(18, 21)),
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(21, 25)),
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(25, 27)),
-      this.calculatorService.obterSomatoria(resultadoRecorrentes.slice(27)),
-    ];
-
-    const valoresEixosNaoRecorrentes = [
-      this.calculatorService.obterSomatoria(
-        resultadoNaoRecorrentes.slice(0, 7)
-      ),
-      this.calculatorService.obterSomatoria(
-        resultadoNaoRecorrentes.slice(7, 13)
-      ),
-      this.calculatorService.obterSomatoria(
-        resultadoNaoRecorrentes.slice(13, 16)
-      ),
-      this.calculatorService.obterSomatoria(
-        resultadoNaoRecorrentes.slice(16, 18)
-      ),
-      this.calculatorService.obterSomatoria(
-        resultadoNaoRecorrentes.slice(18, 21)
-      ),
-      this.calculatorService.obterSomatoria(
-        resultadoNaoRecorrentes.slice(21, 25)
-      ),
-      this.calculatorService.obterSomatoria(
-        resultadoNaoRecorrentes.slice(25, 27)
-      ),
-      this.calculatorService.obterSomatoria(resultadoNaoRecorrentes.slice(27)),
-    ];
+    const valorNaoRecorrente = this.calculatorService.obterSomatoria(
+      resultadoNaoRecorrentes.slice(posicaoInicial, posicaoFinal)
+    );
 
     const resultado = {
       nome: terraIndigenaSelecionada.nome,
-      valorTotal: valorRecorrente + valorNaoRecorrente,
       valorRecorrente,
       valorNaoRecorrente,
-      valoresEixosRecorrentes: valoresEixosRecorrentes,
-      valoresEixosNaoRecorrentes: valoresEixosNaoRecorrentes,
     };
 
     return resultado;
@@ -340,63 +316,38 @@ export class CalculadoraAgrupadaComponent implements OnInit {
     const dataHora = new Date().toLocaleString();
     const tableRows: any = [
       [
-        { text: 'Terra indigena', style: 'tableHeader' },
-        { text: 'Total', style: 'tableHeader' },
-        { text: 'Tipo', style: 'tableHeader' },
-        { text: 'Governança', style: 'tableHeader' },
-        { text: 'Fiscalização e Proteção', style: 'tableHeader' },
-        { text: 'Fortalecimento Cultural', style: 'tableHeader' },
-        { text: 'Geração de renda', style: 'tableHeader' },
-        { text: 'Soberania Alimentar', style: 'tableHeader' },
-        { text: 'Infraestruturas complementares', style: 'tableHeader' },
-        { text: 'Saúde e saneamento complementar', style: 'tableHeader' },
-        { text: 'Educação complementar', style: 'tableHeader' },
+        { text: 'Terra indigena', rowSpan: 2, style: 'tableHeader' },
+        { text: this.eixoSelecionado?.nome, colSpan: 2, style: 'tableHeader' },
+        '',
+      ],
+      [
+        '',
+        { text: 'Recorrente', style: 'tableHeader' },
+        { text: 'Não Recorrente', style: 'tableHeader' },
       ],
     ];
     this.resultado.terrasIndigenas.forEach((x: any) => {
-      tableRows.push(
-        [
-          { text: x.nome, rowSpan: 2, style: 'tableRow' },
-          {
-            text: this.currencyPipe.transform(
-              x.valorTotal,
-              'BRL',
-              'symbol',
-              '1.0-0'
-            ),
-            rowSpan: 2,
-            style: 'tableRow',
-          },
-          { text: 'Recorrente', style: 'tableRow' },
-          ...x.valoresEixosRecorrentes.map((valorEixo: string) => {
-            return {
-              text: this.currencyPipe.transform(
-                valorEixo,
-                'BRL',
-                'symbol',
-                '1.0-0'
-              ),
-              style: 'tableRow',
-            };
-          }),
-        ],
-        [
-          '',
-          '',
-          { text: 'Recorrente', style: 'tableRow' },
-          ...x.valoresEixosNaoRecorrentes.map((valorEixo: string) => {
-            return {
-              text: this.currencyPipe.transform(
-                valorEixo,
-                'BRL',
-                'symbol',
-                '1.0-0'
-              ),
-              style: 'tableRow',
-            };
-          }),
-        ]
-      );
+      tableRows.push([
+        { text: x.nome, style: 'tableRow' },
+        {
+          text: this.currencyPipe.transform(
+            x.valorRecorrente,
+            'BRL',
+            'symbol',
+            '1.0-0'
+          ),
+          style: 'tableRow',
+        },
+        {
+          text: this.currencyPipe.transform(
+            x.valorNaoRecorrente,
+            'BRL',
+            'symbol',
+            '1.0-0'
+          ),
+          style: 'tableRow',
+        },
+      ]);
     });
     var docDefinition = {
       pageOrientation: 'landscape' as PageOrientation,
@@ -435,20 +386,8 @@ export class CalculadoraAgrupadaComponent implements OnInit {
         '\n\n',
         {
           table: {
-            widths: [
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-              'auto',
-            ],
-            headerRows: 1,
+            widths: [400, '*', '*'],
+            headerRows: 2,
             body: tableRows,
           },
         },
