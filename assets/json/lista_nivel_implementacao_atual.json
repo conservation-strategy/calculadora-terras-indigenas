@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Nula",
+    "value": 0
+  },
+  {
+    "label": "Pré-Básico",
+    "value": 5
+  },
+  {
+    "label": "Básico",
+    "value": 10
+  },
+  {
+    "label": "Intermediario",
+    "value": 15
+  },
+  {
+    "label": "Bom",
+    "value": 20
+  }
+]
