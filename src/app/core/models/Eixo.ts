@@ -1,13 +1,10 @@
-import Atividade from "./Atividade";
+import Atividade from './Atividade';
 
 interface Eixo {
   nome: string;
   descricao: string;
-  valorTotal?: number;
-  valorRecorrente?: number;
-  valorNaoRecorrente?: number;
+  valor?: number;
   atividades: Atividade[];
 }
 
 export default Eixo;
-

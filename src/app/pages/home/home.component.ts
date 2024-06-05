@@ -28,7 +28,7 @@ export class HomeComponent {
     private sanitizer: DomSanitizer
   ) {
     this.calculatorService.obterSiteConfig().subscribe((response) => {
-      this.youtubeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      this.youtubeVideoUrl = this.sanitizer.bypassSecurityTrustUrl(
         response.youtubeVideoUrl
       );
     });

@@ -1,5 +1,5 @@
 <app-header title="Versão Agrupada"></app-header>
-<div class="container">
+<div class="container main-container">
     <div class="row">
         <div class="col-lg-6 mb-3">
             <div class="card card-main">
@@ -10,12 +10,23 @@
                             Calcula o custo total de implementação de eixos temáticos selecionados em uma ou mais Terras
                             Indígenas. O usuário pode escolher o nível de implementação desejado (básico ou bom) para
                             cada um dos eixos selecionados. Essa versão é indicada para quem atua em mais de uma Terra
-                            Tndígena e pretende ter informações gerais de custo de implementação das atividades em mais
+                            Indígena e pretende ter informações gerais de custo de implementação das atividades em mais
                             de uma Terra Indígena selecionada.
                         </p>
                     </section>
                     <section>
                         <div ngbAccordion>
+                            <div ngbAccordionItem [collapsed]="true">
+                                <h2 ngbAccordionHeader>
+                                    <button ngbAccordionButton>Terra Indígena</button>
+                                </h2>
+                                <div ngbAccordionCollapse>
+                                    <div ngbAccordionBody>
+                                        Apenas terras indígenas com todas as informações necessárias para o cálculo
+                                        foram incluídas nessa versão
+                                    </div>
+                                </div>
+                            </div>
                             <div ngbAccordionItem [collapsed]="true">
                                 <h2 ngbAccordionHeader>
                                     <button ngbAccordionButton>Nível de implementação básico e bom</button>
@@ -64,18 +75,25 @@
         <div class="col-lg-6 mb-3">
             <div class="card card-main">
                 <div class="card-body">
-                    <form [formGroup]="calculadoraForm">
+                    <form [formGroup]="calculadoraForm" class="calculadora-form">
                         <div class="form-group">
-                            <label class="form-label">
-                                <span>Selecione a terra indígena</span>
-                            </label>
-                            <div class="form-check form-check-terra-indigena" *ngFor="let ti of terrasIndigenas">
-                                <input class="form-check-input" type="checkbox"
-                                    (change)="selecionarTerraIndigena($event,ti)" id="{{'flexCheck' + ti.nome}}">
-                                <label class="form-check-label" for="{{'flexCheck' + ti.nome}}">
-                                    {{ti.nome}}
-                                </label>
+                            <label class="form-label">Selecione a terra indígena</label>
+                            <div *ngFor="let grupo of grupoTerrasIndigenas">
+                                <label>{{grupo.nomeGrupo}}</label>
+                                <div class="form-check form-check-terra-indigena"
+                                    *ngFor="let terraIndigena of grupo.terrasIndigenas">
+                                    <input class="form-check-input" type="checkbox"
+                                        (change)="selecionarTerraIndigena($event,terraIndigena)"
+                                        id="{{'flexCheck' + terraIndigena.nome}}">
+                                    <label class="form-check-label" for="{{'flexCheck' + terraIndigena.nome}}">
+                                        {{terraIndigena.nome}}
+                                    </label>
+                                </div>
                             </div>
+                            <small *ngIf="calculadoraFormEnviado&&terrasIndigenasSelecionadas.length==0"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
                         </div>
                         <div class="form-group mt-3">
                             <label class="form-label d-flex justify-content-between">
@@ -84,37 +102,80 @@
                                     ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos">
                                 </fa-icon>
                             </label>
-                            <select class="form-select form-select-sm" required
-                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.eixo.invalid}"
-                                formControlName="eixo" placeHolder="Selecione o eixo">
-                                <option value="" disabled selected>Selecione o eixo</option>
-                                <option *ngFor="let item of eixos" [ngValue]="item">{{item.nome}}
-                            </select>
-                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.eixo.invalid"
-                                class="text-danger">
+                            <div class="form-check form-check-terra-indigena" *ngFor="let eixo of eixos">
+                                <input class="form-check-input" type="checkbox" (change)="selecionarEixo($event,eixo)"
+                                    id="{{'flexCheck' + eixo.nome}}">
+                                <label class="form-check-label" for="{{'flexCheck' + eixo.nome}}">
+                                    {{eixo.nome}}
+                                </label>
+                            </div>
+                            <small *ngIf="calculadoraFormEnviado&&eixosSelecionados.length==0" class="text-danger">
                                 Campo Obrigatório.
                             </small>
                         </div>
+                        <!-- TIPO CUSTO -->
                         <div class="form-group mt-3">
-                            <label class="form-label d-flex justify-content-between">
-                                <span>Nível de implementação</span>
+                            <label class="form-label">
+                                <span>Tipo de custo</span>
                                 <fa-icon [icon]="faQuestionCircle"
-                                    ngbTooltip="Situação atual de implementação da atividade">
-                                </fa-icon>
+                                    ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
                             </label>
                             <select class="form-select form-select-sm" required
-                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid}"
-                                formControlName="nivelImplementacaoAlmejado"
-                                placeHolder="Selecione o Nível de implementação">
-                                <option value="" disabled selected>Selecione o nível de implementação</option>
-                                <option *ngFor="let item of niveisImplementacao" [ngValue]="item">{{item.text}}
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
+                                formControlName="tipoCusto" (change)="trocarTipoCusto()">
+                                <option value="1">Recorrente (anual)</option>
+                                <option value="2">Não recorrentes (eventual)</option>
                             </select>
-                            <small
-                                *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid"
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid"
                                 class="text-danger">
                                 Campo Obrigatório.
                             </small>
                         </div>
+                        <div class="row">
+                            <!-- NIVEL IMPLEMENTAÇÃO ATUAL -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">
+                                    <span>Nível de implementação atual</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Situação atual de implementação da atividade, em uma escala de 0 a 20"></fa-icon>
+                                </label>
+                                <select class="form-select form-select-sm" required
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
+                                    formControlName="nivelImplementacaoAtual">
+                                    <option [value]="null" disabled selected>Nível de implementação atual</option>
+                                    <option *ngFor="let item of listaNivelImplementacaoAtual" [value]="item.value">
+                                        {{item.label}}</option>
+                                </select>
+                                <small
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                            <!-- NIVEL IMPLEMENTAÇÃO ALMEJADO -->
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label d-flex justify-content-between">
+                                    <span>Nível de implementação Almejado</span>
+                                    <fa-icon [icon]="faQuestionCircle"
+                                        ngbTooltip="Situação atual de implementação da atividade">
+                                    </fa-icon>
+                                </label>
+                                <select class="form-select form-select-sm" required
+                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid}"
+                                    formControlName="nivelImplementacaoAlmejado"
+                                    placeHolder="Selecione o Nível de implementação">
+                                    <option value="null" disabled selected>Nível de implementação almejado</option>
+                                    <option *ngFor="let item of listaNivelImplementacaoAlmejado" [ngValue]="item.value">
+                                        {{item.label}}
+                                </select>
+                                <small
+                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid"
+                                    class="text-danger">
+                                    Campo Obrigatório.
+                                </small>
+                            </div>
+                        </div>
+
                         <div class="form-group mt-3">
                             <label class="form-label d-flex justify-content-between">
                                 <span>Inflação acumulada desde 2023 (%)</span>
@@ -124,16 +185,17 @@
                             <input type="text" class="form-control form-control-sm" placeholder="Inflação %"
                                 formControlName="inflacao" numbersOnly>
                         </div>
-                        <div class="form-group mt-3">
+                        <div class="d-flex mt-3">
                             <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
+                            <app-loading *ngIf="mostrarCarregando"></app-loading>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <div *ngIf="mostrarResultado" id="resultado">
+    <div id="resultado"></div>
+    <div *ngIf="mostrarResultado&&resultado">
         <div class="card card-main mt-3">
             <div class="card-body">
                 <h1 class="section-title mt-3 mb-3">Resultado</h1>
@@ -141,11 +203,12 @@
                 <p class=" mb-3">
                     O custo previsto para as Terras Indígenas
                     <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>
-                    para o eixo temático <strong>{{eixoSelecionado?.nome}}</strong> com o nível de implementação
-                    <strong>{{resultado.nivelImplementacao}}</strong> , por ano, é de:
+                    para o eixos temáticos <strong>{{resultado.eixosSelecionados}}</strong> com o nível de implementação
+                    <strong>{{resultado.nivelImplementacao}}</strong> , {{resultado.tipoCusto == 1 ? 'por ano, ': ''}}é
+                    de:
                 </p>
-                <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chartAgrupado"
-                    [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
+                <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chart"
+                    [styles]="{width: '100%', height:'500px'}"></canvasjs-chart>
             </div>
         </div>
         <div class="card mt-3">
@@ -155,19 +218,15 @@
                     <table class="table table-sm table-bordered">
                         <thead>
                             <tr>
-                                <th rowspan="2">Terra indigena</th>
-                                <th colspan="2">{{eixoSelecionado?.nome}}</th>
-                            </tr>
-                            <tr>
-                                <th>Recorrente</th>
-                                <th>Não Recorrente</th>
+                                <th>Terra Indigena</th>
+                                <th *ngFor="let eixo of resultado.eixosSelecionados">{{eixo}}</th>
                             </tr>
                         </thead>
-                        <tbody *ngFor="let terraIndigena of resultado.terrasIndigenas">
-                            <tr>
+                        <tbody>
+                            <tr *ngFor="let terraIndigena of resultado.terrasIndigenas">
                                 <td>{{terraIndigena.nome}}</td>
-                                <td>{{terraIndigena.valorRecorrente | currency:'BRL':'symbol':'1.0-0'}}</td>
-                                <td>{{terraIndigena.valorNaoRecorrente | currency:'BRL':'symbol':'1.0-0'}}</td>
+                                <td *ngFor="let eixo of terraIndigena.resultadoEixos">{{eixo.valorEixo |
+                                    currency:'BRL':'symbol':'1.0-0'}}</td>
                             </tr>
                         </tbody>
                     </table>

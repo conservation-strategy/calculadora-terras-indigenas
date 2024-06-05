@@ -12,10 +12,22 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url("../assets/images/background.webp");
+}
+
+#app-main-inner {
+  padding-top: 80px;
 }
 
 #app-footer {
   margin-top: auto;
+}
+
+.main-container {
+  background: #fff;
+  padding: 50px 40px 30px 40px;
+  min-height: calc(100vh - 480px);
+  box-shadow: -15px 0px 20px gray, 15px 0px 20px gray;
 }
 
 .card-main {
@@ -35,4 +47,26 @@ body {
   display: inline-block;
   background-color: rgb(184, 29, 0);
   margin-right: 5px;
+}
+
+.calculadora-form label {
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.calculadora-form optgroup {
+  color: rgb(33, 37, 41);
+}
+
+.calculadora-form select:required.ng-invalid {
+  color: gray;
+}
+
+.calculadora-form option[value="null"][disabled] {
+  display: none;
+}
+
+.calculadora-form option {
+  color: var(--bs-body-color);
 }

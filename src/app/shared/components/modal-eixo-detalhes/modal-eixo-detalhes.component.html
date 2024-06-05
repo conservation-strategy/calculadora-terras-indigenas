@@ -1,10 +1,25 @@
 <div class="modal-header">
-    <h4 class="modal-title">{{eixo?.nome}} - Atividades</h4>
+    <h4 class="modal-title">{{eixo.nome}} - Atividades</h4>
 </div>
 <div class="modal-body">
-    <p *ngFor="let item of eixo?.atividades">
-        <strong>{{item.nome}}</strong>: {{item.descricao}}
-    </p>
+    <div *ngFor="let atividade of eixo?.atividades">
+        <div>
+            <strong>{{atividade.nome}}</strong>:
+            <span>{{atividade.descricao}}</span>
+        </div>
+        <ul>
+            <li *ngIf="atividade.custoBasico.length > 0">
+                <span *ngFor="let custo of atividade.custoBasico">
+                    <strong>Básico </strong>{{custo}}
+                </span>
+            </li>
+            <li *ngIf="atividade.custoBom.length > 0">
+                <span *ngFor="let custo of atividade.custoBom">
+                    <strong>Bom </strong>{{custo}}
+                </span>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-sm btn-outline-secondary"

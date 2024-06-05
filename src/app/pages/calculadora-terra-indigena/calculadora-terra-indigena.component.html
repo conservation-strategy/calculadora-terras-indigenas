@@ -1,5 +1,5 @@
-<app-header title="Versão Detalhada"></app-header>
-<div class="container">
+<app-header title="Versão por Terra Indígena"></app-header>
+<div class="container main-container">
     <div class="row">
         <div class="col-lg-6 mb-3">
             <div class="card card-main">
@@ -7,21 +7,16 @@
                     <section>
                         <h1 class="section-title">Guia de Uso</h1>
                         <p>
-                            Calcula o custo de implementação por atividade de uma Terra Indígena, podendo o usuário
-                            alterar os valores das características da Terra Indígena (tamanho, população, aldeia,
-                            complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da
-                            associação) e também definir o nível de implementação desejado.
+                            Calcula o custo total de implementação de todos os eixos temáticos em uma Terra Indígena
+                            selecionada, podendo o usuário alterar os valores das características da Terra Indígena
+                            (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e
+                            localização da sede da associação) e também definir o nível de implementação atual e
+                            desejado.
                         </p>
                         <p>
-                            Nessa versão, o usuário pode alterar os valores das características da Terra Indígena
-                            (tamanho, população, grau de ameaça, etc) e definir um nível de implementação desejado para
-                            cada atividade separadamente. Essa versão é indicada para usuários que buscam informações
-                            mais detalhadas sobre a definição dos níveis de implementação das atividades.
-                        </p>
-                        <p>
-                            Ressaltamos que, devido à pequena amostra de dados, os valores mais gerais, por eixo
-                            temático, são mais estáveis do que os valores detalhados por atividade. Assim, recomendamos
-                            considerar os valores somados de todo o eixo temático.
+                            Essa versão é indicada para usuários que buscam informações mais detalhadas sobre a
+                            definição dos níveis de implementação dos eixos temáticos. Nessa versão não é possível
+                            selecionar apenas um eixo temático, nem mais de uma Terra Indígena.
                         </p>
                     </section>
                     <section>
@@ -170,7 +165,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- ível de implementação -->
+                            <!-- Nível de implementação -->
                             <div ngbAccordionItem [collapsed]="true">
                                 <h2 ngbAccordionHeader>
                                     <button ngbAccordionButton>Nível de implementação</button>
@@ -178,17 +173,40 @@
                                 <div ngbAccordionCollapse>
                                     <div ngbAccordionBody>
                                         <p>
-                                            A definição do nível de implementação varia por atividade. Ao selecioná-la,
-                                            será fornecido um detalhamento dos itens que caracterizam a implementação da
-                                            atividade nos níveis "básico" ou "bom".
+                                            A definição do nível de implementação varia por atividade em cada eixo
+                                            temático.
+                                        </p>
+                                        <p>
+                                            Ao selecionar o eixo, será fornecido um detalhamento das atividades e itens
+                                            que caracterizam a implementação do eixo nos níveis "básico" ou "bom". Essa
+                                            lista de itens é apenas uma referência e pode variar de acordo com a
+                                            realidade de cada Terra Indígena, ou seja, é uma sugestão de características
+                                            dos níveis de implementação.
                                         </p>
                                         <p>
                                             O "nível de implementação atual" é definido pelo conjunto de itens (ações,
-                                            equipamentos, pessoal, etc) realizados no último ano
+                                            equipamentos, pessoal etc.) da terra indígena selecionada. Para as terras
+                                            indígenas com dados de custos na amostra “o nível de implementação atual”
+                                            aparece automaticamente com as informações levantadas junto às organizações,
+                                            esses valores estão no campo “Situação em 2022”. Para as demais terras
+                                            indígenas (Terras Indígenas Xingu - sem dados de custos na amostra; e
+                                            Simulação - outra Terra Indígena), o usuário deverá selecionar qual seria o
+                                            nível de implementação atual podendo ser: "Nulo"; "Pré-básico"; "Básico";
+                                            "Intermediário" e "Bom".
                                         </p>
                                         <p>
                                             O "nível de implementação almejado" define os itens que permitirão o alcance
-                                            do objetivo após um ano de investimento
+                                            do objetivo após um ano de investimento e podem ser nos níveis "Básico" ou
+                                            "Bom".
+                                        </p>
+                                        <p>
+                                            O nível de implementação básico atende ao mínimo necessário para a
+                                            realização
+                                            da atividade. O nível de implementação bom vai um pouco além, adicionando
+                                            novas ações e melhorias. No entanto, é importante ressaltar que o nível bom,
+                                            mesmo sendo melhor que o básico, ainda apresenta limitações ou aspectos que
+                                            precisam ser aprimorados, indicando que há espaço para melhorar o desempenho
+                                            das atividades.
                                         </p>
                                     </div>
                                 </div>
@@ -217,7 +235,7 @@
         <div class="col-lg-6 mb-3">
             <div class="card card-main">
                 <div class="card-body">
-                    <form [formGroup]="calculadoraForm">
+                    <form [formGroup]="calculadoraForm" class="calculadora-form">
                         <div class="row">
                             <!-- TERRA INDIGENA -->
                             <div class="col-12">
@@ -227,10 +245,12 @@
                                 <select class="form-select form-select-sm" required (change)="selecionarTerraIndigena()"
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid}"
                                     formControlName="terraIndigena">
-                                    <option value="" disabled selected>Selecione a terra indígena</option>
-                                    <option *ngFor="let terraIndigena of terrasIndigenas" [ngValue]="terraIndigena">
-                                        {{terraIndigena.nome}}
-                                    </option>
+                                    <option [value]="null" disabled selected>Selecione a terra indígena</option>
+                                    <optgroup *ngFor="let grupo of grupoTerrasIndigenas" [label]="grupo.nomeGrupo">
+                                        <option *ngFor="let terraIndigena of grupo.terrasIndigenas"
+                                            [ngValue]="terraIndigena">{{terraIndigena.nome}}
+                                        </option>
+                                    </optgroup>
                                 </select>
                                 <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid"
                                     class="text-danger">
@@ -329,7 +349,7 @@
                                 <select class="form-select form-select-sm" required
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid}"
                                     formControlName="complexidadeAcesso">
-                                    <option value="" disabled selected>Complexidade de Acesso</option>
+                                    <option [value]="null" disabled selected>Complexidade de Acesso</option>
                                     <option *ngFor="let item of listaComplexidadeAcesso" [ngValue]="item.value">
                                         {{item.label}}
                                     </option>
@@ -350,7 +370,7 @@
                                 <select class="form-select form-select-sm" required
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid}"
                                     formControlName="localSede">
-                                    <option value="" disabled selected>Localização da sede</option>
+                                    <option [value]="null" disabled selected>Localização da sede</option>
                                     <option *ngFor="let item of listaLocalSede" [ngValue]="item.value">
                                         {{item.label}}
                                     </option>
@@ -362,32 +382,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <!-- ATIVIDADE -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Atividade</span>
-                                    <fa-icon [icon]="faQuestionCircle"
-                                        ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos"></fa-icon>
-                                </label>
-                                <div *ngIf="!atividadeSelecionada">
-                                    <button class="btn btn-sm btn-outline-secondary" (click)="abrirModal()">Selecionar
-                                        Atividade</button>
-                                </div>
-                                <div *ngIf="atividadeSelecionada" class="d-flex flex-column">
-                                    <label class="border p-1 mb-1 d-flex flex-column" (click)="abrirModal()"
-                                        style="cursor: pointer;">
-                                        <span>{{atividadeSelecionada.nome}}</span>
-                                        <small class="text-primary text-underline mt-1">
-                                            <strong>Alterar Atividade</strong>
-                                        </small>
-                                    </label>
-                                </div>
-                                <small *ngIf="calculadoraFormEnviado&&!atividadeSelecionada" class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- TIPO GASTO -->
-                            <div class="col-md-6 mt-3">
+                            <!-- TIPO CUSTO -->
+                            <div class="col-12 mt-3">
                                 <label class="form-label">
                                     <span>Tipo de custo</span>
                                     <fa-icon [icon]="faQuestionCircle"
@@ -396,8 +392,10 @@
                                 <select class="form-select form-select-sm" required
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
                                     formControlName="tipoCusto" (change)="trocarTipoCusto()">
-                                    <option value="1">Recorrente (anual)</option>
-                                    <option value="2">Não recorrente (investimento)</option>
+                                    <option [value]="enumTipoCusto.Recorrente">{{enumTipoCustoTexto.Recorrente}}
+                                    </option>
+                                    <option [value]="enumTipoCusto.NaoRecorrente">{{enumTipoCustoTexto.NaoRecorrente}}
+                                    </option>
                                 </select>
                                 <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid"
                                     class="text-danger">
@@ -414,7 +412,7 @@
                                 <select class="form-select form-select-sm" required
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
                                     formControlName="nivelImplementacaoAtual">
-                                    <option value="" disabled selected>Nível de implementação atual</option>
+                                    <option [value]="null" disabled selected>Nível de implementação atual</option>
                                     <option *ngFor="let item of listaNivelImplementacaoAtual" [value]="item.value">
                                         {{item.label}}</option>
                                 </select>
@@ -434,7 +432,8 @@
                                 <select class="form-select form-select-sm" required
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid}"
                                     formControlName="nivelImplementacaoAlmejado">
-                                    <option value="" disabled selected>Nível de implementação almejado</option>
+                                    <option value="null" disabled>Nível de implementação
+                                        almejado</option>
                                     <option *ngFor="let item of listaNivelImplementacaoAlmejado" [value]="item.value">
                                         {{item.label}}</option>
                                 </select>
@@ -461,53 +460,70 @@
                                     formControlName="inflacao" numbersOnly>
                             </div>
                         </div>
-                        <div class="form-group mt-3">
-                            <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
+                        <div class="d-flex mt-3">
+                            <button class="btn btn-secondary me-3" (click)="botaoCalcular()">Calcular</button>
+                            <app-loading *ngIf="mostrarCarregando"></app-loading>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <div *ngIf="mostrarResultado" id="resultado">
+    <div id="resultado"></div>
+    <div *ngIf="mostrarResultado&&resultado">
         <div class="card card-main mt-3">
             <div class="card-body">
-                <h1 class="section-title mt-3 mb-3">Resultado</h1>
-                <button class="btn btn-sm btn-secondary mb-3" (click)="gerarPdf()">Download PDF</button>
-                <div class="alert alert-warning mb-3" *ngIf="resultado.valorCusto < 1000">
-                    Essa atividade não é representativa comparada com outras atividades do eixo
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <h1 class="section-title mt-3 mb-3">Resultado</h1>
+                        <button class="btn btn-sm btn-secondary mb-3" (click)="gerarPdf()">Download PDF</button>
+                        <p>
+                            O custo <strong>{{resultado.tipoCusto ==
+                                enumTipoCusto.Recorrente?enumTipoCustoTexto.Recorrente:enumTipoCustoTexto.NaoRecorrente}}</strong>
+                            previsto para a Terra Indígena <strong>{{resultado.terraIndigena}}</strong><br>
+                            com o nível de implementação <strong>{{resultado.textoNivelImplementacaoAlmejado}}</strong>
+                            <span *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente"> por ano</span> é de:
+                        </p>
+                        <div class="mt-3">
+                            <h2 class="result-price text-success mb-0">
+                                {{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}
+                                <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
+                                <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <canvasjs-chart [options]="chartOptions" id="chart" [styles]="{width: '100%', height:'300px'}"
+                            (chartInstance)="obterReferenciaGrafico($event)"></canvasjs-chart>
+                    </div>
                 </div>
-                <h4> Eixo Temático: {{eixoSelecionado?.nome}} </h4>
-                <p class="mb-3">
-                    O custo <strong>{{resultado.tipoCusto}}</strong> previsto para
-                    <strong>{{atividadeSelecionada?.nome}}</strong>, com o nível de implementação
-                    <strong>{{resultado.textoNivelImplementacao}}</strong> na
-                    Terra Indígena <strong>{{terraIndigenaSelecionada?.nome}}</strong> é de:
-                </p>
-                <h2 class="result-price mb-3">
-                    <span *ngIf="resultado.valorCusto >= 1000">
-                        {{resultado.valorCusto | currency:'BRL':'symbol':'1.0-0' }}
-                    </span>
-                    <span *ngIf="resultado.valorCusto < 1000">
-                        < R$1.000</span>
-                </h2>
-                <p>Esses valores calculados considerando que a Terra Indígena tenha os seguintes parâmetros:</p>
-                <div class="table-responsive col-md-6">
-                    <table class="table table-bordered table-sm">
-                        <tbody>
-                            <tr *ngFor="let item of obterVariaveisUtilizadas()">
-                                <td>{{item.variavel}}</td>
-                                <td>
-                                    <span>{{item.valor}}</span>
-                                    <span *ngIf="item.alterada"
-                                        style="background: lightyellow; font-style: italic; font-size: 14px;">
-                                        (Informação alterada pelo usuário)
-                                    </span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+            </div>
+        </div>
+        <div class="card card-main mt-3">
+            <div class="card-body">
+                <h1 class="section-title mt-3 mb-3">Descrição Por Eixo Temático</h1>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of resultado.eixos">
+                        <div class="card h-100">
+                            <div class="card-header">{{eixo.nome}}</div>
+                            <div class="card-body">
+                                <h4 class="text-success">
+                                    {{ eixo.valor | currency:'BRL':'symbol':'1.0-0'}}
+                                    <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
+                                    <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
+                                </h4>
+                                <p>
+                                    {{eixo.descricao}}
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <button class="btn btn-sm btn-secondary" (click)="modalEixoDetalhes(eixo)">
+                                    Saiba mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

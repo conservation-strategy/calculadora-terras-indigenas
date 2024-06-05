@@ -1,5 +1,5 @@
 interface TerraIndigena {
-  selecionada?: boolean;
+  grupo: number;
   nome: string;
   tamanho: number;
   aldeias: number;
@@ -9,7 +9,6 @@ interface TerraIndigena {
   complexidadeAcesso: number;
   localSede: number;
   nivelImplementacaoAtual: number[];
-  custoContexto: boolean;
 }
 
 export default TerraIndigena;

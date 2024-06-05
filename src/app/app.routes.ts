@@ -19,13 +19,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'calculadora-simplificada',
-    loadComponent: () =>
-      import(
-        './pages/calculadora-simplificada/calculadora-simplificada.component'
-      ).then((c) => c.CalculadoraSimplificadaComponent),
-  },
-  {
     path: 'calculadora-agrupada',
     loadComponent: () =>
       import(
@@ -33,11 +26,11 @@ export const routes: Routes = [
       ).then((c) => c.CalculadoraAgrupadaComponent),
   },
   {
-    path: 'calculadora-detalhada',
+    path: 'calculadora-terra-indigena',
     loadComponent: () =>
       import(
-        './pages/calculadora-detalhada/calculadora-detalhada.component'
-      ).then((c) => c.CalculadoraDetalhadaComponent),
+        './pages/calculadora-terra-indigena/calculadora-terra-indigena.component'
+      ).then((c) => c.CalculadoraTerraIndigenaComponent),
   },
   {
     path: 'metodologia',

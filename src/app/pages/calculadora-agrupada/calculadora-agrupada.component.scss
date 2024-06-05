@@ -1,25 +1,6 @@
-form label {
-    font-size: 12px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  select:required:invalid {
-    color: gray;
-  }
-  
-  option[value=""][disabled] {
-    display: none;
-  }
-  
-  option {
-    color: var(--bs-body-color);
-  }
-  
 .form-check-terra-indigena label {
-    font-size: 12px;
-    font-weight: unset;
+  font-size: 12px;
+  font-weight: unset;
 }
 
 .form-check-terra-indigena input {
@@ -27,7 +8,8 @@ form label {
   height: 14px;
 }
 
-th, td {
+th,
+td {
   font-size: 12px;
   vertical-align: middle;
 }

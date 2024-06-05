@@ -29,6 +29,16 @@ export class CalculadoraService {
     return this.http.get('./assets/json/eixos.json');
   }
 
+  obterListaNivelImplementacaoAtual(): Observable<any> {
+    return this.http.get('./assets/json/lista_nivel_implementacao_atual.json');
+  }
+
+  obterListaNivelImplementacaoAlmejada(): Observable<any> {
+    return this.http.get(
+      './assets/json/lista_nivel_implementacao_almejada.json'
+    );
+  }
+
   obterIPAddress() {
     return this.http.get('https://api.ipify.org/?format=json');
   }
@@ -37,6 +47,80 @@ export class CalculadoraService {
     coeficientes: Coeficiente[],
     nivelImplementacaoAlmejado: number,
     nivelImplementacaoAtual: number[],
+    tamanho: number,
+    populacao: number,
+    aldeias: number,
+    grauDiversidade: number,
+    localSede: number,
+    grauAmeaca: number,
+    complexidadeAcesso: number,
+    inflacao: number
+  ): number[] {
+    const resultados: number[] = [];
+
+    coeficientes.forEach((coeficiente: any, index: number) => {
+      let resultado = this.__calcularCoeficiente(
+        coeficiente,
+        nivelImplementacaoAtual[index],
+        nivelImplementacaoAlmejado,
+        tamanho,
+        populacao,
+        aldeias,
+        grauDiversidade,
+        grauAmeaca,
+        complexidadeAcesso,
+        localSede
+      );
+      if (inflacao > 0) {
+        resultado = resultado + resultado * (inflacao / 100);
+      }
+
+      resultados.push(resultado);
+    });
+    return resultados;
+  }
+
+  calculadoraAgrupada(
+    coeficientes: Coeficiente[],
+    nivelImplementacaoAtual: number,
+    nivelImplementacaoAlmejado: number,
+    tamanho: number,
+    populacao: number,
+    aldeias: number,
+    grauDiversidade: number,
+    localSede: number,
+    grauAmeaca: number,
+    complexidadeAcesso: number,
+    inflacao: number
+  ): number[] {
+    const resultados: number[] = [];
+
+    coeficientes.forEach((coeficiente: any) => {
+      let resultado = this.__calcularCoeficiente(
+        coeficiente,
+        nivelImplementacaoAtual,
+        nivelImplementacaoAlmejado,
+        tamanho,
+        populacao,
+        aldeias,
+        grauDiversidade,
+        grauAmeaca,
+        complexidadeAcesso,
+        localSede
+      );
+      if (inflacao > 0) {
+        resultado = resultado + resultado * (inflacao / 100);
+      }
+
+      resultados.push(resultado);
+    });
+    return resultados;
+  }
+
+  calculadoraTerraIndigena(
+    coeficientes: Coeficiente[],
+    nivelImplementacaoAtual: number[],
+    nivelImplementacaoAlmejado: number,
     tamanho: number,
     populacao: number,
     aldeias: number,

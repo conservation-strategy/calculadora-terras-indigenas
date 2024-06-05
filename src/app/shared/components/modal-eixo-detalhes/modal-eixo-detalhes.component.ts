@@ -13,5 +13,5 @@ import Eixo from '../../../core/models/Eixo';
 export class ModalEixoDetalhesComponent {
   activeModal = inject(NgbActiveModal);
 
-  @Input() eixo: Eixo | null = null;
+  @Input() eixo!: Eixo;
 }
