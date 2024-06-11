@@ -2,6 +2,7 @@
   {
     "nome": "Governança",
     "descricao": "Estruturas e processos das associações que orientam a tomada de decisões e a gestão das Terras Indígenas",
+    "imagem": "governanca.png",
     "atividades": [
       {
         "posicao": 0,
@@ -89,6 +90,7 @@
   {
     "nome": "Fiscalização e Proteção",
     "descricao": "Estratégias e infraestruturas de proteção, defesa e mitigação dos impactos existentes nas Terras Indígenas",
+    "imagem": "fiscalização_e_protecao.png",
     "atividades": [
       {
         "posicao": 7,
@@ -169,6 +171,7 @@
   {
     "nome": "Fortalecimento Cultural",
     "descricao": "Ações voltadas à resistência e fortalecimento cultural dos Povos Indígenas",
+    "imagem": "fortalecimento_cultural.png",
     "atividades": [
       {
         "posicao": 13,
@@ -208,6 +211,7 @@
   {
     "nome": "Geração de renda",
     "descricao": "Estratégias e infraestruturas para promover alternativas econômicas que valorizem e fortaleçam a realidade socioambiental das Terras Indígenas",
+    "imagem": "geracao_de_renda.png",
     "atividades": [
       {
         "posicao": 16,
@@ -236,6 +240,7 @@
   {
     "nome": "Soberania Alimentar",
     "descricao": "Ações para a garantia da alimentação saudável, fortalecimento da agroecologia, culinária tradicional e pequenas criações",
+    "imagem": "soberania_alimentar.png",
     "atividades": [
       {
         "posicao": 18,
@@ -277,6 +282,7 @@
   {
     "nome": "Infraestruturas complementares",
     "descricao": "Investimentos complementares em infraestrutura e ações de comunicação, energia e transporte",
+    "imagem": "infraestruturas_complementares.png",
     "atividades": [
       {
         "posicao": 21,
@@ -333,6 +339,7 @@
   {
     "nome": "Saúde e saneamento complementar",
     "descricao": "Ações complementares à assistência usual do governo sobre saúde e saneamento",
+    "imagem": "saude_e_saneamento_complementar.png",
     "atividades": [
       {
         "posicao": 25,
@@ -365,6 +372,7 @@
   {
     "nome": "Educação complementar",
     "descricao": "Aprimoramento da gestão, aspectos curriculares e didáticos das escolas indígenas e outras atividades de formação relacionadas à educação",
+    "imagem": "educacao_complementar.png",
     "atividades": [
       {
         "posicao": 27,
