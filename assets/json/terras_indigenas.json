@@ -123,7 +123,7 @@
   {
     "grupo": 2,
     "nome": "Arara",
-    "tamanho": 274010.02,
+    "tamanho": 274010,
     "aldeias": 6,
     "populacao": 378,
     "grauDiversidade": 1,
@@ -135,7 +135,7 @@
   {
     "grupo": 2,
     "nome": "Arara da Volta Grande do Xingu",
-    "tamanho": 25524.59,
+    "tamanho": 25524,
     "aldeias": 4,
     "populacao": 254,
     "grauDiversidade": 1,
@@ -147,7 +147,7 @@
   {
     "grupo": 2,
     "nome": "Araweté/Igarapé Ipixuna",
-    "tamanho": 940900.8,
+    "tamanho": 940900,
     "aldeias": 21,
     "populacao": 590,
     "grauDiversidade": 2,
@@ -159,7 +159,7 @@
   {
     "grupo": 2,
     "nome": "Badjônkôre",
-    "tamanho": 221981.64,
+    "tamanho": 221981,
     "aldeias": 1,
     "populacao": 140,
     "grauDiversidade": 1,
@@ -171,7 +171,7 @@
   {
     "grupo": 2,
     "nome": "Cachoeira Seca do Iriri",
-    "tamanho": 733688.25,
+    "tamanho": 733688,
     "aldeias": 5,
     "populacao": 590,
     "grauDiversidade": 1,
@@ -207,7 +207,7 @@
   {
     "grupo": 2,
     "nome": "Kararaô",
-    "tamanho": 330837.54,
+    "tamanho": 330837,
     "aldeias": 4,
     "populacao": 85,
     "grauDiversidade": 1,
@@ -219,7 +219,7 @@
   {
     "grupo": 2,
     "nome": "Koatinemo",
-    "tamanho": 387834.25,
+    "tamanho": 387834,
     "aldeias": 6,
     "populacao": 200,
     "grauDiversidade": 1,
@@ -231,7 +231,7 @@
   {
     "grupo": 2,
     "nome": "Kuruáya",
-    "tamanho": 166784.25,
+    "tamanho": 166784,
     "aldeias": 4,
     "populacao": 164,
     "grauDiversidade": 1,
@@ -243,7 +243,7 @@
   {
     "grupo": 2,
     "nome": "Paquiçamba",
-    "tamanho": 4384.27,
+    "tamanho": 4384,
     "aldeias": 7,
     "populacao": 315,
     "grauDiversidade": 1,
@@ -255,7 +255,7 @@
   {
     "grupo": 2,
     "nome": "Terena Gleba Iriri",
-    "tamanho": 30588.81,
+    "tamanho": 30588,
     "aldeias": 4,
     "populacao": 271,
     "grauDiversidade": 1,
@@ -267,7 +267,7 @@
   {
     "grupo": 2,
     "nome": "Xipaya",
-    "tamanho": 178723.02,
+    "tamanho": 178723,
     "aldeias": 5,
     "populacao": 207,
     "grauDiversidade": 1,
