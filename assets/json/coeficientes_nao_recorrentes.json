@@ -15,7 +15,8 @@
     "grau_divers": 0,
     "d_loc_sede": -0.4051654,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 6,
@@ -33,7 +34,8 @@
     "grau_divers": 0.0226082,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 8,
@@ -51,7 +53,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": -0.1337386,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 12,
@@ -69,7 +72,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 14,
@@ -87,7 +91,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 17,
@@ -105,7 +110,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 19,
@@ -123,7 +129,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": -0.2044182,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 22,
@@ -141,7 +148,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 23,
@@ -159,7 +167,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 24,
@@ -177,7 +186,8 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 27,
@@ -195,7 +205,8 @@
     "grau_divers": 0.3920204,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   },
   {
     "atividade": 29,
@@ -213,6 +224,7 @@
     "grau_divers": 0,
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
-    "ln_aldeia": 0
+    "ln_aldeia": 0,
+    "constante": 0
   }
 ]
