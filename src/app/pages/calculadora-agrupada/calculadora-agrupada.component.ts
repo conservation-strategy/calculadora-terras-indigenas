@@ -109,11 +109,13 @@ export class CalculadoraAgrupadaComponent implements OnInit {
   chartOptions = {
     animationEnabled: true,
     axisY: {
+      includeZero: true,
       labelFormatter: (e: any) => {
         return this.currencyPipe.transform(e.value, 'BRL', 'symbol', '1.0-0');
       },
     },
     axisY2: {
+      includeZero: true,
       labelFormatter: (e: any) => {
         return this.currencyPipe.transform(e.value, 'BRL', 'symbol', '1.0-0');
       },
@@ -359,9 +361,9 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       populacao,
       aldeias,
       grauDiversidade,
-      localSede,
       grauAmeaca,
       complexidadeAcesso,
+      localSede,
       inflacao
     );
     valorEixo = this.calculatorService.obterSomatoria(
@@ -402,6 +404,11 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       this.mostrarCarregando = false;
       this.mostrarResultado = true;
       this.atualizarGrafico();
+
+      this.resultado?.terrasIndigenas.sort(
+        (a: ResultadoTerraIndigena, b: ResultadoTerraIndigena) =>
+          a.nome.localeCompare(b.nome)
+      );
     }, 1000);
   }
 
@@ -410,7 +417,10 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       this.chartOptions.data = [];
       this.resultado.eixosSelecionados.forEach((eixo: string) => {
         const dataPoints = [] as any;
-        this.resultado!.terrasIndigenas.forEach((terraIndigena: any) => {
+        this.resultado!.terrasIndigenas.sort(
+          (a: ResultadoTerraIndigena, b: ResultadoTerraIndigena) =>
+            b.nome.localeCompare(a.nome)
+        ).forEach((terraIndigena: any) => {
           terraIndigena.resultadoEixos.forEach((item: any) => {
             if (item.eixo == eixo) {
               dataPoints.push({

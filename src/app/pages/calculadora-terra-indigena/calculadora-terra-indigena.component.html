@@ -5,7 +5,7 @@
             <div class="card card-main">
                 <div class="card-body">
                     <section>
-                        <h1 class="section-title">Guia de Uso</h1>
+                        <h1 class="section-title mb-3">Guia de Uso</h1>
                         <p>
                             Calcula o custo total de implementação de todos os eixos temáticos em uma Terra Indígena
                             selecionada, podendo o usuário alterar os valores das características da Terra Indígena
@@ -177,21 +177,14 @@
                                             temático.
                                         </p>
                                         <p>
-                                            Ao selecionar o eixo, será fornecido um detalhamento das atividades e itens
-                                            que caracterizam a implementação do eixo nos níveis "básico" ou "bom". Essa
-                                            lista de itens é apenas uma referência e pode variar de acordo com a
-                                            realidade de cada Terra Indígena, ou seja, é uma sugestão de características
-                                            dos níveis de implementação.
-                                        </p>
-                                        <p>
                                             O "nível de implementação atual" é definido pelo conjunto de itens (ações,
                                             equipamentos, pessoal etc.) da terra indígena selecionada. Para as terras
-                                            indígenas com dados de custos na amostra “o nível de implementação atual”
+                                            indígenas com dados de custos na amostra "o nível de implementação atual"
                                             aparece automaticamente com as informações levantadas junto às organizações,
-                                            esses valores estão no campo “Situação em 2022”. Para as demais terras
+                                            esses valores estão no campo "Situação em 2022". Para as demais terras
                                             indígenas (Terras Indígenas Xingu - sem dados de custos na amostra; e
-                                            Simulação - outra Terra Indígena), o usuário deverá selecionar qual seria o
-                                            nível de implementação atual podendo ser: "Nulo"; "Pré-básico"; "Básico";
+                                            Simulação - Terra indígena simulada), o usuário deverá selecionar qual seria
+                                            o nível de implementação atual podendo ser: "Nulo"; "Pré-básico"; "Básico";
                                             "Intermediário" e "Bom".
                                         </p>
                                         <p>
@@ -201,12 +194,18 @@
                                         </p>
                                         <p>
                                             O nível de implementação básico atende ao mínimo necessário para a
-                                            realização
-                                            da atividade. O nível de implementação bom vai um pouco além, adicionando
-                                            novas ações e melhorias. No entanto, é importante ressaltar que o nível bom,
-                                            mesmo sendo melhor que o básico, ainda apresenta limitações ou aspectos que
-                                            precisam ser aprimorados, indicando que há espaço para melhorar o desempenho
-                                            das atividades.
+                                            realização da atividade. O nível de implementação bom vai um pouco além,
+                                            adicionando novas ações e melhorias. No entanto, é importante ressaltar que
+                                            o nível bom, mesmo sendo melhor que o básico, ainda apresenta limitações ou
+                                            aspectos que precisam ser aprimorados, indicando que há espaço para melhorar
+                                            o desempenho das atividades.
+                                        </p>
+                                        <p>
+                                            No resultado, em "Saiba mais" de cada eixo, será fornecido um detalhamento
+                                            das atividades e itens que caracterizam a implementação dos eixos nos níveis
+                                            "básico" ou "bom". Essa lista de itens é apenas uma referência e pode variar
+                                            de acordo com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
+                                            características dos níveis de implementação.
                                         </p>
                                     </div>
                                 </div>
@@ -486,7 +485,11 @@
                         </p>
                         <div class="mt-3">
                             <h2 class="result-price text-success mb-0">
-                                {{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}
+                                <span *ngIf="resultado.valorTotal >= 1000">
+                                    {{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}
+                                </span>
+                                <span *ngIf="resultado.valorTotal < 1000"> &lt; R$1.000 </span>
+
                                 <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
                                 <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
                             </h2>
@@ -506,13 +509,22 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of resultado.eixos">
                         <div class="card h-100">
-                            <div class="card-header">{{eixo.nome}}</div>
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/images/eixos/{{eixo.imagem}}" alt="" style="width: 40px;">
+                                    <h6 class="ms-2 mb-0"><strong>{{eixo.nome}}</strong></h6>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <h4 class="text-success">
-                                    {{ eixo.valor | currency:'BRL':'symbol':'1.0-0'}}
+
+                                <h5 class="text-success">
+                                    <span *ngIf="eixo&&eixo.valor&&eixo.valor >= 1000">
+                                        {{eixo.valor | currency:'BRL':'symbol':'1.0-0' }}
+                                    </span>
+                                    <span *ngIf="eixo&&eixo.valor&&eixo.valor < 1000"> &lt; R$1.000 </span>
                                     <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
                                     <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
-                                </h4>
+                                </h5>
                                 <p>
                                     {{eixo.descricao}}
                                 </p>

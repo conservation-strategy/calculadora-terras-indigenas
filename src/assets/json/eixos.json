@@ -2,6 +2,7 @@
   {
     "nome": "Governança",
     "descricao": "Estruturas e processos das associações que orientam a tomada de decisões e a gestão das Terras Indígenas",
+    "imagem": "governanca.png",
     "atividades": [
       {
         "posicao": 0,
@@ -89,6 +90,7 @@
   {
     "nome": "Fiscalização e Proteção",
     "descricao": "Estratégias e infraestruturas de proteção, defesa e mitigação dos impactos existentes nas Terras Indígenas",
+    "imagem": "fiscalização_e_protecao.png",
     "atividades": [
       {
         "posicao": 7,
@@ -169,6 +171,7 @@
   {
     "nome": "Fortalecimento Cultural",
     "descricao": "Ações voltadas à resistência e fortalecimento cultural dos Povos Indígenas",
+    "imagem": "fortalecimento_cultural.png",
     "atividades": [
       {
         "posicao": 13,
@@ -191,7 +194,7 @@
           "Recorrente (anual): projeto de pesquisa cultural realizado por pesquisadores indígenas / participação anual em atividade de intercâmbio"
         ],
         "custoBom": [
-          "Recorrente (anual): promoção anual de evento de intercâmbio"
+          "Recorrente (anual): para esta atividade foi definido apenas o nível básico"
         ]
       },
       {
@@ -200,7 +203,7 @@
         "descricao": "Equipe necessárias para a realização das atividades voltadas à cultura",
         "custoBasico": ["Recorrente (anual): agente cultural indígena na TI"],
         "custoBom": [
-          "Recorrente (anual): equipe de agentes culturais indígenas, por povo, atuando em patrimônio cultural"
+          "Recorrente (anual): para esta atividade foi definido apenas o nível básico"
         ]
       }
     ]
@@ -208,6 +211,7 @@
   {
     "nome": "Geração de renda",
     "descricao": "Estratégias e infraestruturas para promover alternativas econômicas que valorizem e fortaleçam a realidade socioambiental das Terras Indígenas",
+    "imagem": "geracao_de_renda.png",
     "atividades": [
       {
         "posicao": 16,
@@ -236,6 +240,7 @@
   {
     "nome": "Soberania Alimentar",
     "descricao": "Ações para a garantia da alimentação saudável, fortalecimento da agroecologia, culinária tradicional e pequenas criações",
+    "imagem": "soberania_alimentar.png",
     "atividades": [
       {
         "posicao": 18,
@@ -264,19 +269,22 @@
         ]
       },
       {
-        "posicao": 21,
+        "posicao": 20,
         "nome": "Corpo técnico",
         "descricao": "Equipe necessária para realização das ações de soberania alimentar",
         "custoBasico": [
           "Recorrente (anual): Agente na TI para atuar no tema de soberania alimentar"
         ],
-        "custoBom": []
+        "custoBom": [
+          "Recorrente (anual): para esta atividade foi definido apenas o nível básico"
+        ]
       }
     ]
   },
   {
     "nome": "Infraestruturas complementares",
     "descricao": "Investimentos complementares em infraestrutura e ações de comunicação, energia e transporte",
+    "imagem": "infraestruturas_complementares.png",
     "atividades": [
       {
         "posicao": 21,
@@ -333,6 +341,7 @@
   {
     "nome": "Saúde e saneamento complementar",
     "descricao": "Ações complementares à assistência usual do governo sobre saúde e saneamento",
+    "imagem": "saude_e_saneamento_complementar.png",
     "atividades": [
       {
         "posicao": 25,
@@ -365,6 +374,7 @@
   {
     "nome": "Educação complementar",
     "descricao": "Aprimoramento da gestão, aspectos curriculares e didáticos das escolas indígenas e outras atividades de formação relacionadas à educação",
+    "imagem": "educacao_complementar.png",
     "atividades": [
       {
         "posicao": 27,
@@ -386,7 +396,7 @@
           "Não recorrente (eventual): esboço de documento de apoio e referência sobre educação indígena"
         ],
         "custoBom": [
-          "Recorrente (anual): Formações relacionadas à educação complementar (ex.: formação sobre a pauta indígena para professores, oficina sobre materiais didáticos na língua materna, etc.)",
+          "Recorrente (anual): para esta atividade foi definido apenas o nível básico",
           "Não recorrente (eventual): documento de apoio e referência sobre educação indígena"
         ]
       }

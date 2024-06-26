@@ -5,7 +5,7 @@
             <div class="card card-main">
                 <div class="card-body">
                     <section>
-                        <h1 class="section-title mt-3 mb-3">Guia de Uso</h1>
+                        <h1 class="section-title mb-3">Guia de Uso</h1>
                         <p>
                             Calcula o custo total de implementação de eixos temáticos selecionados em uma ou mais Terras
                             Indígenas. O usuário pode escolher o nível de implementação desejado (básico ou bom) para
@@ -29,25 +29,41 @@
                             </div>
                             <div ngbAccordionItem [collapsed]="true">
                                 <h2 ngbAccordionHeader>
-                                    <button ngbAccordionButton>Nível de implementação básico e bom</button>
+                                    <button ngbAccordionButton>Nível de implementação</button>
                                 </h2>
                                 <div ngbAccordionCollapse>
                                     <div ngbAccordionBody>
                                         <p>
-                                            O nível de implementação é definido para cada atividade segundo métricas
-                                            diferentes. Após selecionada a atividade, é exibida uma lista de itens
-                                            que definem o nível de implementação básico e o nível de implementação
-                                            bom. Essa lista de itens é apenas uma referência e pode variar de acordo
-                                            com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
-                                            características dos níveis de implementação.
+                                            A definição do nível de implementação varia por atividade em cada eixo
+                                            temático.
+                                        </p>
+                                        <p>
+                                            O "nível de implementação atual" é definido pelo conjunto de itens (ações,
+                                            equipamentos, pessoal etc.) que a terra indígena tem. Nessa Versão Agrupada,
+                                            como podemos escolher mais de uma Terra Indígena, o usuário deverá
+                                            selecionar qual seria o nível de implementação atual podendo ser: "Nulo";
+                                            "Pré-básico"; "Básico"; "Intermediário" e "Bom".
+                                        </p>
+                                        <p>
+                                            O "nível de implementação almejado" define os itens que permitirão o alcance
+                                            do objetivo após um ano de investimento e podem ser nos níveis "Básico" ou
+                                            "Bom".
                                         </p>
                                         <p>
                                             O nível de implementação básico atende ao mínimo necessário para a
-                                            realização da atividade. O nível de implementação bom vai um pouco além,
-                                            adicionando novas ações e melhorias. No entanto, é importante ressaltar
-                                            que o nível bom, mesmo sendo melhor que o básico, ainda apresenta
-                                            limitações ou aspectos que precisam ser aprimorados, indicando que há
-                                            espaço para melhorar o desempenho das atividades.
+                                            realização
+                                            da atividade. O nível de implementação bom vai um pouco além, adicionando
+                                            novas ações e melhorias. No entanto, é importante ressaltar que o nível bom,
+                                            mesmo sendo melhor que o básico, ainda apresenta limitações ou aspectos que
+                                            precisam ser aprimorados, indicando que há espaço para melhorar o desempenho
+                                            das atividades.
+                                        </p>
+                                        <p>
+                                            No resultado, em Download PDF, será fornecido um detalhamento das atividades
+                                            e itens que caracterizam a implementação dos eixos selecionados nos níveis
+                                            "básico" ou "bom". Essa lista de itens é apenas uma referência e pode variar
+                                            de acordo com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
+                                            características dos níveis de implementação.
                                         </p>
                                     </div>
                                 </div>

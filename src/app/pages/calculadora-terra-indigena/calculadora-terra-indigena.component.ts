@@ -249,37 +249,51 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       this.calculadoraForm.controls.terraIndigena.value;
 
     if (terraIndigena) {
-      const grupoUmSelecionado = terraIndigena.grupo === 1;
-      if (grupoUmSelecionado) {
-        this.listaNivelImplementacaoAtual.unshift({
-          label: this.enumNivelImplmentacaoTexto.situacaoAvaliada2022,
-          value: this.enumNivelImplementacao.situacaoAvaliada2022,
-        });
-      } else {
-        this.listaNivelImplementacaoAtual =
-          this.listaNivelImplementacaoAtual.filter(
-            (x) => x.value != this.enumNivelImplementacao.situacaoAvaliada2022
-          );
-      }
+      setTimeout(() => {
+        const grupoUmSelecionado = terraIndigena.grupo === 1;
+        const situacaoAvaliada2022Valor =
+          this.enumNivelImplementacao.situacaoAvaliada2022;
+        const situacaoAvaliada2022Texto =
+          this.enumNivelImplmentacaoTexto.situacaoAvaliada2022;
+        const situacaoExisteNaLista = this.listaNivelImplementacaoAtual.some(
+          (x) => x.value == situacaoAvaliada2022Valor
+        );
 
-      this.calculadoraForm.patchValue({
-        tamanho: terraIndigena.tamanho ? terraIndigena.tamanho : null,
-        aldeias: terraIndigena.aldeias ? terraIndigena.aldeias : null,
-        populacao: terraIndigena.populacao ? terraIndigena.populacao : null,
-        grauDiversidade: terraIndigena.grauDiversidade
-          ? terraIndigena.grauDiversidade
-          : null,
-        grauAmeaca: terraIndigena.grauAmeaca ? terraIndigena.grauAmeaca : null,
-        complexidadeAcesso: terraIndigena.complexidadeAcesso
-          ? terraIndigena.complexidadeAcesso
-          : null,
-        localSede:
-          terraIndigena.localSede >= 0 ? terraIndigena.localSede : null,
-        nivelImplementacaoAtual: grupoUmSelecionado
-          ? this.enumNivelImplementacao.situacaoAvaliada2022
-          : null,
-      });
-      this.terraIndigenaSelecionada = terraIndigena;
+        if (grupoUmSelecionado) {
+          if (!situacaoExisteNaLista) {
+            this.listaNivelImplementacaoAtual.unshift({
+              label: situacaoAvaliada2022Texto,
+              value: situacaoAvaliada2022Valor,
+            });
+          }
+        } else {
+          this.listaNivelImplementacaoAtual =
+            this.listaNivelImplementacaoAtual.filter(
+              (x) => x.value != situacaoAvaliada2022Valor
+            );
+        }
+
+        this.calculadoraForm.patchValue({
+          tamanho: terraIndigena.tamanho ? terraIndigena.tamanho : null,
+          aldeias: terraIndigena.aldeias ? terraIndigena.aldeias : null,
+          populacao: terraIndigena.populacao ? terraIndigena.populacao : null,
+          grauDiversidade: terraIndigena.grauDiversidade
+            ? terraIndigena.grauDiversidade
+            : null,
+          grauAmeaca: terraIndigena.grauAmeaca
+            ? terraIndigena.grauAmeaca
+            : null,
+          complexidadeAcesso: terraIndigena.complexidadeAcesso
+            ? terraIndigena.complexidadeAcesso
+            : null,
+          localSede:
+            terraIndigena.localSede >= 0 ? terraIndigena.localSede : null,
+          nivelImplementacaoAtual: grupoUmSelecionado
+            ? this.enumNivelImplementacao.situacaoAvaliada2022
+            : null,
+        });
+        this.terraIndigenaSelecionada = terraIndigena;
+      }, 200);
     }
   }
 
@@ -327,21 +341,22 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       tipoCusto,
       inflacao,
     } = this.calculadoraForm.value;
-
-    const coeficientes =
-      Number(tipoCusto) == this.enumTipoCusto.Recorrente
-        ? this.coeficientesRecorrentes
-        : this.coeficientesNaoRecorrentes;
+    const coeficienteRecorrente =
+      Number(tipoCusto) == this.enumTipoCusto.Recorrente;
+    const coeficientes = coeficienteRecorrente
+      ? this.coeficientesRecorrentes
+      : this.coeficientesNaoRecorrentes;
 
     const listaNivelImplementacaoAtual =
       nivelImplementacaoAtual ==
       this.enumNivelImplementacao.situacaoAvaliada2022
         ? terraIndigenaSelecionada.nivelImplementacaoAtual
-        : Array(29).fill(nivelImplementacaoAtual);
+        : Array(29).fill(Number(nivelImplementacaoAtual));
 
     const resultadoCoeficientes =
       this.calculatorService.calculadoraTerraIndigena(
         coeficientes,
+        coeficienteRecorrente,
         listaNivelImplementacaoAtual,
         Number(nivelImplementacaoAlmejado),
         Number(tamanho),
@@ -364,6 +379,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           (nivel: any) => nivel.value == Number(nivelImplementacaoAlmejado)
         )!.label,
     };
+    console.log(this.resultado);
     this.mostrarDivResultado();
   }
 
@@ -439,6 +455,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
   gerarPdf() {
     if (this.resultado) {
+      console.log(this.resultado);
       const dataHora = new Date().toLocaleString();
       const variaveis = this.obterVariaveisUtilizadas();
       const docDefinition = {
@@ -488,6 +505,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
               ' é de:',
             ],
           },
+          '\n',
           {
             text: [
               {
@@ -498,7 +516,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                   '1.0-0'
                 )}`,
                 bold: true,
-                fontSize: 16,
+                fontSize: 20,
               },
               this.resultado?.tipoCusto === this.enumTipoCusto.Recorrente
                 ? ' /ano'
@@ -553,6 +571,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                 {
                   text: eixo.nome,
                   bold: true,
+                  fontSize: 14,
                 },
                 {
                   text: [
@@ -579,6 +598,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                       {
                         text: atividade.nome,
                         bold: true,
+                        fontSize: 14,
                       },
                       atividade.descricao,
                       {
@@ -593,7 +613,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                       },
                       {
                         type: 'none' as UnorderedListType,
-                        ul: atividade.custoBasico.map((x) => {
+                        ul: atividade.custoBom.map((x) => {
                           return [
                             {
                               text: [{ text: 'Bom: ', bold: true }, x],
