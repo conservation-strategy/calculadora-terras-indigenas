@@ -1,22 +1,18 @@
 [
   {
-    "label": "Nula",
+    "label": "Não tem investimento",
     "value": 0
   },
   {
-    "label": "Pré-Básico",
+    "label": "Investimento precários",
     "value": 5
   },
   {
-    "label": "Básico",
+    "label": "Investimento básico",
     "value": 10
   },
   {
-    "label": "Intermediario",
-    "value": 15
-  },
-  {
-    "label": "Bom",
+    "label": "Investimento bom",
     "value": 20
   }
 ]
