@@ -97,19 +97,6 @@ export class CalculadoraService {
     localSede: number,
     inflacao: number
   ): number[] {
-    console.log('coeficientes');
-    console.log(coeficientes);
-    console.log('niveisImplementacaoAtual: ', niveisImplementacaoAtual);
-    console.log('nivelImplementacaoAlmejado: ', nivelImplementacaoAlmejado);
-    console.log('tamanho: ', tamanho);
-    console.log('populacao: ', populacao);
-    console.log('aldeias: ', aldeias);
-    console.log('grauDiversidade: ', grauDiversidade);
-    console.log('localSede: ', localSede);
-    console.log('grauAmeaca: ', grauAmeaca);
-    console.log('complexidadeAcesso: ', complexidadeAcesso);
-    console.log('inflacao: ', inflacao);
-
     const resultados: number[] = [];
     const listaAtividadeSemCustoBom = [15, 16, 21, 27];
 
@@ -149,7 +136,6 @@ export class CalculadoraService {
 
       resultados.push(resultado);
     });
-    console.log(resultados);
     return resultados;
   }
 

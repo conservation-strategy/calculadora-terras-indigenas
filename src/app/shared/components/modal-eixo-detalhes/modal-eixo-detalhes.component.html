@@ -2,23 +2,30 @@
     <h4 class="modal-title">{{eixo.nome}} - Atividades</h4>
 </div>
 <div class="modal-body">
-    <div *ngFor="let atividade of eixo?.atividades">
-        <div>
-            <strong>{{atividade.nome}}</strong>:
-            <span>{{atividade.descricao}}</span>
+    <div ngbAccordion>
+        <div *ngFor="let atividade of eixo?.atividades" ngbAccordionItem [collapsed]="true">
+            <h2 ngbAccordionHeader>
+                <button ngbAccordionButton>{{atividade.nome}}</button>
+            </h2>
+            <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                    <div>{{atividade.descricao}}</div>
+                    <div *ngIf="false"></div><!-- HACK TO NOT DUPLICATE ITEMS -->
+                    <ul>
+                        <li *ngIf="atividade.custoBasico.length > 0">
+                            <span *ngFor="let custo of atividade.custoBasico">
+                                <strong>Básico </strong>{{custo}}
+                            </span>
+                        </li>
+                        <li *ngIf="atividade.custoBom.length > 0">
+                            <span *ngFor="let custo of atividade.custoBom">
+                                <strong>Bom </strong>{{custo}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <ul>
-            <li *ngIf="atividade.custoBasico.length > 0">
-                <span *ngFor="let custo of atividade.custoBasico">
-                    <strong>Básico </strong>{{custo}}
-                </span>
-            </li>
-            <li *ngIf="atividade.custoBom.length > 0">
-                <span *ngFor="let custo of atividade.custoBom">
-                    <strong>Bom </strong>{{custo}}
-                </span>
-            </li>
-        </ul>
     </div>
 </div>
 <div class="modal-footer">

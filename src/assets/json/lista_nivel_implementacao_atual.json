@@ -1,22 +1,18 @@
 [
   {
-    "label": "Nula",
+    "label": "Não tem investimento",
     "value": 0
   },
   {
-    "label": "Pré-Básico",
+    "label": "Nível de investimento precário",
     "value": 5
   },
   {
-    "label": "Básico",
+    "label": "Nível de investimento básico",
     "value": 10
   },
   {
-    "label": "Intermediario",
-    "value": 15
-  },
-  {
-    "label": "Bom",
+    "label": "Nível de investimento bom",
     "value": 20
   }
 ]

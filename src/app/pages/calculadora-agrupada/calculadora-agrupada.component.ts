@@ -33,12 +33,7 @@ import {
   PageOrientation,
   UnorderedListType,
 } from 'pdfmake/interfaces';
-import {
-  NivelImplmentacao,
-  NivelImplmentacaoTexto,
-  TipoCusto,
-  TipoCustoTexto,
-} from '../../shared/enums';
+import { TipoCusto, TipoCustoTexto } from '../../shared/enums';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import Atividade from '../../core/models/Atividade';
 import SelectOption from '../../core/models/SelectOption';
@@ -66,9 +61,6 @@ export class CalculadoraAgrupadaComponent implements OnInit {
   faQuestionCircle = faQuestionCircle;
   enumTipoCusto: typeof TipoCusto = TipoCusto;
   enumTipoCustoTexto: typeof TipoCustoTexto = TipoCustoTexto;
-  enumNivelImplementacao: typeof NivelImplmentacao = NivelImplmentacao;
-  enumNivelImplmentacaoTexto: typeof NivelImplmentacaoTexto =
-    NivelImplmentacaoTexto;
 
   terrasIndigenasSelecionadas: TerraIndigena[] = [];
   grupoTerrasIndigenas: {

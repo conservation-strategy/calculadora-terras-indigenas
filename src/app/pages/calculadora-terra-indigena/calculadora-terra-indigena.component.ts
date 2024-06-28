@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {
   FormControl,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -16,7 +17,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 
 import { HeaderComponent } from '../../core/layout/header/header.component';
-import { ModalEixoSelecaoComponent } from '../../shared/components/modal-eixo-selecao/modal-eixo-selecao.component';
 import { ModalEixoDetalhesComponent } from '../../shared/components/modal-eixo-detalhes/modal-eixo-detalhes.component';
 import { CalculadoraService } from '../../core/services/calculadora.service';
 import { NumbersOnlyDirective } from '../../shared/numbers-only.directive';
@@ -24,12 +24,7 @@ import { NumbersOnlyDirective } from '../../shared/numbers-only.directive';
 import TerraIndigena from '../../core/models/TerraIndigena';
 import Coeficiente from '../../core/models/Coeficiente';
 import Eixo from '../../core/models/Eixo';
-import {
-  NivelImplmentacao,
-  NivelImplmentacaoTexto,
-  TipoCusto,
-  TipoCustoTexto,
-} from '../../shared/enums';
+import { TipoCusto, TipoCustoTexto } from '../../shared/enums';
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -54,6 +49,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     NgbTooltipModule,
@@ -73,9 +69,6 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
   enumTipoCusto: typeof TipoCusto = TipoCusto;
   enumTipoCustoTexto: typeof TipoCustoTexto = TipoCustoTexto;
-  enumNivelImplementacao: typeof NivelImplmentacao = NivelImplmentacao;
-  enumNivelImplmentacaoTexto: typeof NivelImplmentacaoTexto =
-    NivelImplmentacaoTexto;
 
   grupoTerrasIndigenas: GrupoTerraIndigena[] = [];
   coeficientesRecorrentes: Coeficiente[] = [];
@@ -144,6 +137,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       Validators.required
     ),
     inflacao: new FormControl<number | null>(null),
+    permitirAlteracao: new FormControl<boolean>(false),
   });
 
   erroNivelImplementacao = false;
@@ -167,6 +161,11 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     this.calculatorService.obterIPAddress().subscribe((response: any) => {
       this.ipUsuario = response ? response?.ip : '';
     });
+  }
+
+  permitirAlterarTerraIndigena() {
+    const permitir = this.calculadoraForm.controls.permitirAlteracao.value;
+    this.habilitarDesabilitarEdicao(!!permitir);
   }
 
   obterTerrasIndigenas(): void {
@@ -251,10 +250,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     if (terraIndigena) {
       setTimeout(() => {
         const grupoUmSelecionado = terraIndigena.grupo === 1;
-        const situacaoAvaliada2022Valor =
-          this.enumNivelImplementacao.situacaoAvaliada2022;
-        const situacaoAvaliada2022Texto =
-          this.enumNivelImplmentacaoTexto.situacaoAvaliada2022;
+        const situacaoAvaliada2022Valor = 1;
+        const situacaoAvaliada2022Texto = 'Situação avaliada em 2022';
         const situacaoExisteNaLista = this.listaNivelImplementacaoAtual.some(
           (x) => x.value == situacaoAvaliada2022Valor
         );
@@ -288,17 +285,37 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             : null,
           localSede:
             terraIndigena.localSede >= 0 ? terraIndigena.localSede : null,
-          nivelImplementacaoAtual: grupoUmSelecionado
-            ? this.enumNivelImplementacao.situacaoAvaliada2022
-            : null,
+          nivelImplementacaoAtual: grupoUmSelecionado ? 1 : null,
+          permitirAlteracao: false,
         });
+        this.habilitarDesabilitarEdicao(false);
         this.terraIndigenaSelecionada = terraIndigena;
       }, 200);
     }
   }
 
-  trocarTipoCusto(): void {
-    const { tipoCusto } = this.calculadoraForm.value;
+  habilitarDesabilitarEdicao(habilitarEdicao: boolean) {
+    if (habilitarEdicao) {
+      this.calculadoraForm.controls['tamanho'].enable();
+      this.calculadoraForm.controls['populacao'].enable();
+      this.calculadoraForm.controls['aldeias'].enable();
+      this.calculadoraForm.controls['grauDiversidade'].enable();
+      this.calculadoraForm.controls['grauAmeaca'].enable();
+      this.calculadoraForm.controls['complexidadeAcesso'].enable();
+      this.calculadoraForm.controls['localSede'].enable();
+    } else {
+      this.calculadoraForm.controls['tamanho'].disable();
+      this.calculadoraForm.controls['populacao'].disable();
+      this.calculadoraForm.controls['aldeias'].disable();
+      this.calculadoraForm.controls['grauDiversidade'].disable();
+      this.calculadoraForm.controls['grauAmeaca'].disable();
+      this.calculadoraForm.controls['complexidadeAcesso'].disable();
+      this.calculadoraForm.controls['localSede'].disable();
+    }
+  }
+
+  trocarTipoCusto(event: any): void {
+    const tipoCusto = Number(event.target.value);
     this.calculadoraForm.patchValue({ nivelImplementacaoAlmejado: null });
     this.listaNivelImplementacaoAlmejado = [{ label: 'Básico', value: 10 }];
 
@@ -308,6 +325,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
   botaoCalcular(): void {
     this.calculadoraFormEnviado = true;
+    this.calculadoraForm.patchValue({ permitirAlteracao: true });
+    this.habilitarDesabilitarEdicao(true);
     this.limparResultado();
     this.validarFormulario();
   }
@@ -340,7 +359,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       complexidadeAcesso,
       tipoCusto,
       inflacao,
-    } = this.calculadoraForm.value;
+    } = this.calculadoraForm.getRawValue();
+
     const coeficienteRecorrente =
       Number(tipoCusto) == this.enumTipoCusto.Recorrente;
     const coeficientes = coeficienteRecorrente
@@ -348,8 +368,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       : this.coeficientesNaoRecorrentes;
 
     const listaNivelImplementacaoAtual =
-      nivelImplementacaoAtual ==
-      this.enumNivelImplementacao.situacaoAvaliada2022
+      nivelImplementacaoAtual == 1
         ? terraIndigenaSelecionada.nivelImplementacaoAtual
         : Array(29).fill(Number(nivelImplementacaoAtual));
 
@@ -379,7 +398,6 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           (nivel: any) => nivel.value == Number(nivelImplementacaoAlmejado)
         )!.label,
     };
-    console.log(this.resultado);
     this.mostrarDivResultado();
   }
 
@@ -436,7 +454,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       this.resultado.eixos.forEach((eixo: any) => {
         this.chartOptions.data[0].dataPoints.push({
           name: eixo.nome,
-          y: parseFloat(((eixo.valor / valorTotal) * 100).toFixed(2)),
+          y: parseFloat(((eixo.valor / valorTotal) * 100).toFixed(1)),
         });
       });
 
@@ -455,7 +473,6 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
   gerarPdf() {
     if (this.resultado) {
-      console.log(this.resultado);
       const dataHora = new Date().toLocaleString();
       const variaveis = this.obterVariaveisUtilizadas();
       const docDefinition = {

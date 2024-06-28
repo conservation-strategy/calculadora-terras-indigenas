@@ -52,7 +52,7 @@ export const routes: Routes = [
       import('./pages/time/time.component').then((c) => c.TimeComponent),
   },
   {
-    path: 'contato',
+    path: 'links_uteis',
     loadComponent: () =>
       import('./pages/contato/contato.component').then(
         (c) => c.ContatoComponent

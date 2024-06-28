@@ -5,7 +5,7 @@
             <div class="card card-main">
                 <div class="card-body">
                     <section>
-                        <h1 class="section-title mb-3">Guia de Uso</h1>
+                        <h1 class="section-title mb-3">Como Usar</h1>
                         <p>
                             Calcula o custo total de implementação de todos os eixos temáticos em uma Terra Indígena
                             selecionada, podendo o usuário alterar os valores das características da Terra Indígena
@@ -258,6 +258,14 @@
                             </div>
                         </div>
                         <div class="row" *ngIf="terraIndigenaSelecionada">
+                            <!-- CHECKBOX ALTERAR -->
+                            <div class="col-12 mt-1">
+                                <div class="d-flex">
+                                    <input type="checkbox" formControlName="permitirAlteracao"
+                                        (change)="permitirAlterarTerraIndigena()">
+                                    <label class="ms-2">Quero atualizar os dados da Terra Indígena</label>
+                                </div>
+                            </div>
                             <!-- TAMANHO -->
                             <div class="col-md-6 mt-3">
                                 <label class="form-label">
@@ -390,7 +398,7 @@
                                 </label>
                                 <select class="form-select form-select-sm" required
                                     [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
-                                    formControlName="tipoCusto" (change)="trocarTipoCusto()">
+                                    formControlName="tipoCusto" (change)="trocarTipoCusto($event)">
                                     <option [value]="enumTipoCusto.Recorrente">{{enumTipoCustoTexto.Recorrente}}
                                     </option>
                                     <option [value]="enumTipoCusto.NaoRecorrente">{{enumTipoCustoTexto.NaoRecorrente}}
@@ -472,6 +480,45 @@
     <div *ngIf="mostrarResultado&&resultado">
         <div class="card card-main mt-3">
             <div class="card-body">
+                <h1 class="section-title mt-3 mb-3">Descrição Por Eixo Temático</h1>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of resultado.eixos">
+                        <div class="card h-100">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <img src="assets/images/eixos/{{eixo.imagem}}" alt="" style="width: 40px;">
+                                    <h6 class="ms-2 mb-0"><strong>{{eixo.nome}}</strong></h6>
+                                </div>
+                            </div>
+                            <div class="card-body">
+
+                                <h5 class="text-success">
+                                    <span *ngIf="eixo&&eixo.valor&&eixo.valor >= 1000; else other_content">
+                                        {{eixo.valor | currency:'BRL':'symbol':'1.0-0' }}
+                                    </span>
+                                    <ng-template #other_content>
+                                        <span> &lt; R$1.000 </span>
+                                    </ng-template>
+
+                                    <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
+                                    <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
+                                </h5>
+                                <p>
+                                    {{eixo.descricao}}
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                <button class="btn btn-sm btn-secondary" (click)="modalEixoDetalhes(eixo)">
+                                    Saiba mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-main mt-3">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6 mb-3">
                         <h1 class="section-title mt-3 mb-3">Resultado</h1>
@@ -498,43 +545,6 @@
                     <div class="col-lg-6 mb-3">
                         <canvasjs-chart [options]="chartOptions" id="chart" [styles]="{width: '100%', height:'300px'}"
                             (chartInstance)="obterReferenciaGrafico($event)"></canvasjs-chart>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="card card-main mt-3">
-            <div class="card-body">
-                <h1 class="section-title mt-3 mb-3">Descrição Por Eixo Temático</h1>
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of resultado.eixos">
-                        <div class="card h-100">
-                            <div class="card-header">
-                                <div class="d-flex align-items-center">
-                                    <img src="assets/images/eixos/{{eixo.imagem}}" alt="" style="width: 40px;">
-                                    <h6 class="ms-2 mb-0"><strong>{{eixo.nome}}</strong></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-
-                                <h5 class="text-success">
-                                    <span *ngIf="eixo&&eixo.valor&&eixo.valor >= 1000">
-                                        {{eixo.valor | currency:'BRL':'symbol':'1.0-0' }}
-                                    </span>
-                                    <span *ngIf="eixo&&eixo.valor&&eixo.valor < 1000"> &lt; R$1.000 </span>
-                                    <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
-                                    <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
-                                </h5>
-                                <p>
-                                    {{eixo.descricao}}
-                                </p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-end">
-                                <button class="btn btn-sm btn-secondary" (click)="modalEixoDetalhes(eixo)">
-                                    Saiba mais
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

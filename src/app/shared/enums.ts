@@ -13,15 +13,5 @@ export enum NivelImplmentacao {
   situacaoAvaliada2022 = 1,
   preBasico = 5,
   basico = 10,
-  intermediario = 15,
   bom = 20,
-}
-
-export enum NivelImplmentacaoTexto {
-  nula = 'Nula',
-  situacaoAvaliada2022 = 'Situação avaliada em 2022',
-  preBasico = 'Pré-Básico',
-  basico = 'Básico',
-  intermediario = 'Intermediario',
-  bom = 'Bom',
 }
