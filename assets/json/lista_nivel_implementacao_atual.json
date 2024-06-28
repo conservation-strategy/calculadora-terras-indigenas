@@ -4,15 +4,15 @@
     "value": 0
   },
   {
-    "label": "Investimento precários",
+    "label": "Nível de investimento precário",
     "value": 5
   },
   {
-    "label": "Investimento básico",
+    "label": "Nível de investimento básico",
     "value": 10
   },
   {
-    "label": "Investimento bom",
+    "label": "Nível de investimento bom",
     "value": 20
   }
 ]

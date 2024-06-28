@@ -1,10 +1,10 @@
 [
   {
-    "label": "Investimento básico",
+    "label": "Nível de investimento básico",
     "value": 10
   },
   {
-    "label": "Investimento bom",
+    "label": "Nível de investimento bom",
     "value": 20
   }
 ]
