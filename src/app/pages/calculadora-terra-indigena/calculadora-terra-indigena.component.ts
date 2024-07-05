@@ -314,15 +314,6 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     }
   }
 
-  trocarTipoCusto(event: any): void {
-    const tipoCusto = Number(event.target.value);
-    this.calculadoraForm.patchValue({ nivelImplementacaoAlmejado: null });
-    this.listaNivelImplementacaoAlmejado = [{ label: 'Básico', value: 10 }];
-
-    if (tipoCusto === this.enumTipoCusto.Recorrente)
-      this.listaNivelImplementacaoAlmejado.push({ label: 'Bom', value: 20 });
-  }
-
   botaoCalcular(): void {
     this.calculadoraFormEnviado = true;
     this.calculadoraForm.patchValue({ permitirAlteracao: true });
@@ -398,6 +389,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           (nivel: any) => nivel.value == Number(nivelImplementacaoAlmejado)
         )!.label,
     };
+    console.log(this.resultado);
     this.mostrarDivResultado();
   }
 

@@ -77,7 +77,7 @@
                                         Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
                                         desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
                                         cálculo, a partir do IPCA (IBGE)
-                                        <a href="https://www.ibge.gov.br/explica/inflacao.php">
+                                        <a href="https://www.ibge.gov.br/explica/inflacao.php" target="_blank">
                                             https://www.ibge.gov.br/explica/inflacao.php
                                         </a>
                                     </div>
@@ -138,7 +138,7 @@
                             </label>
                             <select class="form-select form-select-sm" required
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
-                                formControlName="tipoCusto" (change)="trocarTipoCusto()">
+                                formControlName="tipoCusto">
                                 <option value="1">Recorrente (anual)</option>
                                 <option value="2">Não recorrentes (eventual)</option>
                             </select>

@@ -98,7 +98,7 @@ export class CalculadoraService {
     inflacao: number
   ): number[] {
     const resultados: number[] = [];
-    const listaAtividadeSemCustoBom = [15, 16, 21, 27];
+    const listaAtividadeSemCustoBom = [21];
 
     coeficientes.forEach((coeficiente: Coeficiente, index: number) => {
       let nivelImplementacaoAjustado = nivelImplementacaoAlmejado;
@@ -136,6 +136,20 @@ export class CalculadoraService {
 
       resultados.push(resultado);
     });
+
+    console.log('coeficientes', coeficientes);
+
+    console.log('niveisImplementacaoAtual:', niveisImplementacaoAtual);
+    console.log('nivelImplementacaoAlmejado:', nivelImplementacaoAlmejado);
+    console.log('tamanho:', tamanho);
+    console.log('populacao:', populacao);
+    console.log('aldeias:', aldeias);
+    console.log('grauDiversidade:', grauDiversidade);
+    console.log('grauAmeaca:', grauAmeaca);
+    console.log('complexidadeAcesso:', complexidadeAcesso);
+    console.log('localSede:', localSede);
+    console.log(resultados);
+
     return resultados;
   }
 

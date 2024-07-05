@@ -248,15 +248,6 @@ export class CalculadoraAgrupadaComponent implements OnInit {
     }
   }
 
-  trocarTipoCusto(): void {
-    const { tipoCusto } = this.calculadoraForm.value;
-    this.calculadoraForm.patchValue({ nivelImplementacaoAlmejado: null });
-    this.listaNivelImplementacaoAlmejado = [{ label: 'Básico', value: 10 }];
-
-    if (tipoCusto === this.enumTipoCusto.Recorrente)
-      this.listaNivelImplementacaoAlmejado.push({ label: 'Bom', value: 20 });
-  }
-
   botaoCalcular(): void {
     this.calculadoraFormEnviado = true;
     this.mostrarResultado = false;
