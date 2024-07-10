@@ -1,18 +1,131 @@
-<section class="section-header">
-    <div class="section-header-bg">
+<section id="header">
+    <div class="header-bg">
         <div class="container">
-            <h1 class="my-5">
-                A Calculadora de Custos de Gestão de Terras Indígenas (TIs) é uma ferramenta online que
-                projeta as necessidades financeiras de TIs da Bacia do Xingu, visando apoiar a implementação de seus
-                Planos de Gestão Territorial e Ambiental (PGTAs).
-            </h1>
-            <app-calculadora-lista></app-calculadora-lista>
+            <h1>Custos de gestão de terras indígenas</h1>
+            <h2 class="mt-3">
+                A Calculadora de Custos de Gestão de Terras Indígenas é uma ferramenta online desenvolvida com o
+                objetivo de auxiliar as organizações indígenas da bacia do Xingu no planejamento orçamentário e na
+                captação de recursos para implementação de seus PGTAs, por meio da projeção de custos relacionados aos
+                diferentes eixos temáticos neles previstos.
+            </h2>
         </div>
     </div>
 </section>
 
 <div class="container main-container">
+    <section id="usos-possiveis">
+        <h1 class="section-title text-center mb-5">Usos Possíveis</h1>
+        <ul>
+            <li>
+                <h2>Planejar</h2>
+                <p>
+                    Auxiliar organizações indígenas, parceiras e apoiadoras no planejamento financeiro, na
+                    avaliação
+                    de lacunas de financiamento e na elaboração de orçamentos relacionados a ações de gestão dos
+                    territórios
+                </p>
+            </li>
+            <li>
+                <h2>Avaliar</h2>
+                <p>
+                    Subsidiar a tomada de decisões pelas organizações locais por meio de informações
+                    relacionadas a
+                    custos de atividades
+                </p>
+            </li>
+            <li>
+                <h2>Priorizar</h2>
+                <p>
+                    Demonstrar a demanda financeira das organizações para um investimento eficiente na
+                    implementação
+                    das atividades e políticas públicas
+                </p>
+            </li>
+        </ul>
+    </section>
+    <hr>
+    <section id="metodologia" class="mt-5">
+        <h1 class="section-title text-center mb-5">Metodologia</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas maximus lacinia. Nulla faucibus
+            convallis sodales. Donec nec sagittis leo. Sed tempus semper mauris, quis tempor mi mattis tristique. Nullam
+            posuere tempor leo, et interdum urna laoreet dictum. Ut nec pulvinar odio. Morbi odio nunc, efficitur a
+            ultrices
+            feugiat, auctor ac ipsum. Cras imperdiet in nunc vitae ullamcorper.</p>
+
+        <ul class="mt-5">
+            <li ngbTooltip="Extensão da Terra Indígena, em hectares">
+                Tamanho da terra
+            </li>
+            <li class="baixo" ngbTooltip="Quantidade de aldeias na Terra Indígena">
+                Número de aldeias
+            </li>
+            <li ngbTooltip="Quantidade de pessoas residentes na Terra Indígena">
+                População
+            </li>
+            <li class="baixo" ngbTooltip="Número de povos que vivem na Terra Indígena">
+                Número de povos
+            </li>
+            <li ngbTooltip="Classificação baseada no tipo e intensidade das ameaças para a Terra Indígena">
+                Grau de ameaça
+            </li>
+            <li class="baixo"
+                ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena">
+                Complexidade de acesso
+            </li>
+            <li ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena">
+                Localização da sede
+            </li>
+        </ul>
+        <div class="row mt-5 mb-5">
+            <div class="col d-flex justify-content-center">
+                <a class="btn btn-sm btn-outline-dark" routerLink="/metodologia">Saiba mais sobre a metodologia</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <h2 class="section-sub-title mb-5">Eixos temáticos</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas maximus lacinia. Nulla
+                    faucibus
+                    convallis sodales. Donec nec sagittis leo. Sed tempus semper mauris, quis tempor mi mattis
+                    tristique. Nullam
+                    posuere tempor leo, et interdum urna laoreet dictum. Ut nec pulvinar odio. Morbi odio nunc,
+                    efficitur a
+                    ultrices
+                    feugiat, auctor ac ipsum. Cras imperdiet in nunc vitae ullamcorper.</p>
+                <div style="
+                    background-image: url(https://conservation-strategy.github.io/calculadora-terras-indigenas/media/bg-header-D7BQ35U5.jpg);
+                    width: 100%;
+                    height: 350px;
+                    background-size: cover;
+                    background-position: center;
+                    filter: sepia(1);
+                "></div>
+
+                <div class="row mt-5">
+                    <div class="col d-flex justify-content-center">
+                        <a class="btn btn-lg btn-outline-dark" routerLink="/calculadora-terra-indigena">Acesse a
+                            calculadora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
     <section>
+        <div class="row mt-5">
+            <div class="col-md-8">
+                <app-realizacao></app-realizacao>
+            </div>
+            <div class="col-auto">
+                <app-apoio></app-apoio>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col"><app-parceiros></app-parceiros></div>
+        </div>
+    </section>
+    <!-- <section>
         <div class="row" style="padding-top: 30px;">
             <div class="col-lg-6 mb-4">
                 <h1 class="section-title mb-3">Usos Possíveis da Calculadora</h1>
@@ -53,8 +166,6 @@
                 </iframe>
             </div>
         </div>
-    </section>
-    <app-realizacao></app-realizacao>
-    <app-apoio></app-apoio>
-    <app-parceiros></app-parceiros>
+    </section> -->
+
 </div>

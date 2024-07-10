@@ -5,7 +5,8 @@ import { RealizacaoComponent } from '../../shared/components/realizacao/realizac
 import { ApoioComponent } from '../../shared/components/apoio/apoio.component';
 import { ParceirosComponent } from '../../shared/components/parceiros/parceiros.component';
 import { CalculadoraService } from '../../core/services/calculadora.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,8 @@ import { DomSanitizer } from '@angular/platform-browser';
     RealizacaoComponent,
     ApoioComponent,
     ParceirosComponent,
+    NgbTooltipModule,
+    RouterLink,
   ],
   providers: [CalculadoraService],
   templateUrl: './home.component.html',
@@ -23,14 +26,5 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class HomeComponent {
   youtubeVideoUrl: any;
-  constructor(
-    private calculatorService: CalculadoraService,
-    private sanitizer: DomSanitizer
-  ) {
-    this.calculatorService.obterSiteConfig().subscribe((response) => {
-      this.youtubeVideoUrl = this.sanitizer.bypassSecurityTrustUrl(
-        response.youtubeVideoUrl
-      );
-    });
-  }
+  constructor() {}
 }

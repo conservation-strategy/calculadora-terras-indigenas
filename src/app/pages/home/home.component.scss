@@ -1,26 +1,94 @@
-.section-header {
+// SECTION HEADER
+#header {
   background-image: url("../../../assets/images/bg-home-page.jpg");
   background-position: center;
   background-size: cover;
 }
 
-.section-header-bg {
+#header .header-bg {
   width: 100%;
-  min-height: 70vh;
+  min-height: 40vh;
   background-color: #00000096;
   display: flex;
   padding: 50px 0;
 }
 
-.section-header h1 {
+#header h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 150%;
+  font-family: "Montserrat", sans-serif;
+}
+
+#header h2 {
   color: white;
   font-size: 1.625rem;
   font-weight: 400;
   line-height: 150%;
-  text-align: center;
   font-family: "Montserrat", sans-serif;
 }
 
-ul {
+// SECTION USOS POSSIVES
+#usos-possiveis ul {
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  list-style: none;
+}
+
+#usos-possiveis li {
+  flex: 1;
+}
+
+#usos-possiveis li h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#usos-possiveis li h2::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  background: #f4f4f4;
+  display: block;
+  margin: 25px auto;
+  transform: rotateZ(45deg);
+}
+
+#usos-possiveis li p {
+  text-align: center;
+}
+
+// metodologia
+#metodologia ul {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#metodologia li {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  font-weight: 800;
+  cursor: help;
+}
+
+#metodologia li:hover {
+  background: lightgray;
+}
+
+#metodologia .baixo {
+  margin-top: 100px;
 }
