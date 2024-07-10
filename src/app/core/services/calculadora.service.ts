@@ -172,10 +172,10 @@ export class CalculadoraService {
     localSede: number
   ): number {
     const exp1 =
-      coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado + 0.01);
+      coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado);
     const exp2 =
       coeficiente.ln_quali_var *
-      Math.log(nivelImplementacaoAlmejado - nivelImplementacaoAtual + 0.01);
+      Math.log(nivelImplementacaoAlmejado - nivelImplementacaoAtual);
     const exp3 =
       coeficiente.int_situacao *
       (nivelImplementacaoAlmejado *
