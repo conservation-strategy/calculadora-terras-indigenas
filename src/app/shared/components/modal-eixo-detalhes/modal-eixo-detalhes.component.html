@@ -5,7 +5,13 @@
     <div ngbAccordion>
         <div *ngFor="let atividade of eixo?.atividades" ngbAccordionItem [collapsed]="true">
             <h2 ngbAccordionHeader>
-                <button ngbAccordionButton>{{atividade.nome}}</button>
+                <button ngbAccordionButton>
+                    <div>
+                        <b>{{atividade.nome}}</b>
+                        <br>
+                        <small class="mt-1">{{atividade.valor | currency:'BRL':'symbol':'1.0-0'}}</small>
+                    </div>
+                </button>
             </h2>
             <div ngbAccordionCollapse>
                 <div ngbAccordionBody>

@@ -6,8 +6,6 @@ import { HeaderComponent } from '../../core/layout/header/header.component';
   standalone: true,
   imports: [HeaderComponent],
   templateUrl: './metodologia.component.html',
-  styleUrl: './metodologia.component.scss'
+  styleUrl: './metodologia.component.scss',
 })
-export class MetodologiaComponent {
-
-}
+export class MetodologiaComponent {}

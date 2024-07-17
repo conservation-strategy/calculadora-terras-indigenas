@@ -9,6 +9,10 @@ body {
   font-size: 1rem;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 #app-main {
   min-height: 100vh;
   display: flex;
@@ -44,20 +48,11 @@ body {
 
 .section-sub-title {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 800;
   font-family: "Montserrat", sans-serif;
   width: fit-content;
-  border-bottom: 5px solid lightgrey;
+  border-bottom: 3px solid gray;
 }
-
-// .section-title::before {
-//   content: "";
-//   width: 5px;
-//   height: 20px;
-//   display: inline-block;
-//   background-color: rgb(184, 29, 0);
-//   margin-right: 5px;
-// }
 
 .calculadora-form label {
   font-size: 12px;

@@ -14,4 +14,5 @@ export class ModalEixoDetalhesComponent {
   activeModal = inject(NgbActiveModal);
 
   @Input() eixo!: Eixo;
+  @Input() tipoCusto: number = 1;
 }

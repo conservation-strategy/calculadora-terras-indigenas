@@ -40,6 +40,7 @@ import html2canvas from 'html2canvas';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import Atividade from '../../core/models/Atividade';
 import SelectOption from '../../core/models/SelectOption';
+import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-detalhes/modal-form-detalhes.component';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -132,8 +133,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       null,
       Validators.required
     ),
-    nivelImplementacaoAlmejado: new FormControl<number | null>(
-      null,
+    nivelImplementacaoAlmejado: new FormControl<number>(
+      10,
       Validators.required
     ),
     inflacao: new FormControl<number | null>(null),
@@ -145,6 +146,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
   mostrarCarregando = false;
   resultado: Resultado | null = null;
   ipUsuario = '';
+  tipoCusto = false;
 
   constructor(
     private calculatorService: CalculadoraService,
@@ -409,6 +411,15 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     }, 1000);
   }
 
+  trocarTipoCusto() {
+    // false -> Custos de manutenção do investimento
+    // true  -> Custos de investimento melhorado
+    this.calculadoraForm.patchValue({
+      nivelImplementacaoAlmejado: this.tipoCusto ? 20 : 10,
+    });
+    this.botaoCalcular();
+  }
+
   calcularEixos(resultadoCoeficientes: number[], tipoCusto: number) {
     let eixos: Eixo[] = JSON.parse(JSON.stringify(this.eixos));
     const tipoCustoTexo =
@@ -416,20 +427,19 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         ? this.enumTipoCustoTexto.Recorrente
         : this.enumTipoCustoTexto.NaoRecorrente;
     eixos.forEach((eixo: Eixo) => {
-      eixo.valor = this.calculatorService.obterSomatoria(
-        resultadoCoeficientes.slice(
-          eixo.atividades[0].posicao,
-          eixo.atividades[eixo.atividades.length - 1].posicao + 1
-        )
-      );
-      eixo.atividades.forEach((atividades: Atividade) => {
-        atividades.custoBasico = atividades.custoBasico.filter((x) =>
+      let valorTotalEixo = 0;
+
+      eixo.atividades.forEach((atividade: Atividade) => {
+        atividade.valor = resultadoCoeficientes[atividade.posicao];
+        valorTotalEixo += atividade.valor;
+        atividade.custoBasico = atividade.custoBasico.filter((x) =>
           x.startsWith(tipoCustoTexo)
         );
-        atividades.custoBom = atividades.custoBom.filter((x) =>
+        atividade.custoBom = atividade.custoBom.filter((x) =>
           x.startsWith(tipoCustoTexo)
         );
       });
+      eixo.valor = valorTotalEixo;
     });
 
     return eixos;
@@ -754,11 +764,21 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     ];
   }
 
+  abrirModalFormDetalhes(campo: string, tooltip: string) {
+    console.log(`campo: ${campo}`, `tooltip: ${tooltip}`);
+    const modalRef = this.modalService.open(ModalFormDetalhesComponent, {
+      size: 'lg',
+    });
+    modalRef.componentInstance.campo = campo;
+    modalRef.componentInstance.tooltip = tooltip;
+  }
+
   modalEixoDetalhes(eixo: Eixo) {
     const modalRef = this.modalService.open(ModalEixoDetalhesComponent, {
       size: 'lg',
     });
     modalRef.componentInstance.eixo = eixo;
+    modalRef.componentInstance.tipoCusto = eixo;
   }
 }
 

@@ -1,0 +1,182 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{campo}}</h4>
+    <button type="button" class="btn-close" aria-describedby="modal-title"
+        (click)="activeModal.close('Close click')"></button>
+</div>
+<div class="modal-body" ngbAutofocus>
+    <section>
+        <div *ngIf="tooltip">{{tooltip}}</div>
+        <!-- Tipo de custo -->
+        <div *ngIf="campo=='Tipo de custo'">
+            <p>
+                Os custos foram categorizados em dois tipos: custos correntes que são
+                compostos por custos anuais de implementação de atividades, como
+                salários, manutenção de equipamentos, compra de gasolina, capacitações
+                anuais.
+            </p>
+            <p>
+                Os custos não recorrentes envolvem despesas que não são anuais, como
+                investimentos em equipamentos e construções, materiais didáticos,
+                elaboração de PGTAs.
+            </p>
+        </div>
+        <!-- Grau de ameaça -->
+        <div *ngIf="campo=='Grau de ameaça'">
+            <p>
+                Classificação baseada no tipo e intensidade das ameaças para a Terra
+                Indígena (como garimpo, roubo de madeira, incêndios, grilagem,
+                desmatamento, pendências de regularização fundiária, obras de
+                infraestrutura e agrotóxicos). Os níveis de classificação são:, baixo,
+                médio, alto e altíssimo.
+            </p>
+            <p>
+                Os tipos de ocorrências de ameaças territoriais que compõem o indicador
+                grau de ameaça são de dois tipos: interior das terras indígenas e
+                entorno das terras indígenas.
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-sm">
+                    <caption>Tipos de ocorrências de ameaças territoriais</caption>
+                    <thead>
+                        <tr>
+                            <th>Ameaças no Interior das Terras Indígenas</th>
+                            <th>Ameaças no Entorno das Terras Indígenas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Garimpo</td>
+                            <td>Obras de Infraestrutura</td>
+                        </tr>
+                        <tr>
+                            <td>Roubo de Madeira</td>
+                            <td>Agrotóxicos</td>
+                        </tr>
+                        <tr>
+                            <td>Fogo: incêndios</td>
+                            <td>Desmatamento no Entorno</td>
+                        </tr>
+                        <tr>
+                            <td>Grilagem</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Desmatamento</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pendências de Regularização Fundiária</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                Cada tipo de ameaça foi analisada de acordo com a probabilidade de
+                ocorrência e magnitude, que é definida em termos do tipo de ação
+                pública demandada pela ocorrência. Depois, o conjunto de ocorrências
+                por terra indígena foi somado e ponderado e resultou em um grau de
+                ameaça da Terra Indígena.
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-sm">
+                    <caption>Ponderação para definição do Grau de Ameaça</caption>
+                    <thead>
+                        <tr>
+                            <th>Probabilidade e Magnitude</th>
+                            <th>Grau de Ameaça do Xingu</th>
+                            <th>Definição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Não há probabilidade da ocorrência</td>
+                            <td>Nulo</td>
+                            <td>Não existe risco de ocorrência</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                Há probabilidade da ocorrência, julga-se a magnitude da
+                                ocorrência
+                            </td>
+                            <td>Baixo</td>
+                            <td>Ocorrência demanda ação de prevenção</td>
+                        </tr>
+                        <tr>
+                            <td>Médio</td>
+                            <td>Ocorrência demanda ações de fiscalização eventuais</td>
+                        </tr>
+                        <tr>
+                            <td>Alto</td>
+                            <td>Ocorrência demanda uma ação imediata e contínua de
+                                contenção</td>
+                        </tr>
+                        <tr>
+                            <td>Altíssima</td>
+                            <td>Ocorrência está fora de controle, demanda uma ação de
+                                guerra - ação permanente e articulada de vários órgãos
+                                de inteligência, comando e controle Ex: TI Kayapó e TI
+                                Apyterewa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Complexidade de acesso -->
+        <div *ngIf="campo=='Complexidade de acesso'">
+            Classificação do nível de dificuldade de acesso para a maioria das
+            aldeias da Terra Indígena, baseada na distância dos municípios, na
+            existência e condição de estradas, pistas de pouso e navegabilidade dos
+            rios. Os níveis de classificação são: Fácil, Médio ou Difícil.
+        </div>
+
+        <!-- Situação de Gestão da Terra -->
+        <div *ngIf="campo=='Situação de Gestão da Terra'">
+            <p>
+                A definição do nível de implementação varia por atividade em cada eixo
+                temático.
+            </p>
+            <p>
+                O "nível de implementação atual" é definido pelo conjunto de itens (ações,
+                equipamentos, pessoal etc.) da terra indígena selecionada. Para as terras
+                indígenas com dados de custos na amostra "o nível de implementação atual"
+                aparece automaticamente com as informações levantadas junto às organizações,
+                esses valores estão no campo "Situação em 2022". Para as demais terras
+                indígenas (Terras Indígenas Xingu - sem dados de custos na amostra; e
+                Simulação - Terra indígena simulada), o usuário deverá selecionar qual seria
+                o nível de implementação atual podendo ser: "Nulo"; "Pré-básico"; "Básico";
+                "Intermediário" e "Bom".
+            </p>
+            <p>
+                O "nível de implementação almejado" define os itens que permitirão o alcance
+                do objetivo após um ano de investimento e podem ser nos níveis "Básico" ou
+                "Bom".
+            </p>
+            <p>
+                O nível de implementação básico atende ao mínimo necessário para a
+                realização da atividade. O nível de implementação bom vai um pouco além,
+                adicionando novas ações e melhorias. No entanto, é importante ressaltar que
+                o nível bom, mesmo sendo melhor que o básico, ainda apresenta limitações ou
+                aspectos que precisam ser aprimorados, indicando que há espaço para melhorar
+                o desempenho das atividades.
+            </p>
+            <p>
+                No resultado, em "Saiba mais" de cada eixo, será fornecido um detalhamento
+                das atividades e itens que caracterizam a implementação dos eixos nos níveis
+                "básico" ou "bom". Essa lista de itens é apenas uma referência e pode variar
+                de acordo com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
+                características dos níveis de implementação.
+            </p>
+        </div>
+
+        <!-- Inflação acumulada desde 2023 -->
+        <div *ngIf="campo=='Inflação acumulada desde 2023'">
+            Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
+            desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
+            cálculo, a partir do IPCA (IBGE)
+            <a href="https://www.ibge.gov.br/explica/inflacao.php" target="_blank">
+                https://www.ibge.gov.br/explica/inflacao.php
+            </a>
+        </div>
+    </section>
+</div>

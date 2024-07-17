@@ -4,6 +4,7 @@ export interface Atividade {
   descricao: string;
   custoBasico: string[];
   custoBom: string[];
+  valor: number;
 }
 
 export default Atividade;
