@@ -9,6 +9,7 @@
     "grauAmeaca": 4,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "apyterewa.png",
     "nivelImplementacaoAtual": [
       2, 6, 0, 8, 10, 0, 2, 1, 1, 1, 0, 0, 0, 9, 4, 0, 8, 6, 0, 0, 0, 0, 2, 0,
       0, 0, 0, 0, 0
@@ -24,6 +25,7 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "bau.png",
     "nivelImplementacaoAtual": [
       13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
       0, 0, 0, 0, 1, 0, 0
@@ -39,6 +41,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "capoto.png",
     "nivelImplementacaoAtual": [
       13, 16, 1, 6, 12, 0, 9, 0, 13, 11, 0, 12, 14, 0, 1, 0, 10, 3, 2, 5, 0, 0,
       0, 0, 0, 0, 1, 0, 0
@@ -54,6 +57,7 @@
     "grauAmeaca": 4,
     "complexidadeAcesso": 3,
     "localSede": 0,
+    "mapa": "kayapo.png",
     "nivelImplementacaoAtual": [
       7, 10, 3, 5, 8, 0, 13, 5, 7, 0, 0, 5, 7, 5, 7, 0, 5, 4, 12, 0, 0, 1, 6, 3,
       0, 0, 0, 0, 0
@@ -69,6 +73,7 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 3,
     "localSede": 0,
+    "mapa": "menkragnoti.png",
     "nivelImplementacaoAtual": [
       6, 9, 1, 6, 8, 0, 11, 0, 9, 1, 0, 10, 3, 1, 0, 0, 10, 2, 9, 2, 0, 0, 1, 2,
       0, 0, 2, 0, 1
@@ -84,6 +89,7 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 1,
     "localSede": 1,
+    "mapa": "panara.png",
     "nivelImplementacaoAtual": [
       5, 9, 3, 4, 7, 0, 6, 0, 4, 0, 0, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 7, 1, 1, 0,
       1, 0, 0, 0
@@ -99,6 +105,7 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "tix.png",
     "nivelImplementacaoAtual": [
       7, 16, 1, 12, 5, 0, 12, 4, 3, 3, 2, 5, 5, 6, 0, 0, 15, 6, 5, 0, 0, 8, 0,
       4, 4, 2, 0, 0, 0
@@ -114,6 +121,7 @@
     "grauAmeaca": 3,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "trincheira.png",
     "nivelImplementacaoAtual": [
       3, 15, 10, 3, 4, 0, 5, 2, 2, 0, 0, 6, 5, 0, 4, 0, 9, 7, 0, 0, 0, 0, 1, 0,
       0, 0, 0, 0, 0
@@ -130,6 +138,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 1,
+    "mapa": "arara.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -142,6 +151,7 @@
     "grauAmeaca": 2,
     "complexidadeAcesso": 2,
     "localSede": 1,
+    "mapa": "arara_volta_grande.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -154,6 +164,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "arawete.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -166,6 +177,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "badjonkore.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -178,6 +190,7 @@
     "grauAmeaca": 3,
     "complexidadeAcesso": 2,
     "localSede": 1,
+    "mapa": "cachoeira.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -190,6 +203,7 @@
     "grauAmeaca": 4,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "ituna.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -202,6 +216,7 @@
     "grauAmeaca": 0,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "kapot.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -214,6 +229,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 1,
     "localSede": 1,
+    "mapa": "kararao.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -226,6 +242,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 1,
     "localSede": 1,
+    "mapa": "koatinemo.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -238,6 +255,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 1,
+    "mapa": "kuruaya.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -250,6 +268,7 @@
     "grauAmeaca": 3,
     "complexidadeAcesso": 1,
     "localSede": 1,
+    "mapa": "paquicamba.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -262,6 +281,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 1,
     "localSede": 1,
+    "mapa": "terena.png",
     "nivelImplementacaoAtual": []
   },
   {
@@ -274,6 +294,7 @@
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
     "localSede": 0,
+    "mapa": "xipaya.png",
     "nivelImplementacaoAtual": []
   }
 ]
