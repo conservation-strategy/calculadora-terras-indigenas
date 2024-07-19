@@ -1,253 +1,190 @@
-<app-header title="Versão Agrupada"></app-header>
 <div class="container main-container">
-    <div class="row">
-        <div class="col-lg-6 mb-3">
-            <div class="card card-main">
-                <div class="card-body">
-                    <section>
-                        <h1 class="section-title mb-3">Como Usar</h1>
-                        <p>
-                            Calcula o custo total de implementação de eixos temáticos selecionados em uma ou mais Terras
-                            Indígenas. O usuário pode escolher o nível de implementação desejado (básico ou bom) para
-                            cada um dos eixos selecionados. Essa versão é indicada para quem atua em mais de uma Terra
-                            Indígena e pretende ter informações gerais de custo de implementação das atividades em mais
-                            de uma Terra Indígena selecionada.
-                        </p>
-                    </section>
-                    <section>
-                        <div ngbAccordion>
-                            <div ngbAccordionItem [collapsed]="true">
-                                <h2 ngbAccordionHeader>
-                                    <button ngbAccordionButton>Terra Indígena</button>
-                                </h2>
-                                <div ngbAccordionCollapse>
-                                    <div ngbAccordionBody>
-                                        Apenas terras indígenas com todas as informações necessárias para o cálculo
-                                        foram incluídas nessa versão
-                                    </div>
-                                </div>
-                            </div>
-                            <div ngbAccordionItem [collapsed]="true">
-                                <h2 ngbAccordionHeader>
-                                    <button ngbAccordionButton>Nível de implementação</button>
-                                </h2>
-                                <div ngbAccordionCollapse>
-                                    <div ngbAccordionBody>
-                                        <p>
-                                            A definição do nível de implementação varia por atividade em cada eixo
-                                            temático.
-                                        </p>
-                                        <p>
-                                            O "nível de implementação atual" é definido pelo conjunto de itens (ações,
-                                            equipamentos, pessoal etc.) que a terra indígena tem. Nessa Versão Agrupada,
-                                            como podemos escolher mais de uma Terra Indígena, o usuário deverá
-                                            selecionar qual seria o nível de implementação atual podendo ser: "Nulo";
-                                            "Pré-básico"; "Básico"; "Intermediário" e "Bom".
-                                        </p>
-                                        <p>
-                                            O "nível de implementação almejado" define os itens que permitirão o alcance
-                                            do objetivo após um ano de investimento e podem ser nos níveis "Básico" ou
-                                            "Bom".
-                                        </p>
-                                        <p>
-                                            O nível de implementação básico atende ao mínimo necessário para a
-                                            realização
-                                            da atividade. O nível de implementação bom vai um pouco além, adicionando
-                                            novas ações e melhorias. No entanto, é importante ressaltar que o nível bom,
-                                            mesmo sendo melhor que o básico, ainda apresenta limitações ou aspectos que
-                                            precisam ser aprimorados, indicando que há espaço para melhorar o desempenho
-                                            das atividades.
-                                        </p>
-                                        <p>
-                                            No resultado, em Download PDF, será fornecido um detalhamento das atividades
-                                            e itens que caracterizam a implementação dos eixos selecionados nos níveis
-                                            "básico" ou "bom". Essa lista de itens é apenas uma referência e pode variar
-                                            de acordo com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
-                                            características dos níveis de implementação.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div ngbAccordionItem [collapsed]="true">
-                                <h2 ngbAccordionHeader>
-                                    <button ngbAccordionButton>Inflação acumulada desde 2023</button>
-                                </h2>
-                                <div ngbAccordionCollapse>
-                                    <div ngbAccordionBody>
-                                        Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
-                                        desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
-                                        cálculo, a partir do IPCA (IBGE)
-                                        <a href="https://www.ibge.gov.br/explica/inflacao.php" target="_blank">
-                                            https://www.ibge.gov.br/explica/inflacao.php
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+    <div>
+        <h1 class="section-title mb-5">Versão Agrupada</h1>
+        <div class="row mb-3 border-bottom">
+            <div class="col-lg-6 mb-3">
+                <section>
+                    <p>
+                        Versão de comparação entre terras indígenas, a Versão Agrupada calcula o custo total de gestão
+                        dos
+                        eixos temáticos selecionados em uma ou mais Terras Indígenas. O usuário deve definir a situação
+                        atual de gestão da(s) terra(s), bem como a situação almejada (investimento para gestão básica ou
+                        investimento para gestão boa).
+                    </p>
+                    <p>
+                        Essa versão é indicada para quem deseja comparar os resultados entre terras e/ou eixos e também
+                        para
+                        quem atua em mais de uma terra indígena e pretende ter informações gerais de custos de gestão de
+                        eixos selecionados.
+                    </p>
+                </section>
             </div>
-        </div>
-        <div class="col-lg-6 mb-3">
-            <div class="card card-main">
-                <div class="card-body">
-                    <form [formGroup]="calculadoraForm" class="calculadora-form">
-                        <div class="form-group">
-                            <label class="form-label">Selecione a terra indígena</label>
-                            <div *ngFor="let grupo of grupoTerrasIndigenas">
-                                <label>{{grupo.nomeGrupo}}</label>
-                                <div class="form-check form-check-terra-indigena"
-                                    *ngFor="let terraIndigena of grupo.terrasIndigenas">
-                                    <input class="form-check-input" type="checkbox"
-                                        (change)="selecionarTerraIndigena($event,terraIndigena)"
-                                        id="{{'flexCheck' + terraIndigena.nome}}">
-                                    <label class="form-check-label" for="{{'flexCheck' + terraIndigena.nome}}">
-                                        {{terraIndigena.nome}}
-                                    </label>
-                                </div>
-                            </div>
-                            <small *ngIf="calculadoraFormEnviado&&terrasIndigenasSelecionadas.length==0"
-                                class="text-danger">
-                                Campo Obrigatório.
-                            </small>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label class="form-label d-flex justify-content-between">
-                                <span>Eixo temático</span>
-                                <fa-icon [icon]="faQuestionCircle"
-                                    ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos">
-                                </fa-icon>
-                            </label>
-                            <div class="form-check form-check-terra-indigena" *ngFor="let eixo of eixos">
-                                <input class="form-check-input" type="checkbox" (change)="selecionarEixo($event,eixo)"
-                                    id="{{'flexCheck' + eixo.nome}}">
-                                <label class="form-check-label" for="{{'flexCheck' + eixo.nome}}">
-                                    {{eixo.nome}}
-                                </label>
-                            </div>
-                            <small *ngIf="calculadoraFormEnviado&&eixosSelecionados.length==0" class="text-danger">
-                                Campo Obrigatório.
-                            </small>
-                        </div>
-                        <!-- TIPO CUSTO -->
-                        <div class="form-group mt-3">
-                            <label class="form-label">
-                                <span>Tipo de custo</span>
-                                <fa-icon [icon]="faQuestionCircle"
-                                    ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
-                            </label>
-                            <select class="form-select form-select-sm" required
-                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
-                                formControlName="tipoCusto">
-                                <option value="1">Recorrente (anual)</option>
-                                <option value="2">Não recorrentes (eventual)</option>
-                            </select>
-                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid"
-                                class="text-danger">
-                                Campo Obrigatório.
-                            </small>
-                        </div>
-                        <div class="row">
-                            <!-- NIVEL IMPLEMENTAÇÃO ATUAL -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Nível de implementação atual</span>
-                                    <fa-icon [icon]="faQuestionCircle"
-                                        ngbTooltip="Situação atual de implementação da atividade, em uma escala de 0 a 20"></fa-icon>
-                                </label>
-                                <select class="form-select form-select-sm" required
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
-                                    formControlName="nivelImplementacaoAtual">
-                                    <option [value]="null" disabled selected>Nível de implementação atual</option>
-                                    <option *ngFor="let item of listaNivelImplementacaoAtual" [value]="item.value">
-                                        {{item.label}}</option>
-                                </select>
-                                <small
-                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- NIVEL IMPLEMENTAÇÃO ALMEJADO -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label d-flex justify-content-between">
-                                    <span>Nível de implementação Almejado</span>
-                                    <fa-icon [icon]="faQuestionCircle"
-                                        ngbTooltip="Situação atual de implementação da atividade">
-                                    </fa-icon>
-                                </label>
-                                <select class="form-select form-select-sm" required
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid}"
-                                    formControlName="nivelImplementacaoAlmejado"
-                                    placeHolder="Selecione o Nível de implementação">
-                                    <option value="null" disabled selected>Nível de implementação almejado</option>
-                                    <option *ngFor="let item of listaNivelImplementacaoAlmejado" [ngValue]="item.value">
-                                        {{item.label}}
-                                </select>
-                                <small
-                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                        </div>
+            <div class="col-lg-6 mb-3">
+                <iframe width="100%" height="300" frameborder="0" allowfullscreen
+                    src="https://www.youtube.com/embed/6BDqno8Fdow?si=fDu95A_Gepi6FRSI" title="Video Tutorial"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
 
-                        <div class="form-group mt-3">
-                            <label class="form-label d-flex justify-content-between">
-                                <span>Inflação acumulada desde 2023 (%)</span>
-                                <fa-icon [icon]="faQuestionCircle"
-                                    ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."></fa-icon>
+            </div>
+        </div>
+
+        <form [formGroup]="calculadoraForm" class="calculadora-form">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                        <label class="form-label">Selecione a terra indígena</label>
+                        <div *ngFor="let grupo of grupoTerrasIndigenas">
+                            <label>{{grupo.nomeGrupo}}</label>
+                            <div class="form-check form-check-terra-indigena"
+                                *ngFor="let terraIndigena of grupo.terrasIndigenas">
+                                <input class="form-check-input" type="checkbox"
+                                    (change)="selecionarTerraIndigena($event,terraIndigena)"
+                                    id="{{'flexCheck' + terraIndigena.nome}}">
+                                <label class="form-check-label" for="{{'flexCheck' + terraIndigena.nome}}">
+                                    {{terraIndigena.nome}}
+                                </label>
+                            </div>
+                        </div>
+                        <small *ngIf="calculadoraFormEnviado&&terrasIndigenasSelecionadas.length==0"
+                            class="text-danger">
+                            Campo Obrigatório.
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="form-group mt-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Eixo temático</span>
+                            <fa-icon [icon]="faQuestionCircle"
+                                ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos">
+                            </fa-icon>
+                        </label>
+                        <div class="form-check form-check-terra-indigena" *ngFor="let eixo of eixos">
+                            <input class="form-check-input" type="checkbox" (change)="selecionarEixo($event,eixo)"
+                                id="{{'flexCheck' + eixo.nome}}">
+                            <label class="form-check-label" for="{{'flexCheck' + eixo.nome}}">
+                                {{eixo.nome}}
                             </label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Inflação %"
-                                formControlName="inflacao" numbersOnly>
                         </div>
-                        <div class="d-flex mt-3">
-                            <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
-                            <app-loading *ngIf="mostrarCarregando"></app-loading>
-                        </div>
-                    </form>
+                        <small *ngIf="calculadoraFormEnviado&&eixosSelecionados.length==0" class="text-danger">
+                            Campo Obrigatório.
+                        </small>
+                    </div>
+                    <!-- TIPO CUSTO -->
+                    <div class="form-group mt-3">
+                        <label class="form-label">
+                            <span>Tipo de custo</span>
+                            <fa-icon [icon]="faQuestionCircle"
+                                ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
+                        </label>
+                        <select class="form-select form-select-sm" required
+                            [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
+                            formControlName="tipoCusto">
+                            <option value="1">Recorrente (anual)</option>
+                            <option value="2">Não recorrentes (eventual)</option>
+                        </select>
+                        <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid"
+                            class="text-danger">
+                            Campo Obrigatório.
+                        </small>
+                    </div>
+                    <!-- Situação atual de Gestão da Terra -->
+                    <div class="form-group mt-3">
+                        <label class="form-label">
+                            <span>Situação atual de Gestão da Terra</span>
+                            <fa-icon [icon]="faQuestionCircle" ngbTooltip="Situação atual de Gestão da Terra"></fa-icon>
+                        </label>
+                        <select class="form-select form-select-sm" required
+                            [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
+                            formControlName="nivelImplementacaoAtual">
+                            <option [value]="null" disabled selected>Situação atual de Gestão da Terra</option>
+                            <option *ngFor="let item of listaNivelImplementacaoAtual" [value]="item.value">
+                                {{item.label}}</option>
+                        </select>
+                        <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid"
+                            class="text-danger">
+                            Campo Obrigatório.
+                        </small>
+                    </div>
+                    <!-- Situação desejada de Gestão da Terra -->
+                    <div class="form-group mt-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Situação desejada de Gestão da Terra</span>
+                            <fa-icon [icon]="faQuestionCircle" ngbTooltip="Situação desejada de Gestão da Terra">
+                            </fa-icon>
+                        </label>
+                        <select class="form-select form-select-sm" required
+                            [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid}"
+                            formControlName="nivelImplementacaoAlmejado">
+                            <option value="null" disabled selected>Situação desejada de Gestão da Terra</option>
+                            <option *ngFor="let item of listaNivelImplementacaoAlmejado" [ngValue]="item.value">
+                                {{item.label}}
+                        </select>
+                        <small
+                            *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid"
+                            class="text-danger">
+                            Campo Obrigatório.
+                        </small>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Inflação acumulada desde 2023 (%)</span>
+                            <fa-icon [icon]="faQuestionCircle"
+                                ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."></fa-icon>
+                        </label>
+                        <input type="text" class="form-control form-control-sm" placeholder="(Opcional)"
+                            formControlName="inflacao" numbersOnly>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 d-flex flex-column justify-content-center">
+                    <img src="./assets/images/terras-indigenas/terra_indigena.jpg" style="max-height: 400px;" alt="">
+                    <a class="btn btn-sm btn-link text-secondary w-50 align-self-center" target="_blank"
+                        routerLink="/pgtas">
+                        Conheça os PGTAs
+                    </a>
                 </div>
             </div>
-        </div>
+            <div class="d-flex mt-3">
+                <button class="btn btn-secondary" (click)="botaoCalcular()">Calcular</button>
+                <app-loading *ngIf="mostrarCarregando"></app-loading>
+            </div>
+        </form>
     </div>
+
     <div id="resultado"></div>
-    <div *ngIf="mostrarResultado&&resultado">
-        <div class="card card-main mt-3">
-            <div class="card-body">
-                <h1 class="section-title mt-3 mb-3">Resultado</h1>
-                <button class="btn btn-sm btn-secondary mb-3" (click)="gerarPdf()">Download PDF</button>
-                <p class=" mb-3">
-                    O custo previsto para as Terras Indígenas
-                    <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>
-                    para o eixos temáticos <strong>{{resultado.eixosSelecionados}}</strong> com o nível de implementação
-                    <strong>{{resultado.nivelImplementacao}}</strong> , {{resultado.tipoCusto == 1 ? 'por ano, ': ''}}é
-                    de:
-                </p>
-                <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chart"
-                    [styles]="{width: '100%', height:'500px'}"></canvasjs-chart>
-            </div>
-        </div>
-        <div class="card mt-3">
-            <div class="card-body">
-                <h1 class="section-title mt-3 mb-3">Descrição Por Eixo Temático</h1>
-                <div class="table-responsive">
-                    <table class="table table-sm table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Terra Indigena</th>
-                                <th *ngFor="let eixo of resultado.eixosSelecionados">{{eixo}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let terraIndigena of resultado.terrasIndigenas">
-                                <td>{{terraIndigena.nome}}</td>
-                                <td *ngFor="let eixo of terraIndigena.resultadoEixos">{{eixo.valorEixo |
-                                    currency:'BRL':'symbol':'1.0-0'}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <div *ngIf="mostrarResultado&&resultado" class="mt-5 border p-3">
+        <h1 class="section-title text-center">Resultados</h1>
+        <button class="btn btn-sm btn-secondary mb-3" (click)="gerarPdf()">Download PDF</button>
+        <p class=" mb-3">
+            O custo previsto para as Terras Indígenas
+            <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>
+            para o eixos temáticos <strong>{{resultado.eixosSelecionados}}</strong> com o nível de implementação
+            <strong>{{resultado.nivelImplementacao}}</strong> , {{resultado.tipoCusto == 1 ? 'por ano, ': ''}}é
+            de:
+        </p>
+        <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chart"
+            [styles]="{width: '100%', height:'500px'}"></canvasjs-chart>
+
+
+        <h1 class="section-sub-title mt-5 mb-3">Descrição Por Eixo Temático</h1>
+        <div class="table-responsive">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Terra Indigena</th>
+                        <th *ngFor="let eixo of resultado.eixosSelecionados">{{eixo}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let terraIndigena of resultado.terrasIndigenas">
+                        <td>{{terraIndigena.nome}}</td>
+                        <td *ngFor="let eixo of terraIndigena.resultadoEixos">{{eixo.valorEixo |
+                            currency:'BRL':'symbol':'1.0-0'}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

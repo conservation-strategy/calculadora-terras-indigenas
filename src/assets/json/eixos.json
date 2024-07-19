@@ -8,81 +8,153 @@
         "posicao": 0,
         "nome": "Infraestrutura das associações",
         "descricao": "Recursos para a sede da associação (espaço físico, equipamentos, computadores, materiais de escritório e manutenções); meio de transporte para a realização das atividades (carros, caminhões, embarcações e manutenções); meio de comunicação da sede (telefone, internet ou rádio e manutenções)",
-        "custoBasico": [
-          "Não recorrente (eventual): sede / meio de comunicação / meio de transporte",
-          "Recorrente (anual): manutenção"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): sede / meio de comunicação / meio de transporte",
+            "exemplo": "Exemplos de custos: Equipamentos (celular, impressora, datashow, computador, notebook,  equipamento audiovisual, rádio, bateria, HD externo, GPS, etc.) Veiculos (carro, barco, motores, etc.) Mobília (ar condicionado, cadeira, mesa, fogão, porta) Outros (bomba d'água, material de construção, armário, serviço de reforma, instalação de internet, etc.)"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção",
+            "exemplo": "Exemplos de custos: Manutenção de equipamentos e veículos, licenças de softwares, reparos correntes da infraestrutura da associação, etc."
+          }
         ],
-        "custoBom": [
-          "Não recorrente (eventual): sede própria / loja / espaço para armazenamento da produção / caminhão / ônibus / garagem de veículo / equipamento de audiovisual / espaço para realização das reuniões / alojamento",
-          "Recorrente (anual): manutenção / seguro para os veículos"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): sede própria / loja / espaço para armazenamento da produção / caminhão / ônibus / garagem de veículo / equipamento de audiovisual / espaço para realização das reuniões / alojamento",
+            "exemplo": "Exemplos de custos: Equipamentos (nobreak, inversor, projetor, câmera profissional, equipamentos para as ilhas de edição, etc.) Veículos (caminhão, ônibus, barcos, motores, etc.) Mobília (mesa de reunião, cadeiras, ar condicionado, etc.) Outros (materiais elétricos, cerca elétrica, materiais de construção, arquiteto, equipamentos para espaço da produção, reforma das casas de apoio, serviço de construção de balsa, etc.)"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção / seguro para os veículos",
+            "exemplo": "Exemplos de custos: manutenção de equipamentos e veículos, manutenção elétrica, seguro dos veículos, sistema de monitoramento, reparos correntes da infraestrutura da associação, etc."
+          }
         ]
       },
       {
         "posicao": 1,
         "nome": "Funcionamento das associações",
         "descricao": "Recursos para desenvolver as atividades e o funcionamento da Associação (assembleia, aluguel, materiais, inclusive de comunicação, assessorias jurídica/tributária/fiscal/técnica/comunicação, despesas cartoriais, correio, despesa com reuniões, manutenção de site)",
-        "custoBasico": [
-          "Recorrente (anual): assembleia estatutária / recurso para despesas de aluguel, água, luz, internet, correios / frete de caminhão, ônibus e barco / material de escritório / assessoria contábil"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): assembleia estatutária / recurso para despesas de aluguel, água, luz, internet, correios / frete de caminhão, ônibus e barco / material de escritório / assessoria contábil",
+            "exemplo": "Exemplos de custos: Tarifa bancária, internet, energia, água, telefone, correios, auditoria, serviços contábeis, despesa com cartório, material de escritório, confecção de material gráfico, impressões, passagens, alimentação, hospedagem, frete aéreo, aluguel de veículo, táxi, transporte, combustível, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): assessoria jurídica / assessoria de comunicação / manutenção do site / produção de materiais de comunicação"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): assessoria jurídica / assessoria de comunicação / manutenção do site / produção de materiais de comunicação",
+            "exemplo": "Exemplos de custos: Assessoria de comunicação, assessoria jurídica, consultoria de audiovisual, advogado, assessoria de gestão de mídias, site, plano de comunicação, etc."
+          }
         ]
       },
       {
         "posicao": 2,
         "nome": "Treinamento e formação contínua",
         "descricao": "Cursos, capacitações, atividades e elaboração de materiais didáticos, visando o apoio às associações sobre gestão administrativa, financeira e de comunicação",
-        "custoBasico": [
-          "Recorrente (anual): participar e/ou realizar capacitações: pelo menos 1 a cada 3 anos (gestão administrativa, financeira e de comunicação) / assessoria técnica (profissionais contratados para a realização dos cursos)",
-          "Não recorrente (eventual): esboço de material didático sobre gestão organizacional"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): esboço de material didático sobre gestão organizacional",
+            "exemplo": "Exemplos de custos: consultoria, combustível, alimentação, hospedagem, transporte, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): participar e/ou realizar capacitações: pelo menos 1 a cada 3 anos (gestão administrativa, financeira e de comunicação) / assessoria técnica (profissionais contratados para a realização dos cursos)",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, hospedagem, passagens, fretes, materiais dos cursos, transportes, etc. (exemplo de capacitações: audiovisual, informática, elaboração de projetos e relatórios, prestação de contas, etc)."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): formação contínua",
-          "Não recorrente (eventual): material didático sobre gestão organizacional"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): material didático sobre gestão organizacional",
+            "exemplo": "Exemplos de custos: Consultoria, logística, diagramação gráfica, impressão, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): formação contínua",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, hospedagem, passagens, fretes, materiais dos cursos, transportes, etc."
+          }
         ]
       },
       {
         "posicao": 3,
         "nome": "Articulação interna",
         "descricao": "Instâncias de governanças e controle social que reúne o coletivo de povos, lideranças e comunidades (reuniões e visitas nas aldeias), visando a ampla discussão sobre as ações relacionadas à governança e ao PGTA",
-        "custoBasico": [
-          "Recorrente (anual): reuniões nas aldeias para compartilhamento e discussão das ações das associações (além da Assembleia)"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): reuniões nas aldeias para compartilhamento e discussão das ações das associações (além da Assembleia)",
+            "exemplo": "Exemplos de custos: Frete aéreo, fluvial e terrestre, transporte, passagem, alimentação, combustível, ajuda de custo/auxílio financeiro, consultoria, hospedagem, material de papelaria, pagamento de cozinheira, barqueiro, etc. (atividades como Encontro Xingu+ e reuniões do conselho, etc.)"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): recurso para reuniões emergenciais (situacionais de conflitos, etc.)"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): recurso para reuniões emergenciais (situacionais de conflitos, etc.)",
+            "exemplo": "Exemplos de custos: Frete aéreo, fluvial e terrestre, transporte, passagem, alimentação, combustível, ajuda de custo/auxílio financeiro, consultoria, hospedagem, material de papelaria, pagamento de  cozinheira, barqueiro, etc. (para as reuniões emergenciais sobre conflitos, etc.)"
+          }
         ]
       },
       {
         "posicao": 4,
         "nome": "Articulação externa",
         "descricao": "Mobilizações regionais, nacionais e internacionais que contemplem as pautas amplas voltadas aos direitos dos povos indígenas (saúde, educação, território)",
-        "custoBasico": [
-          "Recorrente (anual): reunião anual com a articulação indígena estadual, regional / mobilizações em nível nacional (ex. Abril Indígena)"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): reunião anual com a articulação indígena estadual, regional / mobilizações em nível nacional (ex. Abril Indígena)",
+            "exemplo": "Exemplos de custos: Alimentação, ajuda de custo/auxílio financeiro, combustível, hospedagem, passagem terrestre e aérea, materiais de camping, frete aéreo, fluvial e terrestre, locação de ônibus, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): projeto específico para participação em mobilizações (ex. ATL) / mobilizações anuais em nível nacional (PECs, licenciamento) para TI's com elevado grau de ameaça / fundo para mobilizações regionais, nacionais e/ou internacionais"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): projeto específico para participação em mobilizações (ex. ATL) / mobilizações anuais em nível nacional (PECs, licenciamento) para TI's com elevado grau de ameaça / fundo para mobilizações regionais, nacionais e/ou internacionais",
+            "exemplo": "Exemplos de custos: Assessoria indígena, consultoria, construção de um fundo para mobilizações, alimentação, ajuda de custo/auxílio financeiro, combustível, hospedagem, passagem terrestre e aérea, materiais de camping, frete aéreo, fluvial e terrestre, locação de ônibus, etc."
+          }
         ]
       },
       {
         "posicao": 5,
         "nome": "Instrumentos de governança",
         "descricao": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)",
-        "custoBasico": [
-          "Não recorrente (eventual): Construção do PGTA / Construção do Protocolo de consulta"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): Construção do PGTA / Construção do Protocolo de consulta",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, material didático, passagem, frete aéreo, fluvial e terrestre, passagem aérea e terrestre, tradutor, camisetas, impressão PGTA e Protocolo de Consulta, pagamento de  cozinheira, barqueiro, etc. (reuniões sobre o PGTA, Protocolo de Consulta, Etnomapeamento, etc.)"
+          }
         ],
-        "custoBom": [
-          "Não recorrente (eventual): atualização do PGTA a cada 3 anos / atualização do Protocolo de consulta a cada 5 anos"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): atualização do PGTA a cada 3 anos / atualização do Protocolo de consulta a cada 5 anos",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, material didático, passagem, frete aéreo, fluvial e terrestre, passagem aérea e terrestre, tradutor, camisetas, impressão versão atualizada do PGTA e Protocolo de Consulta, pagamento de  cozinheira, barqueiro, etc."
+          }
         ]
       },
       {
         "posicao": 6,
-        "nome": "Corpo técnico - Soberania Alimentar",
+        "nome": "Corpo técnico/Governança",
         "descricao": "Capacidade dos quadros técnicos mínimos necessários para a gestão da Associação e desenvolvimento dos projetos",
-        "custoBasico": [
-          "Recorrente (anual): equipe (diretivo/político; administrativo/financeiro; operacional {ex. motorista etc.}) / em projetos ter corpo técnico específico"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): equipe (diretivo/político; administrativo/financeiro; operacional {ex. motorista etc.}) / em projetos ter corpo técnico específico",
+            "exemplo": "Exemplos de custos: Salários, encargos e benefícios"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): equipe diretivo/político / equipe administrativo/financeiro / equipe operacional / equipe de comunicadores indígenas"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): equipe diretivo/político / equipe administrativo/financeiro / equipe operacional / equipe de comunicadores indígenas",
+            "exemplo": "Exemplos de custos: Salários, encargos e benefícios"
+          }
         ]
       }
     ]
@@ -96,74 +168,154 @@
         "posicao": 7,
         "nome": "Elaboração e atualização de diagnóstico dos vetores de ameaça e plano de fiscalização",
         "descricao": "Construção dos diagnósticos e reuniões para a atualização dos mesmos (discussão de ameaças e estratégias)",
-        "custoBasico": [
-          "Recorrente (anual): reuniões para levantamento/discussão de ameaças e estratégias, conforme grau de ameaça da TI (Baixo: 1 reunião por ano / Médio: 2 reuniões por ano / Alto: 3 reuniões por ano / Altíssimo: 4 ou mais reuniões por ano)",
-          "Não recorrente (eventual): esboço de documento de apoio e referência para o monitoramento e atualização dos vetores de ameaça"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): esboço de documento de apoio e referência para o monitoramento e atualização dos vetores de ameaça",
+            "exemplo": "Exemplos de custos: consultoria, combustível, alimentação, hospedagem, transporte, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): reuniões para levantamento/discussão de ameaças e estratégias, conforme grau de ameaça da TI (Baixo: 1 reunião por ano / Médio: 2 reuniões por ano / Alto: 3 reuniões por ano / Altíssimo: 4 ou mais reuniões por ano)",
+            "exemplo": "Exemplos de custos: Alimentação, frete aéreo, fluvial e terrestre, combustível, hospedagem, material de campo, material de papelaria, pagamento de  cozinheira, barqueiro, etc. (exemplo de atividades: monitoramento do PGTA/MonitorGATI, acordo de caça e pesca, discussão das ameaças, Grupo de Trabalho sobre proteção territorial, atualização dos diagnósticos, etc.)"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): reuniões para levantamento/discussão de ameaças e estratégias, conforme grau de ameaça da TI (Baixo: 2 reuniões por ano / Médio: 3 reuniões por ano / Alto: 4 reuniões por ano / Altíssimo: 5 ou mais reuniões por ano)",
-          "Não recorrente (eventual): documento de apoio e referência para o monitoramento e atualização dos vetores de ameaça"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): documento de apoio e referência para o monitoramento e atualização dos vetores de ameaça",
+            "exemplo": "Exemplos de custos: Consultoria, logística, diagramação gráfica, impressão, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): reuniões para levantamento/discussão de ameaças e estratégias, conforme grau de ameaça da TI (Baixo: 2 reuniões por ano / Médio: 3 reuniões por ano / Alto: 4 reuniões por ano / Altíssimo: 5 ou mais reuniões por ano)",
+            "exemplo": "Exemplos de custos: Alimentação, frete aéreo, fluvial e terrestre, combustível, hospedagem, material de campo, material de papelaria, pagamento de  cozinheira, barqueiro, etc. (exemplo de atividades: monitoramento do PGTA/MonitorGATI, acordo de caça e pesca, discussão das ameaças, Grupo de Trabalho sobre proteção territorial, atualização dos diagnósticos, etc.)"
+          }
         ]
       },
       {
         "posicao": 8,
         "nome": "Fiscalização e monitoramento territorial (atividades ilegais - desmatamento, garimpo, madeira, estradas)",
         "descricao": "Expedições de vigilância visando proteger e fiscalizar o território contra atividades ilegais na TI e no seu entorno e manutenção dos limites, incluindo o uso de ferramentas de monitoramento remoto (SIG)",
-        "custoBasico": [
-          "Recorrente (anual): expedições de vigilância/manutenção de limites da TI, conforme grau de ameaça da TI (Baixo: 1 expedição por ano / Médio: 2 expedições por ano / Alto: 3 expedições por ano / Altíssimo: 4 expedições por ano) / sobrevoo anual (TIs de grau de ameaça alto e altíssimo)"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): expedições de vigilância/manutenção de limites da TI, conforme grau de ameaça da TI (Baixo: 1 expedição por ano / Médio: 2 expedições por ano / Alto: 3 expedições por ano / Altíssimo: 4 expedições por ano) / sobrevoo anual (TIs de grau de ameaça alto e altíssimo)",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, sobrevoo, material de campo, frete aéreo, terrestre e fluvial, auxílio financeiro/ajuda de custo, uniforme, consultoria, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): Mais expedições de vigilância por ano / monitoramento remoto em tempo real / sobrevoo anual (TIs de grau de ameaça médio)"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): Mais expedições de vigilância por ano / monitoramento remoto em tempo real / sobrevoo anual (TIs de grau de ameaça médio)",
+            "exemplo": "Exemplos de custos: Consultoria SIG, programa Cybertracker, aquisição e processamento de imagens de satélite, combustível, alimentação, sobrevoo, material de campo, frete aéreo, terrestre e fluvial, auxílio financeiro/ajuda de custo, uniforme, consultoria, etc."
+          }
         ]
       },
       {
         "posicao": 9,
         "nome": "Monitoramento e manejo ambiental (qualidade ambiental)",
         "descricao": "Construção dos diagnósticos, ações de proteção, restauração, conservação, monitoramento de impactos e manejo dos recursos naturais (como qualidade da água, fauna, flora, controle do fogo e uso de agrotóxicos)",
-        "custoBasico": [
-          "Recorrente (anual): reuniões para levantamento/discussão de necessidades, impactos e estratégias para o monitoramento ambiental conforme grau de ameaça da TI (Baixo: 1 reunião por ano / Médio: 2 reuniões por ano / Alto: 3  reuniões por ano / Altíssimo: 4 ou mais reuniões por ano) / projeto de monitoramento e manejo ambiental conforme grau de ameaça da TI (Baixo: 1 projeto / Médio: 2 projetos / Alto: 3 projetos / Altíssimo: 4 ou mais projetos por ano)",
-          "Não recorrente (eventual): esboço de documento de apoio e referência para o monitoramento e manejo"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): esboço de documento de apoio e referência para o monitoramento e manejo",
+            "exemplo": "Exemplos de custos: consultoria, combustível, alimentação, hospedagem, transporte, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): reuniões para levantamento/discussão de necessidades, impactos e estratégias para o monitoramento ambiental conforme grau de ameaça da TI (Baixo: 1 reunião por ano / Médio: 2 reuniões por ano / Alto: 3  reuniões por ano / Altíssimo: 4 ou mais reuniões por ano) / projeto de monitoramento e manejo ambiental conforme grau de ameaça da TI (Baixo: 1 projeto / Médio: 2 projetos / Alto: 3 projetos / Altíssimo: 4 ou mais projetos por ano)",
+            "exemplo": "Exemplos de custos: Alimentação, combustível, consultoria, auxílio financeiro/ajuda de custo, material de campo, pagamento de  cozinheira, barqueiro, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): projeto de monitoramento e manejo ambiental por ameaça ambiental / assessoria técnica necessária para o monitoramento ambiental",
-          "Não recorrente (eventual): documento de apoio e referência para o monitoramento e manejo"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): documento de apoio e referência para o monitoramento e manejo",
+            "exemplo": "Exemplos de custos: Consultoria, logística, diagramação gráfica, impressão, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): projeto de monitoramento e manejo ambiental por ameaça ambiental / assessoria técnica necessária para o monitoramento ambiental",
+            "exemplo": "Exemplos de custos: Assessoria técnica, consultoria, alimentação, combustível, auxílio financeiro/ajuda de custo, material de campo, pagamento de  cozinheira, barqueiro, etc. (exemplo de atividades: projeto proteção dos recursos hídricos e pesqueiros, projeto aldeia limpa, acordos de vizinhança, reunião gestão ambiental, monitoramento da contaminação de mercúrio em peixes, etc.)"
+          }
         ]
       },
       {
         "posicao": 10,
         "nome": "Capacitações e elaboração de materiais relacionados à fiscalização territorial e proteção ambiental",
         "descricao": "Eventos, cursos e capacitações (ex.: Agentes Ambientais Indígenas) e elaboração de materiais didáticos voltados à fiscalização, proteção territorial, monitoramento e manejo ambiental",
-        "custoBasico": [
-          "Recorrente (anual): formações sobre a fiscalização e proteção territorial (Ex. Agentes Ambientais Indígenas) conforme de grau de ameaça da TI (Baixo: 1 formações a cada 2 anos / Médio: 1 formação por ano / Alto: 2 formações por ano / Altíssimo: 3 ou mais formações por ano) / formação anual específica sobre monitoramento e manejo ambiental (ex. controle do fogo)",
-          "Não recorrente (eventual): esboço de material didático para formações"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): esboço de material didático para formações ",
+            "exemplo": "Exemplos de custos: consultoria, combustível, alimentação, hospedagem, transporte, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): formações sobre a fiscalização e proteção territorial (Ex. Agentes Ambientais Indígenas) conforme de grau de ameaça da TI (Baixo: 1 formações a cada 2 anos / Médio: 1 formação por ano / Alto: 2 formações por ano / Altíssimo: 3 ou mais formações por ano) / formação anual específica sobre monitoramento e manejo ambiental (ex. controle do fogo)",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, material de papelaria, transporte, camiseta, auxílio financeiro/ajuda de custo, hospedagem, passagem aérea e terrestre, frete (exemplo de capacitações: Educação Ambiental, Prevfogo, Mapbiomas, curso Gestores Ambientais, etc.)"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): reunião ou intercâmbio anual com outros povos para aprimorar o conhecimento e técnicas sobre proteção e fiscalização",
-          "Não recorrente (eventual): material didático para formações"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): material didático para formações",
+            "exemplo": "Exemplos de custos: Consultoria, logística, diagramação gráfica, impressão, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): reunião ou intercâmbio anual com outros povos para aprimorar o conhecimento e técnicas sobre proteção e fiscalização",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, transporte, camiseta, auxílio financeiro/ajuda de custo, hospedagem, passagem aérea e terrestre, etc."
+          }
         ]
       },
       {
         "posicao": 11,
         "nome": "Equipamentos",
         "descricao": "Aquisição/manutenção/reposição de equipamentos básicos indispensáveis para as atividades de proteção e fiscalização da TI e seu entorno (veículos, drone, notebook, GPS), infraestrutura de vigilância e equipamentos para o monitoramento e manejo ambiental",
-        "custoBasico": [
-          "Não recorrente (eventual): kit de equipamento para as expedições (GPS, drone, EPI, celular, meio de transporte)",
-          "Recorrente (anual): manutenção dos equipamentos"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): kit de equipamento para as expedições (GPS, drone, EPI, celular, meio de transporte)",
+            "exemplo": "Exemplos de custos: Equipamentos (drone, bateria, notebook, tablet, celular, Walk talkie, câmera fotográfica, GPS, TV, rádio, HD externo, receptor, equipamento de proteção individual, material permanente, etc.) Veículos (os mesmos veículos utilizados pela associação)"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção dos equipamentos",
+            "exemplo": "Exemplos de custos: Manutenção dos equipamentos e veículos utilizados para a proteção territorial"
+          }
         ],
-        "custoBom": [
-          "Não recorrente (eventual): estrutura por sub-região para vigilância constante na TI / meios de transporte específicos para as atividades de fiscalização",
-          "Recorrente (anual): manutenção dos equipamentos e infraestruturas"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): estrutura por sub-região para vigilância constante na TI / meios de transporte específicos para as atividades de fiscalização",
+            "exemplo": "Exemplos de custos: Veículos próprios para as atividades de proteção (carro, barco, moto, voadeira, hélice, caminhão, motor rabeta e de popa, camionete, etc.) Mobília (freezer, gerador, eletrodomésticos, bebedouro, TV, antena, equipamentos da base, etc.) Outros (motor de energia, kit solar, material de construção, mão de obra, estrutura base, construção de galpão para guardar equipamentos, instalação do sistema de alarme, construção do muro e portão do depósito de vigilância, etc.)"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção dos equipamentos e infraestruturas",
+            "exemplo": "Exemplos de custos: Manutenção de veículos e equipamentos de proteção, seguro, monitoramento do depósito de equipamentos de vigilância e sistema de alarme, etc."
+          }
         ]
       },
       {
         "posicao": 12,
-        "nome": "Corpo técnico",
+        "nome": "Corpo técnico/Fiscalização e Proteção",
         "descricao": "Equipe necessária para a realização das atividades de fiscalização e proteção ambiental",
-        "custoBasico": [
-          "Recorrente (anual): equipe de agentes ambientais indígenas"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): equipe de agentes ambientais indígenas",
+            "exemplo": "Exemplos de custos: Salário de pessoal específico da proteção (agentes ambientais indígenas)"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): agente ambiental por aldeia / corpo técnico para o monitoramento remoto (SIG, ODK, Drone)"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): agente ambiental por aldeia / corpo técnico para o monitoramento remoto (SIG, ODK, Drone)",
+            "exemplo": "Exemplos de custos: Salários, benefícios e encargos de pessoal vinculado a vigilância e monitoramento remoto e agentes ambientais indígenas"
+          }
         ]
       }
     ]
@@ -177,33 +329,67 @@
         "posicao": 13,
         "nome": "Apoio à atividades culturais tradicionais",
         "descricao": "Iniciativas de fortalecimento e/ou resgate do patrimônio cultural e manifestações culturais tradicionais (eventos, registros audiovisuais, livros, equipamentos)",
-        "custoBasico": [
-          "Recorrente (anual): encontro anual cultural geral da TI /  cumprir os calendários tradicionais  de atividades culturais da TI",
-          "Não recorrente (eventual): planejamento para construção de instrumento próprio de divulgação das ações culturais da TI (rádio, site, podcast, etc.)"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): planejamento para construção de instrumento próprio de divulgação das ações culturais da TI (rádio, site, podcast, etc.)",
+            "exemplo": "Exemplos de custos: consultoria, combustível, alimentação, hospedagem, transporte, etc"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): encontro anual cultural geral da TI /  cumprir os calendários tradicionais  de atividades culturais da TI",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, deslocamento, compra de materiais para artesanato, auxílio financeiro/ajuda de custo, frete aéreo, terrestre e fluvial, passagem aérea e terrestre, consultoria (cinegrafista), hospedagem, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): projetos específicos para apoiar a realização das atividades culturais tradicionais (e/ou de resgate da cultura material) / oficina anual para o fortalecimento e/ou resgate das atividades culturais",
-          "Não recorrente (eventual): instrumento próprio de divulgação das ações culturais da TI (rádio, site, podcast, etc.)"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): instrumento próprio de divulgação das ações culturais da TI (rádio, site, podcast, etc.)",
+            "exemplo": "Exemplos de custos: Rádio, computador, equipamentos audiovisuais, internet, consultoria, material gráfico, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): projetos específicos para apoiar a realização das atividades culturais tradicionais (e/ou de resgate da cultura material) / oficina anual para o fortalecimento e/ou resgate das atividades culturais",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, deslocamento, auxílio financeiro/ajuda de custo, frete aéreo, terrestre e fluvial, passagem aérea e terrestre, pagamento de  cozinheira, barqueiro, hospedagem, etc."
+          }
         ]
       },
       {
         "posicao": 14,
         "nome": "Apoio a atividades interculturais (pesquisas, intercâmbios e/ou eventos)",
         "descricao": "Ações de pesquisas interculturais e intercâmbios, visando o fortalecimento cultural",
-        "custoBasico": [
-          "Recorrente (anual): projeto de pesquisa cultural realizado por pesquisadores indígenas / participação anual em atividade de intercâmbio"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): projeto de pesquisa cultural realizado por pesquisadores indígenas / participação anual em atividade de intercâmbio",
+            "exemplo": "Exemplos de custos: Passagem aérea e terrestre, combustível, alimentação, auxílio financeiro/ajuda de custo, frete, hospedagem, consultoria, etc. (exemplo de atividades: intercâmbio das mulheres, feira cultural, encontro de jovens, etc.)"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): para esta atividade foi definido apenas o nível básico"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): promoção anual de evento de intercâmbio",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, deslocamento, auxílio financeiro/ajuda de custo, frete aéreo, terrestre e fluvial, passagem aérea e terrestre, pagamento de  cozinheira, barqueiro, hospedagem, etc."
+          }
         ]
       },
       {
         "posicao": 15,
-        "nome": "Corpo técnico",
+        "nome": "Corpo técnico/Fortalecimento Cultural",
         "descricao": "Equipe necessárias para a realização das atividades voltadas à cultura",
-        "custoBasico": ["Recorrente (anual): agente cultural indígena na TI"],
-        "custoBom": [
-          "Recorrente (anual): para esta atividade foi definido apenas o nível básico"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): agente cultural indígena na TI",
+            "exemplo": "Exemplos de custos: Salário agente cultural"
+          }
+        ],
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): equipe de agentes culturais indígenas, por povo, atuando em patrimônio cultural",
+            "exemplo": "Exemplos de custos: Salário equipe de agentes culturais"
+          }
         ]
       }
     ]
@@ -217,22 +403,48 @@
         "posicao": 16,
         "nome": "Apoio a alternativas econômicas sustentáveis",
         "descricao": "Mapeamento, adequação, ampliação e/ou prospecção de recursos das TIs que tenham interface com o mercado, desenvolvimento do produto, cadeia de valor e seus elos, como beneficiamento e comercialização, incluindo aquisição de equipamentos, como caminhão e construção de UBAs",
-        "custoBasico": [
-          "Recorrente (anual): logística de transporte (escoamento) / manutenção de equipamentos e veículos / material e insumos de campo / auxílio financeiro (01 cadeia, produto ou serviço estruturado)",
-          "Não recorrente (eventual): diagnóstico sobre o potencial dos produtos e/ou serviços (turismo, carbono, etc.) da terra indígena / cadeia estruturada (diagnóstico do produto e/ou serviço, estratégia comercial, estrutura de beneficiamento da produção)"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): diagnóstico sobre o potencial dos produtos e/ou serviços (turismo, carbono, etc.) da terra indígena / cadeia estruturada (diagnóstico do produto e/ou serviço, estratégia comercial, estrutura de beneficiamento da produção)",
+            "exemplo": "Exemplos de custos: (Uma cadeia produtiva): Equipamentos (computador, celular, GPS, notebook, tablet, bateria de rádio, roçadeira, motosserra, prensa, tacho, carrinho de mão, balança, material elétrico, despolpadeira, etc) Veículos (trator, barco, motor, caminhão, carreta, carro) Mobília (freezer, grupo gerador, máquinas de costura, equipamentos casa de farinha) Outros (material de construção, sistema de irrigação, placa solar, material de construção para feiras, consultoria (diagnóstico, vídeo), etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): logística de transporte (escoamento) / manutenção de equipamentos e veículos / material e insumos de campo / auxílio financeiro (01 cadeia, produto ou serviço estruturado)",
+            "exemplo": "Exemplos de custos: (Uma cadeia produtiva): alimentação, combustível, auxílio financeiro/ajuda de custo, consultoria sobre produção, capacitações, material de campo e de apoio ao escoamento, frete aéreo, terrestre e fluvial, passagens, insumos para a produção (embalagem, rótulo, etiqueta, insumos agrícolas, etc.), imposto da transação comercial, mudas, hospedagem, serviço retroescavadeira, aluguel depósito/loja, manutenção veículos, seguro, energia elétrica, internet e água (galpões de produção), manutenção dos espaços de produção, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): logística de transporte (escoamento) / manutenção de equipamentos e veículos / material e insumos de campo / auxílio financeiro  (02 ou mais cadeias, produtos ou serviços estruturados)",
-          "Não recorrente (eventual): contrato de comercialização (PNAE, Origens, empresas, cooperativas) / selo de certificação (ex. Origens, orgânico) / associação com estrutura para viabilizar a produção (em todas as etapas) / 02 ou mais cadeias estruturadas (diagnósticos do produtos e/ou serviço, estratégia comercial, estrutura de beneficiamento da produção)"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): contrato de comercialização (PNAE, Origens, empresas, cooperativas) / selo de certificação (ex. Origens, orgânico) / associação com estrutura para viabilizar a produção (em todas as etapas) / 02 ou mais cadeias estruturadas (diagnósticos do produtos e/ou serviço, estratégia comercial, estrutura de beneficiamento da produção)",
+            "exemplo": "Exemplos de custos: (Duas ou mais cadeias produtivas): Equipamentos (computador, celular, GPS, notebook, tablet, bateria de rádio, roçadeira, motosserra, prensa, tacho, carrinho de mão, balança, material elétrico, despolpadeira) Veículos (trator, barco, motor, caminhão, carreta, carro) Mobília (freezer, grupo gerador, máquinas de costura, equipamentos casa de farinha) Outros (material de construção, sistema de irrigação, placa solar, material de construção para feiras, consultoria (diagnóstico, vídeo), etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): logística de transporte (escoamento) / manutenção de equipamentos e veículos / material e insumos de campo / auxílio financeiro  (02 ou mais cadeias, produtos ou serviços estruturados)",
+            "exemplo": "Exemplos de custos: (Duas ou mais cadeias produtivas): alimentação, combustível, auxílio financeiro/ajuda de custo, consultoria sobre produção, capacitações, material de campo e de apoio ao escoamento, frete aéreo, terrestre e fluvial, passagens, insumos para a produção (embalagem, rótulo, etiqueta, insumos agrícolas, etc.), imposto da transação comercial, mudas, hospedagem, serviço retroescavadeira, aluguel depósito/loja, manutenção veículos, seguro, energia elétrica, internet e água (galpões de produção), manutenção dos espaços de produção, etc."
+          }
         ]
       },
       {
         "posicao": 17,
-        "nome": "Corpo técnico",
+        "nome": "Corpo técnico/Geração de renda",
         "descricao": "Equipe necessária para a realização das atividades de geração de renda e alternativas econômicas",
-        "custoBasico": ["Recorrente (anual): assessoria técnica continuada"],
-        "custoBom": [
-          "Recorrente (anual): equipe indígena de assessoria técnica com formação específica"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): assessoria técnica continuada",
+            "exemplo": "Exemplos de custos: Salário de pessoal vinculado assessoria técnica"
+          }
+        ],
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): equipe indígena de assessoria técnica com formação específica",
+            "exemplo": "Exemplos de custos: Salário de pessoal específico para produção"
+          }
         ]
       }
     ]
@@ -246,38 +458,72 @@
         "posicao": 18,
         "nome": "Iniciativas relacionadas à soberania alimentar",
         "descricao": "Diversidade de iniciativas que visam a soberania e segurança alimentar das comunidades por meio do fortalecimento da agrobiodiversidade, agroecologia, culinária tradicional e pequenas criações",
-        "custoBasico": [
-          "Recorrente (anual): material e insumos de campo / consumo de proteína (criação e/ou caça e pesca) / logística / manutenção de equipamentos e veículos",
-          "Não recorrente (eventual): roça por família e/ou comunitária / 01 ou mais casas de farinha comunitárias /  viveiro familiar / pomar familiar"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): roça por família e/ou comunitária / 01 ou mais casas de farinha comunitárias /  viveiro familiar / pomar familiar",
+            "exemplo": "Exemplos de custos: Exemplos de custos: Material de construção (galinheiros), bomba d'água, caixa d'água, betoneira, gerador, carrinho de mão, poço amazônico, instalação elétrica (viveiros), material de pesca, implementação de roça, casa de farinha, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): material e insumos de campo / consumo de proteína (criação e/ou caça e pesca) / logística / manutenção de equipamentos e veículos",
+            "exemplo": "Combustível, alimentação, saco para mudas, lona, aquisição de sementes e mudas de frutas, ferramentas e insumos para roça, ração, manutenção de equipamentos e veículos, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): feira anual de troca de sementes",
-          "Não recorrente (eventual): banco de sementes / certificação sobre o modo de produção (ex. certificação do sistema alimentar)"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): banco de sementes / certificação sobre o modo de produção (ex. certificação do sistema alimentar)",
+            "exemplo": "Exemplos de custos: Material de construção, equipamentos, diagnósticos e consultorias"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): feira anual de troca de sementes",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, passagem, hospedagem, frete aéreo, terrestre e fluvial, auxílio financeiro/ajuda de custo, material de campo, consultoria, pagamento de cozinheira, barqueiro, etc."
+          }
         ]
       },
       {
         "posicao": 19,
         "nome": "Capacitações relacionadas a soberania alimentar",
         "descricao": "Atividades, eventos, cursos, capacitações e elaboração de materiais didáticos relacionados à soberania alimentar",
-        "custoBasico": [
-          "Recorrente (anual): oficina anual de fortalecimento da culinária tradicional",
-          "Não recorrente (eventual): esboço de material didático de apoio"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): esboço de material didático de apoio",
+            "exemplo": "Exemplos de custos: consultoria, combustível, alimentação, hospedagem, transporte, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): oficina anual de fortalecimento da culinária tradicional",
+            "exemplo": "Exemplos de custos: Alimentação, combustível, consultoria, auxílio financeiro/ajuda de custo, passagem aérea e terrestre, frete aéreo, terrestre e fluvial, pagamento de cozinheira, barqueiro (exemplo de atividades: capacitação sobre produção e plantio de mudas), etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): oficinas de fortalecimento da culinária tradicional",
-          "Não recorrente (eventual): material didático de apoio"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): material didático de apoio",
+            "exemplo": "Exemplos de custos: Consultoria, logística, diagramação gráfica, impressão, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): oficinas de fortalecimento da culinária tradicional",
+            "exemplo": "Exemplos de custos: Alimentação, combustível, consultoria, auxílio financeiro/ajuda de custo, passagem aérea e terrestre, frete aéreo, terrestre e fluvial, pagamento de cozinheira, barqueiro (exemplo de atividades: capacitação sobre produção e plantio de mudas), etc."
+          }
         ]
       },
       {
         "posicao": 20,
-        "nome": "Corpo técnico",
+        "nome": "Corpo técnico/Soberania Alimentar",
         "descricao": "Equipe necessária para realização das ações de soberania alimentar",
-        "custoBasico": [
-          "Recorrente (anual): Agente na TI para atuar no tema de soberania alimentar"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): Agente na TI para atuar no tema de soberania alimentar",
+            "exemplo": "Exemplos de custos: Salário de pessoal vinculado às ações de soberania alimentar"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): para esta atividade foi definido apenas o nível básico"
-        ]
+        "metricaBom": []
       }
     ]
   },
@@ -290,50 +536,106 @@
         "posicao": 21,
         "nome": "Acesso a energia",
         "descricao": "Projetos e manutenção dos sistemas de energia adaptados à região com aquisição de equipamentos, implantação e distribuição do sistema (diferentes fontes como eólica, solar, motor a diesel, hídrica)",
-        "custoBasico": [
-          "Recorrente (anual): manutenção anual dos equipamentos e sistema de energia",
-          "Não recorrente (eventual): fonte de energia por aldeia (gerador, solar ou rede elétrica)"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): fonte de energia por aldeia (gerador, solar ou rede elétrica)",
+            "exemplo": "Exemplos de custos: Equipamentos (motor, bateria, inversor, placas), logística para instalação de energia (combustível, alimentação, serviços), etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção anual dos equipamentos e sistema de energia",
+            "exemplo": "Exemplos de custos: Manutenção da infraestrutura de energia (placa solar, motor de luz), mensalidade, combustível, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): manutenção semestral dos equipamentos e sistema de energia",
-          "Não recorrente (eventual): sistema de energia solar"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): sistema de energia solar",
+            "exemplo": "Exemplos de custos: Kits de energia solar (painel, bateria, etc.), módulos solares (sistema off grid), painel, logística para instalação de energia (combustível, alimentação, serviços), etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção semestral dos equipamentos e sistema de energia",
+            "exemplo": "Exemplos de custos: Manutenção da infraestrutura de energia solar, mensalidade, etc."
+          }
         ]
       },
       {
         "posicao": 22,
         "nome": "Acesso à comunicação",
         "descricao": "Implantação e manutenção dos sistemas de radiofonia, internet, visando a ampliação do acesso à comunicação",
-        "custoBasico": [
-          "Recorrente (anual): manutenção anual dos equipamentos e sistema de comunicação",
-          "Não recorrente (eventual): 01 ponto de internet por aldeia / 01 rádio por aldeia"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): 01 ponto de internet por aldeia / 01 rádio por aldeia",
+            "exemplo": "Exemplos de custos: Kit de rádio móvel (antena, bateria, placa solar), Kit de internet, logística para instalação de internet e rádio (combustível, alimentação, serviços, frete aéreo, terrestre e fluvial), etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção anual dos equipamentos e sistema de comunicação",
+            "exemplo": "Exemplos de custos: Manutenção anual dos equipamentos de rádio e internet, logística de manutenção (combustível, alimentação, serviços, frete aéreo, terrestre e fluvial), mensalidade internet, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): manutenção semestral dos equipamentos e sistema de comunicação",
-          "Não recorrente (eventual): 02 ou mais pontos de internet por aldeia com qualidade"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): 02 ou mais pontos de internet por aldeia com qualidade",
+            "exemplo": "Exemplos de custos: Kits de internet de boa qualidade, logística para instalação (combustível, alimentação, serviços, frete aéreo, terrestre e fluvial), etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): manutenção semestral dos equipamentos e sistema de comunicação",
+            "exemplo": "Exemplos de custos: Manutenção semestral dos equipamentos de rádio e internet, logística de manutenção (combustível, alimentação, serviços, frete aéreo, terrestre e fluvial), mensalidade internet, etc."
+          }
         ]
       },
       {
         "posicao": 23,
         "nome": "Acesso a transporte",
         "descricao": "Aquisição e manutenção de meios de transporte adequados à região, limpeza de igarapés e estradas",
-        "custoBasico": [
-          "Recorrente (anual): mutirão comunitário anual para limpeza das vias de acesso (estrada e rios) / manutenção de transporte",
-          "Não recorrente (eventual): meio de transporte (barco/carro)"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): meio de transporte (barco/carro)",
+            "exemplo": "Exemplos de custos: Carros, barcos, reforma de balsas, aquisição de peças permanentes, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): mutirão comunitário anual para limpeza das vias de acesso (estrada e rios) / manutenção de transporte",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, auxílio financeiro/ajuda de custo, manutenção, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): transporte mensal da TI para o município mais próximo (para resolver pendências em banco, supermercado, etc.)",
-          "Não recorrente (eventual): meio de transporte (ônibus, van, etc)"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): meio de transporte (ônibus, van, etc).",
+            "exemplo": "Exemplos de custos: Transporte para o deslocamento (ônibus, barco, van, etc.)"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): transporte mensal da TI para o município mais próximo (para resolver pendências em banco, supermercado, etc.)",
+            "exemplo": "Exemplos de custos: Locação/contratação de serviço de transporte para o deslocamento, combustível, motorista, manutenção."
+          }
         ]
       },
       {
         "posicao": 24,
-        "nome": "Corpo técnico",
+        "nome": "Corpo técnico/Infraestruturas complementares",
         "descricao": "Equipe necessária para apoiar na manutenção dos equipamentos relacionados à energia, comunicação e transporte",
-        "custoBasico": [
-          "Recorrente (anual): 01 pessoa referência para apoiar nas manutenções emergenciais"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): 01 pessoa referência para apoiar nas manutenções emergenciais",
+            "exemplo": "Exemplos de custos: Salário de pessoa referência para infraestrutura (relacionados à energia, comunicação e transporte)"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): 01 agente índígena de infraestrutura capacitado por aldeia"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): 01 agente índígena de infraestrutura capacitado por aldeia",
+            "exemplo": "Exemplos de custos: Salário de agentes indígenas específicos para infraestrutura (relacionados à energia, comunicação e transporte), logística das capacitações (combustível, alimentação, materiais)"
+          }
         ]
       }
     ]
@@ -347,26 +649,58 @@
         "posicao": 25,
         "nome": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
         "descricao": "Atividades, eventos e capacitações complementares de saúde e relacionados ao conhecimento e medicina tradicional",
-        "custoBasico": [
-          "Recorrente (anual): oficina anual sobre as práticas complementares de saúde (Cuidadores tradicionais {ex.raizeiros, fitoterápicos, etc)}) / oficina anual sobre as práticas complementares de saúde (Parteiras {cuidado com a gestante}) / roda de conversa anual sobre o Bem Viver e os temas sensíveis (ex. uso abusivo de álcool e outras drogas, epidemias, etc.)",
-          "Não recorrente (eventual): diagnóstico sobre a saúde complementar (ex. quantas parteiras, raizeiros, etc. onde estão {qual aldeia, TI, etc.}, quais são os pontos sensíveis {ex. abuso de álcool e drogas, saúde mental, desnutrição infantil, medicalização, etc.})"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): diagnóstico sobre a saúde complementar (ex. quantas parteiras, raizeiros, etc. onde estão {qual aldeia, TI, etc.}, quais são os pontos sensíveis {ex. abuso de álcool e drogas, saúde mental, desnutrição infantil, medicalização, etc.})",
+            "exemplo": "Exemplos de custos: Material didático, consultoria, logística para o diagnóstico combustível, alimentação, frete aéreo, terrestre e fluvial)"
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): oficina anual sobre as práticas complementares de saúde (Cuidadores tradicionais {ex.raizeiros, fitoterápicos, etc)}) / oficina anual sobre as práticas complementares de saúde (Parteiras {cuidado com a gestante}) / roda de conversa anual sobre o Bem Viver e os temas sensíveis (ex. uso abusivo de álcool e outras drogas, epidemias, etc.)",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, frete, passagem, consultoria, materiais (exemplo de atividades: encontro de pajés, oficina/expedição, plantas medicinais), etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): 02 oficinas anuais sobre as práticas complementares de saúde (Cuidadores tradicionais {ex.raizeiros, fitoterápicos, etc}) / 02 oficinas anuais sobre as práticas complementares de saúde (Parteiras {cuidado com a gestante}) / 02 rodas de conversa anuais sobre o Bem Viver e os temas sensíveis (ex. uso abusivo de álcool e outras drogas, epidemias, etc.)",
-          "Não recorrente (eventual): documento de apoio e referência sobre saúde complementar (para apoiar, inclusive, na visibilidade e valorização do trabalho dos cuidadores tradicionais) / estratégia de valorização dos profissionais relacionados à saúde complementar"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): documento de apoio e referência sobre saúde complementar (para apoiar, inclusive, na visibilidade e valorização do trabalho dos cuidadores tradicionais) / estratégia de valorização dos profissionais relacionados à saúde complementar",
+            "exemplo": "Exemplos de custos: Consultoria, diagramação gráfica, impressão, logística para reuniões com autoridades relacionadas à saúde, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): 02 oficinas anuais sobre as práticas complementares de saúde (Cuidadores tradicionais {ex.raizeiros, fitoterápicos, etc}) / 02 oficinas anuais sobre as práticas complementares de saúde (Parteiras {cuidado com a gestante}) / 02 rodas de conversa anuais sobre o Bem Viver e os temas sensíveis (ex. uso abusivo de álcool e outras drogas, epidemias, etc.)",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, frete, passagem, consultoria, materiais (exemplo de atividades: encontro de pajés, oficina/expedição, plantas medicinais), etc."
+          }
         ]
       },
       {
         "posicao": 26,
         "nome": "Iniciativas complementares à assistência usual do governo relacionadas a saneamento",
         "descricao": "Atividades, eventos e capacitações complementares de saneamento (poço semiartesiano, coleta e tratamento de lixo, banheiros ecológicos)",
-        "custoBasico": [
-          "Recorrente (anual): oficina anual sobre o descarte e separação correta do lixo / coleta seletiva por aldeia",
-          "Não recorrente (eventual): diagnóstico sobre o saneamento complementar / transporte adequado para a destinação correta dos resíduos por aldeia / poço semiartesiano"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): diagnóstico sobre o saneamento complementar / transporte adequado para a destinação correta dos resíduos por aldeia / poço semiartesiano",
+            "exemplo": "Exemplos de custos: Diagnóstico, consultoria, abertura e perfuração de poço semiartesiano, aquisição de materiais de sistema de água, transporte para a destinação dos resíduos, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): oficina anual sobre o descarte e separação correta do lixo / coleta seletiva por aldeia",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, hospedagem, passagens, fretes, materiais dos cursos, transportes (exemplo de atividade mutirão de coleta de lixo nas aldeias), etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): oficinas sobre o descarte e separação correta do lixo / oficinas de boas práticas sobre o uso dos equipamentos de saneamento",
-          "Não recorrente (eventual): documento de apoio e referência sobre saneamento complementar"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): documento de apoio e referência sobre saneamento complementar",
+            "exemplo": "Exemplos de custos: Consultoria, diagramação gráfica, impressão, logística para reuniões com autoridades relacionadas à saneamento, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): oficinas sobre o descarte e separação correta do lixo / oficinas de boas práticas sobre o uso dos equipamentos de saneamento",
+            "exemplo": "Exemplos de custos: Combustível, alimentação, consultoria, hospedagem, passagens, fretes, materiais dos cursos, transportes (exemplo de atividade mutirão de coleta de lixo nas aldeias), etc."
+          }
         ]
       }
     ]
@@ -380,24 +714,48 @@
         "posicao": 27,
         "nome": "Iniciativas complementares à educação usual implementada pelo governo",
         "descricao": "Acompanhamento das atividades e eventos relacionados à educação e realização de iniciativas complementares à educação usual do governo",
-        "custoBasico": [
-          "Recorrente (anual): 03 bolsas complementares por TI para viabilizar a permanência do estudante indígena nas universidades/cursos técnicos"
+        "metricaBasico": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): 03 bolsas complementares por TI para viabilizar a permanência do estudante indígena nas universidades/cursos técnicos",
+            "exemplo": "Exemplos de custos: Bolsas de estudo"
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): 04 ou mais bolsas complementares por TI para viabilizar a permanência do estudante indígena nas universidades/cursos técnicos"
+        "metricaBom": [
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): 04 ou mais bolsas complementares por TI para viabilizar a permanência do estudante indígena nas universidades/cursos técnicos",
+            "exemplo": "Exemplos de custos: Bolsas de estudo"
+          }
         ]
       },
       {
         "posicao": 28,
         "nome": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
         "descricao": "Processos formativos relacionados à educação para professores indígenas e  elaboração e publicação de materiais didáticos complementares relacionados à educação",
-        "custoBasico": [
-          "Recorrente (anual): Formação relacionada à educação complementar por ano (ex.: formação sobre a pauta indígena para professores, oficina sobre materiais didáticos na língua materna, etc.)",
-          "Não recorrente (eventual): esboço de documento de apoio e referência sobre educação indígena"
+        "metricaBasico": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): esboço de documento de apoio e referência sobre educação indígena",
+            "exemplo": "Exemplos de custos: consultoria, combustível, alimentação, hospedagem, transporte, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): Formação relacionada à educação complementar por ano (ex.: formação sobre a pauta indígena para professores, oficina sobre materiais didáticos na língua materna, etc.)",
+            "exemplo": "Exemplos de custos: Combustível, passagem aérea e terrestre, material de campo, alimentação, frete aéreo, terrestre e fluvial, consultoria, auxílio financeiro/ajuda de custo, etc."
+          }
         ],
-        "custoBom": [
-          "Recorrente (anual): para esta atividade foi definido apenas o nível básico",
-          "Não recorrente (eventual): documento de apoio e referência sobre educação indígena"
+        "metricaBom": [
+          {
+            "recorrente": false,
+            "descricao": "Não recorrente (eventual): documento de apoio e referência sobre educação indígena",
+            "exemplo": "Exemplos de custos: Consultoria, diagramação gráfica, impressão, logística para reuniões com autoridades relacionadas à educação, etc."
+          },
+          {
+            "recorrente": true,
+            "descricao": "Corrente (anual): Formações relacionadas à educação complementar (ex.: formação sobre a pauta indígena para professores, oficina sobre materiais didáticos na língua materna, etc.)",
+            "exemplo": "Exemplos de custos: Combustível, passagem aérea e terrestre, material de campo, alimentação, frete aéreo, terrestre e fluvial, consultoria, auxílio financeiro/ajuda de custo, etc."
+          }
         ]
       }
     ]

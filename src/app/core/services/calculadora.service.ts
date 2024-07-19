@@ -137,7 +137,7 @@ export class CalculadoraService {
       resultados.push(resultado);
     });
 
-    console.log('coeficientes', coeficientes);
+    console.log('coeficientes:', coeficientes);
 
     console.log('niveisImplementacaoAtual:', niveisImplementacaoAtual);
     console.log('nivelImplementacaoAlmejado:', nivelImplementacaoAlmejado);
@@ -148,7 +148,7 @@ export class CalculadoraService {
     console.log('grauAmeaca:', grauAmeaca);
     console.log('complexidadeAcesso:', complexidadeAcesso);
     console.log('localSede:', localSede);
-    console.log(resultados);
+    console.log('resultados:', resultados);
 
     return resultados;
   }
@@ -175,7 +175,7 @@ export class CalculadoraService {
       coeficiente.ln_sit_depois * Math.log(nivelImplementacaoAlmejado);
     const exp2 =
       coeficiente.ln_quali_var *
-      Math.log(nivelImplementacaoAlmejado - nivelImplementacaoAtual);
+      Math.log(nivelImplementacaoAlmejado - nivelImplementacaoAtual + 0.01);
     const exp3 =
       coeficiente.int_situacao *
       (nivelImplementacaoAlmejado *

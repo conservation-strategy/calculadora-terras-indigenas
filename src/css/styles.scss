@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/images/background.webp");
+  background-image: url("../assets/images/background.jpg");
 }
 
 #app-main-inner {
@@ -32,7 +32,7 @@ body {
   background: #fff;
   padding: 50px 40px 30px 40px;
   min-height: calc(100vh - 480px);
-  box-shadow: -5px 0px 5px gray, 5px 0px 5px gray;
+  box-shadow: -5px 0px 5px #903d37, 5px 0px 5px #903d37;
 }
 
 .card-main {
@@ -48,10 +48,9 @@ body {
 
 .section-sub-title {
   font-size: 1.5rem;
-  font-weight: 800;
   font-family: "Montserrat", sans-serif;
   width: fit-content;
-  border-bottom: 3px solid gray;
+  border-bottom: 2px solid gray;
 }
 
 .calculadora-form label {

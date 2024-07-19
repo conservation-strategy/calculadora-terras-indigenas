@@ -40,11 +40,9 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'publicacoes',
+    path: 'pgtas',
     loadComponent: () =>
-      import('./pages/publicacoes/publicacoes.component').then(
-        (c) => c.PublicacoesComponent
-      ),
+      import('./pages/pgtas/pgtas.component').then((c) => c.PgtasComponent),
   },
   {
     path: 'equipe',
@@ -59,19 +57,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'sobre',
-    loadComponent: () =>
-      import('./pages/sobre/sobre.component').then((c) => c.SobreComponent),
-  },
-  {
-    path: 'not-found',
-    loadComponent: () =>
-      import('./pages/not-found/not-found.component').then(
-        (c) => c.NotFoundComponent
-      ),
-  },
-  {
     path: '**',
-    redirectTo: 'not-found',
+    redirectTo: '',
   },
 ];

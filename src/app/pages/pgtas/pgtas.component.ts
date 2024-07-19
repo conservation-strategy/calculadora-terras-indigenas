@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../core/layout/header/header.component';
 
 @Component({
-  selector: 'app-sobre',
+  selector: 'app-pgtas',
   standalone: true,
   imports: [HeaderComponent],
-  templateUrl: './sobre.component.html',
-  styleUrl: './sobre.component.scss'
+  templateUrl: './pgtas.component.html',
+  styleUrl: './pgtas.component.scss'
 })
-export class SobreComponent {
+export class PgtasComponent {
 
 }

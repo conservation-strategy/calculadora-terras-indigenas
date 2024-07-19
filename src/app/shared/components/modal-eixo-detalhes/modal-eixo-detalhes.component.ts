@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, inject } from '@angular/core';
 import { NgbAccordionModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import Eixo from '../../../core/models/Eixo';
 
 @Component({
   selector: 'app-modal-governanca',
@@ -13,6 +12,5 @@ import Eixo from '../../../core/models/Eixo';
 export class ModalEixoDetalhesComponent {
   activeModal = inject(NgbActiveModal);
 
-  @Input() eixo!: Eixo;
-  @Input() tipoCusto: number = 1;
+  @Input() eixo: any;
 }

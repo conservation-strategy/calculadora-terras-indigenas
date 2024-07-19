@@ -41,6 +41,7 @@ import { LoadingComponent } from '../../shared/components/loading/loading.compon
 import Atividade from '../../core/models/Atividade';
 import SelectOption from '../../core/models/SelectOption';
 import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-detalhes/modal-form-detalhes.component';
+import { RouterLink } from '@angular/router';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -59,6 +60,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     NumbersOnlyDirective,
     CanvasJSAngularChartsModule,
     LoadingComponent,
+    RouterLink,
   ],
   providers: [CalculadoraService, CurrencyPipe],
   templateUrl: './calculadora-terra-indigena.component.html',
@@ -146,7 +148,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
   mostrarCarregando = false;
   resultado: Resultado | null = null;
   ipUsuario = '';
-  tipoCusto = false;
+  tipoResultadoBom = false;
 
   constructor(
     private calculatorService: CalculadoraService,
@@ -183,6 +185,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         complexidadeAcesso: 0,
         localSede: 0,
         nivelImplementacaoAtual: [],
+        mapa: 'simulada.png',
       };
       this.grupoTerrasIndigenas.push(
         {
@@ -190,7 +193,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           terrasIndigenas: [terraIndigenaSimulada],
         },
         {
-          nomeGrupo: 'Terras Indígenas Xingu - Com dados de custos na amostra',
+          nomeGrupo: 'Terras Indígenas com dados coletados',
           terrasIndigenas: response
             .filter((x: TerraIndigena) => x.grupo === 1)
             .sort((a: TerraIndigena, b: TerraIndigena) =>
@@ -198,7 +201,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             ),
         },
         {
-          nomeGrupo: 'Terras Indígenas Xingu - Sem dados de custos na amostra',
+          nomeGrupo: 'Terras Indígenas com dados extrapolados',
           terrasIndigenas: response
             .filter((x: TerraIndigena) => x.grupo === 2)
             .sort((a: TerraIndigena, b: TerraIndigena) =>
@@ -324,22 +327,16 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     this.validarFormulario();
   }
 
-  validarFormulario(): void {
-    if (this.calculadoraForm.valid) {
-      const { nivelImplementacaoAtual, nivelImplementacaoAlmejado } =
-        this.calculadoraForm.value;
-
-      if (nivelImplementacaoAtual && nivelImplementacaoAlmejado) {
-        this.erroNivelImplementacao =
-          nivelImplementacaoAtual > Number(nivelImplementacaoAlmejado);
-      }
-
-      if (this.terraIndigenaSelecionada && !this.erroNivelImplementacao)
-        this.calcularResultado(this.terraIndigenaSelecionada);
+  validarFormulario(comLoading: boolean = true): void {
+    if (this.calculadoraForm.valid && this.terraIndigenaSelecionada) {
+      this.calcularResultado(this.terraIndigenaSelecionada, comLoading);
     }
   }
 
-  calcularResultado(terraIndigenaSelecionada: TerraIndigena): void {
+  calcularResultado(
+    terraIndigenaSelecionada: TerraIndigena,
+    comLoading: boolean
+  ): void {
     const {
       nivelImplementacaoAtual,
       nivelImplementacaoAlmejado,
@@ -385,14 +382,15 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       terraIndigena: terraIndigenaSelecionada.nome,
       tipoCusto: Number(tipoCusto),
       valorTotal: this.calculatorService.obterSomatoria(resultadoCoeficientes),
-      eixos: this.calcularEixos(resultadoCoeficientes, Number(tipoCusto)),
+      eixos: this.calcularEixos(resultadoCoeficientes),
       textoNivelImplementacaoAlmejado:
         this.listaNivelImplementacaoAlmejado.find(
           (nivel: any) => nivel.value == Number(nivelImplementacaoAlmejado)
         )!.label,
+      variaveisUtilizadas: this.obterVariaveisUtilizadas(),
     };
-    console.log(this.resultado);
-    this.mostrarDivResultado();
+    console.log('divResultado:', this.resultado);
+    this.mostrarDivResultado(comLoading);
   }
 
   limparResultado() {
@@ -400,44 +398,38 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     this.resultado = null;
   }
 
-  mostrarDivResultado() {
+  mostrarDivResultado(comLoading: boolean) {
     document.getElementById('resultado')?.scrollIntoView();
-    this.mostrarCarregando = true;
 
-    setTimeout(() => {
-      this.mostrarCarregando = false;
+    if (comLoading) {
+      this.mostrarCarregando = true;
+      setTimeout(() => {
+        this.mostrarCarregando = false;
+        this.mostrarResultado = true;
+        this.atualizarGrafico();
+      }, 300);
+    } else {
       this.mostrarResultado = true;
       this.atualizarGrafico();
-    }, 1000);
+    }
   }
 
-  trocarTipoCusto() {
-    // false -> Custos de manutenção do investimento
-    // true  -> Custos de investimento melhorado
+  trocarTipoResultado() {
     this.calculadoraForm.patchValue({
-      nivelImplementacaoAlmejado: this.tipoCusto ? 20 : 10,
+      nivelImplementacaoAlmejado: this.tipoResultadoBom ? 20 : 10,
     });
-    this.botaoCalcular();
+    this.resultado = null;
+    this.validarFormulario(false);
   }
 
-  calcularEixos(resultadoCoeficientes: number[], tipoCusto: number) {
+  calcularEixos(resultadoCoeficientes: number[]) {
     let eixos: Eixo[] = JSON.parse(JSON.stringify(this.eixos));
-    const tipoCustoTexo =
-      tipoCusto == this.enumTipoCusto.Recorrente
-        ? this.enumTipoCustoTexto.Recorrente
-        : this.enumTipoCustoTexto.NaoRecorrente;
     eixos.forEach((eixo: Eixo) => {
       let valorTotalEixo = 0;
 
       eixo.atividades.forEach((atividade: Atividade) => {
         atividade.valor = resultadoCoeficientes[atividade.posicao];
         valorTotalEixo += atividade.valor;
-        atividade.custoBasico = atividade.custoBasico.filter((x) =>
-          x.startsWith(tipoCustoTexo)
-        );
-        atividade.custoBom = atividade.custoBom.filter((x) =>
-          x.startsWith(tipoCustoTexo)
-        );
       });
       eixo.valor = valorTotalEixo;
     });
@@ -620,26 +612,26 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                         fontSize: 14,
                       },
                       atividade.descricao,
-                      {
-                        type: 'none' as UnorderedListType,
-                        ul: atividade.custoBasico.map((x) => {
-                          return [
-                            {
-                              text: [{ text: 'Básico: ', bold: true }, x],
-                            },
-                          ];
-                        }),
-                      },
-                      {
-                        type: 'none' as UnorderedListType,
-                        ul: atividade.custoBom.map((x) => {
-                          return [
-                            {
-                              text: [{ text: 'Bom: ', bold: true }, x],
-                            },
-                          ];
-                        }),
-                      },
+                      // {
+                      //   type: 'none' as UnorderedListType,
+                      //   ul: atividade.custoBasico.map((x) => {
+                      //     return [
+                      //       {
+                      //         text: [{ text: 'Básico: ', bold: true }, x],
+                      //       },
+                      //     ];
+                      //   }),
+                      // },
+                      // {
+                      //   type: 'none' as UnorderedListType,
+                      //   ul: atividade.custoBom.map((x) => {
+                      //     return [
+                      //       {
+                      //         text: [{ text: 'Bom: ', bold: true }, x],
+                      //       },
+                      //     ];
+                      //   }),
+                      // },
                       '\n',
                     ];
                   }),
@@ -690,12 +682,19 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
     return [
       {
-        variavel: 'Tamanho TI',
+        variavel: 'Tamanho',
         valor: Number(tamanho).toLocaleString('pt-BR'),
         valorOriginal: String(
           this.terraIndigenaSelecionada?.tamanho.toLocaleString('pt-BR')
         ),
         alterada: tamanho != this.terraIndigenaSelecionada?.tamanho,
+      },
+      {
+        variavel: 'Número de povos',
+        valor: String(grauDiversidade),
+        valorOriginal: String(this.terraIndigenaSelecionada?.grauDiversidade),
+        alterada:
+          grauDiversidade != this.terraIndigenaSelecionada?.grauDiversidade,
       },
       {
         variavel: 'Número de aldeias',
@@ -710,13 +709,6 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           this.terraIndigenaSelecionada?.populacao.toLocaleString('pt-BR')
         ),
         alterada: populacao != this.terraIndigenaSelecionada?.populacao,
-      },
-      {
-        variavel: 'Grau de diversidade',
-        valor: String(grauDiversidade),
-        valorOriginal: String(this.terraIndigenaSelecionada?.grauDiversidade),
-        alterada:
-          grauDiversidade != this.terraIndigenaSelecionada?.grauDiversidade,
       },
       {
         variavel: 'Grau de ameaça',
@@ -765,7 +757,6 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
   }
 
   abrirModalFormDetalhes(campo: string, tooltip: string) {
-    console.log(`campo: ${campo}`, `tooltip: ${tooltip}`);
     const modalRef = this.modalService.open(ModalFormDetalhesComponent, {
       size: 'lg',
     });
@@ -777,8 +768,41 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     const modalRef = this.modalService.open(ModalEixoDetalhesComponent, {
       size: 'lg',
     });
-    modalRef.componentInstance.eixo = eixo;
-    modalRef.componentInstance.tipoCusto = eixo;
+    const { tipoCusto } = this.calculadoraForm.getRawValue();
+    const isRecorrente = tipoCusto == this.enumTipoCusto.Recorrente;
+
+    let atividades = eixo.atividades;
+    if (tipoCusto == this.enumTipoCusto.Recorrente) {
+      atividades = atividades.filter((atividade: Atividade) => {
+        return atividade.posicao + 1 !== 6;
+      });
+    }
+
+    const eixoModificado = {
+      nome: eixo.nome,
+      atividades: atividades.map((atividade: Atividade) => {
+        return {
+          nome: atividade.nome,
+          descricao: atividade.descricao,
+          valor:
+            atividade.valor > 1000
+              ? this.currencyPipe.transform(
+                  atividade.valor,
+                  'BRL',
+                  'symbol',
+                  '1.0-0'
+                )
+              : '< R$ 1.000',
+          metricaBasico: atividade.metricaBasico.filter(
+            (x) => x.recorrente == isRecorrente
+          ),
+          metricaBom: atividade.metricaBom.filter(
+            (x) => x.recorrente == isRecorrente
+          ),
+        };
+      }),
+    };
+    modalRef.componentInstance.eixo = eixoModificado;
   }
 }
 
@@ -788,6 +812,7 @@ type Resultado = {
   valorTotal: number;
   eixos: Eixo[];
   textoNivelImplementacaoAlmejado: string;
+  variaveisUtilizadas: Variavel[];
 };
 
 type GrupoTerraIndigena = {

@@ -1,382 +1,370 @@
-<app-header title="Calculadora"></app-header>
 <div class="container main-container">
-    <div class="card card-main">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                    <iframe width="100%" height="300" frameborder="0" allowfullscreen
-                        src="https://www.youtube.com/embed/6BDqno8Fdow?si=fDu95A_Gepi6FRSI" title="Video Tutorial"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin">
-                    </iframe>
+    <div>
+        <h1 class="section-title mb-5">Custo de gestão de terra indígena</h1>
+        <div class="row mb-3 border-bottom">
+            <div class="col-lg-6 mb-3">
+                <iframe width="100%" height="250" frameborder="0" allowfullscreen
+                    src="https://www.youtube.com/embed/6BDqno8Fdow?si=fDu95A_Gepi6FRSI" title="Video Tutorial"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
 
-                </div>
-                <div class="col-lg-6 mb-3">
-                    <section>
-                        <p>
-                            Calcula o custo total de implementação de todos os eixos temáticos em uma Terra Indígena
-                            selecionada, podendo o usuário alterar os valores das características da Terra Indígena
-                            (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e
-                            localização da sede da associação) e também definir o nível de implementação atual e
-                            desejado.
-                        </p>
-                        <p>
-                            Essa versão é indicada para usuários que buscam informações mais detalhadas sobre a
-                            definição dos níveis de implementação dos eixos temáticos. Nessa versão não é possível
-                            selecionar apenas um eixo temático, nem mais de uma Terra Indígena.
-                        </p>
-                    </section>
-                </div>
+            </div>
+            <div class="col-lg-6 mb-3">
+                <section>
+                    <p>
+                        Calcule o custo de gestão de todos os eixos temáticos de uma Terra Indígena, sendo possível
+                        alterar os valores de suas características (tamanho, população, aldeia, complexidade de acesso,
+                        grau de ameaça, grau de diversidade e localização da sede da associação), e também alterar e/ou
+                        definir a situação atual de gestão da terra.
+                    </p>
+                    <p>
+                        Nos resultados, o usuário poderá selecionar o
+                        acesso ao valor do "investimento para gestão básica" e "investimento para gestão boa".
+                    </p>
+                    <p>
+                        Clique
+                        nos pontos de interrogação das caixas de valores para ter explicações detalhadas sobre o que
+                        elas querem dizer.
+                    </p>
+                </section>
             </div>
         </div>
-    </div>
-    <div class="card card-main mt-5">
-        <div class="card-body">
-            <h1 class="section-title mb-3">Custo de gestão de terra indígena</h1>
-            <div class="row">
-                <div class="col-lg-8 mb-3">
-                    <form [formGroup]="calculadoraForm" class="calculadora-form">
-                        <div class="row">
-                            <!-- TERRA INDIGENA -->
-                            <div class="col-12">
-                                <label class="form-label">
-                                    <span>Selecione a terra indígena</span>
-                                </label>
-                                <select class="form-select form-select-sm" required (change)="selecionarTerraIndigena()"
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid}"
-                                    formControlName="terraIndigena">
-                                    <option [value]="null" disabled selected>Selecione a terra indígena</option>
-                                    <optgroup *ngFor="let grupo of grupoTerrasIndigenas" [label]="grupo.nomeGrupo">
-                                        <option *ngFor="let terraIndigena of grupo.terrasIndigenas"
-                                            [ngValue]="terraIndigena">{{terraIndigena.nome}}
-                                        </option>
-                                    </optgroup>
-                                </select>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
+        <div class="row">
+            <div class="col-lg-8 mb-3">
+                <form [formGroup]="calculadoraForm" class="calculadora-form">
+                    <div class="row">
+                        <!-- TERRA INDIGENA -->
+                        <div class="col-12">
+                            <label class="form-label">
+                                <span>Selecione a terra indígena</span>
+                            </label>
+                            <select class="form-select form-select-sm" required (change)="selecionarTerraIndigena()"
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid}"
+                                formControlName="terraIndigena">
+                                <option [value]="null" disabled selected>Selecione a terra indígena</option>
+                                <optgroup *ngFor="let grupo of grupoTerrasIndigenas" [label]="grupo.nomeGrupo">
+                                    <option *ngFor="let terraIndigena of grupo.terrasIndigenas"
+                                        [ngValue]="terraIndigena">{{terraIndigena.nome}}
+                                    </option>
+                                </optgroup>
+                            </select>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="terraIndigenaSelecionada">
+                        <!-- CHECKBOX ALTERAR -->
+                        <div class="col-12 mt-1">
+                            <div class="d-flex">
+                                <input type="checkbox" formControlName="permitirAlteracao"
+                                    (change)="permitirAlterarTerraIndigena()">
+                                <label class="ms-2">Quero atualizar os dados da Terra Indígena</label>
                             </div>
                         </div>
-                        <div class="row" *ngIf="terraIndigenaSelecionada">
-                            <!-- CHECKBOX ALTERAR -->
-                            <div class="col-12 mt-1">
-                                <div class="d-flex">
-                                    <input type="checkbox" formControlName="permitirAlteracao"
-                                        (change)="permitirAlterarTerraIndigena()">
-                                    <label class="ms-2">Quero atualizar os dados da Terra Indígena</label>
-                                </div>
-                            </div>
-                            <!-- TAMANHO -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Tamanho da tera</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Extensão da Terra Indígena, em hectares"
-                                        (click)="abrirModalFormDetalhes('Tamanho da tera indigena', 'Extensão da Terra Indígena, em hectares')"></fa-icon>
-                                </label>
-                                <input type="text" class="form-control form-control-sm"
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid}"
-                                    formControlName="tamanho" numbersOnly>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- ALDEIAS -->
-                            <div class="col-md-3 mt-3">
-                                <label class="form-label">
-                                    <span>Número de aldeias</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Quantidade de aldeias na Terra Indígena"
-                                        (click)="abrirModalFormDetalhes('Número de aldeias', 'Quantidade de aldeias na Terra Indígena')"></fa-icon>
-                                </label>
-                                <input type="text" class="form-control form-control-sm"
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid}"
-                                    formControlName="aldeias" numbersOnly>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- NUMERO DE POVOS -->
-                            <div class="col-md-3 mt-3">
-                                <label class="form-label">
-                                    <span>Número de povos</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Número de povos que vivem na Terra Indígena"
-                                        (click)="abrirModalFormDetalhes('Número de povos', 'Número de povos que vivem na Terra Indígena')"></fa-icon>
-                                </label>
-                                <input type="text" class="form-control form-control-sm"
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid}"
-                                    formControlName="grauDiversidade" numbersOnly>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- POPULAÇÃO -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>População</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Quantidade de pessoas residentes na Terra Indígena"
-                                        (click)="abrirModalFormDetalhes('População', 'Quantidade de pessoas residentes na Terra Indígena')"></fa-icon>
-                                </label>
-                                <input type="text" class="form-control form-control-sm"
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid}"
-                                    formControlName="populacao" numbersOnly>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- LOCAL SEDE -->
-                            <div class="col-6 mt-3">
-                                <label class="form-label">
-                                    <span>Localização da sede</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Onde está situada a sede da associação: cidade ou aldeia"
-                                        (click)="abrirModalFormDetalhes('Localização da sede', 'Onde está situada a sede da associação: cidade ou aldeia')"></fa-icon>
-                                </label>
-                                <select class="form-select form-select-sm" required
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid}"
-                                    formControlName="localSede">
-                                    <option [value]="null" disabled selected>Localização da sede</option>
-                                    <option *ngFor="let item of listaLocalSede" [ngValue]="item.value">
-                                        {{item.label}}
-                                    </option>
-                                </select>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- GRAU AMEAÇA -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Grau de ameaça</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Classificação baseada no tipo e intensidade das ameaças para a Terra Indígena"
-                                        (click)="abrirModalFormDetalhes('Grau de ameaça', '')"></fa-icon>
-                                </label>
-                                <select class="form-select form-select-sm" required
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid}"
-                                    formControlName="grauAmeaca">
-                                    <option value="" disabled selected>Grau de Ameaça</option>
-                                    <option *ngFor="let item of listaGrauAmeaca" [ngValue]="item.value">
-                                        {{item.label}}
-                                    </option>
-                                </select>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- COMPLEXIDADE ACESSO -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Complexidade de acesso</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena"
-                                        (click)="abrirModalFormDetalhes('Complexidade de acesso', '')"></fa-icon>
-                                </label>
-                                <select class="form-select form-select-sm" required
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid}"
-                                    formControlName="complexidadeAcesso">
-                                    <option [value]="null" disabled selected>Complexidade de Acesso</option>
-                                    <option *ngFor="let item of listaComplexidadeAcesso" [ngValue]="item.value">
-                                        {{item.label}}
-                                    </option>
-                                </select>
-                                <small
-                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
+                        <!-- TAMANHO -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">
+                                <span>Tamanho da terra (hectares)</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Tamanho da Terra Indígena, em hectares"
+                                    (click)="abrirModalFormDetalhes('Tamanho da terra indigena', 'Tamanho da Terra Indígena, em hectares')"></fa-icon>
+                            </label>
+                            <input type="text" class="form-control form-control-sm"
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid}"
+                                formControlName="tamanho" numbersOnly>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
                         </div>
-                        <div class="row">
-                            <!-- SITUACAO GESTAO DA TERRA -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Situação de Gestão da Terra</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Situação de Gestão da Terra"
-                                        (click)="abrirModalFormDetalhes('Situação de Gestão da Terra', '')"></fa-icon>
-                                </label>
-                                <select class="form-select form-select-sm" required
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
-                                    formControlName="nivelImplementacaoAtual">
-                                    <option [value]="null" disabled selected>Nível de implementação atual</option>
-                                    <option *ngFor="let item of listaNivelImplementacaoAtual" [value]="item.value">
-                                        {{item.label}}</option>
-                                </select>
-                                <small
-                                    *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- TIPO CUSTO -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Tipo de custo</span>
-                                    <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                        ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."
-                                        (click)="abrirModalFormDetalhes('Tipo de custo', '')"></fa-icon>
-                                </label>
-                                <select class="form-select form-select-sm" required
-                                    [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
-                                    formControlName="tipoCusto">
-                                    <option [value]="enumTipoCusto.Recorrente">{{enumTipoCustoTexto.Recorrente}}
-                                    </option>
-                                    <option [value]="enumTipoCusto.NaoRecorrente">{{enumTipoCustoTexto.NaoRecorrente}}
-                                    </option>
-                                </select>
-                                <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid"
-                                    class="text-danger">
-                                    Campo Obrigatório.
-                                </small>
-                            </div>
-                            <!-- INFLAÇÃO -->
-                            <div class="col-md-6 mt-3">
-                                <label class="form-label">
-                                    <span>Inflação acumulada desde 2023 (%)</span>
-                                    <fa-icon [icon]="faQuestionCircle"
-                                        ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."
-                                        (click)="abrirModalFormDetalhes('Inflação acumulada desde 2023 (%)', '')"></fa-icon>
-                                </label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Inflação %"
-                                    formControlName="inflacao" numbersOnly>
-                            </div>
+                        <!-- ALDEIAS -->
+                        <div class="col-md-3 mt-3">
+                            <label class="form-label">
+                                <span>Número de aldeias</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Quantidade de aldeias na Terra Indígena"
+                                    (click)="abrirModalFormDetalhes('Número de aldeias', 'Quantidade de aldeias na Terra Indígena')"></fa-icon>
+                            </label>
+                            <input type="text" class="form-control form-control-sm"
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid}"
+                                formControlName="aldeias" numbersOnly>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
                         </div>
-                        <div class="d-flex mt-3">
-                            <button class="btn btn-secondary w-25 me-3" (click)="botaoCalcular()">Calcular</button>
-                            <app-loading *ngIf="mostrarCarregando"></app-loading>
+                        <!-- NUMERO DE POVOS -->
+                        <div class="col-md-3 mt-3">
+                            <label class="form-label">
+                                <span>Número de povos</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Número de povos que vivem na Terra Indígena"
+                                    (click)="abrirModalFormDetalhes('Número de povos', 'Número de povos que vivem na Terra Indígena')"></fa-icon>
+                            </label>
+                            <input type="text" class="form-control form-control-sm"
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid}"
+                                formControlName="grauDiversidade" numbersOnly>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
                         </div>
-                    </form>
-                </div>
-                <div class="col-lg-4 mb-3 d-flex justify-content-center p-5 border" *ngIf="terraIndigenaSelecionada">
-                    <img src="./assets/images/terras-indigenas/terra_indigena.jpg" style="max-height: 400px;" alt=""
-                        srcset="">
-                </div>
+                        <!-- POPULAÇÃO -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">
+                                <span>População</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Quantidade de pessoas residentes na Terra Indígena"
+                                    (click)="abrirModalFormDetalhes('População', 'Quantidade de pessoas residentes na Terra Indígena')"></fa-icon>
+                            </label>
+                            <input type="text" class="form-control form-control-sm"
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid}"
+                                formControlName="populacao" numbersOnly>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                        <!-- LOCAL SEDE -->
+                        <div class="col-6 mt-3">
+                            <label class="form-label">
+                                <span>Localização da sede</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Onde está situada a sede da associação: cidade ou aldeia"
+                                    (click)="abrirModalFormDetalhes('Localização da sede', 'Onde está situada a sede da associação: cidade ou aldeia')"></fa-icon>
+                            </label>
+                            <select class="form-select form-select-sm" required
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid}"
+                                formControlName="localSede">
+                                <option [value]="null" disabled selected>Localização da sede</option>
+                                <option *ngFor="let item of listaLocalSede" [ngValue]="item.value">
+                                    {{item.label}}
+                                </option>
+                            </select>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                        <!-- GRAU AMEAÇA -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">
+                                <span>Grau de ameaça</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Classificação baseada no tipo e intensidade das ameaças para a Terra Indígena"
+                                    (click)="abrirModalFormDetalhes('Grau de ameaça', '')"></fa-icon>
+                            </label>
+                            <select class="form-select form-select-sm" required
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid}"
+                                formControlName="grauAmeaca">
+                                <option value="" disabled selected>Grau de Ameaça</option>
+                                <option *ngFor="let item of listaGrauAmeaca" [ngValue]="item.value">
+                                    {{item.label}}
+                                </option>
+                            </select>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                        <!-- COMPLEXIDADE ACESSO -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">
+                                <span>Complexidade de acesso</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena"
+                                    (click)="abrirModalFormDetalhes('Complexidade de acesso', '')"></fa-icon>
+                            </label>
+                            <select class="form-select form-select-sm" required
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid}"
+                                formControlName="complexidadeAcesso">
+                                <option [value]="null" disabled selected>Complexidade de Acesso</option>
+                                <option *ngFor="let item of listaComplexidadeAcesso" [ngValue]="item.value">
+                                    {{item.label}}
+                                </option>
+                            </select>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- SITUACAO GESTAO DA TERRA -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">
+                                <span>Situação atual de gestão da terra</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Situação atual de gestão da terra"
+                                    (click)="abrirModalFormDetalhes('Situação de Gestão da Terra', '')"></fa-icon>
+                            </label>
+                            <select class="form-select form-select-sm" required
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
+                                formControlName="nivelImplementacaoAtual">
+                                <option [value]="null" disabled selected>Situação atual de gestão da terra</option>
+                                <option *ngFor="let item of listaNivelImplementacaoAtual" [value]="item.value">
+                                    {{item.label}}</option>
+                            </select>
+                            <small
+                                *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                        <!-- TIPO CUSTO -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">
+                                <span>Tipo de custo</span>
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                    ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."
+                                    (click)="abrirModalFormDetalhes('Tipo de custo', '')"></fa-icon>
+                            </label>
+                            <select class="form-select form-select-sm" required
+                                [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
+                                formControlName="tipoCusto">
+                                <option [value]="enumTipoCusto.Recorrente">{{enumTipoCustoTexto.Recorrente}}
+                                </option>
+                                <option [value]="enumTipoCusto.NaoRecorrente">{{enumTipoCustoTexto.NaoRecorrente}}
+                                </option>
+                            </select>
+                            <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid"
+                                class="text-danger">
+                                Campo Obrigatório.
+                            </small>
+                        </div>
+                        <!-- INFLAÇÃO -->
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">
+                                <span>Inflação acumulada desde 2023 (%)</span>
+                                <fa-icon [icon]="faQuestionCircle"
+                                    ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."
+                                    (click)="abrirModalFormDetalhes('Inflação acumulada desde 2023 (%)', '')"></fa-icon>
+                            </label>
+                            <input type="text" class="form-control form-control-sm" placeholder="(Opcional)"
+                                formControlName="inflacao" numbersOnly>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button class="btn btn-secondary w-25 me-3" (click)="botaoCalcular()">Calcular</button>
+                        <app-loading *ngIf="mostrarCarregando"></app-loading>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4 mb-3 d-flex flex-column justify-content-center" *ngIf="terraIndigenaSelecionada">
+                <img [src]="'./assets/images/mapas/'+terraIndigenaSelecionada.mapa" alt="">
+                <a class="btn btn-sm btn-link text-secondary w-50 align-self-center" target="_blank"
+                    routerLink="/pgtas">
+                    Conheça os PGTAs
+                </a>
             </div>
         </div>
     </div>
 
     <div id="resultado"></div>
-    <div *ngIf="mostrarResultado&&resultado">
-        <div class="card card-main mt-3">
-            <div class="card-body">
-                <h1 class="section-title mb-3 text-center">Resultados</h1>
+    <div *ngIf="mostrarResultado&&resultado" class="mt-5 border p-3">
 
-                <div class="row justify-content-md-center mb-5">
-                    <div class="col col-lg-4 text-end fw-bold">
-                        Custos de manutenção do investimento
-                    </div>
-                    <div class="col-md-auto">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
-                                [(ngModel)]="tipoCusto" (change)="trocarTipoCusto()">
+        <h1 class="section-title text-center">Resultados</h1>
 
+        <div class="row justify-content-md-center mb-5">
+            <div class="col col-lg-4 text-end">
+                <span class="resultado-tipo-custo">Investimento para gestão básica</span>
+            </div>
+            <div class="col-md-auto">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                        [(ngModel)]="tipoResultadoBom" (change)="trocarTipoResultado()">
+
+                </div>
+            </div>
+            <div class="col col-lg-4 text-start">
+                <span class="resultado-tipo-custo">Investimento para gestão boa</span>
+            </div>
+        </div>
+
+        <h2 class="resultado-section-sub-title">
+            {{tipoResultadoBom ? 'Investimento para gestão boa' : 'Investimento para gestão básica'}}
+        </h2>
+        <div class="row">
+            <div class="col-lg-3 mb-3">
+                <h3 style="font-size: 1.5rem;">Custo Total</h3>
+                <div class="mt-3">
+                    <h2 style="font-size: 1.8rem" class="text-success mb-3 mt-3">
+                        <span *ngIf="resultado.valorTotal >= 1000">
+                            {{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}
+                        </span>
+                        <span *ngIf="resultado.valorTotal < 1000"> &lt; R$1.000 </span>
+
+                        <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
+                        <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
+                    </h2>
+                </div>
+                <button class="btn btn-sm btn-secondary" (click)="gerarPdf()">Download PDF</button>
+            </div>
+            <div class="col-lg-6 mb-3">
+                <canvasjs-chart [options]="chartOptions" id="chart" [styles]="{width: '100%', height:'300px'}"
+                    (chartInstance)="obterReferenciaGrafico($event)"></canvasjs-chart>
+            </div>
+            <div class="col-lg-3 mb-3">
+                <div style="
+                    border: 1px solid gray;
+                    padding: 15px 10px;
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 100%;
+                ">
+                    <p><b>Território: </b>{{resultado.terraIndigena}}</p>
+                    <p *ngFor="let x of resultado.variaveisUtilizadas">
+                        <b>{{x.variavel}}: </b>{{x.valor}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <h2 class="resultado-section-sub-title mt-3">Custo Por Eixos</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of resultado.eixos">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/eixos/{{eixo.imagem}}" alt="" style="width: 40px;">
+                            <h6 class="ms-2 mb-0"><strong>{{eixo.nome}}</strong></h6>
                         </div>
                     </div>
-                    <div class="col col-lg-4 text-start fw-bold">
-                        Custos de investimento melhorado
-                    </div>
-                </div>
-
-                <div class="card">
                     <div class="card-body">
-                        <h2 class="section-sub-title mb-3">
-                            {{tipoCusto ? 'Custos de investimento melhorado' : 'Custos de manutenção do investimento'}}
-                        </h2>
-                        <div class="row">
-                            <div class="col-lg-3 mb-3">
-                                <h3 class="mt-3">Custo Total</h3>
-                                <div class="mt-3">
-                                    <h2 class="result-price text-success mb-0">
-                                        <span *ngIf="resultado.valorTotal >= 1000">
-                                            {{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}
-                                        </span>
-                                        <span *ngIf="resultado.valorTotal < 1000"> &lt; R$1.000 </span>
 
-                                        <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
-                                        <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
-                                    </h2>
-                                </div>
-                                <button class="btn btn-sm btn-secondary mt-3" (click)="gerarPdf()">Download PDF</button>
-                            </div>
-                            <div class="col-lg-6 mb-3">
-                                <canvasjs-chart [options]="chartOptions" id="chart"
-                                    [styles]="{width: '100%', height:'300px'}"
-                                    (chartInstance)="obterReferenciaGrafico($event)"></canvasjs-chart>
-                            </div>
-                            <div class="col-lg-3 mb-3">
-                                <div style="
-                                        border: 1px solid gray;
-                                        padding: 15px 10px;
-                                        border-radius: 20px;
-                                        width: 100%;
-                                        height: 100%;
-                                    ">
-                                    <p><b>Território: </b>{{terraIndigenaSelecionada?.nome}}</p>
-                                    <p><b>Tamanho: </b>{{terraIndigenaSelecionada?.tamanho}}</p>
-                                    <p><b>Número de povos: </b>{{terraIndigenaSelecionada?.grauDiversidade}}
-                                    <p><b>Número de aldeias: </b>{{terraIndigenaSelecionada?.aldeias}}
-                                    <p><b>População: </b>{{terraIndigenaSelecionada?.populacao}}
-                                </div>
-                            </div>
-                        </div>
+                        <h5 class="text-success">
+                            <span *ngIf="eixo&&eixo.valor&&eixo.valor >= 1000; else other_content">
+                                {{eixo.valor | currency:'BRL':'symbol':'1.0-0' }}
+                            </span>
+                            <ng-template #other_content>
+                                <span> &lt; R$1.000 </span>
+                            </ng-template>
+
+                            <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
+                            <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
+                        </h5>
+                        <p>
+                            {{eixo.descricao}}
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                        <button class="btn btn-sm btn-secondary" (click)="modalEixoDetalhes(eixo)">
+                            Saiba mais
+                        </button>
                     </div>
                 </div>
+            </div>
+        </div>
 
-
-
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h2 class="section-sub-title mb-3">Custo Por Eixos</h2>
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of resultado.eixos">
-                                <div class="card h-100">
-                                    <div class="card-header">
-                                        <div class="d-flex align-items-center">
-                                            <img src="assets/images/eixos/{{eixo.imagem}}" alt="" style="width: 40px;">
-                                            <h6 class="ms-2 mb-0"><strong>{{eixo.nome}}</strong></h6>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-
-                                        <h5 class="text-success">
-                                            <span *ngIf="eixo&&eixo.valor&&eixo.valor >= 1000; else other_content">
-                                                {{eixo.valor | currency:'BRL':'symbol':'1.0-0' }}
-                                            </span>
-                                            <ng-template #other_content>
-                                                <span> &lt; R$1.000 </span>
-                                            </ng-template>
-
-                                            <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
-                                            <small
-                                                *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
-                                        </h5>
-                                        <p>
-                                            {{eixo.descricao}}
-                                        </p>
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-end">
-                                        <button class="btn btn-sm btn-secondary" (click)="modalEixoDetalhes(eixo)">
-                                            Saiba mais
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
+        <div class="row mt-3">
+            <div class="col d-flex justify-content-center">
+                <a class="btn btn-outline-secondary" routerLink="/calculadora-agrupada">
+                    COMPARE MAIS DE UMA TERRA
+                </a>
             </div>
         </div>
     </div>

@@ -37,6 +37,7 @@ import { TipoCusto, TipoCustoTexto } from '../../shared/enums';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import Atividade from '../../core/models/Atividade';
 import SelectOption from '../../core/models/SelectOption';
+import { RouterLink } from '@angular/router';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -52,6 +53,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     HeaderComponent,
     CanvasJSAngularChartsModule,
     LoadingComponent,
+    RouterLink,
   ],
   providers: [CalculadoraService, CurrencyPipe],
   templateUrl: './calculadora-agrupada.component.html',
@@ -165,7 +167,7 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       ];
       this.grupoTerrasIndigenas.push(
         {
-          nomeGrupo: 'Terras Indígenas Xingu - Com dados de custos na amostra',
+          nomeGrupo: 'Terras Indígenas com dados coletados',
           terrasIndigenas: response
             .filter((x: TerraIndigena) => x.grupo === 1)
             .sort((a: TerraIndigena, b: TerraIndigena) =>
@@ -173,7 +175,7 @@ export class CalculadoraAgrupadaComponent implements OnInit {
             ),
         },
         {
-          nomeGrupo: 'Terras Indígenas Xingu - Sem dados de custos na amostra',
+          nomeGrupo: 'Terras Indígenas com dados extrapolados',
           terrasIndigenas: response
             .filter(
               (x: TerraIndigena) =>
@@ -365,16 +367,16 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       tipoCusto == this.enumTipoCusto.Recorrente
         ? this.enumTipoCustoTexto.Recorrente
         : this.enumTipoCustoTexto.NaoRecorrente;
-    eixos.forEach((eixo: Eixo) => {
-      eixo.atividades.forEach((atividades: Atividade) => {
-        atividades.custoBasico = atividades.custoBasico.filter((x) =>
-          x.startsWith(tipoCustoTexo)
-        );
-        atividades.custoBom = atividades.custoBom.filter((x) =>
-          x.startsWith(tipoCustoTexo)
-        );
-      });
-    });
+    // eixos.forEach((eixo: Eixo) => {
+    //   eixo.atividades.forEach((atividades: Atividade) => {
+    //     atividades.custoBasico = atividades.custoBasico.filter((x) =>
+    //       x.startsWith(tipoCustoTexo)
+    //     );
+    //     atividades.custoBom = atividades.custoBom.filter((x) =>
+    //       x.startsWith(tipoCustoTexo)
+    //     );
+    //   });
+    // });
 
     return eixos;
   }
@@ -550,26 +552,26 @@ export class CalculadoraAgrupadaComponent implements OnInit {
                         bold: true,
                       },
                       atividade.descricao,
-                      {
-                        type: 'none' as UnorderedListType,
-                        ul: atividade.custoBasico.map((x) => {
-                          return [
-                            {
-                              text: [{ text: 'Básico: ', bold: true }, x],
-                            },
-                          ];
-                        }),
-                      },
-                      {
-                        type: 'none' as UnorderedListType,
-                        ul: atividade.custoBasico.map((x) => {
-                          return [
-                            {
-                              text: [{ text: 'Bom: ', bold: true }, x],
-                            },
-                          ];
-                        }),
-                      },
+                      // {
+                      //   type: 'none' as UnorderedListType,
+                      //   ul: atividade.custoBasico.map((x) => {
+                      //     return [
+                      //       {
+                      //         text: [{ text: 'Básico: ', bold: true }, x],
+                      //       },
+                      //     ];
+                      //   }),
+                      // },
+                      // {
+                      //   type: 'none' as UnorderedListType,
+                      //   ul: atividade.custoBasico.map((x) => {
+                      //     return [
+                      //       {
+                      //         text: [{ text: 'Bom: ', bold: true }, x],
+                      //       },
+                      //     ];
+                      //   }),
+                      // },
                       '\n',
                     ];
                   }),
