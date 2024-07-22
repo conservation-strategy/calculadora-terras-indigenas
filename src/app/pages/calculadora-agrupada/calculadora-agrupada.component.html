@@ -138,8 +138,8 @@
                             formControlName="inflacao" numbersOnly>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3 d-flex flex-column justify-content-center">
-                    <img src="./assets/images/terras-indigenas/terra_indigena.jpg" style="max-height: 400px;" alt="">
+                <div class="col-md-4 mb-3 d-flex flex-column justify-content-center align-items-center">
+                    <img src="./assets/images/mapas/terra_indigena_geral.png" style="max-width: 100%;" alt="">
                     <a class="btn btn-sm btn-link text-secondary w-50 align-self-center" target="_blank"
                         routerLink="/pgtas">
                         Conheça os PGTAs
@@ -156,7 +156,7 @@
     <div id="resultado"></div>
     <div *ngIf="mostrarResultado&&resultado" class="mt-5 border p-3">
         <h1 class="section-title text-center">Resultados</h1>
-        <button class="btn btn-sm btn-secondary mb-3" (click)="gerarPdf()">Download PDF</button>
+        <button class="btn btn-sm btn-secondary mb-5 mt-5" (click)="gerarPdf()">Download PDF</button>
         <p class=" mb-3">
             O custo previsto para as Terras Indígenas
             <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>

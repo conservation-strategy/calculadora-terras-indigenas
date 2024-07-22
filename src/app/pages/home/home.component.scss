@@ -30,36 +30,19 @@
 }
 
 // SECTION USOS POSSIVES
-#usos-possiveis ul {
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  list-style: none;
-}
-
-#usos-possiveis li {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-}
-
 #usos-possiveis img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 50px;
   height: 50px;
 }
 
-#usos-possiveis li h2 {
+#usos-possiveis h2 {
   font-family: "Montserrat";
   font-size: 1.5rem;
   text-align: center;
   margin: 25px 0;
 }
 
-#usos-possiveis li p {
+#usos-possiveis p {
   text-align: center;
   font-family: "Roboto";
   padding: 0 10px;
@@ -72,7 +55,8 @@
   list-style: none;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 0;
 }
 #metodologia li {
   width: 130px;
@@ -93,6 +77,22 @@
   background: lightgray;
 }
 
-.ilustracao {
+#eixo_ilustracao_completa img {
   max-width: 100%;
+}
+
+#eixo_ilustracao_mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  #eixo_ilustracao_completa img {
+    display: none;
+  }
+
+  #eixo_ilustracao_mobile {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }

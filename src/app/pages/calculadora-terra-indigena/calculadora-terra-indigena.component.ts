@@ -295,7 +295,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         });
         this.habilitarDesabilitarEdicao(false);
         this.terraIndigenaSelecionada = terraIndigena;
-      }, 200);
+        this.limparResultado();
+      }, 100);
     }
   }
 

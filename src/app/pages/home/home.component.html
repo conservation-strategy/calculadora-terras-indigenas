@@ -14,8 +14,8 @@
 <div class="container main-container">
     <section id="usos-possiveis" class="mb-5">
         <h1 class="section-title text-center mb-5">Usos Possíveis</h1>
-        <ul>
-            <li>
+        <div class="row">
+            <div class="col-md-4 mb-5 d-flex flex-column align-items-center">
                 <img src="assets/images/home/planejar.png" alt="">
                 <h2>Planejar</h2>
                 <p>
@@ -24,8 +24,8 @@
                     de lacunas de financiamento e na elaboração de orçamentos relacionados a ações de gestão dos
                     territórios
                 </p>
-            </li>
-            <li>
+            </div>
+            <div class="col-md-4 mb-5 d-flex flex-column align-items-center">
                 <img src="assets/images/home/avaliar.png" alt="">
                 <h2>Avaliar</h2>
                 <p>
@@ -33,8 +33,8 @@
                     relacionadas a
                     custos de atividades
                 </p>
-            </li>
-            <li>
+            </div>
+            <div class="col-md-4 mb-5 d-flex flex-column align-items-center">
                 <img src="assets/images/home/priorizar.png" alt="">
                 <h2>Priorizar</h2>
                 <p>
@@ -42,8 +42,8 @@
                     implementação
                     das atividades e políticas públicas
                 </p>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
     <hr>
     <section id="metodologia" class="mt-5 mb-5">
@@ -93,8 +93,15 @@
                     Os custos foram divididos em eixos temáticos, conforme os principais temas dos PGTAs. Conheça mais
                     sobre os Eixos temáticos:
                 </p>
-                <div>
-                    <img src="assets/images/home/eixos_ilustracao.png" class="ilustracao" alt="ilustração eixos">
+                <div id="eixo_ilustracao_completa">
+                    <img src="assets/images/home/eixos_ilustracao_completo.png" alt="ilustração eixos">
+                </div>
+
+                <div id="eixo_ilustracao_mobile">
+                    <img src="assets/images/home/eixos_ilustracao_1.png" alt="ilustração eixos">
+                    <img src="assets/images/home/eixos_ilustracao_2.png" alt="ilustração eixos">
+                    <img src="assets/images/home/eixos_ilustracao_3.png" alt="ilustração eixos">
+                    <img src="assets/images/home/eixos_ilustracao_4.png" alt="ilustração eixos">
                 </div>
 
                 <div class="row mt-5">
@@ -109,10 +116,10 @@
     <hr>
     <section>
         <div class="row mt-5">
-            <div class="col-md-8">
+            <div class="col-md-8 mb-5">
                 <app-realizacao></app-realizacao>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mb-5">
                 <app-apoio></app-apoio>
             </div>
         </div>
