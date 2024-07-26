@@ -3,6 +3,7 @@
 <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1299.62 643.64" style="enable-background:new 0 0 1299.62 643.64;" xml:space="preserve">
 <style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900');
 	.st0{clip-path:url(#SVGID_00000131366247857403609890000001631033274758491804_);}
 	.st1{fill:#073C29;}
 	.st2{fill:#BF7A4B;}
@@ -120,7 +121,7 @@
 	.st109{fill:none;stroke:#C98A45;stroke-width:1.0122;stroke-miterlimit:10;}
 	.st110{fill:#192A33;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
 	.st111{fill:#FFFFFF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
-	.st112{font-family:'Raleway';}
+	.st112{font-family:'Raleway'; font-weight: 500;}
 	.st113{font-size:13.0622px;}
 	.st114{font-size:12.7208px;}
 </style>
