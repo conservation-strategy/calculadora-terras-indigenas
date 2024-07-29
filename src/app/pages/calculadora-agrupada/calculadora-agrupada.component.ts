@@ -101,6 +101,7 @@ export class CalculadoraAgrupadaComponent implements OnInit {
   dataPointsNaoRecorrentes: any[] = [];
 
   chartOptions = {
+    backgroundColor: '#f2f1f1',
     animationEnabled: true,
     axisY: {
       includeZero: true,
@@ -488,7 +489,7 @@ export class CalculadoraAgrupadaComponent implements OnInit {
             text: [
               'O cálculo abaixo foi realizado utilizando a ',
               {
-                text: 'Versão Agrupada',
+                text: 'Versão Comparativa',
                 bold: true,
               },
               ' da calculadora.',
@@ -611,7 +612,7 @@ export class CalculadoraAgrupadaComponent implements OnInit {
           },
         },
       };
-      pdfMake.createPdf(docDefinition).download('Calculadora Versão Agrupada');
+      pdfMake.createPdf(docDefinition).download('Versão Comparativa');
     }
   }
 }

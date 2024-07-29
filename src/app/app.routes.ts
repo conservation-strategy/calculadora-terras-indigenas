@@ -47,13 +47,13 @@ export const routes: Routes = [
   {
     path: 'equipe',
     loadComponent: () =>
-      import('./pages/time/time.component').then((c) => c.TimeComponent),
+      import('./pages/equipe/equipe.component').then((c) => c.EquipeComponent),
   },
   {
     path: 'links_uteis',
     loadComponent: () =>
-      import('./pages/contato/contato.component').then(
-        (c) => c.ContatoComponent
+      import('./pages/links-uteis/links-uteis.component').then(
+        (c) => c.LinksUteisComponent
       ),
   },
   {

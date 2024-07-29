@@ -1,98 +1,176 @@
 // SECTION HEADER
 #header {
-  background-image: url("../../../assets/images/home/bg-home-page.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-#header .header-bg {
-  width: 100%;
-  min-height: 40vh;
-  background-color: #00000096;
-  display: flex;
-  padding: 50px 0;
-}
-
-#header h1 {
-  color: white;
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 150%;
-  font-family: "Montserrat", sans-serif;
-}
-
-#header h2 {
-  color: white;
-  font-size: 1.3rem;
-  padding-top: 2rem;
-  line-height: 150%;
-  font-family: "Montserrat", sans-serif;
+  padding: 120px 0;
+  h1 {
+    text-transform: uppercase;
+    margin: 0;
+  }
+  p {
+    font-weight: bold;
+    color: #494949;
+    margin: 0;
+  }
 }
 
 // SECTION USOS POSSIVES
-#usos-possiveis img {
-  width: 50px;
-  height: 50px;
+#usos-possiveis {
+  padding: 68px 0;
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
+  h2 {
+    font-family: "Doppio One";
+    font-size: 40px;
+    color: #5c5c5c;
+    margin: 25px 0;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }
 
-#usos-possiveis h2 {
-  font-family: "Montserrat";
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 25px 0;
+// SECTION EIXOS TEMATICOS
+#eixos-tematicos {
+  padding-top: 57px;
+
+  h1 {
+    margin-bottom: 35px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .ilustracao img {
+    max-width: 100%;
+  }
+
+  .ilustracao_completa {
+    margin-top: 112px;
+    display: block;
+  }
+
+  .ilustracao_mobile {
+    display: none;
+  }
 }
 
-#usos-possiveis p {
-  text-align: center;
-  font-family: "Roboto";
-  padding: 0 10px;
+// SECTION METODOLOGIA
+#metodologia {
+  padding: 64px 0;
+  p {
+    padding-top: 52px;
+    padding-bottom: 73px;
+    font-size: 20px;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  li {
+    width: 140px;
+    height: 130px;
+    border-radius: 10px;
+    background: #b20000;
+    color: white;
+    font-family: "Doppio One", sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    transition: 0.3s all;
+  }
+
+  li:hover {
+    transform: scale(110%);
+  }
 }
 
-// metodologia
-#metodologia ul {
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  list-style: none;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0;
-}
-#metodologia li {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  background: #f4f4f4;
+// SECTION CALCULADORA
+#calculadora {
+  padding: 163px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 5px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  cursor: help;
+  .botao-calculadora {
+    background: #b20000;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: "Gudea";
+    font-size: 32px;
+    color: white;
+    padding: 10px 30px;
+    transition: 0.3s all;
+  }
+
+  .botao-calculadora:hover {
+    transform: scale(110%);
+  }
 }
 
-#metodologia li:hover {
-  background: lightgray;
-}
-
-#eixo_ilustracao_completa img {
-  max-width: 100%;
-}
-
-#eixo_ilustracao_mobile {
-  display: none;
+// SECTION REALIZACAO/APOIO/PARCEIROS
+#realizacao-apoio-parceiros {
+  padding: 66px 0;
 }
 
 @media (max-width: 991px) {
-  #eixo_ilustracao_completa img {
+  #eixos-tematicos .ilustracao_completa {
     display: none;
   }
 
-  #eixo_ilustracao_mobile {
+  #eixos-tematicos .ilustracao_mobile {
     max-width: 100%;
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  #header {
+    padding: 60px 0;
+  }
+
+  #usos-possiveis {
+    padding: 34px 0;
+    img {
+      width: 120px;
+      height: 120px;
+    }
+    h2 {
+      font-size: 30px;
+      margin: 15px 0;
+    }
+  }
+
+  #metodologia {
+    p {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    ul {
+      justify-content: center;
+    }
+  }
+
+  #calculadora {
+    padding: 80px 0;
+    .botao-calculadora {
+      font-size: 28px;
+      padding: 7px 21px;
+    }
   }
 }

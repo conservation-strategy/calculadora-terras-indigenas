@@ -5,7 +5,7 @@ import { RealizacaoComponent } from '../../shared/components/realizacao/realizac
 import { ApoioComponent } from '../../shared/components/apoio/apoio.component';
 
 @Component({
-  selector: 'app-time',
+  selector: 'app-equipe',
   standalone: true,
   imports: [
     HeaderComponent,
@@ -13,7 +13,7 @@ import { ApoioComponent } from '../../shared/components/apoio/apoio.component';
     ApoioComponent,
     ParceirosComponent,
   ],
-  templateUrl: './time.component.html',
-  styleUrl: './time.component.scss',
+  templateUrl: './equipe.component.html',
+  styleUrl: './equipe.component.scss',
 })
-export class TimeComponent {}
+export class EquipeComponent {}

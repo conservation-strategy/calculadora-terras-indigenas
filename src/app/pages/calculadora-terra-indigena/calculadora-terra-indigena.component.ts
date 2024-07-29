@@ -82,6 +82,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
   chart: any;
   chartBase64String = '';
   chartOptions = {
+    backgroundColor: '#f2f1f1',
     animationEnabled: true,
     data: [
       {
@@ -473,9 +474,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       const docDefinition = {
         pageMargins: [50, 80, 50, 40] as Margins,
         info: {
-          title: 'Calculadora Versão por Terra Indígena',
+          title: 'Calculadora do Custo de Gestão de Terras Indígenas',
           author: 'CSF',
-          subject: 'Calculadora Versão por Terra Indígena',
+          subject: 'Calculadora do Custo de Gestão de Terras Indígenas',
         },
         header: [
           {
@@ -490,7 +491,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             text: [
               'O cálculo abaixo foi realizado utilizando a ',
               {
-                text: 'Versão por Terra Indígena',
+                text: 'Calculadora do Custo de Gestão de Terras Indígenas',
                 bold: true,
               },
               ' da calculadora.',
@@ -666,7 +667,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
       pdfMake
         .createPdf(docDefinition)
-        .download('Calculadora Versão por Terra Indígena');
+        .download('Calculadora do Custo de Gestão de Terras Indígenas');
     }
   }
 

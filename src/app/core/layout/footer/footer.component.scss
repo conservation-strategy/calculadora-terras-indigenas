@@ -1,3 +1,41 @@
 footer {
-  background-color: rgb(244, 244, 244);
+  background-color: #f2f1f1;
+  padding: 40px 0;
+
+  p {
+    text-align: center;
+    font-family: "Doppio One";
+    font-size: 20px;
+    color: #5c5c5c;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+    padding: 15px 0;
+    flex-wrap: wrap;
+  }
+
+  li {
+    background: #d8cfc7;
+    padding: 5px 30px;
+    border-radius: 50px;
+    font-family: "Doppio One";
+    font-size: 22px;
+    color: #584c41;
+    cursor: pointer;
+  }
+
+  li:hover {
+    box-shadow: 0 0 3px #584c41;
+  }
+}
+
+.copyright {
+  background: #b20000;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }

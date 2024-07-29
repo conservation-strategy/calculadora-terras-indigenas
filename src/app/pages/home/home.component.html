@@ -1,57 +1,88 @@
-<section id="header">
-    <div class="header-bg">
-        <div class="container">
-            <h1>Custos de gestão de terras indígenas</h1>
-            <h2 class="mt-3">
-                A Calculadora de Custos de Gestão de Terras Indígenas é uma ferramenta online desenvolvida com o
-                objetivo de auxiliar as organizações indígenas da bacia do Xingu no planejamento orçamentário e na
-                captação de recursos para implementação de seus PGTAs
-            </h2>
+<section class="section-container" id="header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="section-title">Custos de gestão de terras indígenas</h1>
+            </div>
+            <div class="col-md-4">
+                <p style="padding-top: 5px;">
+                    A Calculadora de Custos de Gestão de Terras Indígenas é uma ferramenta online desenvolvida com o
+                    objetivo de auxiliar as organizações indígenas da bacia do Xingu no planejamento orçamentário e na
+                    captação de recursos para implementação de seus PGTAs.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
-<div class="container main-container">
-    <section id="usos-possiveis" class="mb-5">
-        <h1 class="section-title text-center mb-5">Usos Possíveis</h1>
+<section class="section-container bg-gray" id="usos-possiveis">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4 mb-5 d-flex flex-column align-items-center">
-                <img src="assets/images/home/planejar.png" alt="">
-                <h2>Planejar</h2>
-                <p>
-                    Auxiliar organizações indígenas, parceiras e apoiadoras no planejamento financeiro, na
-                    avaliação
-                    de lacunas de financiamento e na elaboração de orçamentos relacionados a ações de gestão dos
-                    territórios
-                </p>
+            <div class="col-lg-3 mb-5 align-self-center">
+                <h1 class="section-sub-title">Usos possíveis</h1>
             </div>
-            <div class="col-md-4 mb-5 d-flex flex-column align-items-center">
-                <img src="assets/images/home/avaliar.png" alt="">
-                <h2>Avaliar</h2>
-                <p>
-                    Subsidiar a tomada de decisões pelas organizações locais por meio de informações
-                    relacionadas a
-                    custos de atividades
-                </p>
-            </div>
-            <div class="col-md-4 mb-5 d-flex flex-column align-items-center">
-                <img src="assets/images/home/priorizar.png" alt="">
-                <h2>Priorizar</h2>
-                <p>
-                    Demonstrar a demanda financeira das organizações para um investimento eficiente na
-                    implementação
-                    das atividades e políticas públicas
-                </p>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-4 d-flex flex-column">
+                        <img src="assets/images/home/usos_possiveis_planejar.png" alt="">
+                        <h2>Planejar</h2>
+                        <p>
+                            Auxiliar organizações indígenas, parceiras e apoiadoras no planejamento financeiro, na
+                            avaliação de lacunas de financiamento e na elaboração de orçamentos relacionados a ações de
+                            gestão dos territórios.
+                        </p>
+                    </div>
+                    <div class="col-md-4 d-flex flex-column">
+                        <img src="assets/images/home/usos_possiveis_avaliar.png" alt="">
+                        <h2>Avaliar</h2>
+                        <p>
+                            Subsidiar a tomada de decisões pelas organizações locais por meio de informações
+                            relacionadas a custos de atividades.
+                        </p>
+                    </div>
+                    <div class="col-md-4 d-flex flex-column">
+                        <img src="assets/images/home/usos_possiveis_priorizar.png" alt="">
+                        <h2>Priorizar</h2>
+                        <p>
+                            Demonstrar a demanda financeira das organizações para um investimento eficiente na
+                            implementação das atividades e políticas públicas.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <hr>
-    <section id="metodologia" class="mt-5 mb-5">
-        <h1 class="section-title text-center mb-5">Metodologia</h1>
+    </div>
+</section>
+
+<section class="section-container bg-white" id="eixos-tematicos">
+    <div class="container">
+        <h1 class="section-sub-title text-center">Eixos temáticos</h1>
+        <p class="m-0">
+            Os custos foram divididos em eixos temáticos, conforme os principais temas dos PGTAs. Conheça mais sobre
+            os eixos temáticos:
+        </p>
+    </div>
+    <div class="ilustracao ilustracao_completa">
+        <app-eixos-ilustracao-completa></app-eixos-ilustracao-completa>
+    </div>
+
+    <div class="ilustracao ilustracao_mobile">
+        <app-eixos-ilustracao-1></app-eixos-ilustracao-1>
+        <app-eixos-ilustracao-2></app-eixos-ilustracao-2>
+        <app-eixos-ilustracao-3></app-eixos-ilustracao-3>
+        <app-eixos-ilustracao-4></app-eixos-ilustracao-4>
+    </div>
+</section>
+
+<section class="section-container bg-gray" id="metodologia">
+    <div class="container">
+        <h1 class="section-title text-center">Metodologia</h1>
         <p>
             Para calcular os custos dos Planos de Gestão de Terras Indígenas (PGTAs), a calculadora utiliza relações
-            estatísticas entre várias características das terras. Com base nessas características e na coleta de dados,
-            a ferramenta estima os custos de implementação dos PGTAs. Conheça mais sobre as características das terras
+            estatísticas entre várias características das terras. Com base nessas características e na coleta de
+            dados,
+            a ferramenta estima os custos de implementação dos PGTAs. Conheça mais sobre as características das
+            terras
             indígenas que o modelo considerou para o cálculo:
         </p>
 
@@ -59,7 +90,7 @@
             <li ngbTooltip="Extensão da Terra Indígena, em hectares">
                 Tamanho da terra
             </li>
-            <li ngbTooltip="Quantidade de aldeias na Terra Indígena">
+            <li ngbTooltip="Quantidade de aldeias na Terra Indígena" container="body">
                 Número de aldeias
             </li>
             <li ngbTooltip="Quantidade de pessoas residentes na Terra Indígena">
@@ -74,57 +105,40 @@
             <li ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena">
                 Complexidade de acesso
             </li>
-            <li ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena">
+            <li ngbTooltip="Onde está situada a sede da associação, se cidade ou aldeia">
                 Localização da sede
             </li>
         </ul>
 
         <div class="row">
-            <div class="col d-flex justify-content-center">
-                <a class="btn btn-sm btn-outline-secondary" target="_blank" routerLink="/metodologia">Saiba mais sobre a
-                    metodologia</a>
+            <div class="col d-flex justify-content-end">
+                <a class="btn btn-sm btn-link text-secondary" target="_blank" routerLink="/metodologia">
+                    Saiba mais sobre a metodologia
+                </a>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="row mt-5">
-            <div class="col">
-                <h2 class="section-sub-title mb-5">Eixos temáticos</h2>
-                <p>
-                    Os custos foram divididos em eixos temáticos, conforme os principais temas dos PGTAs. Conheça mais
-                    sobre os Eixos temáticos:
-                </p>
-                <div id="eixo_ilustracao_completa">
-                    <img src="assets/images/home/eixos_ilustracao_completo.png" alt="ilustração eixos">
-                </div>
+<section class="section-container" id="calculadora">
+    <a class="botao-calculadora" routerLink="/calculadora-terra-indigena">
+        Acesse a calculadora
+    </a>
+</section>
 
-                <div id="eixo_ilustracao_mobile">
-                    <img src="assets/images/home/eixos_ilustracao_1.png" alt="ilustração eixos">
-                    <img src="assets/images/home/eixos_ilustracao_2.png" alt="ilustração eixos">
-                    <img src="assets/images/home/eixos_ilustracao_3.png" alt="ilustração eixos">
-                    <img src="assets/images/home/eixos_ilustracao_4.png" alt="ilustração eixos">
-                </div>
-
-                <div class="row mt-5">
-                    <div class="col d-flex justify-content-center">
-                        <a class="btn btn-lg btn-secondary" routerLink="/calculadora-terra-indigena">Acesse a
-                            calculadora</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr>
-    <section>
-        <div class="row mt-5">
-            <div class="col-md-8 mb-5">
+<section class="section-container bg-white" id="realizacao-apoio-parceiros">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
                 <app-realizacao></app-realizacao>
             </div>
-            <div class="col-auto mb-5">
+            <div class="col-auto">
                 <app-apoio></app-apoio>
             </div>
         </div>
         <div class="row mt-5">
             <div class="col"><app-parceiros></app-parceiros></div>
         </div>
-    </section>
-</div>
+    </div>
+
+</section>

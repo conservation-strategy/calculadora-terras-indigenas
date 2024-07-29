@@ -1,3 +1,23 @@
+#header {
+  padding: 120px 0;
+}
+
+#info {
+  padding: 90px 0;
+}
+
+#form {
+  padding: 90px 0;
+}
+
+#resultados {
+  padding: 40px 0;
+}
+
+#custos_por_eixos {
+  padding: 40px 0;
+}
+
 .form-check-terra-indigena label {
   font-size: 12px;
   font-weight: unset;
@@ -12,4 +32,40 @@ th,
 td {
   font-size: 12px;
   vertical-align: middle;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.link_pgta {
+  align-self: center;
+  width: 90px;
+  height: 90px;
+  background: #b20000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Gudea";
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link_pgta:hover {
+  transform: scale(110%);
 }

@@ -1,11 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Open+Sans:wght@300;400;600;700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400&");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Doppio+One&family=Gudea:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "variables";
 @import "bootstrap/scss/bootstrap";
 
+.raleway-medium {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 body {
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Gudea", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 1rem;
 }
 
@@ -17,7 +24,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/images/background.jpg");
+  background-image: url("../assets/images/layout/background.png");
 }
 
 #app-main-inner {
@@ -28,11 +35,22 @@ body {
   margin-top: auto;
 }
 
+.section-container {
+  width: 100%;
+}
+
 .main-container {
   background: #fff;
-  padding: 50px 40px 30px 40px;
+  padding: 50px 40px 30px;
   min-height: calc(100vh - 480px);
-  box-shadow: -5px 0px 5px #903d37, 5px 0px 5px #903d37;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-gray {
+  background: #f2f1f1;
 }
 
 .card-main {
@@ -41,16 +59,28 @@ body {
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 500;
-  font-family: "Montserrat", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 400;
+  font-family: "Doppio One", sans-serif;
+  color: #5c5c5c;
 }
 
 .section-sub-title {
-  font-size: 1.5rem;
-  font-family: "Montserrat", sans-serif;
-  width: fit-content;
-  border-bottom: 2px solid gray;
+  font-size: 3.125rem;
+  font-weight: 400;
+  font-family: "Doppio One", sans-serif;
+  color: #5c5c5c;
+}
+
+.section-small-title {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: "Doppio One", sans-serif;
+  color: #5c5c5c;
+}
+
+.section-text-color {
+  color: #5c5c5c;
 }
 
 .calculadora-form label {
@@ -73,4 +103,14 @@ body {
 
 .calculadora-form option {
   color: var(--bs-body-color);
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 3.125rem;
+  }
+
+  .section-sub-title {
+    font-size: 2.75rem;
+  }
 }
