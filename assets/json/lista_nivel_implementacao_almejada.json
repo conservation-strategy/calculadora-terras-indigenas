@@ -1,10 +1,10 @@
 [
   {
-    "label": "Nível de investimento básico",
+    "label": "Investimento para gestão básica",
     "value": 10
   },
   {
-    "label": "Nível de investimento bom",
+    "label": "Investimento para gestão boa",
     "value": 20
   }
 ]
