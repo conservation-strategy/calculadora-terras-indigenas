@@ -11,11 +11,66 @@
 }
 
 #resultados {
-  padding: 40px 0;
+  padding-bottom: 70px;
+  h1 {
+    text-transform: uppercase;
+    font-family: "Gudea";
+    font-weight: bold;
+    font-size: 25px;
+    color: #414141;
+    width: fit-content;
+    padding: 15px 40px;
+    margin-top: -30px;
+    margin-bottom: 70px;
+    background: #f2f1f1;
+    border-radius: 10px;
+  }
+  h2 {
+    width: fit-content;
+    background: white;
+    margin-top: 63px;
+    margin-bottom: 63px;
+    margin-left: -350px;
+    padding-left: 350px;
+    background: white;
+    width: fit-content;
+    padding: 15px 30px 15px 350px;
+    border-radius: 0px 35px 35px 0px;
+  }
+  h3 {
+    font-family: "Doppio One";
+    font-size: 30px;
+    color: #454545;
+    margin-bottom: 20px;
+  }
+  h4 {
+    font-family: "Gudea";
+    font-size: 33px;
+    font-weight: bold;
+    color: #b20000;
+    margin-bottom: 60px;
+  }
+  .resultado-tipo-custo {
+    font-family: "Doppio One";
+    font-size: 22px;
+  }
 }
 
 #custos_por_eixos {
-  padding: 40px 0;
+  padding-bottom: 70px;
+  h1 {
+    text-transform: uppercase;
+    font-family: "Gudea";
+    font-weight: bold;
+    font-size: 25px;
+    color: #383838;
+    width: fit-content;
+    padding: 15px 40px;
+    margin-top: -30px;
+    margin-bottom: 70px;
+    background: white;
+    border-radius: 10px;
+  }
 }
 
 .form-check-terra-indigena label {

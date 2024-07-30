@@ -247,9 +247,9 @@
                         <div class="col-md-6 mt-3">
                             <label class="form-label">
                                 <span>Inflação acumulada desde 2023 (%)</span>
-                                <fa-icon [icon]="faQuestionCircle"
+                                <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
                                     ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."
-                                    (click)="abrirModalFormDetalhes('Inflação acumulada desde 2023 (%)', '')"></fa-icon>
+                                    (click)="abrirModalFormDetalhes('Inflação acumulada desde 2023', '')"></fa-icon>
                             </label>
                             <input type="text" class="form-control form-control-sm" placeholder="(Opcional)"
                                 formControlName="inflacao" numbersOnly>
@@ -284,15 +284,19 @@
 <div id="resultado"></div>
 <section class="section-container bg-gray" id="resultados" *ngIf="mostrarResultado&&resultado">
     <div class="container">
-        <h1 class="section-small-title text-center text-uppercase mb-5">Resultados</h1>
-        <div class="row justify-content-md-center mb-5">
+        <div class="d-flex justify-content-center">
+            <h1>Resultados</h1>
+        </div>
+
+        <div class="row justify-content-center">
             <div class="col col-lg-4 text-center text-md-end">
                 <span class="resultado-tipo-custo">Investimento para gestão básica</span>
             </div>
             <div class="col-md-auto">
                 <div class="form-check form-switch d-flex justify-content-center">
                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
-                        [(ngModel)]="tipoResultadoBom" (change)="trocarTipoResultado()">
+                        style="width: 50px;height: 25px;" [(ngModel)]="tipoResultadoBom"
+                        (change)="trocarTipoResultado()">
 
                 </div>
             </div>
@@ -300,14 +304,14 @@
                 <span class="resultado-tipo-custo">Investimento para gestão boa</span>
             </div>
         </div>
-        <h2 class="resultado-section-sub-title text-uppercase">
+        <h2>
             {{tipoResultadoBom ? 'Investimento para gestão boa' : 'Investimento para gestão básica'}}
         </h2>
         <div class="row">
             <div class="col-lg-3 mb-3">
-                <h3 style="font-size: 1.5rem;" class="text-uppercase">Custo Total</h3>
+                <h3>Custo Total</h3>
                 <div class="mt-3">
-                    <h2 style="font-size: 1.8rem" class="text-secondary mb-5">
+                    <h4>
                         <span *ngIf="resultado.valorTotal >= 1000">
                             {{resultado.valorTotal | currency:'BRL':'symbol':'1.0-0' }}
                         </span>
@@ -315,9 +319,9 @@
 
                         <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
                         <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
-                    </h2>
+                    </h4>
                 </div>
-                <button class="btn btn-lg btn-secondary rounded-pill" (click)="gerarPdf()">Baixar PDF</button>
+                <button class="btn btn-lg btn-secondary px-5 rounded-pill" (click)="gerarPdf()">Baixar PDF</button>
             </div>
             <div class="col-lg-6 mb-3">
                 <canvasjs-chart [options]="chartOptions" id="chart" [styles]="{width: '100%', height:'300px'}"
@@ -337,7 +341,10 @@
 
 <section class="section-container bg-white" id="custos_por_eixos" *ngIf="mostrarResultado&&resultado">
     <div class="container">
-        <h1 class="section-small-title text-center mb-5 text-uppercase">Custos Por Eixos</h1>
+        <div class="d-flex justify-content-center">
+            <h1>Custos Por Eixos</h1>
+        </div>
+
         <div class="row">
             <div class="col-md-6 col-lg-4 col-xl-3 mb-3" *ngFor="let eixo of resultado.eixos">
                 <div class="card h-100">
@@ -373,10 +380,10 @@
             </div>
         </div>
 
-        <div class="row mt-3">
+        <div class="row mt-5">
             <div class="col d-flex justify-content-center">
                 <a class="btn btn-outline-secondary" routerLink="/calculadora-agrupada" target="_blank">
-                    COMPARE MAIS DE UMA TERRA
+                    Compare mais de uma terra
                 </a>
             </div>
         </div>

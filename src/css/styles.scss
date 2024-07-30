@@ -25,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   background-image: url("../assets/images/layout/background.png");
+  background-size: contain;
 }
 
 #app-main-inner {

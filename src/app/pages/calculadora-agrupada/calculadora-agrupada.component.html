@@ -61,9 +61,10 @@
                 <div class="col-md-4 mb-3">
                     <div class="form-group mt-3">
                         <label class="form-label d-flex justify-content-between">
-                            <span>Eixo temático</span>
-                            <fa-icon [icon]="faQuestionCircle"
-                                ngbTooltip="Ações a serem realizadas para o alcance dos eixos temáticos">
+                            <span>Eixos temáticos</span>
+                            <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                ngbTooltip="Eixos temáticos  definidos a partir dos principais temas presentes dos PGTAs"
+                                (click)="abrirModalFormDetalhes('Eixos temáticos','')">
                             </fa-icon>
                         </label>
                         <div class="form-check form-check-terra-indigena" *ngFor="let eixo of eixos">
@@ -81,8 +82,9 @@
                     <div class="form-group mt-3">
                         <label class="form-label">
                             <span>Tipo de custo</span>
-                            <fa-icon [icon]="faQuestionCircle"
-                                ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."></fa-icon>
+                            <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."
+                                (click)="abrirModalFormDetalhes('Tipo de custo', 'Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente.')"></fa-icon>
                         </label>
                         <select class="form-select form-select-sm" required
                             [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
@@ -99,7 +101,9 @@
                     <div class="form-group mt-3">
                         <label class="form-label">
                             <span>Situação atual de Gestão da Terra</span>
-                            <fa-icon [icon]="faQuestionCircle" ngbTooltip="Situação atual de Gestão da Terra"></fa-icon>
+                            <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                ngbTooltip="Situação atual de Gestão da Terra"
+                                (click)="abrirModalFormDetalhes('Situação atual de Gestão da Terra', '')"></fa-icon>
                         </label>
                         <select class="form-select form-select-sm" required
                             [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
@@ -117,7 +121,9 @@
                     <div class="form-group mt-3">
                         <label class="form-label d-flex justify-content-between">
                             <span>Situação desejada de Gestão da Terra</span>
-                            <fa-icon [icon]="faQuestionCircle" ngbTooltip="Situação desejada de Gestão da Terra">
+                            <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                ngbTooltip="Situação desejada de Gestão da Terra"
+                                (click)="abrirModalFormDetalhes('Situação desejada de Gestão da Terra', '')">
                             </fa-icon>
                         </label>
                         <select class="form-select form-select-sm" required
@@ -133,12 +139,13 @@
                             Campo Obrigatório.
                         </small>
                     </div>
-
+                    <!-- inflação -->
                     <div class="form-group mt-3">
                         <label class="form-label d-flex justify-content-between">
                             <span>Inflação acumulada desde 2023 (%)</span>
-                            <fa-icon [icon]="faQuestionCircle"
-                                ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."></fa-icon>
+                            <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
+                                ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."
+                                (click)="abrirModalFormDetalhes('Inflação acumulada desde 2023', '')"></fa-icon>
                         </label>
                         <input type="text" class="form-control form-control-sm" placeholder="(Opcional)"
                             formControlName="inflacao" numbersOnly>
@@ -168,23 +175,31 @@
 
 <section class="section-container bg-gray" id="resultados" *ngIf="mostrarResultado&&resultado">
     <div class="container">
-        <h1 class="section-small-title text-center text-uppercase mb-5">Resultados</h1>
-        <button class="btn btn-lg btn-secondary rounded-pill" (click)="gerarPdf()">Baixar PDF</button>
-        <p class=" mb-3">
+        <div class="d-flex justify-content-center">
+            <h1>Resultados</h1>
+        </div>
+
+        <button class="btn btn-lg btn-secondary px-5 mb-5 rounded-pill" (click)="gerarPdf()">Baixar PDF</button>
+        <p class="mb-3">
             O custo previsto para as Terras Indígenas
             <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>
             para o eixos temáticos <strong>{{resultado.eixosSelecionados}}</strong> com o nível de implementação
             <strong>{{resultado.nivelImplementacao}}</strong> , {{resultado.tipoCusto == 1 ? 'por ano, ': ''}}é
             de:
         </p>
-        <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chart"
-            [styles]="{width: '100%', height:'500px'}"></canvasjs-chart>
+        <div class="mb-5">
+            <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chart"
+                [styles]="{width: '100%', height:'500px'}"></canvasjs-chart>
+        </div>
+
     </div>
 </section>
 
 <section class="section-container bg-white" id="custos_por_eixos" *ngIf="mostrarResultado&&resultado">
     <div class="container">
-        <h1 class="section-small-title text-center mb-5 text-uppercase">Custos Por Eixos</h1>
+        <div class="d-flex justify-content-center">
+            <h1>Custos Por Eixos</h1>
+        </div>
         <div class="table-responsive">
             <table class="table table-sm table-bordered">
                 <thead>

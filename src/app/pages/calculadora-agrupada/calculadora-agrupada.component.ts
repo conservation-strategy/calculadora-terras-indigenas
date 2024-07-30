@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {
   NgbAccordionModule,
+  NgbModal,
   NgbTooltipModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import {
@@ -38,6 +39,7 @@ import { LoadingComponent } from '../../shared/components/loading/loading.compon
 import Atividade from '../../core/models/Atividade';
 import SelectOption from '../../core/models/SelectOption';
 import { RouterLink } from '@angular/router';
+import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-detalhes/modal-form-detalhes.component';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -60,6 +62,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrl: './calculadora-agrupada.component.scss',
 })
 export class CalculadoraAgrupadaComponent implements OnInit {
+  private modalService = inject(NgbModal);
   faQuestionCircle = faQuestionCircle;
   enumTipoCusto: typeof TipoCusto = TipoCusto;
   enumTipoCustoTexto: typeof TipoCustoTexto = TipoCustoTexto;
@@ -614,6 +617,14 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       };
       pdfMake.createPdf(docDefinition).download('Versão Comparativa');
     }
+  }
+
+  abrirModalFormDetalhes(campo: string, tooltip: string) {
+    const modalRef = this.modalService.open(ModalFormDetalhesComponent, {
+      size: 'lg',
+    });
+    modalRef.componentInstance.campo = campo;
+    modalRef.componentInstance.tooltip = tooltip;
   }
 }
 

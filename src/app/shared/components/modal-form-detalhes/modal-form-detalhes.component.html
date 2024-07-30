@@ -163,6 +163,41 @@
             </p>
         </div>
 
+        <!-- Situação atual de Gestão da Terra -->
+        <div *ngIf="campo=='Situação atual de Gestão da Terra'">
+            <p>
+                A definição da situação de gestão da terra varia por atividade em cada eixo temático.
+            </p>
+            <p>
+                A “situação atual de gestão da terra” é definida pelo conjunto de itens (ações, equipamentos, pessoal
+                etc.) que a terra indígena tem. Nessa versão para comparação entre terras indígenas, como podemos
+                escolher mais de uma Terra Indígena, o usuário deverá selecionar qual seria a Situação de gestão da(s)
+                terra(s) podendo ser: "Não tem investimento"; "Nível de investimento precário"; "Nível de investimento
+                básico"; e "Nível de investimento bom".
+            </p>
+            <p>
+                No resultado é possível observar os valores para o alcance da situação de gestão no nível definido pelo
+                usuário, podendo ser no “Investimento para a gestão básica” ou “investimento para a gestão boa”.
+            </p>
+        </div>
+
+        <!-- Situação desejada de Gestão da Terra -->
+        <div *ngIf="campo=='Situação desejada de Gestão da Terra'">
+            <p>
+                O investimento para a gestão básica atende ao mínimo necessário para a realização da atividade. O
+                investimento para a gestão boa vai um pouco além, adicionando novas ações e melhorias. No entanto, é
+                importante ressaltar que o investimento para a gestão boa, mesmo sendo melhor que o investimento para a
+                gestão básica, ainda apresenta limitações ou aspectos que precisam ser aprimorados, indicando que há
+                espaço para melhorar o desempenho das atividades.
+            </p>
+            <p>
+                No resultado, em Download PDF, será fornecido um detalhamento das atividades e itens que caracterizam a
+                situação de gestão dos eixos selecionados nos níveis “básico” ou “bom”. Essa lista de itens é apenas uma
+                referência e pode variar de acordo com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
+                características dos níveis de situação de gestão.
+            </p>
+        </div>
+
         <!-- Inflação acumulada desde 2023 -->
         <div *ngIf="campo=='Inflação acumulada desde 2023'">
             Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
@@ -171,6 +206,46 @@
             <a href="https://www.ibge.gov.br/explica/inflacao.php" target="_blank">
                 https://www.ibge.gov.br/explica/inflacao.php
             </a>
+        </div>
+
+        <!-- Eixos temáticos -->
+        <div *ngIf="campo=='Eixos temáticos'">
+            <p>
+                Os eixos temáticos foram definidos a partir dos principais temas presentes nos Planos de Gestão
+                Territorial e Ambiental (PGTAs) das Terras Indígenas. São 08 os eixos temáticos:
+            </p>
+            <ul>
+                <li>
+                    Governança: estruturas e processos das associações que orientam a tomada de decisões e a gestão das
+                    Terras Indígenas.
+                </li>
+                <li>
+                    Fiscalização e proteção: estratégias e infraestruturas de proteção, defesa e mitigação dos impactos
+                    existentes nas Terras Indígenas
+                </li>
+                <li>
+                    Fortalecimento cultural: ações voltadas à resistência e fortalecimento cultural dos Povos Indígenas
+                </li>
+                <li>
+                    Geração de renda: estratégias e infraestruturas para promover alternativas econômicas que valorizem
+                    e fortaleçam a realidade socioambiental das Terras Indígenas
+                </li>
+                <li>
+                    Soberania alimentar: ações para a garantia da alimentação saudável, fortalecimento da agroecologia,
+                    culinária tradicional e pequenas criações.
+                </li>
+                <li>
+                    Infraestruturas complementares (energia, comunicações e transportes): investimentos complementares
+                    em infraestrutura e ações de comunicação, energia e transporte.
+                </li>
+                <li>
+                    Educação complementar: ações complementares à assistência usual do governo sobre saúde e saneamento
+                </li>
+                <li>
+                    Saúde e saneamento complementares: aprimoramento da gestão, aspectos curriculares e didáticos das
+                    escolas indígenas e outras atividades de formação relacionadas à educação.
+                </li>
+            </ul>
         </div>
     </section>
 </div>
