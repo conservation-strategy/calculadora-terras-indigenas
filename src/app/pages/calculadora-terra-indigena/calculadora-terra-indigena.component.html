@@ -47,7 +47,7 @@
                             <label class="form-label">
                                 <span>Selecione a terra indígena</span>
                             </label>
-                            <select class="form-select form-select-sm" required (change)="selecionarTerraIndigena()"
+                            <select class="form-select" required (change)="selecionarTerraIndigena()"
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.terraIndigena.invalid}"
                                 formControlName="terraIndigena">
                                 <option [value]="null" disabled selected>Selecione a terra indígena</option>
@@ -80,9 +80,10 @@
                                     ngbTooltip="Tamanho da Terra Indígena, em hectares"
                                     (click)="abrirModalFormDetalhes('Tamanho da terra indigena', 'Tamanho da Terra Indígena, em hectares')"></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm"
+                            <input type="text" class="form-control" mask="separator.2" thousandSeparator="."
+                                decimalMarker=","
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid}"
-                                formControlName="tamanho" numbersOnly>
+                                formControlName="tamanho">
                             <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tamanho.invalid"
                                 class="text-danger">
                                 Campo Obrigatório.
@@ -96,7 +97,7 @@
                                     ngbTooltip="Quantidade de aldeias na Terra Indígena"
                                     (click)="abrirModalFormDetalhes('Número de aldeias', 'Quantidade de aldeias na Terra Indígena')"></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm"
+                            <input type="text" class="form-control"
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid}"
                                 formControlName="aldeias" numbersOnly>
                             <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.aldeias.invalid"
@@ -112,7 +113,7 @@
                                     ngbTooltip="Número de povos que vivem na Terra Indígena"
                                     (click)="abrirModalFormDetalhes('Número de povos', 'Número de povos que vivem na Terra Indígena')"></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm"
+                            <input type="text" class="form-control"
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid}"
                                 formControlName="grauDiversidade" numbersOnly>
                             <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.grauDiversidade.invalid"
@@ -128,7 +129,7 @@
                                     ngbTooltip="Quantidade de pessoas residentes na Terra Indígena"
                                     (click)="abrirModalFormDetalhes('População', 'Quantidade de pessoas residentes na Terra Indígena')"></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm"
+                            <input type="text" class="form-control"
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid}"
                                 formControlName="populacao" numbersOnly>
                             <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.populacao.invalid"
@@ -142,9 +143,9 @@
                                 <span>Localização da sede</span>
                                 <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
                                     ngbTooltip="Onde está situada a sede da associação: cidade ou aldeia"
-                                    (click)="abrirModalFormDetalhes('Localização da sede', 'Onde está situada a sede da associação: cidade ou aldeia')"></fa-icon>
+                                    (click)="abrirModalFormDetalhes('Localização da sede', 'Onde está situada a sede da associação: cidade ou aldeia. Se não houver associação, defina um local onde ela seria construída: cidade ou aldeia')"></fa-icon>
                             </label>
-                            <select class="form-select form-select-sm" required
+                            <select class="form-select" required
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.localSede.invalid}"
                                 formControlName="localSede">
                                 <option [value]="null" disabled selected>Localização da sede</option>
@@ -165,7 +166,7 @@
                                     ngbTooltip="Classificação baseada no tipo e intensidade das ameaças para a Terra Indígena"
                                     (click)="abrirModalFormDetalhes('Grau de ameaça', '')"></fa-icon>
                             </label>
-                            <select class="form-select form-select-sm" required
+                            <select class="form-select" required
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid}"
                                 formControlName="grauAmeaca">
                                 <option value="" disabled selected>Grau de Ameaça</option>
@@ -186,7 +187,7 @@
                                     ngbTooltip="Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena"
                                     (click)="abrirModalFormDetalhes('Complexidade de acesso', '')"></fa-icon>
                             </label>
-                            <select class="form-select form-select-sm" required
+                            <select class="form-select" required
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.complexidadeAcesso.invalid}"
                                 formControlName="complexidadeAcesso">
                                 <option [value]="null" disabled selected>Complexidade de Acesso</option>
@@ -209,7 +210,7 @@
                                     ngbTooltip="Situação atual de gestão da terra"
                                     (click)="abrirModalFormDetalhes('Situação de Gestão da Terra', '')"></fa-icon>
                             </label>
-                            <select class="form-select form-select-sm" required
+                            <select class="form-select" required
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
                                 formControlName="nivelImplementacaoAtual">
                                 <option [value]="null" disabled selected>Situação atual de gestão da terra</option>
@@ -230,7 +231,7 @@
                                     ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."
                                     (click)="abrirModalFormDetalhes('Tipo de custo', '')"></fa-icon>
                             </label>
-                            <select class="form-select form-select-sm" required
+                            <select class="form-select" required
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
                                 formControlName="tipoCusto">
                                 <option [value]="enumTipoCusto.Recorrente">{{enumTipoCustoTexto.Recorrente}}
@@ -251,8 +252,8 @@
                                     ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."
                                     (click)="abrirModalFormDetalhes('Inflação acumulada desde 2023', '')"></fa-icon>
                             </label>
-                            <input type="text" class="form-control form-control-sm" placeholder="(Opcional)"
-                                formControlName="inflacao" numbersOnly>
+                            <input type="text" class="form-control" placeholder="(Opcional)" formControlName="inflacao"
+                                numbersOnly>
                         </div>
                     </div>
                     <div class="d-flex flex-column mt-5">
@@ -271,7 +272,7 @@
                             *ngIf="terraIndigenaSelecionada">
                     </div>
                     <div class="align-self-center">
-                        <a routerlink="/pgtas" class="link_pgta" target="_blank">
+                        <a href="/pgtas" class="link_pgta" target="_blank">
                             Acesse aqui os PGTAs
                         </a>
                     </div>

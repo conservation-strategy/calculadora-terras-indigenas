@@ -155,7 +155,7 @@
                     <div class="d-flex">
                         <img src="./assets/images/mapas/terra_indigena_geral.png" style="max-width: 100%;" alt="">
                         <div class="align-self-center">
-                            <a routerlink="/pgtas" class="link_pgta" target="_blank">
+                            <a href="/pgtas" class="link_pgta" target="_blank">
                                 Acesse aqui os PGTAs
                             </a>
                         </div>
@@ -206,6 +206,7 @@
                     <tr>
                         <th>Terra Indigena</th>
                         <th *ngFor="let eixo of resultado.eixosSelecionados">{{eixo}}</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -213,6 +214,37 @@
                         <td>{{terraIndigena.nome}}</td>
                         <td *ngFor="let eixo of terraIndigena.resultadoEixos">{{eixo.valorEixo |
                             currency:'BRL':'symbol':'1.0-0'}}</td>
+                        <td>{{terraIndigena.valorTotal | currency:'BRL':'symbol':'1.0-0'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <label class="mt-3">Características da(s) terra(s) selecionada(s)</label>
+        <div class="table-responsive">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Terra Indigena</th>
+                        <th>Tamanho</th>
+                        <th>Povos</th>
+                        <th>Aldeias</th>
+                        <th>População</th>
+                        <th>Grau de ameaça</th>
+                        <th>Complexidade de acesso</th>
+                        <th>Local sede da associação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let terraIndigena of resultado.terrasIndigenas">
+                        <td>{{terraIndigena.nome}}</td>
+                        <td>{{terraIndigena.tamanho}}</td>
+                        <td>{{terraIndigena.grauDiversidade}}</td>
+                        <td>{{terraIndigena.aldeias}}</td>
+                        <td>{{terraIndigena.populacao}}</td>
+                        <td>{{terraIndigena.grauAmeaca}}</td>
+                        <td>{{terraIndigena.complexidadeAcesso}}</td>
+                        <td>{{terraIndigena.localSede}}</td>
                     </tr>
                 </tbody>
             </table>

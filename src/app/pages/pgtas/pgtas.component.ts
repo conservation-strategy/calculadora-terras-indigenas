@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../core/layout/header/header.component';
+import { PageTitleComponent } from '../../core/layout/page-title/page-title.component';
 
 @Component({
   selector: 'app-pgtas',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [PageTitleComponent],
   templateUrl: './pgtas.component.html',
   styleUrl: './pgtas.component.scss'
 })

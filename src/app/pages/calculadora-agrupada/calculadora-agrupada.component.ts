@@ -16,7 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
-import { HeaderComponent } from '../../core/layout/header/header.component';
+import { PageTitleComponent } from '../../core/layout/page-title/page-title.component';
 import { CalculadoraService } from '../../core/services/calculadora.service';
 
 import TerraIndigena from '../../core/models/TerraIndigena';
@@ -52,7 +52,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     FontAwesomeModule,
     NgbTooltipModule,
     NgbAccordionModule,
-    HeaderComponent,
+    PageTitleComponent,
     CanvasJSAngularChartsModule,
     LoadingComponent,
     RouterLink,
@@ -277,22 +277,54 @@ export class CalculadoraAgrupadaComponent implements OnInit {
 
     this.terrasIndigenasSelecionadas.forEach((terraIndigena: TerraIndigena) => {
       const resultadoEixos: ResultadoEixo[] = [];
+      let valorTotal = 0;
       this.eixosSelecionados.forEach((eixoSelecionado: Eixo) => {
-        resultadoEixos.push(
-          this.calcularResultadoTerraIndigena(
-            terraIndigena,
-            eixoSelecionado,
-            Number(nivelImplementacaoAtual),
-            Number(nivelImplementacaoAlmejado),
-            Number(tipoCusto),
-            Number(inflacao)
-          )
+        const resultado = this.calcularResultadoTerraIndigena(
+          terraIndigena,
+          eixoSelecionado,
+          Number(nivelImplementacaoAtual),
+          Number(nivelImplementacaoAlmejado),
+          Number(tipoCusto),
+          Number(inflacao)
         );
+        resultadoEixos.push(resultado);
+        valorTotal += resultado.valorEixo;
       });
+      const listaGrauAmeaca = [
+        { label: 'Baixo', value: 1 },
+        { label: 'Médio', value: 2 },
+        { label: 'Alto', value: 3 },
+        { label: 'Altíssimo', value: 4 },
+      ];
 
+      const listaComplexidadeAcesso = [
+        { label: 'Fácil', value: 1 },
+        { label: 'Médio', value: 2 },
+        { label: 'Difícil', value: 3 },
+      ];
+
+      const listaLocalSede = [
+        { label: 'Cidade', value: 0 },
+        { label: 'Aldeia', value: 1 },
+      ];
       resultadoTerrasIndigenas.push({
         nome: terraIndigena.nome,
+
+        tamanho: Number(terraIndigena.tamanho).toLocaleString('pt-BR'),
+        grauDiversidade: terraIndigena.grauDiversidade,
+        aldeias: terraIndigena.aldeias,
+        populacao: Number(terraIndigena.populacao).toLocaleString('pt-BR'),
+        grauAmeaca: listaGrauAmeaca.filter(
+          (x) => x.value == terraIndigena.grauAmeaca
+        )[0].label,
+        complexidadeAcesso: listaComplexidadeAcesso.filter(
+          (x) => x.value == terraIndigena.complexidadeAcesso
+        )[0].label,
+        localSede: listaLocalSede.filter(
+          (x) => x.value == terraIndigena.localSede
+        )[0].label,
         resultadoEixos,
+        valorTotal,
       });
     });
 
@@ -639,6 +671,14 @@ type Resultado = {
 
 type ResultadoTerraIndigena = {
   nome: string;
+  tamanho: string;
+  grauDiversidade: number;
+  aldeias: number;
+  populacao: string;
+  grauAmeaca: string;
+  complexidadeAcesso: string;
+  localSede: string;
+  valorTotal: number;
   resultadoEixos: ResultadoEixo[];
 };
 

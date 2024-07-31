@@ -16,7 +16,7 @@ import {
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 
-import { HeaderComponent } from '../../core/layout/header/header.component';
+import { PageTitleComponent } from '../../core/layout/page-title/page-title.component';
 import { ModalEixoDetalhesComponent } from '../../shared/components/modal-eixo-detalhes/modal-eixo-detalhes.component';
 import { CalculadoraService } from '../../core/services/calculadora.service';
 import { NumbersOnlyDirective } from '../../shared/numbers-only.directive';
@@ -42,6 +42,7 @@ import Atividade from '../../core/models/Atividade';
 import SelectOption from '../../core/models/SelectOption';
 import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-detalhes/modal-form-detalhes.component';
 import { RouterLink } from '@angular/router';
+import { NgxMaskDirective } from 'ngx-mask';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -56,11 +57,12 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     FontAwesomeModule,
     NgbTooltipModule,
     NgbAccordionModule,
-    HeaderComponent,
+    PageTitleComponent,
     NumbersOnlyDirective,
     CanvasJSAngularChartsModule,
     LoadingComponent,
     RouterLink,
+    NgxMaskDirective,
   ],
   providers: [CalculadoraService, CurrencyPipe],
   templateUrl: './calculadora-terra-indigena.component.html',
@@ -794,7 +796,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                   'symbol',
                   '1.0-0'
                 )
-              : '< R$ 1.000',
+              : '',
           metricaBasico: atividade.metricaBasico.filter(
             (x) => x.recorrente == isRecorrente
           ),

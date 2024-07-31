@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../core/layout/header/header.component';
+import { PageTitleComponent } from '../../core/layout/page-title/page-title.component';
 import { ParceirosComponent } from '../../shared/components/parceiros/parceiros.component';
 import { RealizacaoComponent } from '../../shared/components/realizacao/realizacao.component';
 import { ApoioComponent } from '../../shared/components/apoio/apoio.component';
@@ -8,7 +8,7 @@ import { ApoioComponent } from '../../shared/components/apoio/apoio.component';
   selector: 'app-equipe',
   standalone: true,
   imports: [
-    HeaderComponent,
+    PageTitleComponent,
     RealizacaoComponent,
     ApoioComponent,
     ParceirosComponent,
