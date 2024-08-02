@@ -292,7 +292,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             ? terraIndigena.complexidadeAcesso
             : null,
           localSede:
-            terraIndigena.localSede >= 0 ? terraIndigena.localSede : null,
+            Number(terraIndigena.localSede) >= 0
+              ? terraIndigena.localSede
+              : null,
           nivelImplementacaoAtual: grupoUmSelecionado ? 1 : null,
           permitirAlteracao: false,
         });

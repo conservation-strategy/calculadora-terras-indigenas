@@ -7,7 +7,7 @@ interface TerraIndigena {
   grauDiversidade: number;
   grauAmeaca: number;
   complexidadeAcesso: number;
-  localSede: number;
+  localSede?: number;
   nivelImplementacaoAtual: number[];
   mapa: string;
 }

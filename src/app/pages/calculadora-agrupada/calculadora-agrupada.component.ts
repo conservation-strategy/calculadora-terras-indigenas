@@ -384,7 +384,7 @@ export class CalculadoraAgrupadaComponent implements OnInit {
       grauDiversidade,
       grauAmeaca,
       complexidadeAcesso,
-      localSede,
+      Number(localSede) >= 0 ? Number(localSede) : 0,
       inflacao
     );
     valorEixo = this.calculatorService.obterSomatoria(
