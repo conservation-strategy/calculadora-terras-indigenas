@@ -166,7 +166,7 @@
     "acesso_dificil": 1.116836,
     "grau_divers": 0,
     "d_loc_sede": 0,
-    "int_ln_ameaca": -1.1188962,
+    "int_ln_ameaca": -0.1188962,
     "ln_aldeia": 0.1065885,
     "constante": 8.820542
   },
@@ -320,7 +320,7 @@
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
     "ln_aldeia": 0,
-    "constante": 0.5
+    "constante": 1
   },
   {
     "atividade": 18,
@@ -339,7 +339,7 @@
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
     "ln_aldeia": 0,
-    "constante": 0.5
+    "constante": 1
   },
   {
     "atividade": 19,
@@ -362,7 +362,7 @@
   },
   {
     "atividade": 20,
-    "ln_sit_depois": 0.9961525,
+    "ln_sit_depois": 0.9961523,
     "ln_quali_var": 0,
     "int_situacao": 0,
     "ln_tamanho_TI": 0,
@@ -372,11 +372,11 @@
     "ameaca_alta": 0,
     "ameaca_altissima": 0,
     "acesso_medio": 0,
-    "acesso_dificil": 0.8902532,
+    "acesso_dificil": 0.890253,
     "grau_divers": 0,
     "d_loc_sede": 0,
-    "int_ln_ameaca": 0.0838423,
-    "ln_aldeia": 0,
+    "int_ln_ameaca": 0,
+    "ln_aldeia": 0.083842,
     "constante": 8.68069
   },
   {
