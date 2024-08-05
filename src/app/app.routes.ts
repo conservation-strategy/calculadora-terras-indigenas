@@ -19,14 +19,14 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'calculadora-agrupada',
+    path: 'calculadora_comparativa',
     loadComponent: () =>
       import(
-        './pages/calculadora-agrupada/calculadora-agrupada.component'
-      ).then((c) => c.CalculadoraAgrupadaComponent),
+        './pages/calculadora-comparativa/calculadora-comparativa.component'
+      ).then((c) => c.CalculadoraComparativaComponent),
   },
   {
-    path: 'calculadora-terra-indigena',
+    path: 'calculadora_terra_indigena',
     loadComponent: () =>
       import(
         './pages/calculadora-terra-indigena/calculadora-terra-indigena.component'

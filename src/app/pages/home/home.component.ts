@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { CalculadoraListaComponent } from '../../shared/components/calculadora-lista/calculadora-lista.component';
 import { RealizacaoComponent } from '../../shared/components/realizacao/realizacao.component';
 import { ApoioComponent } from '../../shared/components/apoio/apoio.component';
 import { ParceirosComponent } from '../../shared/components/parceiros/parceiros.component';
@@ -18,7 +17,6 @@ import { EixosIlustracao4Component } from '../../shared/components/eixos-ilustra
   standalone: true,
   imports: [
     HttpClientModule,
-    CalculadoraListaComponent,
     RealizacaoComponent,
     ApoioComponent,
     ParceirosComponent,

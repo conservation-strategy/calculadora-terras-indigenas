@@ -42,7 +42,7 @@ import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-d
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
-  selector: 'app-calculadora-agrupada',
+  selector: 'app-calculadora-comparativa',
   standalone: true,
   imports: [
     CommonModule,
@@ -56,10 +56,10 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     RouterLink,
   ],
   providers: [CalculadoraService, CurrencyPipe],
-  templateUrl: './calculadora-agrupada.component.html',
-  styleUrl: './calculadora-agrupada.component.scss',
+  templateUrl: './calculadora-comparativa.component.html',
+  styleUrl: './calculadora-comparativa.component.scss',
 })
-export class CalculadoraAgrupadaComponent implements OnInit {
+export class CalculadoraComparativaComponent implements OnInit {
   private modalService = inject(NgbModal);
   faQuestionCircle = faQuestionCircle;
   enumTipoCusto: typeof TipoCusto = TipoCusto;
