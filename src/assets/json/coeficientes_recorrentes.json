@@ -320,7 +320,7 @@
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
     "ln_aldeia": 0,
-    "constante": 1
+    "constante": 0.3
   },
   {
     "atividade": 18,
@@ -339,7 +339,7 @@
     "d_loc_sede": 0,
     "int_ln_ameaca": 0,
     "ln_aldeia": 0,
-    "constante": 1
+    "constante": 0.3
   },
   {
     "atividade": 19,
