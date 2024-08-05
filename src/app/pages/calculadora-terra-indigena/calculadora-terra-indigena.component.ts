@@ -16,7 +16,6 @@ import {
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 
-import { PageTitleComponent } from '../../core/layout/page-title/page-title.component';
 import { ModalEixoDetalhesComponent } from '../../shared/components/modal-eixo-detalhes/modal-eixo-detalhes.component';
 import { CalculadoraService } from '../../core/services/calculadora.service';
 import { NumbersOnlyDirective } from '../../shared/numbers-only.directive';
@@ -57,7 +56,6 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     FontAwesomeModule,
     NgbTooltipModule,
     NgbAccordionModule,
-    PageTitleComponent,
     NumbersOnlyDirective,
     CanvasJSAngularChartsModule,
     LoadingComponent,

@@ -16,7 +16,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
-import { PageTitleComponent } from '../../core/layout/page-title/page-title.component';
 import { CalculadoraService } from '../../core/services/calculadora.service';
 
 import TerraIndigena from '../../core/models/TerraIndigena';
@@ -52,7 +51,6 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     FontAwesomeModule,
     NgbTooltipModule,
     NgbAccordionModule,
-    PageTitleComponent,
     CanvasJSAngularChartsModule,
     LoadingComponent,
     RouterLink,

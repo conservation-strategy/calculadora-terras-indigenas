@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TopComponent } from './core/layout/top/top.component';
+import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -17,7 +17,7 @@ registerLocaleData(ptBr);
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TopComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [
