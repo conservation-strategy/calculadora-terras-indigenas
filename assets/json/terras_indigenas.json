@@ -163,7 +163,7 @@
     "grauDiversidade": 2,
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
-    "localSede": 0,
+    "localSede": null,
     "mapa": "arawete.png",
     "nivelImplementacaoAtual": []
   },
@@ -176,7 +176,7 @@
     "grauDiversidade": 1,
     "grauAmeaca": 1,
     "complexidadeAcesso": 2,
-    "localSede": 0,
+    "localSede": null,
     "mapa": "badjonkore.png",
     "nivelImplementacaoAtual": []
   },
@@ -202,7 +202,7 @@
     "grauDiversidade": 0,
     "grauAmeaca": 4,
     "complexidadeAcesso": 2,
-    "localSede": 0,
+    "localSede": null,
     "mapa": "ituna.png",
     "nivelImplementacaoAtual": []
   },
@@ -215,7 +215,7 @@
     "grauDiversidade": 3,
     "grauAmeaca": 0,
     "complexidadeAcesso": 2,
-    "localSede": 0,
+    "localSede": null,
     "mapa": "kapot.png",
     "nivelImplementacaoAtual": []
   },
