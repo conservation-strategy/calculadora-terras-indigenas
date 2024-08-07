@@ -217,6 +217,15 @@
                         <td>{{terraIndigena.valorTotal | currency:'BRL':'symbol':'1.0-0'}}</td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td *ngFor="let eixo of resultado.detalhesEixosSelecionados">
+                            {{eixo.valor | currency:'BRL':'symbol':'1.0-0'}}
+                        </td>
+                        <td></td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
 

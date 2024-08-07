@@ -169,7 +169,7 @@
                             <select class="form-select" required
                                 [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.grauAmeaca.invalid}"
                                 formControlName="grauAmeaca">
-                                <option value="" disabled selected>Grau de Ameaça</option>
+                                <option [value]="null" disabled selected>Grau de Ameaça</option>
                                 <option *ngFor="let item of listaGrauAmeaca" [ngValue]="item.value">
                                     {{item.label}}
                                 </option>
