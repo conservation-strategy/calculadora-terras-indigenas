@@ -1,0 +1,76 @@
+{
+  "menu": {
+    "home": "Home page",
+    "methodology": "Methodology",
+    "calculator": "Calculator",
+    "pgtas": "PGTAs",
+    "team": "team",
+    "useful-links": "Useful links"
+  },
+  "home": {
+    "section-header": {
+      "title": "Indigenous Land Management Costs",
+      "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous organizations in the Xingu basin plan their budgets and raise funds for the implementation of their PGTAs."
+    },
+    "section-possible-uses": {
+      "title": "Possible uses",
+      "item-1": {
+        "title": "Planning",
+        "description": "Assisting Indigenous organizations, partners and supporters in financial planning, from assessing funding gaps to estimating budgets for each managementactivity ."
+      },
+      "item-2": {
+        "title": "Evaluation",
+        "description": "Support decision-making by local organizations through information related to activity costs."
+      },
+      "item-3": {
+        "title": "Prioritization",
+        "description": "Demonstrate the financial investment necessary for the most effective implementation of public activities and policies."
+      }
+    },
+    "section-thematic-axes": {
+      "title": "Thematic axes",
+      "description": "The costs of each managementactivity were categorized into thematic axes, according to the main themes of the PGTAs. The thematic axes are:"
+    },
+    "section-methodology": {
+      "title": "Methodology",
+      "description": "To calculate the costs of Indigenous Land Management Plans (PGTAs), the calculator uses statistical relationships between various characteristics of each Indigenous Land.. The tool then estimates the costs of implementing the management plan. Find out more about the characteristics of Indigenous Lands that the model took ",
+      "item-1": {
+        "title": "Size of the land",
+        "description": "Extent of the Indigenous Land, in hectares."
+      },
+      "item-2": {
+        "title": "Number of villages",
+        "description": "Number of villages within the Indigenous Land."
+      },
+      "item-3": {
+        "title": "Population",
+        "description": "Number of people living within the Indigenous Land."
+      },
+      "item-4": {
+        "title": "Number of Indigenous peoples",
+        "description": "Number of peoples living in the Indigenous Land."
+      },
+      "item-5": {
+        "title": "Degree of threat",
+        "description": "Classification based on the type and intensity of threats to the Indigenous Land."
+      },
+      "item-6": {
+        "title": "Complexity of access",
+        "description": "Classification of the difficulty of access for most of the villages in the Indigenous Territory."
+      },
+      "item-7": {
+        "title": "Location of headquarters",
+        "description": "whether in a town or village."
+      },
+      "learn-more": "Learn more about the methodology"
+    },
+    "section-calculator": {
+      "button-link": "Access the calculator"
+    }
+  },
+  "realization-support-partners": {
+    "realization": "Realization",
+    "support": "Support",
+    "partners": "Collaborating Partners"
+  }
+}

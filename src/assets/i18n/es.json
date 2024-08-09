@@ -1,0 +1,76 @@
+{
+  "menu": {
+    "home": "Página de inicio",
+    "methodology": "Metodología",
+    "calculator": "Calculadora",
+    "pgtas": "PGTAs",
+    "team": "Equipo",
+    "useful-links": "Enlaces útiles"
+  },
+  "home": {
+    "section-header": {
+      "title": "Costos de Gestión de las Tierras Indígenas",
+      "description": "La Calculadora de Costos de Gestión de Tierras Indígenas es una herramienta en línea desarrollada para ayudar a las organizaciones indígenas de la cuenca del Xingú a planificar sus presupuestos y recaudar fondos para aplicar sus Planes de Gestión Territorial y Ambiental (PGTA)."
+    },
+    "section-possible-uses": {
+      "title": "Potenciales usos",
+      "item-1": {
+        "title": "Planificar",
+        "description": "Ayudar a las organizaciones indígenas, socios y simpatizantes en la planificación financiera, la evaluación de los déficits de financiación y la elaboración de presupuestos relacionados con las acciones de gestión en los territorios."
+      },
+      "item-2": {
+        "title": "Evaluar",
+        "description": "Apoyar la toma de decisiones de las organizaciones locales mediante información relacionada con los costos de sus actividades."
+      },
+      "item-3": {
+        "title": "Priorizar",
+        "description": "Demostrar la demanda financiera de las organizaciones para invertir eficazmente en la ejecución de actividades y políticas públicas."
+      }
+    },
+    "section-thematic-axes": {
+      "title": "Ejes temáticos",
+      "description": "Los costos se dividieron en ejes temáticos, según los principales temas de los PGTA. Estos son:"
+    },
+    "section-methodology": {
+      "title": "Metodología",
+      "description": " Para calcular los costos de los Planes de Gestión Territorial y Ambiental (PGTA de Tierras Indígenas, la calculadora utiliza relaciones estadísticas entre varias características de la tierra. Con base en estas características y la recopilación de datos, la herramienta estima los costos de implementación de los PGTA. Más información sobre las características de las tierras indígenas que el modelo tuvo en cuenta para el cálculo:",
+      "item-1": {
+        "title": "Tamaño de la tierra",
+        "description": "Extensión de la tierra indígena, en hectáreas"
+      },
+      "item-2": {
+        "title": "Número de aldeas",
+        "description": "Número de aldeas en la Tierra Indígena"
+      },
+      "item-3": {
+        "title": "Población",
+        "description": "Número de personas que viven en la Tierra Indígena"
+      },
+      "item-4": {
+        "title": "Número de pueblos",
+        "description": "Número de pueblos que viven en la Tierra Indígena"
+      },
+      "item-5": {
+        "title": "Grado de amenaza",
+        "description": "Clasificación basada en el tipo y la intensidad de las amenazas ala Tierra Indígena"
+      },
+      "item-6": {
+        "title": "Complejidad del acceso",
+        "description": "Clasificación de la dificultad de acceso para la mayoría de las aldeas del Territorio Indígena"
+      },
+      "item-7": {
+        "title": "Ubicación de la sede",
+        "description": "Lugar dónde se encuentra la sede de la asociación, ya sea en unaciudad oenunaaldea"
+      },
+      "learn-more": "Más información sobre la metodología"
+    },
+    "section-calculator": {
+      "button-link": "Acceder a la calculadora"
+    }
+  },
+  "realization-support-partners": {
+    "realization": "Realización",
+    "support": "Con el apoyo de",
+    "partners": "Socios colaboradores"
+  }
+}

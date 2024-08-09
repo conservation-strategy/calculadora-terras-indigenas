@@ -1,0 +1,76 @@
+{
+  "menu": {
+    "home": "Página inicial",
+    "methodology": "Metodologia",
+    "calculator": "Calculadora",
+    "pgtas": "PGTAs",
+    "team": "Equipe",
+    "useful-links": "Links úteis"
+  },
+  "home": {
+    "section-header": {
+      "title": "Custos de gestão de terras indígenas",
+      "description": "A Calculadora de Custos de Gestão de Terras Indígenas é uma ferramenta online desenvolvida com o  objetivo de auxiliar as organizações indígenas da bacia do Xingu no planejamento orçamentário e na captação de recursos para implementação de seus PGTAs."
+    },
+    "section-possible-uses": {
+      "title": "Usos possíveis",
+      "item-1": {
+        "title": "Planejar",
+        "description": "Auxiliar organizações indígenas, parceiras e apoiadoras no planejamento financeiro, na avaliação de lacunas de financiamento e na elaboração de orçamentos relacionados a ações de gestão dos territórios."
+      },
+      "item-2": {
+        "title": "Avaliar",
+        "description": "Subsidiar a tomada de decisões pelas organizações locais por meio de informações relacionadas a custos de atividades."
+      },
+      "item-3": {
+        "title": "Priorizar",
+        "description": "Demonstrar a demanda financeira das organizações para um investimento eficiente na implementação das atividades e políticas públicas."
+      }
+    },
+    "section-thematic-axes": {
+      "title": "Eixos temáticos",
+      "description": "Os custos foram divididos em eixos temáticos, conforme os principais temas dos PGTAs. Conheça mais sobre os eixos temáticos:"
+    },
+    "section-methodology": {
+      "title": "Metodologia",
+      "description": "Para calcular os custos dos Planos de Gestão de Terras Indígenas (PGTAs), a calculadora utiliza relações estatísticas entre várias características das terras. Com base nessas características e na coleta de dados, a ferramenta estima os custos de implementação dos PGTAs. Conheça mais sobre as características das terras indígenas que o modelo considerou para o cálculo:",
+      "item-1": {
+        "title": "Tamanho da terra",
+        "description": "Extensão da Terra Indígena, em hectares"
+      },
+      "item-2": {
+        "title": "Número de aldeias",
+        "description": "Quantidade de aldeias na Terra Indígena"
+      },
+      "item-3": {
+        "title": "População",
+        "description": "Quantidade de pessoas residentes na Terra Indígena"
+      },
+      "item-4": {
+        "title": "Número de povos",
+        "description": "Número de povos que vivem na Terra Indígena"
+      },
+      "item-5": {
+        "title": "Grau de ameaça",
+        "description": "Classificação baseada no tipo e intensidade das ameaças para a Terra Indígena"
+      },
+      "item-6": {
+        "title": "Complexidade de acesso",
+        "description": "Classificação da dificuldade de acesso para a maioria das aldeias da Terra Indígena"
+      },
+      "item-7": {
+        "title": "Localização da sede",
+        "description": "Onde está situada a sede da associação, se cidade ou aldeia"
+      },
+      "learn-more": "Saiba mais sobre a metodologia"
+    },
+    "section-calculator": {
+      "button-link": "Acesse a calculadora"
+    }
+  },
+  "realization-support-partners": {
+    "realization": "Realização",
+    "support": "Apoio",
+    "partners": "Parceiros colaboradores"
+  }
+}
