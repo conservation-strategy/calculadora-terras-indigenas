@@ -20,10 +20,12 @@ export const routes: Routes = [
   },
   {
     path: 'calculadora_comparativa',
+    // loadComponent: () =>
+    //   import(
+    //     './pages/calculadora-comparativa/calculadora-comparativa.component'
+    //   ).then((c) => c.CalculadoraComparativaComponent),
     loadComponent: () =>
-      import(
-        './pages/calculadora-comparativa/calculadora-comparativa.component'
-      ).then((c) => c.CalculadoraComparativaComponent),
+      import('./pages/home/home.component').then((c) => c.HomeComponent),
   },
   {
     path: 'calculadora_terra_indigena',
