@@ -4,8 +4,12 @@
     "methodology": "Methodology",
     "calculator": "Calculator",
     "pgtas": "PGTAs",
-    "team": "team",
+    "team": "Team",
     "useful-links": "Useful links"
+  },
+  "footer": {
+    "description": "CSF, ISA and Rede Xingu+ are not responsible for the consequences of using the calculator.",
+    "contact": "contact"
   },
   "home": {
     "section-header": {
@@ -68,9 +72,372 @@
       "button-link": "Access the calculator"
     }
   },
+  "methodology": {
+    "title": "METHODOLOGY",
+    "section-calculator": {
+      "title": "Calculator",
+      "paragraph-1": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous  organizations in the Xingu Basin plan their budgets and raise funds to implement their Territorial and Environmental Management Plans (PGTAs for the Portuguese acronym). ",
+      "paragraph-2": "Based on historical costs in eight Indigenous  territories in the Xingu Corridor and cost projections for different scenarios, such as changes in population, the degree of threat, and the size of the territory, the Indigenous Land Management Cost Calculator makes it possible to calculate the costs associated with implementing the PGTAs of the Indigenous Lands in this region. "
+    },
+    "section-pgta-costs": {
+      "title": "PGTA costs",
+      "paragraph-1": "To calculate the costs of the PGTAs, the calculator establishes statistical relationships between characteristics of the Indigenous Lands, such as size, number of villages, level of threat, complexity of access, the possible investment scenarios of the activities included in the Indigenous Lands Management Plans (PGTAs), using their average implementation costs. Each activity has a formula for predicting average costs based on (i) the average historical expenses collected and analyzed from eight Indigenous Lands, and (ii) cost projections for hypothetical scenarios that consider possible changes in the characteristics of the Indigenous Lands and the investments needed for the management activities over time. With this data, , it is possible to calculate the costs according to the management plan and characteristics of the Indigenous Lands.",
+      "paragraph-2": "The cost figures are based on the averages observed during data collection with Indigenous organizations and their partners. For example, if an Indigenous land spent R$1,000,000 on an activity and another land with similar characteristics spent R$2,000,000, the average cost predicted by the Calculator would be R$1,500,000. The comparison between the predicted average value and the actual value may vary (e.g. ±R$500,000). This variation does not indicate an error in the model, it indicates that there is a difference between the cost of one organization's activity and the combined average of all the organizations. Thus, half of the forecasts will have a margin of error upwards and the other half downwards. When you add up the different activities to a total investment amount for a PGTA, this margin of error tends to cancel itself out, i.e. the total value of a PGTA investment will likely not have this margin of error."
+    },
+    "section-types-of-costs": {
+      "title": "Types of Costs and Activities",
+      "types": "The values are categorized into",
+      "type-1": {
+        "title": "Recurring costs",
+        "description": "These are the costs of implementing activities that occur annually such as payments for salaries, equipment maintenance, infrastructure (notary, rent, communication, etc.),and workshops (fuel, food, etc.)"
+      },
+      "type-2": {
+        "title": "Non-recurring costs",
+        "description": "These are the occasional costs, made every 5 or 10 years or so, such as investments in equipment and buildings. It's important to note that some of the non-recurring cost activities don't have values, because the institutions consulted didn't have this type of cost in the field, and so it wasn't possible to predict values for them - which doesn't mean that the costs can't exist, only that they are not accounted for in this estimate."
+      },
+      "paragraph-1": "The activities are grouped into 8 thematic axes and 29 activities, defined by the teams from the Instituto Socioambiental (ISA) and Conservation Strategy Fund  (CSF), based on the data in published management plans (PGTAs) for Indigenous Landsin the Xingu River Basin. Each activity has metrics to assess its financial requirements.",
+      "paragraph-2": "The metrics are defined according to two general levels (i) investment for basic management and (ii) investment for good management. To enable this model to scenario-plan between different levels of investment and different management outcomes, we classified the investment levels as follows:No investment; Poor investment level; Basic investment level; and Good investment level. The scale of the investment situation is a key variable that impacts on costs."
+    },
+    "section-division-of-indigenous-land": {
+      "title": "Division of Indigenous Lands",
+      "groups": "In the Calculator, Indigenous Lands are divided into three groups",
+      "group-1": {
+        "title": "Indigenous Lands with collected data ",
+        "description": "Direct data was collected and integrated into this Calculator from 8 Indigenous territories s in the Xingu Basin."
+      },
+      "group-2": {
+        "title": "Indigenous Lands with extrapolated data",
+        "description": "Thirteen Indigenous Lands in the Xingu Basin were not sourced for primary data and the information on them (size, population, degree of threat etc) is therefore extrapolated. "
+      },
+      "group-3": {
+        "title": "Simulated Indigenous Land",
+        "description": "Any Indigenous Land that the user wants to simulate by adding their own data."
+      },
+      "paragraph-1": "For the last two groups, the values are extrapolated with a greater margin of error and, for this reason, caution is recommended when considering the predicted values for these groups."
+    },
+    "section-data-collection": {
+      "title": "Data collection",
+      "paragraph-1": "Historical data (2018 to 2022) was collected on expenditure for activities in eight thematic areas present in most of the region's PGTAs:",
+      "thematic-axe-1": "Governance",
+      "thematic-axe-2": "Monitoring and Protection",
+      "thematic-axe-3": "Cultural Strengthening",
+      "thematic-axe-4": "Income Generation",
+      "thematic-axe-5": "Food Sovereignty",
+      "thematic-axe-6": "Complementary Infrastructure",
+      "thematic-axe-7": "Health and Sanitation (complementary)",
+      "thematic-axe-8": "Education (complementary practices)",
+      "paragraph-2": "The calculator compiles information from 29 activities, distributed across the 8 thematic axes for which “metrics” are constructed to communicate financial estimations for the implementation of each PGTA activity depending on what level of management is preferred: basic, good. ",
+      "paragraph-3": "Direct data was collected for the Apyterewa, Baú, Capoto-Jarina, Kayapó, Menkragnoti, Panará, TIX (Batovi, Pequizal do Naruvôtu, Xingu and Wawi) and Trincheira/Bacajá Indigenous Lands. The sources of information were the following  Indigenous and civil society partner organizations working in these Indigenous Lands: Associação Floresta Protegida (AFP), Associação Iakiô Panará, Associação Terra Indígena do Xingu (ATIX), Instituto Kabu (IK), Instituto Raoni (IR), Instituto Socioambiental (ISA) and The Nature Conservancy (TNC). Interviews were also held with representatives from these organizations to gather information on the characteristics and context within which each Indigenous Land is located, such as size, number of villages, degree of external threat, complexity of access, location of the association's headquarters, among others, as well as to project hypothetical scenarios based on variations in these characteristics and context."
+    },
+    "section-learn-more": {
+      "title": "Learn more about the methodology in this downloadable PDF",
+      "download": "Download PDF"
+    }
+  },
+  "calculator": {
+    "title": "INDIGENOUS LAND MANAGEMENT COST CALCULATOR",
+    "button-1": "Access the calculator",
+    "button-2": "Compare more than one land"
+  },
+  "indigenous-land-calculator": {
+    "title": "INDIGENOUS LAND MANAGEMENT COST CALCULATOR",
+    "section-info": {
+      "paragraph-1": "Calculate the cost of managing an Indigenous Land, depending on its characteristics (size, population, village, complexity of access, degree of threat, degree of diversity and location of the association's headquarters), and its current level of management. ",
+      "paragraph-2": "Once the user has accessed their results, they can see the cost projection for a “basic” level of management compared to a “good” level of management of the Indigenous Land.",
+      "paragraph-3": "Click on the question marks in the value boxes to get detailed explanations of what they mean."
+    }
+  },
+  "comparative-version": {
+    "title": "COMPARATIVE VERSION",
+    "section-info": {
+      "paragraph-1": "The Comparative Version calculates the total cost of implementing the PGTAsin one or more Indigenous Lands. The user must define the current management situation of the land(s), as well as the desired situation (investment for basic management or investment for good management).",
+      "paragraph-2": "This version is best for those who want to compare results between territories and/or thematic axes and also for those who work with more than one Indigenous Land and want to have general information on the management costs of selected axes."
+    }
+  },
+  "pgtas": {
+    "access-archive": "Access Archive"
+  },
+  "team": {
+    "title": "TEAM",
+    "general-coordination": "General Coordination",
+    "technical-leader": "Technical Leader",
+    "conceptual-development": "Conceptual Development",
+    "econometric-cost-modeling": "Econometric Cost Modeling",
+    "data-collection-and-cost-structuring": "Data Collection and Cost Structuring",
+    "content-review": "Content Review",
+    "development": "Development",
+    "ux-ui-designer": "UX/UI Designer",
+    "Illustration": "Illustration"
+  },
+  "useful-links": {
+    "title": "USEFUL LINKS",
+    "link-1": {
+      "title": "Xingu+ Network Platform",
+      "description": "xingumais.org.br"
+    },
+    "link-2": {
+      "title": "Indigenous Peoples of Brazil website",
+      "description": "pib.socioambiental.org/pt"
+    },
+    "link-3": {
+      "title": "Brazil's Indigenous Lands website",
+      "description": "terrasindigenas.org.br"
+    },
+    "link-4": {
+      "title": "Xingu+ Network Collection",
+      "description": "xingumais.org.br/acervo"
+    },
+    "link-5": {
+      "title": "Keeping an eye on the Xingu Observatory",
+      "description": "xingumais.org.br/observatorios"
+    },
+    "link-6": {
+      "title": "Xingu Radar Deforestation Monitoring System",
+      "description": "xingumais.org.br/categoria/sirad-x"
+    }
+  },
   "realization-support-partners": {
     "realization": "Realization",
     "support": "Support",
     "partners": "Collaborating Partners"
+  },
+  "form": {
+    "indigenous-land": {
+      "name": "Indigenous land",
+      "placeholder": "Select the Indigenous land",
+      "validation": "Required Field."
+    },
+    "checkbox-edit": "I want to update the Indigenous Land data",
+    "land-size": {
+      "name": "Land size (hectares)",
+      "description": "Size of Indigenous Land, in hectares",
+      "validation": "Required Field."
+    },
+    "villages": {
+      "name": "Number of villages",
+      "description": "Number of villages in the Indigenous Land",
+      "validation": "Required Field."
+    },
+    "peoples": {
+      "name": "Number of peoples",
+      "description": "Number of peoples living in the Indigenous Land",
+      "validation": "Required Field."
+    },
+    "population": {
+      "name": "Population",
+      "description": "Number of people living in the Indigenous Land",
+      "validation": "Required Field."
+    },
+    "headquarters": {
+      "name": "Location of headquarters",
+      "placeholder": "Location of headquarters",
+      "description": "Where the association is based: town or village",
+      "validation": "Required Field."
+    },
+    "degree-of-threat": {
+      "name": "Degree of threat",
+      "placeholder": "Degree of threat",
+      "description": "Classification based on the type and intensity of threats to the Indigenous Land",
+      "validation": "Required Field."
+    },
+    "complexity-of-access": {
+      "name": "Complexity of access",
+      "placeholder": "Complexity of access",
+      "description": "Classification of the level of difficulty of access for most of the villages in the Indigenous Territory",
+      "validation": "Required Field."
+    },
+    "current-situation": {
+      "name": "Current land management situation",
+      "placeholder": "Current land management situation",
+      "description": "Current land management situation",
+      "validation": "Required Field."
+    },
+    "current-situation-comparative": {
+      "name": "Current land management situation",
+      "placeholder": "Current land management situation",
+      "description": "Current land management situation",
+      "validation": "Required Field."
+    },
+    "desired-situation": {
+      "name": "Desired Land Management Situation",
+      "placeholder": "Desired Land Management Situation",
+      "description": "Desired Land Management Situation",
+      "validation": "Required Field."
+    },
+    "thematic-axes": {
+      "name": "Thematic axes",
+      "placeholder": "Thematic axes",
+      "description": "Thematic axes defined on the basis of the main themes of the PGTAS",
+      "validation": "Required Field."
+    },
+    "type-of-cost": {
+      "name": "Type of cost",
+      "description": "Recurring costs are annual expenses and non-recurring costs refer to expenses that are not repeated every year.",
+      "validation": "Required Field."
+    },
+    "inflation": {
+      "name": "Accumulated inflation since 2023 (%) ",
+      "placeholder": "(Optional)",
+      "description": "The amounts must be adjusted for inflation from 01/2023 based on the IBGE."
+    },
+    "button-calculate": "Calculate",
+    "pgtas": "Access the PGTAs here"
+  },
+  "modal-form-details": {
+    "type-of-cost": {
+      "paragraph-1": "The costs were categorized into two types: ",
+      "paragraph-2": "Recurring costs, which signify the annual costs of implementing activities, such as salaries, equipment maintenance, and the purchase of petrol or other daily resources.",
+      "paragraph-3": "Non-recurring costs involve expenses that are not annual, such as investments in equipment and buildings, teaching materials and the preparation of PGTAs."
+    },
+    "degree-of-threat": {
+      "paragraph-1": "Classification based on the type and intensity of threats to the Indigenous Land (such as mining, timber theft, fires, land grabbing, deforestation, pending land regularization, infrastructure works and pesticides). The classification levels are: low, medium, high and very high.",
+      "paragraph-2": "There are two types of territorial threats to choose between: inside the Indigenous Land and nearby the Indigenous Land.",
+      "paragraph-3": "Each type of threat was analyzed according to the probability of its occurrence and the threat’s magnitude, which is defined by the type of public action demanded by the threat. The set of occurrences per Indigenous Land was then added up and weighted, resulting in a “degree of threat” level for the selected Indigenous Land.",
+      "table-1": {
+        "name": "Types of territorial threats",
+        "header": {
+          "col-1": "Threats Inside Indigenous Lands",
+          "col-2": "Threats Nearby Indigenous Lands"
+        },
+        "line-1": {
+          "col-1": "Garimpo",
+          "col-2": "Infrastructure Works"
+        },
+        "line-2": {
+          "col-1": "Wood theft",
+          "col-2": "Pesticides"
+        },
+        "line-3": {
+          "col-1": "Fire: fires",
+          "col-2": "Deforestation in the surrounding area"
+        },
+        "line-4": {
+          "col-1": "Land grabbing",
+          "col-2": ""
+        },
+        "line-5": {
+          "col-1": "Deforestation",
+          "col-2": ""
+        },
+        "line-6": {
+          "col-1": "Pending Land Regularization",
+          "col-2": ""
+        }
+      },
+      "table-2": {
+        "name": "Weighting to define the Degree of Threat.",
+        "header": {
+          "col-1": "Probability and Magnitude",
+          "col-2": "Xingu Threat Level",
+          "col-3": "Definition"
+        },
+        "line-1": {
+          "col-1": "No likelihood of occurrence",
+          "col-2": "Null",
+          "col-3": "No risk of occurrence"
+        },
+        "line-2": {
+          "col-1": "There is a probability of occurrence, the magnitude of the occurrence is judged",
+          "col-2": "Basic",
+          "col-3": "Occurrence requires preventive action"
+        },
+        "line-3": {
+          "col-1": "",
+          "col-2": "Medium",
+          "col-3": "Occurrence requires occasional inspection actions"
+        },
+        "line-4": {
+          "col-1": "",
+          "col-2": "High",
+          "col-3": "Occurrence requires immediate and continuous containment action"
+        },
+        "line-5": {
+          "col-1": "",
+          "col-2": "Very high",
+          "col-3": "Occurrence is out of control, demands war action - permanent and articulated action by various intelligence, command and control bodies Ex: TI Kayapó and TI Apyterewa"
+        }
+      }
+    },
+    "complexity-of-access": "Classification of the level of travel and transportation accessibility for the villages within the Indigenous Land, based on distance, the condition of roadways and airstrips and the navigability of the rivers. The classification levels are: Easy, Medium or Difficult.",
+    "current-situation": {
+      "paragraph-1": "The definition of the land management situation varies by activity.",
+      "paragraph-2": "The current land management situation is defined by the set of items (actions, equipment, personnel, etc.) of the selected Indigenous Land. For Indigenous Lands with collected data, the current management situation appears automatically with the information collected from the organizations, these values are in the Situation assessed in 2022 field. For the other Indigenous Lands (Terras Indígenas Xingu - with extrapolated data; and Simulação - simulated Indigenous  land), the user must select the management scenario of the land, which can be: No investment; Poor investment level; Basic investment level; and Good investment level.",
+      "paragraph-3": "The result shows the values for the investment for basic management and investment for good management situations.",
+      "paragraph-4": "The level of investment for basic management meets the minimum required to carry out the activity. The investment level for good management goes a little further, allowing for additional actions and improvements. It is important to note that the investment level for good management,though it is better than the investment level for basic management, still has limitations . There is always room to improve the performance of the activities with added investment.",
+      "paragraph-5": "In the results, the Learn more field for each axis will provide a breakdown of the activities and items that characterize the management situation of the axes at the basic or good levels. This list of items is just a reference and may vary according to each Indigenous Land, i.e. it is a suggestion of the characteristics of the levels of management situation."
+    },
+    "current-situation-comparative": {
+      "paragraph-1": "The definition of the land management situation varies by activity in each thematic axis.",
+      "paragraph-2": "The current land management situation is defined by the set of items (actions, equipment, personnel, etc.) that the Indigenous  Land has. In this version for comparing Indigenous  Lands, as we can choose more than one Indigenous Land, the user will have to select the management situation of the Land(s), which can be: No investment; Poor level of investment; Basic level of investment; and Good level of investment.",
+      "paragraph-3": "The results show the investment values for achieving the management situation at the level defined by the user, which can be Investment for basic management or Investment for good management."
+    },
+    "desired-situation": {
+      "paragraph-1": "The investment for basic management meets the minimum amount required to carry out the necessary management activities. Investment in good management goes a little further, adding new actions and improvements. However, it is important to point out that the investment for good management, although better than the investment for basic management, still has limitations or aspects that need to be improved, indicating that there is room to improve the performance of the activities.",
+      "paragraph-2": "The result, as a PDF download, will provide a breakdown of the activities and items that characterize the management situation of the axes selected at the basic or good levels. This list of items is just a reference and may vary according to the reality of each Indigenous Land, i.e. it is a suggestion of the characteristics of the levels of management situation."
+    },
+    "thematic-axes": {
+      "paragraph-1": "The thematic axes were defined based on the main themes present in the Territorial and Environmental Management Plans (PGTAs) of the Indigenous Lands. There are eight (8) thematic axes:",
+      "axe-1": "Governance: structures and processes of associations that guide decision-making and the management of Indigenous Lands.",
+      "axe-2": "Monitoring and Protection: strategies and infrastructures for protection, defense and mitigation of existing impacts on Indigenous Lands",
+      "axe-3": "Cultural strengthening: actions aimed at the resistance and cultural strengthening of Indigenous Peoples",
+      "axe-4": "Income Generation: strategies and infrastructures to promote economic alternatives that value and strengthen the socio-environmental reality of Indigenous Lands",
+      "axe-5": "Food sovereignty: actions to guarantee healthy food, strengthen agroecology, traditional cuisine and small-scale farming.",
+      "axe-6": "Complementary Infrastructure: Additional investments in communications, energy and transport infrastructure and actions.",
+      "axe-7": "Education (complementary practices): Additional actions to the usual government assistance on health and sanitation",
+      "axe-8": "Health and Sanitation (complementary): improving management, curricular and didactic aspects of Indigenous  schools and other education-related training activities"
+    },
+    "inflation": "The amounts must be adjusted for inflation. Calculate the accumulated inflation since 01/2023 using the period from 01/2023 to the date of the calculation as a basis, based on the IPCA (IBGE)"
+  },
+  "indigenous-land-groups": {
+    "value-1": "Simulation",
+    "value-2": "Indigenous  lands with collected data",
+    "value-3": "Indigenous  lands with extrapolated data"
+  },
+  "headquarters-list": {
+    "value-0": "Town ",
+    "value-1": "Village"
+  },
+  "degree-of-threat-list": {
+    "value-1": "Low",
+    "value-2": "Medium",
+    "value-3": "High",
+    "value-4": "Very high"
+  },
+  "complexity-of-access-list": {
+    "value-1": "Easy",
+    "value-2": "Medium",
+    "value-3": "Difficult"
+  },
+  "current-situation-list": {
+    "value-0": "There is no investment",
+    "value-1": "Situation assessed in 2022",
+    "value-5": "Poor level of investment",
+    "value-10": "Basic level of investment",
+    "value-20": "Good level of investment"
+  },
+  "current-situation-comparative-list": {
+    "value-0": "There is no investment",
+    "value-1": "Situation assessed in 2022",
+    "value-5": "Poor level of investment",
+    "value-10": "Basic level of investment",
+    "value-20": "Good level of investment"
+  },
+  "desired-situation-list": {
+    "value-10": "Basic level of investment",
+    "value-20": "Good level of investment"
+  },
+  "type-of-cost-list": {
+    "value-1": "Recurring (annual)",
+    "value-2": "Non-recurring (occasional)"
+  },
+  "thematic-axes-list": {
+    "value-1": "Governance",
+    "value-2": "Monitoring and Protection",
+    "value-3": "Cultural strengthening",
+    "value-4": "Income Generation",
+    "value-5": "Food sovereignty",
+    "value-6": "Complementary Infrastructure",
+    "value-7": "Education (complementary practices)",
+    "value-8": "Health and Sanitation (complementary):"
   }
 }

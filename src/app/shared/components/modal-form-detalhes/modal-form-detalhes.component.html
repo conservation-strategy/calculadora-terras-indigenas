@@ -1,249 +1,249 @@
 <div class="modal-header">
-    <h4 class="modal-title">{{campo}}</h4>
+    <h4 class="modal-title">{{title}}</h4>
     <button type="button" class="btn-close" aria-describedby="modal-title"
         (click)="activeModal.close('Close click')"></button>
 </div>
 <div class="modal-body" ngbAutofocus>
     <section>
-        <div *ngIf="tooltip">{{tooltip}}</div>
-        <!-- Tipo de custo -->
-        <div *ngIf="campo=='Tipo de custo'">
+        <div *ngIf="description">{{description}}</div>
+        <!-- type-of-cost -->
+        <div *ngIf="type=='type-of-cost'">
             <p>
-                Os custos foram categorizados em dois tipos: custos correntes que são
-                compostos por custos anuais de implementação de atividades, como
-                salários, manutenção de equipamentos, compra de gasolina, capacitações
-                anuais.
+                {{'modal-form-details.type-of-cost.paragraph-1' | translate}}
             </p>
             <p>
-                Os custos não recorrentes envolvem despesas que não são anuais, como
-                investimentos em equipamentos e construções, materiais didáticos,
-                elaboração de PGTAs.
+                {{'modal-form-details.type-of-cost.paragraph-2' | translate}}
+            </p>
+            <p>
+                {{'modal-form-details.type-of-cost.paragraph-3' | translate}}
             </p>
         </div>
-        <!-- Grau de ameaça -->
-        <div *ngIf="campo=='Grau de ameaça'">
+        <!-- degree-of-threat -->
+        <div *ngIf="type=='degree-of-threat'">
             <p>
-                Classificação baseada no tipo e intensidade das ameaças para a Terra
-                Indígena (como garimpo, roubo de madeira, incêndios, grilagem,
-                desmatamento, pendências de regularização fundiária, obras de
-                infraestrutura e agrotóxicos). Os níveis de classificação são:, baixo,
-                médio, alto e altíssimo.
+                {{'modal-form-details.degree-of-threat.paragraph-1' | translate}}
             </p>
             <p>
-                Os tipos de ocorrências de ameaças territoriais que compõem o indicador
-                grau de ameaça são de dois tipos: interior das terras indígenas e
-                entorno das terras indígenas.
+                {{'modal-form-details.degree-of-threat.paragraph-1' | translate}}
             </p>
             <div class="table-responsive">
                 <table class="table table-bordered table-sm">
-                    <caption>Tipos de ocorrências de ameaças territoriais</caption>
+                    <caption>
+                        {{'modal-form-details.degree-of-threat.table-1.name' | translate}}
+                    </caption>
                     <thead>
                         <tr>
-                            <th>Ameaças no Interior das Terras Indígenas</th>
-                            <th>Ameaças no Entorno das Terras Indígenas</th>
+                            <th>
+                                {{'modal-form-details.degree-of-threat.table-1.header.col-1' | translate}}
+                            </th>
+                            <th>
+                                {{'modal-form-details.degree-of-threat.table-1.header.col-2' | translate}}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Garimpo</td>
-                            <td>Obras de Infraestrutura</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-1.col-1' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-1.col-2' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Roubo de Madeira</td>
-                            <td>Agrotóxicos</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-2.col-1' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-2.col-2' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Fogo: incêndios</td>
-                            <td>Desmatamento no Entorno</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-3.col-1' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-3.col-2' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Grilagem</td>
-                            <td></td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-4.col-1' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-4.col-2' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Desmatamento</td>
-                            <td></td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-5.col-1' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-5.col-2' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Pendências de Regularização Fundiária</td>
-                            <td></td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-6.col-1' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-1.line-6.col-2' | translate}}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <p>
-                Cada tipo de ameaça foi analisada de acordo com a probabilidade de
-                ocorrência e magnitude, que é definida em termos do tipo de ação
-                pública demandada pela ocorrência. Depois, o conjunto de ocorrências
-                por terra indígena foi somado e ponderado e resultou em um grau de
-                ameaça da Terra Indígena.
+                {{'modal-form-details.degree-of-threat.paragraph-1' | translate}}
             </p>
             <div class="table-responsive">
                 <table class="table table-bordered table-sm">
-                    <caption>Ponderação para definição do Grau de Ameaça</caption>
+                    <caption>
+                        {{'modal-form-details.degree-of-threat.table-2.name' | translate}}
+                    </caption>
                     <thead>
                         <tr>
-                            <th>Probabilidade e Magnitude</th>
-                            <th>Grau de Ameaça do Xingu</th>
-                            <th>Definição</th>
+                            <th>
+                                {{'modal-form-details.degree-of-threat.table-2.header.col-1' | translate}}
+                            </th>
+                            <th>
+                                {{'modal-form-details.degree-of-threat.table-2.header.col-2' | translate}}
+                            </th>
+                            <th>
+                                {{'modal-form-details.degree-of-threat.table-2.header.col-3' | translate}}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Não há probabilidade da ocorrência</td>
-                            <td>Nulo</td>
-                            <td>Não existe risco de ocorrência</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-1.col-1' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-1.col-2' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-1.col-3' | translate}}
+                            </td>
                         </tr>
                         <tr>
                             <td rowspan="4">
-                                Há probabilidade da ocorrência, julga-se a magnitude da
-                                ocorrência
+                                {{'modal-form-details.degree-of-threat.table-2.line-2.col-1' | translate}}
                             </td>
-                            <td>Baixo</td>
-                            <td>Ocorrência demanda ação de prevenção</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-2.col-2' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-2.col-3' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Médio</td>
-                            <td>Ocorrência demanda ações de fiscalização eventuais</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-3.col-2' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-3.col-3' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Alto</td>
-                            <td>Ocorrência demanda uma ação imediata e contínua de
-                                contenção</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-4.col-2' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-4.col-3' | translate}}
+                            </td>
                         </tr>
                         <tr>
-                            <td>Altíssima</td>
-                            <td>Ocorrência está fora de controle, demanda uma ação de
-                                guerra - ação permanente e articulada de vários órgãos
-                                de inteligência, comando e controle Ex: TI Kayapó e TI
-                                Apyterewa</td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-5.col-2' | translate}}
+                            </td>
+                            <td>
+                                {{'modal-form-details.degree-of-threat.table-2.line-5.col-3' | translate}}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- Complexidade de acesso -->
-        <div *ngIf="campo=='Complexidade de acesso'">
-            Classificação do nível de dificuldade de acesso para a maioria das
-            aldeias da Terra Indígena, baseada na distância dos municípios, na
-            existência e condição de estradas, pistas de pouso e navegabilidade dos
-            rios. Os níveis de classificação são: Fácil, Médio ou Difícil.
+        <!-- complexity-of-access -->
+        <div *ngIf="type=='complexity-of-access'">
+            {{'modal-form-details.complexity-of-access' | translate}}
         </div>
-
-        <!-- Situação de Gestão da Terra -->
-        <div *ngIf="campo=='Situação de Gestão da Terra'">
+        <!-- current-situation-->
+        <div *ngIf="type=='current-situation'">
             <p>
-                A definição da situação de gestão da terra varia por atividade em cada eixo temático.
+                {{'modal-form-details.current-situation.paragraph-1' | translate}}
             </p>
             <p>
-                A "situação atual de gestão da terra" é definida pelo conjunto de itens (ações, equipamentos, pessoal
-                etc.) da terra indígena selecionada. Para as terras indígenas com dados coletados “a situação atual de
-                gestão” aparece automaticamente com as informações levantadas junto às organizações, esses valores estão
-                no campo “Situação avaliada em 2022”. Para as demais terras indígenas (Terras Indígenas Xingu - com
-                dados extrapolados; e Simulação - Terra indígena simulada), o usuário deverá selecionar qual seria a
-                Situação de gestão da terra podendo ser: "Não tem investimento"; "Nível de investimento precário";
-                "Nível de investimento básico"; e "Nível de investimento bom".
+                {{'modal-form-details.current-situation.paragraph-2' | translate}}
             </p>
             <p>
-                No resultado é possível observar os valores para a situação de "investimento para gestão básica" e
-                "investimento para gestão boa".
+                {{'modal-form-details.current-situation.paragraph-3' | translate}}
             </p>
             <p>
-                O nível de investimento para a gestão básica atende ao mínimo necessário para a realização da atividade.
-                O nível de investimento para a gestão boa vai um pouco além, adicionando novas ações e melhorias. No
-                entanto, é importante ressaltar que o nível de investimento para a gestão boa, mesmo sendo melhor que o
-                nível investimento para a gestão básica, ainda apresenta limitações ou aspectos que precisam ser
-                aprimorados, indicando que há espaço para melhorar o desempenho das atividades.
+                {{'modal-form-details.current-situation.paragraph-4' | translate}}
             </p>
             <p>
-                No resultado, no campo “Saiba mais” de cada eixo, será fornecido um detalhamento das atividades e itens
-                que caracterizam a situação de gestão dos eixos nos níveis “básico” ou “bom”. Essa lista de itens é
-                apenas uma referência e pode variar de acordo com a realidade de cada Terra Indígena, ou seja, é uma
-                sugestão de características dos níveis de situação de gestão.
+                {{'modal-form-details.current-situation.paragraph-5' | translate}}
             </p>
         </div>
-
-        <!-- Situação atual de Gestão da Terra -->
-        <div *ngIf="campo=='Situação atual de Gestão da Terra'">
+        <!-- current-situation-comparative -->
+        <div *ngIf="type=='current-situation-comparative'">
             <p>
-                A definição da situação de gestão da terra varia por atividade em cada eixo temático.
+                {{'modal-form-details.current-situation-comparative.paragraph-1' | translate}}
             </p>
             <p>
-                A “situação atual de gestão da terra” é definida pelo conjunto de itens (ações, equipamentos, pessoal
-                etc.) que a terra indígena tem. Nessa versão para comparação entre terras indígenas, como podemos
-                escolher mais de uma Terra Indígena, o usuário deverá selecionar qual seria a Situação de gestão da(s)
-                terra(s) podendo ser: "Não tem investimento"; "Nível de investimento precário"; "Nível de investimento
-                básico"; e "Nível de investimento bom".
+                {{'modal-form-details.current-situation-comparative.paragraph-2' | translate}}
             </p>
             <p>
-                No resultado é possível observar os valores para o alcance da situação de gestão no nível definido pelo
-                usuário, podendo ser no “Investimento para a gestão básica” ou “investimento para a gestão boa”.
+                {{'modal-form-details.current-situation-comparative.paragraph-3' | translate}}
             </p>
         </div>
-
-        <!-- Situação desejada de Gestão da Terra -->
-        <div *ngIf="campo=='Situação desejada de Gestão da Terra'">
+        <!-- desired-situation -->
+        <div *ngIf="type=='desired-situation'">
             <p>
-                O investimento para a gestão básica atende ao mínimo necessário para a realização da atividade. O
-                investimento para a gestão boa vai um pouco além, adicionando novas ações e melhorias. No entanto, é
-                importante ressaltar que o investimento para a gestão boa, mesmo sendo melhor que o investimento para a
-                gestão básica, ainda apresenta limitações ou aspectos que precisam ser aprimorados, indicando que há
-                espaço para melhorar o desempenho das atividades.
+                {{'modal-form-details.desired-situation.paragraph-1' | translate}}
             </p>
             <p>
-                No resultado, em Download PDF, será fornecido um detalhamento das atividades e itens que caracterizam a
-                situação de gestão dos eixos selecionados nos níveis “básico” ou “bom”. Essa lista de itens é apenas uma
-                referência e pode variar de acordo com a realidade de cada Terra Indígena, ou seja, é uma sugestão de
-                características dos níveis de situação de gestão.
+                {{'modal-form-details.desired-situation.paragraph-2' | translate}}
             </p>
         </div>
-
-        <!-- Inflação acumulada desde 2023 -->
-        <div *ngIf="campo=='Inflação acumulada desde 2023'">
-            Os valores devem ser corrigidos pela inflação. Calcule a inflação acumulada
-            desde 01/2023 utilizando como base o período de 01/2023 até a data presedo
-            cálculo, a partir do IPCA (IBGE)
+        <!-- inflation -->
+        <div *ngIf="type=='inflation'">
+            {{'modal-form-details.inflation' | translate}}
             <a href="https://www.ibge.gov.br/explica/inflacao.php" target="_blank">
                 https://www.ibge.gov.br/explica/inflacao.php
             </a>
         </div>
-
-        <!-- Eixos temáticos -->
-        <div *ngIf="campo=='Eixos temáticos'">
+        <!-- thematic-axes -->
+        <div *ngIf="type=='thematic-axes'">
             <p>
-                Os eixos temáticos foram definidos a partir dos principais temas presentes nos Planos de Gestão
-                Territorial e Ambiental (PGTAs) das Terras Indígenas. São 08 os eixos temáticos:
+                {{'modal-form-details.thematic-axes.paragraph-1' | translate}}
             </p>
             <ul>
                 <li>
-                    Governança: estruturas e processos das associações que orientam a tomada de decisões e a gestão das
-                    Terras Indígenas.
+                    {{'modal-form-details.thematic-axes.axe-1' | translate}}
                 </li>
                 <li>
-                    Fiscalização e proteção: estratégias e infraestruturas de proteção, defesa e mitigação dos impactos
-                    existentes nas Terras Indígenas
+                    {{'modal-form-details.thematic-axes.axe-2' | translate}}
                 </li>
                 <li>
-                    Fortalecimento cultural: ações voltadas à resistência e fortalecimento cultural dos Povos Indígenas
+                    {{'modal-form-details.thematic-axes.axe-3' | translate}}
                 </li>
                 <li>
-                    Geração de renda: estratégias e infraestruturas para promover alternativas econômicas que valorizem
-                    e fortaleçam a realidade socioambiental das Terras Indígenas
+                    {{'modal-form-details.thematic-axes.axe-4' | translate}}
                 </li>
                 <li>
-                    Soberania alimentar: ações para a garantia da alimentação saudável, fortalecimento da agroecologia,
-                    culinária tradicional e pequenas criações.
+                    {{'modal-form-details.thematic-axes.axe-5' | translate}}
                 </li>
                 <li>
-                    Infraestruturas complementares (energia, comunicações e transportes): investimentos complementares
-                    em infraestrutura e ações de comunicação, energia e transporte.
+                    {{'modal-form-details.thematic-axes.axe-6' | translate}}
                 </li>
                 <li>
-                    Educação complementar: ações complementares à assistência usual do governo sobre saúde e saneamento
+                    {{'modal-form-details.thematic-axes.axe-7' | translate}}
                 </li>
                 <li>
-                    Saúde e saneamento complementares: aprimoramento da gestão, aspectos curriculares e didáticos das
-                    escolas indígenas e outras atividades de formação relacionadas à educação.
+                    {{'modal-form-details.thematic-axes.axe-8' | translate}}
                 </li>
             </ul>
         </div>

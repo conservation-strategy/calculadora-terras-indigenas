@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "nome": "Governança",
     "descricao": "Estruturas e processos das associações que orientam a tomada de decisões e a gestão das Terras Indígenas",
     "imagem": "governanca.png",
@@ -160,6 +161,7 @@
     ]
   },
   {
+    "id": 2,
     "nome": "Fiscalização e Proteção",
     "descricao": "Estratégias e infraestruturas de proteção, defesa e mitigação dos impactos existentes nas Terras Indígenas",
     "imagem": "fiscalização_e_protecao.png",
@@ -321,6 +323,7 @@
     ]
   },
   {
+    "id": 3,
     "nome": "Fortalecimento Cultural",
     "descricao": "Ações voltadas à resistência e fortalecimento cultural dos Povos Indígenas",
     "imagem": "fortalecimento_cultural.png",
@@ -395,6 +398,7 @@
     ]
   },
   {
+    "id": 4,
     "nome": "Geração de renda",
     "descricao": "Estratégias e infraestruturas para promover alternativas econômicas que valorizem e fortaleçam a realidade socioambiental das Terras Indígenas",
     "imagem": "geracao_de_renda.png",
@@ -450,6 +454,7 @@
     ]
   },
   {
+    "id": 5,
     "nome": "Soberania Alimentar",
     "descricao": "Ações para a garantia da alimentação saudável, fortalecimento da agroecologia, culinária tradicional e pequenas criações",
     "imagem": "soberania_alimentar.png",
@@ -528,6 +533,7 @@
     ]
   },
   {
+    "id": 6,
     "nome": "Infraestruturas complementares",
     "descricao": "Investimentos complementares em infraestrutura e ações de comunicação, energia e transporte",
     "imagem": "infraestruturas_complementares.png",
@@ -641,6 +647,7 @@
     ]
   },
   {
+    "id": 7,
     "nome": "Saúde e saneamento complementar",
     "descricao": "Ações complementares à assistência usual do governo sobre saúde e saneamento",
     "imagem": "saude_e_saneamento_complementar.png",
@@ -706,6 +713,7 @@
     ]
   },
   {
+    "id": 8,
     "nome": "Educação complementar",
     "descricao": "Aprimoramento da gestão, aspectos curriculares e didáticos das escolas indígenas e outras atividades de formação relacionadas à educação",
     "imagem": "educacao_complementar.png",

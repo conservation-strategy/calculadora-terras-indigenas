@@ -23,6 +23,7 @@ import Eixo from '../../core/models/Eixo';
 import TerraIndigena from '../../core/models/TerraIndigena';
 
 import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import html2canvas from 'html2canvas';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -54,8 +55,9 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     CanvasJSAngularChartsModule,
     LoadingComponent,
     RouterLink,
+    TranslateModule,
   ],
-  providers: [CalculadoraService, CurrencyPipe],
+  providers: [CalculadoraService, CurrencyPipe, TranslateService],
   templateUrl: './calculadora-comparativa.component.html',
   styleUrl: './calculadora-comparativa.component.scss',
 })
@@ -67,7 +69,8 @@ export class CalculadoraComparativaComponent implements OnInit {
 
   terrasIndigenasSelecionadas: TerraIndigena[] = [];
   grupoTerrasIndigenas: {
-    nomeGrupo?: string;
+    id: number;
+    nomeGrupo: string;
     terrasIndigenas?: TerraIndigena[];
   }[] = [];
   coeficientesRecorrentes: Coeficiente[] = [];
@@ -144,7 +147,8 @@ export class CalculadoraComparativaComponent implements OnInit {
 
   constructor(
     private calculatorService: CalculadoraService,
-    private currencyPipe: CurrencyPipe
+    private currencyPipe: CurrencyPipe,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit() {
@@ -169,6 +173,7 @@ export class CalculadoraComparativaComponent implements OnInit {
       ];
       this.grupoTerrasIndigenas.push(
         {
+          id: 2,
           nomeGrupo: 'Terras Indígenas com dados coletados',
           terrasIndigenas: response
             .filter((x: TerraIndigena) => x.grupo === 1)
@@ -177,6 +182,7 @@ export class CalculadoraComparativaComponent implements OnInit {
             ),
         },
         {
+          id: 3,
           nomeGrupo: 'Terras Indígenas com dados extrapolados',
           terrasIndigenas: response
             .filter(
@@ -672,12 +678,25 @@ export class CalculadoraComparativaComponent implements OnInit {
     }
   }
 
-  abrirModalFormDetalhes(campo: string, tooltip: string) {
+  abrirModalFormDetalhes(type: string) {
+    const formField = this.translateService.instant(`form.${type}`);
     const modalRef = this.modalService.open(ModalFormDetalhesComponent, {
       size: 'lg',
     });
-    modalRef.componentInstance.campo = campo;
-    modalRef.componentInstance.tooltip = tooltip;
+    const typesWithTemplate = [
+      'type-of-cost',
+      'degree-of-threat',
+      'complexity-of-access',
+      'current-situation',
+      'current-situation-comparative',
+      'desired-situation',
+      'inflation',
+    ];
+    modalRef.componentInstance.type = type;
+    modalRef.componentInstance.title = formField.name;
+    modalRef.componentInstance.description = typesWithTemplate.includes(type)
+      ? ''
+      : formField.description;
   }
 
   modificarEixo(eixo: Eixo) {

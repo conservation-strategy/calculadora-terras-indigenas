@@ -36,6 +36,7 @@ import {
 
 import { RouterLink } from '@angular/router';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import html2canvas from 'html2canvas';
 import { NgxMaskDirective } from 'ngx-mask';
 import Atividade from '../../core/models/Atividade';
@@ -61,8 +62,9 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
     LoadingComponent,
     RouterLink,
     NgxMaskDirective,
+    TranslateModule,
   ],
-  providers: [CalculadoraService, CurrencyPipe],
+  providers: [CalculadoraService, CurrencyPipe, TranslateService],
   templateUrl: './calculadora-terra-indigena.component.html',
   styleUrl: './calculadora-terra-indigena.component.scss',
 })
@@ -153,7 +155,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
   constructor(
     private calculatorService: CalculadoraService,
-    private currencyPipe: CurrencyPipe
+    private currencyPipe: CurrencyPipe,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -189,10 +192,12 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       };
       this.grupoTerrasIndigenas.push(
         {
+          id: 1,
           nomeGrupo: 'Simulação',
           terrasIndigenas: [terraIndigenaSimulada],
         },
         {
+          id: 2,
           nomeGrupo: 'Terras Indígenas com dados coletados',
           terrasIndigenas: response
             .filter((x: TerraIndigena) => x.grupo === 1)
@@ -201,6 +206,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             ),
         },
         {
+          id: 3,
           nomeGrupo: 'Terras Indígenas com dados extrapolados',
           terrasIndigenas: response
             .filter((x: TerraIndigena) => x.grupo === 2)
@@ -811,12 +817,23 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     ];
   }
 
-  abrirModalFormDetalhes(campo: string, tooltip: string) {
+  abrirModalFormDetalhes(type: string) {
+    const formField = this.translateService.instant(`form.${type}`);
     const modalRef = this.modalService.open(ModalFormDetalhesComponent, {
       size: 'lg',
     });
-    modalRef.componentInstance.campo = campo;
-    modalRef.componentInstance.tooltip = tooltip;
+    const typesWithTemplate = [
+      'type-of-cost',
+      'degree-of-threat',
+      'complexity-of-access',
+      'current-situation',
+      'inflation',
+    ];
+    modalRef.componentInstance.type = type;
+    modalRef.componentInstance.title = formField.name;
+    modalRef.componentInstance.description = typesWithTemplate.includes(type)
+      ? ''
+      : formField.description;
   }
 
   modalEixoDetalhes(eixo: Eixo) {
@@ -878,6 +895,7 @@ type Resultado = {
 };
 
 type GrupoTerraIndigena = {
+  id: number;
   nomeGrupo: string;
   terrasIndigenas: TerraIndigena[];
 };

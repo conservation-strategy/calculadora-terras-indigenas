@@ -7,6 +7,10 @@
     "team": "Equipo",
     "useful-links": "Enlaces útiles"
   },
+  "footer": {
+    "description": "CSF, ISA y Rede Xingu+ no se responsabilizan por las consecuencias del uso de la calculadora.",
+    "contact": "Contacto"
+  },
   "home": {
     "section-header": {
       "title": "Costos de Gestión de las Tierras Indígenas",
@@ -68,9 +72,372 @@
       "button-link": "Acceder a la calculadora"
     }
   },
+  "methodology": {
+    "title": "METODOLOGÍA",
+    "section-calculator": {
+      "title": "Calculadora",
+      "paragraph-1": "La Calculadora de Costos de Gestión de Tierras Indígenas es una herramienta en línea diseñada para ayudar a las organizaciones indígenas de la cuenca del Xingú con la planificación presupuestaria y la recaudación de fondos para implementar sus Planes de Gestión Territorial y Ambiental (PGTA), mediante la proyección de los costos relacionados con los ejes temáticos planificados.",
+      "paragraph-2": "A partir de gastos históricos en ocho territorios indígenas del Corredor del Xingú y de proyecciones de costos para diferentes escenarios, como cambios en la población, el grado de amenaza, el tamaño del territorio, entre otros. La calculadora permite estimar los costos asociados a la implementación de los PGTA de las Tierras Indígenas. Estos costos serán actualizados cuando sea necesario."
+    },
+    "section-pgta-costs": {
+      "title": "Costos de los PGTA",
+      "paragraph-1": "Para estimar los costos de los PGTA, la calculadora establece relaciones estadísticas entre las características de las Tierras Indígenas, como el tamaño, el número de aldeas, el grado de amenaza, la complejidad del acceso, las posibles situaciones de inversión de las actividades previstas en los Planes de Gestión de las Tierras Indígenas (PGTA) y sus costos promedio de implementación. Cada actividad cuenta con una fórmula de predicción de costos medios basada en (i) el gasto medio histórico de ocho Tierras Indígenas de las que se han recogido y analizado datos, y (ii) proyecciones de costos para escenarios hipotéticos que tienen en cuenta posibles cambios en las características de las Tierras Indígenas y la situación de inversión para la implementación de las actividades a lo largo del tiempo. De esta forma, es posible estimar los costos en función de la situación de la inversión en gestión y de las características de las Tierras Indígenas.",
+      "paragraph-2": "Cada actividad cuenta con una fórmula de predicción de costos medios basada en (i) el gasto medio histórico de ocho Tierras Indígenas de las que se han recogido y analizado datos, y (ii) proyecciones de costos para escenarios hipotéticos que tienen en cuenta posibles cambios en las características de las Tierras Indígenas y la situación de inversión para la implementación de las actividades a lo largo del tiempo. De esta forma, es posible estimar los costos en función de la situación de la inversión en gestión y de las características de las Tierras Indígenas. Los valores de los costos se obtienen de promedios observados durante la recogida de datos con las organizaciones indígenas y de apoyo. Por ejemplo, si una tierra indígena gastó 1 000 000 de reales en una actividad y otra tierra con características similares gastó 2 000 000 de reales, el costo promedio previsto sería de 1 500 000 reales. La comparación entre el valor medio previsto y el valor real puede variar (por ejemplo, ±R$500 000). Esta variación no indica un error en el modelo, sino que existe una diferencia entre el costo de la actividad de una organización y la media combinada de todas las organizaciones. Así, la mitad de las previsiones tendrán un margen de error al alza y la otra mitad a la baja. Al sumar las distintas actividades de un PGTA, este margen de error tiende a anularse, es decir, el valor total de un PGTA tendrá este margen de error suavizado."
+    },
+    "section-types-of-costs": {
+      "title": "Tipos de costos y actividades",
+      "types": "Los valores se clasifican en",
+      "type-1": {
+        "title": "Costos recurrentes",
+        "description": "Son los costos anuales de ejecución de las actividades como salarios, mantenimiento de equipos, gastos frecuentes de las asociaciones (notaría, alquiler, comunicación, etc.), talleres anuales (combustible, comida, etc.), entre otros gastos."
+      },
+      "type-2": {
+        "title": "Costos no recurrentes",
+        "description": "Son los costos ocasionales, realizados cada 5 o 10 años aproximadamente, como las inversiones en equipos y edificios. Es importante señalar que algunas actividades de los costos no recurrentes no cuentan con valores, porque las instituciones consultadas no tenían este tipo de gastos sobre el terreno, no siendo posible predecir valores para ellos — lo que no significa que los costos no puedan existir."
+      },
+      "paragraph-1": "Las actividades están agrupadas en ocho ejes temáticos y 29 actividades, las cuales  fueron definidas por los equipos del Instituto Socioambiental (ISA) y de Conservation Strategy Fund (CSF), a partir de los PGTAs publicados de las Tierras Indígenas (TI) de la Cuenca del Río Xingú. Cada actividad tiene métricas para evaluar su situación de gestión. Se definieron métricas que corresponden a los ítems necesarios para indicar el estado de implementación de cada actividad.",
+      "paragraph-2": "Las métricas se definen según dos niveles generales (i) inversión para la gestión básica e (ii) inversión para la buena gestión. Estos niveles se subdividieron en valores intermedios para la situación actual de gestión de las tierras, ya que la situación actual de gestión de las tierras observada se situaba a menudo, por ejemplo, entre la “inversión para la gestión básica” y la “inversión para la buena gestión”. Por lo tanto, optamos por una clasificación que considera los siguientes niveles de inversión en la situación actual de gestión: Sin inversión; Nivel de inversión deficiente; Nivel de inversión básico; y Nivel de inversión bueno. La escala de la situación de inversión es una variable clave que incide en los costos."
+    },
+    "section-division-of-indigenous-land": {
+      "title": "División de tierras indígenas",
+      "groups": "En la Calculadora, las IT se dividen en tres grupos",
+      "group-1": {
+        "title": "TI con datos recogidos",
+        "description": "Agrupadas en ocho (8) TIs en la cuenca del Xingú con datos de costos disponibles a través de organizaciones indígenas y de apoyo."
+      },
+      "group-2": {
+        "title": "TI con datos extrapolados",
+        "description": "Se trata de trece (13) TIs  en la cuenca del Xingú con información sobre características (tamaño, población, grado de amenaza, "
+      },
+      "group-3": {
+        "title": "TI simulada",
+        "description": "Cualquier TI que el usuario quiera simular."
+      },
+      "paragraph-1": "Para los dos últimos grupos, los valores se extrapolan con un mayor margen de error, por lo que se recomienda precaución al considerar los valores previstos para estos grupos."
+    },
+    "section-data-collection": {
+      "title": "Recolección de datos",
+      "paragraph-1": "Se recopilaron datos históricos (2018 a 2022) sobre el gasto en actividades de ocho áreas temáticas presentes en la mayoría de los PGTA de la región:",
+      "thematic-axe-1": "Gobernanza",
+      "thematic-axe-2": "Supervisión y Protección",
+      "thematic-axe-3": "Fortalecimiento Cultural",
+      "thematic-axe-4": "Generación de Ingresos",
+      "thematic-axe-5": "Soberanía Alimentaria",
+      "thematic-axe-6": "Infraestructuras complementarias (energía, comunicaciones y transportes)",
+      "thematic-axe-7": "Educación (prácticas complementarias)",
+      "thematic-axe-8": "Salud y Saneamiento (complementario)",
+      "paragraph-2": "En total, la calculadora tuvo en cuenta información de 29 actividades, repartidas en los ocho ejes. Se desarrollaron 'métricas' que proporcionan información sobre lo que debe tener la TI para que la actividad se sitúe en el nivel básico de implantación de la gestión y en el nivel de implantación de la buena gestión.",
+      "paragraph-3": "Se recogieron datos de las Tierras Indígenas Apyterewa, Baú, Capoto-Jarina, Kayapó, Menkragnoti, Panará, TIX (Batovi, Pequizal do Naruvôtu, Xingú y Wawi) y Trincheira/Bacajá. Las fuentes de información fueron las principales organizaciones indígenas y de la sociedad civil asociadas que trabajan en estas Tierras Indígenas: Associação Floresta Protegida (AFP), Associação Iakiô Panará, Associação Terra Indígena do Xingu (ATIX), Instituto Kabu (IK), Instituto Raoni (IR), Instituto Socioambiental (ISA) y The Nature Conservancy (TNC). También se realizaron entrevistas con representantes de estas organizaciones para recopilar información sobre las características y el contexto en el que se encuentra cada Tierra Indígena, como tamaño, número de aldeas, grado de amenaza externa, complejidad de acceso, ubicación de la sede de la asociación, entre otros, así como para proyectar escenarios hipotéticos basados en variaciones de estas características y contexto."
+    },
+    "section-learn-more": {
+      "title": "Más información sobre la metodología",
+      "download": "Descargar PDF"
+    }
+  },
+  "calculator": {
+    "title": "CALCULADORA DE COSTOS DE GESTIÓN DE TIERRAS INDÍGENAS",
+    "button-1": "Accede a la calculadora",
+    "button-2": "Comparar más de un terreno"
+  },
+  "indigenous-land-calculator": {
+    "title": "CALCULADORA DE COSTOS DE GESTIÓN DE TIERRAS INDÍGENAS",
+    "section-info": {
+      "paragraph-1": "Estime el costo de la gestión de todos los ejes temáticos de una Tierra Indígena (TI), con la posibilidad de cambiar los valores de las características de una TI (tamaño, población, aldea, complejidad de acceso, grado de amenaza, grado de diversidad y ubicación de la sede de la asociación), así como cambiar y/o definir la situación actual de gestión de la tierra.",
+      "paragraph-2": "En los resultados, el usuario puede acceder al valor de la 'inversión para una gestión básica' y la 'inversión para una buena gestión'.",
+      "paragraph-3": "Haga clic en los signos de interrogación de las casillas de valores para obtener explicaciones detalladas de lo que significan."
+    }
+  },
+  "comparative-version": {
+    "title": "VERSIÓN COMPARATIVA",
+    "section-info": {
+      "paragraph-1": "La Versión Comparativa estima el costo total de la gestión de los ejes temáticos seleccionados en una o varias Tierras Indígenas (TI). El usuario debe definir la situación actual de gestión de la(s) tierra(s), así como la situación deseada (inversión para una gestión básica o inversión para una buena gestión).",
+      "paragraph-2": "Esta versión es adecuada para quienes deseen comparar resultados entre tierras y/o ejes y también para quienes trabajen en más de una tierra indígena y deseen disponer de información general sobre los costos de gestión de los ejes seleccionados."
+    }
+  },
+  "pgtas": {
+    "access-archive": "Acceder al archivo"
+  },
+  "team": {
+    "title": "EQUIPO",
+    "general-coordination": "Coordinación general",
+    "technical-leader": "Líder técnico",
+    "conceptual-development": "Desarrollo conceptual",
+    "econometric-cost-modeling": "Modelado de costos econométricos",
+    "data-collection-and-cost-structuring": "Recolección de datos y estructuración de costos",
+    "content-review": "Revisión de contenidos",
+    "development": "Desarrollo",
+    "ux-ui-designer": "Diseñador UX/UI",
+    "Illustration": "Ilustración"
+  },
+  "useful-links": {
+    "title": "ENLACES ÚTILES",
+    "link-1": {
+      "title": "Plataforma de la Red Xingu+",
+      "description": "xingumais.org.br"
+    },
+    "link-2": {
+      "title": "Página web de los Pueblos Indígenas de Brasil",
+      "description": "pib.socioambiental.org/pt"
+    },
+    "link-3": {
+      "title": "Sitio web de las Tierras Indígenas de Brasil",
+      "description": "terrasindigenas.org.br"
+    },
+    "link-4": {
+      "title": "Colección de la Red Xingu+: ",
+      "description": "xingumais.org.br/acervo"
+    },
+    "link-5": {
+      "title": "Observatorio Ojo del Xingu",
+      "description": "xingumais.org.br/observatorios"
+    },
+    "link-6": {
+      "title": "Sistema de vigilancia de la deforestación por radar de Xingu",
+      "description": "xingumais.org.br/categoria/sirad-x"
+    }
+  },
   "realization-support-partners": {
     "realization": "Realización",
     "support": "Con el apoyo de",
     "partners": "Socios colaboradores"
+  },
+  "form": {
+    "indigenous-land": {
+      "name": "Tierra Indígena",
+      "placeholder": "Seleccione la Tierra Indígena",
+      "validation": "Required Field."
+    },
+    "checkbox-edit": "Quiero actualizar los datos de la Tierra Indígena",
+    "land-size": {
+      "name": "Tamaño de la tierra (hectáreas)",
+      "description": "Tamaño de la Tierra Indígena, en hectáreas",
+      "validation": "Required Field."
+    },
+    "villages": {
+      "name": "Número de aldeas",
+      "description": "Cantidad de aldeas en la Tierra Indígena",
+      "validation": "Required Field."
+    },
+    "peoples": {
+      "name": "Número de pueblos",
+      "description": "Número de pueblos que viven en la Tierra Indígena",
+      "validation": "Required Field."
+    },
+    "population": {
+      "name": "Población",
+      "description": "Número de personas que viven en la Tierra Indígena",
+      "validation": "Required Field."
+    },
+    "headquarters": {
+      "name": "Ubicación de la sede",
+      "placeholder": "Ubicación de la sede",
+      "description": "Sede de la asociación: ciudad o aldea",
+      "validation": "Required Field."
+    },
+    "degree-of-threat": {
+      "name": "Grado de amenaza",
+      "placeholder": "Grado de amenaza",
+      "description": "Clasificación basada en el tipo y la intensidad de las amenazas a la Tierra Indígena",
+      "validation": "Required Field."
+    },
+    "complexity-of-access": {
+      "name": "Complejidad del acceso",
+      "placeholder": "Complejidad del acceso",
+      "description": "Clasificación del nivel de dificultad de acceso para la mayoría de las aldeas del Territorio Indígena",
+      "validation": "Required Field."
+    },
+    "current-situation": {
+      "name": "Situación actual de la gestión de la tierra",
+      "placeholder": "Situación actual de la gestión de la tierra",
+      "description": "Situación actual de la gestión de la tierra",
+      "validation": "Required Field."
+    },
+    "current-situation-comparative": {
+      "name": "Situación actual de la gestión de la tierra",
+      "placeholder": "Situación actual de la gestión de la tierra",
+      "description": "Situación actual de la gestión de la tierra",
+      "validation": "Required Field."
+    },
+    "desired-situation": {
+      "name": "Situación deseada de la gestión de la tierra",
+      "placeholder": "Situación deseada de la gestión de la tierra",
+      "description": "Situación deseada de la gestión de la tierra",
+      "validation": "Required Field."
+    },
+    "thematic-axes": {
+      "name": "Ejes temáticos",
+      "placeholder": "Ejes temáticos",
+      "description": "Ejes temáticos definidos a partir de los grandes temas de los PGTA.",
+      "validation": "Required Field."
+    },
+    "type-of-cost": {
+      "name": "Tipo de costo ",
+      "description": "Los costos recurrentes son gastos anuales y los no recurrentes se refieren a gastos que no se repiten cada año.",
+      "validation": "Required Field."
+    },
+    "inflation": {
+      "name": "Inflación acumulada desde 2023 (%)",
+      "placeholder": "(Opcional)",
+      "description": "Los importes deben ajustarse a la inflación desde el 01/2023 sobre la base del IPCA (IBGE)."
+    },
+    "button-calculate": "Calcular",
+    "pgtas": "Acceda a los PGTAs aqui"
+  },
+  "modal-form-details": {
+    "type-of-cost": {
+      "paragraph-1": "Los costos se clasificaron en dos tipos:",
+      "paragraph-2": "Los costos recurrentes son de funcionamiento, se componen de los costos anuales de ejecución de las actividades, como los salarios, el mantenimiento de los equipos, la compra de gasolina y la formación anual.",
+      "paragraph-3": "Os custos não recorrentes envolvem despesas que não são anuais, como investimentos em equipamentos e construções, materiais didáticos, elaboração de PGTAs."
+    },
+    "degree-of-threat": {
+      "paragraph-1": "Clasificación basada en el tipo y la intensidad de las amenazas a la Tierra Indígena (como la minería ilegal, el tráfico de madera, los incendios, el acaparamiento/tráfico de tierras, la deforestación, la regularización de tierras pendientes, las obras de infraestructura y los pesticidas). Los niveles de clasificación son: bajo, medio, alto y muy alto.",
+      "paragraph-2": "Los tipos de ocurrencia de amenazas territoriales que componen el indicador de grado de amenaza son de dos tipos: dentro de tierras indígenas y alrededor de tierras indígenas.",
+      "paragraph-3": "Cada tipo de amenaza fue analizada de acuerdo con la probabilidad de ocurrencia y la magnitud, que se define en términos del tipo de acción pública que requiere la ocurrencia. Posteriormente, se sumó y ponderó el conjunto de sucesos en tierras indígenas, el resultado fue su grado de amenaza.",
+      "table-1": {
+        "name": "Tipos de amenazas territoriales",
+        "header": {
+          "col-1": "Amenazas dentro de las tierras indígenas",
+          "col-2": "Amenazas en torno a las tierras indígenas"
+        },
+        "line-1": {
+          "col-1": "Minería ilegal",
+          "col-2": "Obras de infraestructura"
+        },
+        "line-2": {
+          "col-1": "Tráfico de madera",
+          "col-2": "Pesticidas"
+        },
+        "line-3": {
+          "col-1": "Fuego: incendios",
+          "col-2": "Deforestación en los alrededores"
+        },
+        "line-4": {
+          "col-1": "Acaparamiento/tráfico de tierras",
+          "col-2": ""
+        },
+        "line-5": {
+          "col-1": "Deforestación",
+          "col-2": ""
+        },
+        "line-6": {
+          "col-1": "Regularización de tierras pendientes",
+          "col-2": ""
+        }
+      },
+      "table-2": {
+        "name": "Ponderación para definir el Grado de Amenaza",
+        "header": {
+          "col-1": "Ponderación para definir el Grado de Amenaza",
+          "col-2": "Nivel de amenaza de Xingú",
+          "col-3": "Definición"
+        },
+        "line-1": {
+          "col-1": "Sin probabilidad de ocurrencia",
+          "col-2": "Nulo",
+          "col-3": "Sin riesgo de aparición"
+        },
+        "line-2": {
+          "col-1": "Hay una probabilidad de que ocurra, se juzga la magnitud de la ocurrencia.",
+          "col-2": "Hay una probabilidad de que ocurra, se juzga la magnitud de la ocurrencia.",
+          "col-3": "La incidencia exige medidas preventivas"
+        },
+        "line-3": {
+          "col-1": "",
+          "col-2": "Medio",
+          "col-3": "La ocurrencia requiere acciones de inspección ocasionales"
+        },
+        "line-4": {
+          "col-1": "",
+          "col-2": "Alta",
+          "col-3": "La aparición del hecho requiere una acción de contención inmediata y continua"
+        },
+        "line-5": {
+          "col-1": "",
+          "col-2": "Muy alta",
+          "col-3": "El suceso está fuera de control, exige una acción de guerra - acción permanente y articulada de varios órganos de inteligencia, mando y control Ej: TI Kayapó y TI Apyterewa"
+        }
+      }
+    },
+    "complexity-of-access": "Clasificación del nivel de dificultad de acceso para la mayoría de las aldeas del Territorio Indígena, en función de la distancia a los municipios, la existencia y el estado de las carreteras, las pistas de aterrizaje y la navegabilidad de los ríos. Los niveles de clasificación son: Fácil, Medio o Difícil.",
+    "current-situation": {
+      "paragraph-1": "La definición de la situación de la gestión de la tierra varía según la actividad en cada eje temático.",
+      "paragraph-2": "La situación actual de la gestión de la tierra se define como el conjunto de elementos (acciones, equipos, personal, etc.) de la tierra indígena seleccionada. Para las tierras indígenas con datos recogidos, la situación actual de gestión aparece automáticamente con la información recogida de las organizaciones, estos valores están en el campo Situación evaluada en 2022.",
+      "paragraph-3": "Para las demás tierras indígenas (Tierras Indígenas de Xingu - con datos extrapolados; y simulación - Tierra Indígena simulada), el usuario debe seleccionar la situación de gestión de la tierra, que puede ser: Sin inversión; Nivel de inversión deficiente; Nivel de inversión básico; y Nivel de inversión bueno. El resultado muestra los valores de las situaciones: inversión para una gestión básica e inversión para una buena gestión.",
+      "paragraph-4": "El nivel de inversión para la gestión básica cumple el mínimo necesario para realizar la actividad. El nivel de inversión para la buena gestión va un poco más allá, añadiendo nuevas acciones y mejoras. Sin embargo, es importante destacar que el nivel de inversión para la buena gestión, aunque sea mejor que el nivel de inversión para la gestión básica, sigue teniendo limitaciones o aspectos que deben mejorarse, lo que indica que hay margen para mejorar el rendimiento de las actividades.",
+      "paragraph-5": "En el resultado, el campo Saber más de cada eje proporcionará un desglose de las actividades y los ítems que caracterizan la situación de gestión de los ejes en los niveles básico o bueno. Esta lista de ítems es sólo una referencia y puede variar de acuerdo con la realidad de cada Tierra Indígena, es decir, es una sugerencia de las características de los niveles de situación de gestión."
+    },
+    "current-situation-comparative": {
+      "paragraph-1": "La definición de la situación de la gestión del territorio varía según la actividad en cada eje temático.",
+      "paragraph-2": "La situación actual de gestión de la tierra se define por el conjunto de elementos (acciones, equipos, personal, etc.) que posee la tierra indígena. En esta versión para comparar tierras indígenas podemos elegir más de una Tierra Indígena, por lo que la persona usuaria deberá seleccionar la situación de gestión de la(s) tierra(s). Las opciones a colocar pueden ser: Sin inversión; Pobre nivel de inversión; Nivel básico de inversión; y Buen nivel de inversión.",
+      "paragraph-3": "El resultado muestra los valores para alcanzar la situación de gestión al nivel definido por el usuario, que puede ser Inversión para una gestión básica o Inversión para una buena gestión."
+    },
+    "desired-situation": {
+      "paragraph-1": "La “inversión para la gestión básica” cumple el mínimo necesario para el desarrollo de la actividad. La “inversión para la buena gestión” va un poco más allá, añadiendo nuevas acciones y mejoras. Sin embargo, es importante destacar que la “inversión para la buena gestión”, aunque es mejor que la “inversión para la gestión básica”, sigue teniendo limitaciones o aspectos que deben fortalecerse, lo que indica que hay margen para aumentar el rendimiento de las actividades.",
+      "paragraph-2": "El resultado, descargable en formato PDF, ofrece un desglose de las actividades e ítems que caracterizan la situación de la gestión de los ejes seleccionados en los niveles básico o bueno. Esta lista de ítems es sólo una referencia y puede variar según la realidad de cada Tierra Indígena, es decir, es una sugerencia de las características de los niveles de situación de gestión."
+    },
+    "thematic-axes": {
+      "paragraph-1": "Los ejes temáticos fueron definidos a partir de los principales temas presentes en los Planes de Gestión Territorial y Ambiental (PGTA) de las Tierras Indígenas. Estos son ocho (8) ejes temáticos:",
+      "axe-1": "Gobernanza: Estructuras y proceso de las asociaciones que orientan la toma de decisiones y la gestión de las Tierras Indígenas.",
+      "axe-2": "Supervisión y Protección: Estrategias e infraestructuras de protección, defensa y mitigación de los impactos existentes en las Tierras Indígenas.",
+      "axe-3": "Fortalecimiento Cultural: Acciones encaminadas a la resistencia y fortalecimiento cultural de los Pueblos Indígenas.",
+      "axe-4": "Generación de Ingresos: Estrategias e infraestructuras para promover alternativas económicas que valoricen y fortalezcan la realidad socioambiental de las Tierras Indígenas.",
+      "axe-5": "Soberanía Alimentaria: Acciones para garantizar una alimentación sana, reforzar la agroecología, la cocina tradicional y la pequeña agricultura.",
+      "axe-6": "Infraestructuras complementarias (energía, comunicaciones y transportes): Inversiones complementarias en infraestructuras y acciones de comunicaciones, energía y transportes.",
+      "axe-7": "Salud y Saneamiento (complementario): Acciones complementarias a la asistencia habitual del Gobierno en materia de salud y saneamiento.",
+      "axe-8": "Educación (prácticas complementarias): Mejorar la gestión, los aspectos curriculares y didácticos de las escuelas indígenas y otras actividades de formación relacionadas con la educación."
+    },
+    "inflation": "Los valores deben ajustarse en función de la inflación. Calcule la inflación acumulada desde enero de 2023. Para ello, tome como base el IPCA (IBGE), seleccionando el periodo comprendido entre enero de 2023 hasta la fecha del cálculo cuando se realiza para hacer la estimación."
+  },
+  "indigenous-land-groups": {
+    "value-1": "Simulación",
+    "value-2": "Tierras indígenas con datos recogidos",
+    "value-3": "Tierras indígenas con datos extrapolados"
+  },
+  "headquarters-list": {
+    "value-0": "Ciudad",
+    "value-1": "Aldea"
+  },
+  "degree-of-threat-list": {
+    "value-1": "Bajo",
+    "value-2": "Medio",
+    "value-3": "Alto",
+    "value-4": "Muy alto"
+  },
+  "complexity-of-access-list": {
+    "value-1": "Fácil",
+    "value-2": "Medio",
+    "value-3": "Difícil"
+  },
+  "current-situation-list": {
+    "value-0": "Sin inversión",
+    "value-1": "Situación evaluada en 2022",
+    "value-5": "Nivel de inversión deficiente",
+    "value-10": "Nivel de inversión básico",
+    "value-20": "Buen nivel de inversión"
+  },
+  "current-situation-comparative-list": {
+    "value-0": "Sin inversión",
+    "value-1": "Situación evaluada en 2022",
+    "value-5": "Nivel de inversión deficiente",
+    "value-10": "Nivel de inversión básico",
+    "value-20": "Buen nivel de inversión"
+  },
+  "desired-situation-list": {
+    "value-10": "Nivel de inversión básico",
+    "value-20": "Buen nivel de inversión"
+  },
+  "type-of-cost-list": {
+    "value-1": "Recurrente (anual)",
+    "value-2": "No recurrente (ocasional)"
+  },
+  "thematic-axes-list": {
+    "value-1": "Gobernanza",
+    "value-2": "Supervisión y Protección",
+    "value-3": "Fortalecimiento Cultural",
+    "value-4": "Generación de Ingresos",
+    "value-5": "Soberanía Alimentaria",
+    "value-6": "Infraestructuras complementarias (energía, comunicaciones y transportes)",
+    "value-7": "Salud y Saneamiento (complementario) ",
+    "value-8": "Educación (prácticas complementarias)"
   }
 }

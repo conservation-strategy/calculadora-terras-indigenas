@@ -1,6 +1,8 @@
 <section class="section-container" id="header">
     <div class="container">
-        <h1 class="section-title text-center">VERSÃO COMPARATIVA</h1>
+        <h1 class="section-title text-center">
+            {{'comparative-version.title' | translate}}
+        </h1>
     </div>
 </section>
 
@@ -18,15 +20,10 @@
             </div>
             <div class="col-lg-6">
                 <p>
-                    Versão de comparação entre terras indígenas, a Versão Comparativa calcula o custo total de gestão
-                    dos eixos temáticos selecionados em uma ou mais Terras Indígenas. O usuário deve definir a situação
-                    atual de gestão da(s) terra(s), bem como a situação almejada (investimento para gestão básica ou
-                    investimento para gestão boa).
+                    {{'comparative-version.section-info.paragraph-1' | translate}}
                 </p>
                 <p>
-                    Essa versão é indicada para quem deseja comparar os resultados entre terras e/ou eixos e também para
-                    quem atua em mais de uma terra indígena e pretende ter informações gerais de custos de gestão de
-                    eixos selecionados.
+                    {{'comparative-version.section-info.paragraph-2' | translate}}
                 </p>
             </div>
         </div>
@@ -37,11 +34,16 @@
     <div class="container">
         <form [formGroup]="calculadoraForm" class="calculadora-form">
             <div class="row">
+                <!-- indigenous-land -->
                 <div class="col-md-4 mb-3">
                     <div class="form-group">
-                        <label class="form-label">Selecione a terra indígena</label>
+                        <label class="form-label">
+                            {{'form.indigenous-land.placeholder' | translate}}
+                        </label>
                         <div *ngFor="let grupo of grupoTerrasIndigenas">
-                            <label>{{grupo.nomeGrupo}}</label>
+                            <label>
+                                {{'indigenous-land-groups.value-' + grupo.id | translate}}
+                            </label>
                             <div class="form-check form-check-terra-indigena"
                                 *ngFor="let terraIndigena of grupo.terrasIndigenas">
                                 <input class="form-check-input" type="checkbox"
@@ -54,101 +56,122 @@
                         </div>
                         <small *ngIf="calculadoraFormEnviado&&terrasIndigenasSelecionadas.length==0"
                             class="text-danger">
-                            Campo Obrigatório.
+                            {{'form.indigenous-land.validation' | translate}}
                         </small>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
+                    <!-- thematic-axes -->
                     <div class="form-group mt-3">
                         <label class="form-label d-flex justify-content-between">
-                            <span>Eixos temáticos</span>
+                            <span>
+                                {{'form.thematic-axes.name' | translate}}
+                            </span>
                             <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                ngbTooltip="Eixos temáticos  definidos a partir dos principais temas presentes dos PGTAs"
-                                (click)="abrirModalFormDetalhes('Eixos temáticos','')">
+                                ngbTooltip="{{'form.thematic-axes.description' | translate}}"
+                                (click)="abrirModalFormDetalhes('thematic-axes')">
                             </fa-icon>
                         </label>
                         <div class="form-check form-check-terra-indigena" *ngFor="let eixo of eixos">
                             <input class="form-check-input" type="checkbox" (change)="selecionarEixo($event,eixo)"
-                                id="{{'flexCheck' + eixo.nome}}">
-                            <label class="form-check-label" for="{{'flexCheck' + eixo.nome}}">
-                                {{eixo.nome}}
+                                id="{{'flexCheck' + eixo.id}}">
+                            <label class="form-check-label" for="{{'flexCheck' + eixo.id}}">
+                                {{'thematic-axes-list.value-' + eixo.id| translate}}
                             </label>
                         </div>
                         <small *ngIf="calculadoraFormEnviado&&eixosSelecionados.length==0" class="text-danger">
-                            Campo Obrigatório.
+                            {{'form.thematic-axes.validation' | translate}}
                         </small>
                     </div>
-                    <!-- TIPO CUSTO -->
+                    <!-- type-of-cost -->
                     <div class="form-group mt-3">
                         <label class="form-label">
-                            <span>Tipo de custo</span>
+                            <span>
+                                {{'form.type-of-cost.name' | translate}}
+                            </span>
                             <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                ngbTooltip="Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente."
-                                (click)="abrirModalFormDetalhes('Tipo de custo', 'Custos correntes são despesas anuais e custos não recorrentes se referem a despesas que não se repetem anualmente.')"></fa-icon>
+                                ngbTooltip="{{'form.type-of-cost.description' | translate}}"
+                                (click)="abrirModalFormDetalhes('type-of-cost')"></fa-icon>
                         </label>
                         <select class="form-select form-select-sm" required
                             [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid}"
                             formControlName="tipoCusto">
-                            <option value="1">Recorrente (anual)</option>
-                            <option value="2">Não recorrentes (eventual)</option>
+                            <option value="1">
+                                {{'type-of-cost-list.value-1' | translate}}
+                            </option>
+                            <option value="2">
+                                {{'type-of-cost-list.value-2' | translate}}
+                            </option>
                         </select>
                         <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.tipoCusto.invalid"
                             class="text-danger">
-                            Campo Obrigatório.
+                            {{'form.type-of-cost.validation' | translate}}
                         </small>
                     </div>
-                    <!-- Situação atual de Gestão da Terra -->
+                    <!-- current-situation-comparative -->
                     <div class="form-group mt-3">
                         <label class="form-label">
-                            <span>Situação atual de Gestão da Terra</span>
+                            <span>
+                                {{'form.current-situation-comparative.name' | translate}}
+                            </span>
                             <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                ngbTooltip="Situação atual de Gestão da Terra"
-                                (click)="abrirModalFormDetalhes('Situação atual de Gestão da Terra', '')"></fa-icon>
+                                ngbTooltip="{{'form.current-situation-comparative.description' | translate}}"
+                                (click)="abrirModalFormDetalhes('current-situation-comparative')"></fa-icon>
                         </label>
                         <select class="form-select form-select-sm" required
                             [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid}"
                             formControlName="nivelImplementacaoAtual">
-                            <option [value]="null" disabled selected>Situação atual de Gestão da Terra</option>
+                            <option [value]="null" disabled selected>
+                                {{'form.current-situation-comparative.placeholder' | translate}}
+                            </option>
                             <option *ngFor="let item of listaNivelImplementacaoAtual" [value]="item.value">
-                                {{item.label}}</option>
+                                {{'current-situation-comparative-list.value-'+ item.value| translate}}
+                            </option>
                         </select>
                         <small *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAtual.invalid"
                             class="text-danger">
-                            Campo Obrigatório.
+                            {{'form.current-situation-comparative.validation' | translate}}
                         </small>
                     </div>
-                    <!-- Situação desejada de Gestão da Terra -->
+                    <!-- desired-situation -->
                     <div class="form-group mt-3">
                         <label class="form-label d-flex justify-content-between">
-                            <span>Situação desejada de Gestão da Terra</span>
+                            <span>
+                                {{'form.desired-situation.name' | translate}}
+                            </span>
                             <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                ngbTooltip="Situação desejada de Gestão da Terra"
-                                (click)="abrirModalFormDetalhes('Situação desejada de Gestão da Terra', '')">
+                                ngbTooltip="{{'form.desired-situation.description' | translate}}"
+                                (click)="abrirModalFormDetalhes('desired-situation')">
                             </fa-icon>
                         </label>
                         <select class="form-select form-select-sm" required
                             [ngClass]="{ 'is-invalid': calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid}"
                             formControlName="nivelImplementacaoAlmejado">
-                            <option value="null" disabled selected>Situação desejada de Gestão da Terra</option>
+                            <option value="null" disabled selected>
+                                {{'form.desired-situation.placeholder' | translate}}
+                            </option>
                             <option *ngFor="let item of listaNivelImplementacaoAlmejado" [ngValue]="item.value">
-                                {{item.label}}
+                                {{'desired-situation-list.value-'+ item.value| translate}}
                         </select>
                         <small
                             *ngIf="calculadoraFormEnviado&&calculadoraForm.controls.nivelImplementacaoAlmejado.invalid"
                             class="text-danger">
-                            Campo Obrigatório.
+                            {{'form.desired-situation.validation'}}
                         </small>
                     </div>
-                    <!-- inflação -->
+                    <!-- inflation -->
                     <div class="form-group mt-3">
-                        <label class="form-label d-flex justify-content-between">
-                            <span>Inflação acumulada desde 2023 (%)</span>
+                        <label class="form-label">
+                            <span>
+                                {{'form.inflation.name' | translate}}
+                            </span>
                             <fa-icon [icon]="faQuestionCircle" class="cursor-pointer"
-                                ngbTooltip="Os valores devem ser corrigidos pela inflação, desde 01/2023 a partir do IPCA (IBGE)."
-                                (click)="abrirModalFormDetalhes('Inflação acumulada desde 2023', '')"></fa-icon>
+                                ngbTooltip="{{'form.inflation.description' | translate}}"
+                                (click)="abrirModalFormDetalhes('inflation')"></fa-icon>
                         </label>
-                        <input type="text" class="form-control form-control-sm" placeholder="(Opcional)"
-                            formControlName="inflacao" numbersOnly>
+                        <input type="text" class="form-control"
+                            placeholder="{{'form.inflation.placeholder' | translate}}" formControlName="inflacao"
+                            numbersOnly>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -156,15 +179,16 @@
                         <img src="./assets/images/mapas/terra_indigena_geral.png" style="max-width: 100%;" alt="">
                         <div class="align-self-center">
                             <a href="/pgtas" class="link_pgta" target="_blank">
-                                Acesse aqui os PGTAs
+                                {{'form.pgtas' | translate}}
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="d-flex mt-3">
-                <button class="btn btn-lg btn-secondary rounded-pill px-5 w-25"
-                    (click)="botaoCalcular()">Calcular</button>
+                <button class="btn btn-lg btn-secondary rounded-pill px-5 w-25" (click)="botaoCalcular()">
+                    {{'form.button-calculate' | translate}}
+                </button>
                 <app-loading *ngIf="mostrarCarregando"></app-loading>
             </div>
         </form>
