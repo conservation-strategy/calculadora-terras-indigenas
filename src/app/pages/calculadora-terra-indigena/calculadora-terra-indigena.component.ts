@@ -456,7 +456,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       this.chartOptions.data[0].dataPoints = [];
       this.resultado.eixos.forEach((eixo: any) => {
         this.chartOptions.data[0].dataPoints.push({
-          name: eixo.nome,
+          name: this.translateService.instant(
+            'thematic-axis.axis-' + eixo.id + '.name'
+          ),
           y: parseFloat(((eixo.valor / valorTotal) * 100).toFixed(1)),
         });
       });
@@ -731,6 +733,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
     return [
       {
+        name: 'land-size',
         variavel: 'Tamanho',
         valor: Number(tamanho).toLocaleString('pt-BR'),
         valorOriginal: String(
@@ -742,6 +745,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         alterada: tamanho != this.terraIndigenaSelecionada?.tamanho,
       },
       {
+        name: 'peoples',
         variavel: 'Número de povos',
         valor: String(grauDiversidade),
         valorOriginal: String(
@@ -756,6 +760,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           grauDiversidade != this.terraIndigenaSelecionada?.grauDiversidade,
       },
       {
+        name: 'villages',
         variavel: 'Número de aldeias',
         valor: String(aldeias),
         valorOriginal: String(
@@ -767,6 +772,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         alterada: aldeias != this.terraIndigenaSelecionada?.aldeias,
       },
       {
+        name: 'population',
         variavel: 'População',
         valor: Number(populacao).toLocaleString('pt-BR'),
         valorOriginal: String(
@@ -778,6 +784,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         alterada: populacao != this.terraIndigenaSelecionada?.populacao,
       },
       {
+        name: 'degree-of-threat',
         variavel: 'Grau de ameaça',
         valor: String(
           this.listaGrauAmeaca.find((x) => x.value === Number(grauAmeaca))
@@ -789,6 +796,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         alterada: grauAmeaca != this.terraIndigenaSelecionada?.grauAmeaca,
       },
       {
+        name: 'complexity-of-access',
         variavel: 'Complexidade de acesso',
         valor: String(
           this.listaComplexidadeAcesso.find(
@@ -805,6 +813,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           this.terraIndigenaSelecionada?.complexidadeAcesso,
       },
       {
+        name: 'headquarters',
         variavel: 'Localização da sede da associação',
         valor: String(
           this.listaLocalSede.find((x) => x.value === Number(localSede))?.label
@@ -857,11 +866,13 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     }
 
     return {
+      id: eixo.id,
       nome: eixo.nome,
       descricao: eixo.descricao,
       valor: eixo.valor,
       atividades: atividades.map((atividade: Atividade) => {
         return {
+          id: atividade.id,
           nome: atividade.nome,
           descricao: atividade.descricao,
           valor:
@@ -901,6 +912,7 @@ type GrupoTerraIndigena = {
 };
 
 type Variavel = {
+  name: string;
   variavel: string;
   valor: string;
   valorOriginal: string;

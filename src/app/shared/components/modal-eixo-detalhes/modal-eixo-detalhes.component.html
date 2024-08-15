@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h4 class="modal-title">{{eixo.nome}} - Atividades</h4>
+    <h4 class="modal-title">{{'thematic-axis.axis-' + eixo.id + '.name' | translate}}</h4>
 </div>
 <div class="modal-body">
     <div ngbAccordion>
@@ -7,7 +7,9 @@
             <h2 ngbAccordionHeader>
                 <button ngbAccordionButton>
                     <div>
-                        <b>{{atividade.nome}}</b>
+                        <b>
+                            {{'activities.activity-' + atividade.id + '.name' | translate}}
+                        </b>
                         <br>
                         <small class="mt-1">{{atividade.valor}}</small>
                     </div>
@@ -15,7 +17,9 @@
             </h2>
             <div ngbAccordionCollapse>
                 <div ngbAccordionBody>
-                    <div>{{atividade.descricao}}</div>
+                    <div>
+                        {{'activities.activity-' + atividade.id + '.description' | translate}}
+                    </div>
                     <div *ngIf="false"></div><!-- HACK TO NOT DUPLICATE ITEMS -->
                     <ul>
                         <li *ngIf="atividade.metricaBasico.length > 0">

@@ -324,12 +324,16 @@
 <section class="section-container bg-gray" id="resultados" *ngIf="mostrarResultado&&resultado">
     <div class="container">
         <div class="d-flex justify-content-center">
-            <h1>Resultados</h1>
+            <h1>
+                {{'indigenous-land-calculator.section-result.title' | translate}}
+            </h1>
         </div>
 
         <div class="row justify-content-center">
             <div class="col col-lg-4 text-center text-md-end">
-                <span class="resultado-tipo-custo">Investimento para gestão básica</span>
+                <span class="resultado-tipo-custo">
+                    {{'indigenous-land-calculator.section-result.basic-management' | translate}}
+                </span>
             </div>
             <div class="col-md-auto">
                 <div class="form-check form-switch d-flex justify-content-center">
@@ -340,15 +344,20 @@
                 </div>
             </div>
             <div class="col col-lg-4 text-center text-md-start">
-                <span class="resultado-tipo-custo">Investimento para gestão boa</span>
+                <span class="resultado-tipo-custo">
+                    {{'indigenous-land-calculator.section-result.good-management' | translate}}
+                </span>
             </div>
         </div>
         <h2>
-            {{tipoResultadoBom ? 'Investimento para gestão boa' : 'Investimento para gestão básica'}}
+            {{(tipoResultadoBom ? 'indigenous-land-calculator.section-result.good-management' :
+            'indigenous-land-calculator.section-result.basic-management') | translate}}
         </h2>
         <div class="row">
             <div class="col-lg-3 mb-3">
-                <h3>Custo Total</h3>
+                <h3>
+                    {{'indigenous-land-calculator.section-result.total-cost' | translate}}
+                </h3>
                 <div class="mt-3">
                     <h4>
                         <span *ngIf="resultado.valorTotal >= 1000">
@@ -356,11 +365,15 @@
                         </span>
                         <span *ngIf="resultado.valorTotal < 1000"> &lt; R$1.000 </span>
 
-                        <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
+                        <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">
+                            {{'indigenous-land-calculator.section-result.per-year' | translate}}
+                        </small>
                         <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
                     </h4>
                 </div>
-                <button class="btn btn-lg btn-secondary px-5 rounded-pill" (click)="gerarPdf()">Baixar PDF</button>
+                <button class="btn btn-lg btn-secondary px-5 rounded-pill" (click)="gerarPdf()">
+                    {{'indigenous-land-calculator.section-result.download-pdf' | translate}}
+                </button>
             </div>
             <div class="col-lg-6 mb-3">
                 <canvasjs-chart [options]="chartOptions" id="chart" [styles]="{width: '100%', height:'300px'}"
@@ -368,9 +381,10 @@
             </div>
             <div class="col-lg-3 mb-3">
                 <div class="box-result">
-                    <p><b>Território: </b>{{resultado.terraIndigena}}</p>
+                    <p><b>{{'indigenous-land-calculator.section-result.territory' | translate}}:
+                        </b>{{resultado.terraIndigena}}</p>
                     <p *ngFor="let x of resultado.variaveisUtilizadas">
-                        <b>{{x.variavel}}: </b>{{x.valor}}
+                        <b>{{'indigenous-land-calculator.section-result.' + x.name| translate}}: </b>{{x.valor}}
                     </p>
                 </div>
             </div>
@@ -381,7 +395,9 @@
 <section class="section-container bg-white" id="custos_por_eixos" *ngIf="mostrarResultado&&resultado">
     <div class="container">
         <div class="d-flex justify-content-center">
-            <h1>Custos Por Eixos</h1>
+            <h1>
+                {{'indigenous-land-calculator.costs-by-axis.title' | translate}}
+            </h1>
         </div>
 
         <div class="row">
@@ -390,7 +406,11 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <img src="assets/images/eixos/{{eixo.imagem}}" alt="" style="width: 40px;">
-                            <h6 class="ms-2 mb-0"><strong>{{eixo.nome}}</strong></h6>
+                            <h6 class="ms-2 mb-0">
+                                <strong>
+                                    {{'thematic-axis.axis-' + eixo.id + '.name' | translate}}
+                                </strong>
+                            </h6>
                         </div>
                     </div>
                     <div class="card-body">
@@ -403,16 +423,18 @@
                                 <span> &lt; R$1.000 </span>
                             </ng-template>
 
-                            <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">/ano</small>
+                            <small *ngIf="resultado.tipoCusto == enumTipoCusto.Recorrente">
+                                {{'indigenous-land-calculator.costs-by-axis.axis-per-year' | translate}}
+                            </small>
                             <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
                         </h5>
                         <p>
-                            {{eixo.descricao}}
+                            {{'thematic-axis.axis-' + eixo.id + '.description' | translate}}
                         </p>
                     </div>
                     <div class="card-footer d-flex justify-content-end">
                         <button class="btn btn-sm btn-secondary" (click)="modalEixoDetalhes(eixo)">
-                            Saiba mais
+                            {{'indigenous-land-calculator.costs-by-axis.axis-learn-more' | translate}}
                         </button>
                     </div>
                 </div>
@@ -422,7 +444,7 @@
         <div class="row mt-5">
             <div class="col d-flex justify-content-center">
                 <a class="btn btn-outline-secondary" routerLink="/calculadora_comparativa" target="_blank">
-                    Compare mais de uma terra
+                    {{'indigenous-land-calculator.costs-by-axis.compare-button' | translate}}
                 </a>
             </div>
         </div>

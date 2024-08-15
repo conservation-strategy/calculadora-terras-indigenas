@@ -145,6 +145,28 @@
       "paragraph-1": "Calcule o custo de gestão de todos os eixos temáticos de uma Terra Indígena, sendo possível alterar os valores de suas características (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da associação), e também alterar e/ou definir a situação atual de gestão da terra.",
       "paragraph-2": "Nos resultados, o usuário poderá selecionar o acesso ao valor do 'investimento para gestão básica' e 'investimento para gestão boa'.",
       "paragraph-3": "Clique nos pontos de interrogação das caixas de valores para ter explicações detalhadas sobre o que elas querem dizer."
+    },
+    "section-result": {
+      "title": "Resultados",
+      "basic-management": "Investimento para gestão básica",
+      "good-management": "Investimento para gestão boa",
+      "total-cost": "Custo Total",
+      "per-year": "/ano",
+      "download-pdf": "Baixar PDF",
+      "territory": "Território",
+      "land-size": "Tamanho",
+      "peoples": "Número de povos",
+      "villages": "Número de aldeias",
+      "population": "População",
+      "degree-of-threat": "Grau de ameaça",
+      "complexity-of-access": "Complexidade de acesso",
+      "headquarters": "Localização da sede da associação"
+    },
+    "costs-by-axis": {
+      "title": "Custos Por Eixos",
+      "compare-button": "Compare mais de uma terra",
+      "axis-per-year": "/ano",
+      "axis-learn-more": "Saiba mais"
     }
   },
   "comparative-version": {
@@ -430,14 +452,158 @@
     "value-1": "Recorrente (anual)",
     "value-2": "Não recorrente (eventual)"
   },
-  "thematic-axes-list": {
-    "value-1": "Governança",
-    "value-2": "Fiscalização e Proteção",
-    "value-3": "Fortalecimento Cultural",
-    "value-4": "Geração de renda",
-    "value-5": "Soberania Alimentar",
-    "value-6": "Infraestruturas complementares",
-    "value-7": "Saúde e saneamento complementar",
-    "value-8": "Educação complementar"
+  "thematic-axis": {
+    "axis-1": {
+      "name": "Governança",
+      "description": "Estruturas e processos das associações que orientam a tomada de decisões e a gestão das Terras Indígenas"
+    },
+    "axis-2": {
+      "name": "Fiscalização e Proteção",
+      "description": "Estratégias e infraestruturas de proteção, defesa e mitigação dos impactos existentes nas Terras Indígenas"
+    },
+    "axis-3": {
+      "name": "Fortalecimento Cultural",
+      "description": "Ações voltadas à resistência e fortalecimento cultural dos Povos Indígenas"
+    },
+    "axis-4": {
+      "name": "Geração de renda",
+      "description": "Estratégias e infraestruturas para promover alternativas econômicas que valorizem e fortaleçam a realidade socioambiental das Terras Indígenas"
+    },
+    "axis-5": {
+      "name": "Soberania Alimentar",
+      "description": "Ações para a garantia da alimentação saudável, fortalecimento da agroecologia, culinária tradicional e pequenas criações"
+    },
+    "axis-6": {
+      "name": "Infraestruturas complementares",
+      "description": "Investimentos complementares em infraestrutura e ações de comunicação, energia e transporte"
+    },
+    "axis-7": {
+      "name": "Saúde e saneamento complementar",
+      "description": "Ações complementares à assistência usual do governo sobre saúde e saneamento"
+    },
+    "axis-8": {
+      "name": "Educação complementar",
+      "description": "Aprimoramento da gestão, aspectos curriculares e didáticos das escolas indígenas e outras atividades de formação relacionadas à educação"
+    }
+  },
+  "activities": {
+    "basic-metric": "Básico",
+    "good-metric": "Bom",
+    "activity-1": {
+      "name": "Infraestrutura das associações",
+      "description": "Recursos para a sede da associação (espaço físico, equipamentos, computadores, materiais de escritório e manutenções); meio de transporte para a realização das atividades (carros, caminhões, embarcações e manutenções); meio de comunicação da sede (telefone, internet ou rádio e manutenções)"
+    },
+    "activity-2": {
+      "name": "Funcionamento das associações",
+      "description": "Recursos para desenvolver as atividades e o funcionamento da Associação (assembleia, aluguel, materiais, inclusive de comunicação, assessorias jurídica/tributária/fiscal/técnica/comunicação, despesas cartoriais, correio, despesa com reuniões, manutenção de site)"
+    },
+    "activity-3": {
+      "name": "Treinamento e formação contínua",
+      "description": "Cursos, capacitações, atividades e elaboração de materiais didáticos, visando o apoio às associações sobre gestão administrativa, financeira e de comunicação"
+    },
+    "activity-4": {
+      "name": "Articulação interna",
+      "description": "Instâncias de governanças e controle social que reúne o coletivo de povos, lideranças e comunidades (reuniões e visitas nas aldeias), visando a ampla discussão sobre as ações relacionadas à governança e ao PGTA"
+    },
+    "activity-5": {
+      "name": "Articulação externa",
+      "description": "Mobilizações regionais, nacionais e internacionais que contemplem as pautas amplas voltadas aos direitos dos povos indígenas (saúde, educação, território)"
+    },
+    "activity-6": {
+      "name": "Instrumentos de governança",
+      "description": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)"
+    },
+    "activity-7": {
+      "name": "Corpo técnico/Governança",
+      "description": "Capacidade dos quadros técnicos mínimos necessários para a gestão da Associação e desenvolvimento dos projetos"
+    },
+    "activity-8": {
+      "name": "Elaboração e atualização de diagnóstico dos vetores de ameaça e plano de fiscalização",
+      "description": "Construção dos diagnósticos e reuniões para a atualização dos mesmos (discussão de ameaças e estratégias)"
+    },
+    "activity-9": {
+      "name": "Fiscalização e monitoramento territorial (atividades ilegais - desmatamento, garimpo, madeira, estradas)",
+      "description": "Expedições de vigilância visando proteger e fiscalizar o território contra atividades ilegais na TI e no seu entorno e manutenção dos limites, incluindo o uso de ferramentas de monitoramento remoto (SIG)"
+    },
+    "activity-10": {
+      "name": "Monitoramento e manejo ambiental (qualidade ambiental)",
+      "description": "Construção dos diagnósticos, ações de proteção, restauração, conservação, monitoramento de impactos e manejo dos recursos naturais (como qualidade da água, fauna, flora, controle do fogo e uso de agrotóxicos)"
+    },
+    "activity-11": {
+      "name": "Capacitações e elaboração de materiais relacionados à fiscalização territorial e proteção ambiental",
+      "description": "Eventos, cursos e capacitações (ex.: Agentes Ambientais Indígenas) e elaboração de materiais didáticos voltados à fiscalização, proteção territorial, monitoramento e manejo ambiental"
+    },
+    "activity-12": {
+      "name": "Equipamentos",
+      "description": "Aquisição/manutenção/reposição de equipamentos básicos indispensáveis para as atividades de proteção e fiscalização da TI e seu entorno (veículos, drone, notebook, GPS), infraestrutura de vigilância e equipamentos para o monitoramento e manejo ambiental"
+    },
+    "activity-13": {
+      "name": "Corpo técnico/Fiscalização e Proteção",
+      "description": "Equipe necessária para a realização das atividades de fiscalização e proteção ambiental"
+    },
+    "activity-14": {
+      "name": "Apoio à atividades culturais tradicionais",
+      "description": "Iniciativas de fortalecimento e/ou resgate do patrimônio cultural e manifestações culturais tradicionais (eventos, registros audiovisuais, livros, equipamentos)"
+    },
+    "activity-15": {
+      "name": "Apoio a atividades interculturais (pesquisas, intercâmbios e/ou eventos)",
+      "description": "Ações de pesquisas interculturais e intercâmbios, visando o fortalecimento cultural"
+    },
+    "activity-16": {
+      "name": "Corpo técnico/Fortalecimento Cultural",
+      "description": "Equipe necessárias para a realização das atividades voltadas à cultura"
+    },
+    "activity-17": {
+      "name": "Apoio a alternativas econômicas sustentáveis",
+      "description": "Mapeamento, adequação, ampliação e/ou prospecção de recursos das TIs que tenham interface com o mercado, desenvolvimento do produto, cadeia de valor e seus elos, como beneficiamento e comercialização, incluindo aquisição de equipamentos, como caminhão e construção de UBAs"
+    },
+    "activity-18": {
+      "name": "Corpo técnico/Geração de renda",
+      "description": "Equipe necessária para a realização das atividades de geração de renda e alternativas econômicas"
+    },
+    "activity-19": {
+      "name": "Iniciativas relacionadas à soberania alimentar",
+      "description": "Diversidade de iniciativas que visam a soberania e segurança alimentar das comunidades por meio do fortalecimento da agrobiodiversidade, agroecologia, culinária tradicional e pequenas criações"
+    },
+    "activity-20": {
+      "name": "Capacitações relacionadas a soberania alimentar",
+      "description": "Atividades, eventos, cursos, capacitações e elaboração de materiais didáticos relacionados à soberania alimentar"
+    },
+    "activity-21": {
+      "name": "Corpo técnico/Soberania Alimentar",
+      "description": "Equipe necessária para realização das ações de soberania alimentar"
+    },
+    "activity-22": {
+      "name": "Acesso a energia",
+      "description": "Projetos e manutenção dos sistemas de energia adaptados à região com aquisição de equipamentos, implantação e distribuição do sistema (diferentes fontes como eólica, solar, motor a diesel, hídrica)"
+    },
+    "activity-23": {
+      "name": "Acesso à comunicação",
+      "description": "Implantação e manutenção dos sistemas de radiofonia, internet, visando a ampliação do acesso à comunicação"
+    },
+    "activity-24": {
+      "name": "Acesso a transporte",
+      "description": "Aquisição e manutenção de meios de transporte adequados à região, limpeza de igarapés e estradas"
+    },
+    "activity-25": {
+      "name": "Corpo técnico/Infraestruturas complementares",
+      "description": "Equipe necessária para apoiar na manutenção dos equipamentos relacionados à energia, comunicação e transporte"
+    },
+    "activity-26": {
+      "name": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
+      "description": "Atividades, eventos e capacitações complementares de saúde e relacionados ao conhecimento e medicina tradicional"
+    },
+    "activity-27": {
+      "name": "Iniciativas complementares à assistência usual do governo relacionadas a saneamento",
+      "description": "Atividades, eventos e capacitações complementares de saneamento (poço semiartesiano, coleta e tratamento de lixo, banheiros ecológicos)"
+    },
+    "activity-28": {
+      "name": "Iniciativas complementares à educação usual implementada pelo governo",
+      "description": "Acompanhamento das atividades e eventos relacionados à educação e realização de iniciativas complementares à educação usual do governo"
+    },
+    "activity-29": {
+      "name": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
+      "description": "Processos formativos relacionados à educação para professores indígenas e  elaboração e publicação de materiais didáticos complementares relacionados à educação"
+    }
   }
 }

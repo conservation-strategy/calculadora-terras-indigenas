@@ -6,6 +6,7 @@
     "imagem": "governanca.png",
     "atividades": [
       {
+        "id": 1,
         "posicao": 0,
         "nome": "Infraestrutura das associações",
         "descricao": "Recursos para a sede da associação (espaço físico, equipamentos, computadores, materiais de escritório e manutenções); meio de transporte para a realização das atividades (carros, caminhões, embarcações e manutenções); meio de comunicação da sede (telefone, internet ou rádio e manutenções)",
@@ -35,6 +36,7 @@
         ]
       },
       {
+        "id": 2,
         "posicao": 1,
         "nome": "Funcionamento das associações",
         "descricao": "Recursos para desenvolver as atividades e o funcionamento da Associação (assembleia, aluguel, materiais, inclusive de comunicação, assessorias jurídica/tributária/fiscal/técnica/comunicação, despesas cartoriais, correio, despesa com reuniões, manutenção de site)",
@@ -54,6 +56,7 @@
         ]
       },
       {
+        "id": 3,
         "posicao": 2,
         "nome": "Treinamento e formação contínua",
         "descricao": "Cursos, capacitações, atividades e elaboração de materiais didáticos, visando o apoio às associações sobre gestão administrativa, financeira e de comunicação",
@@ -83,6 +86,7 @@
         ]
       },
       {
+        "id": 4,
         "posicao": 3,
         "nome": "Articulação interna",
         "descricao": "Instâncias de governanças e controle social que reúne o coletivo de povos, lideranças e comunidades (reuniões e visitas nas aldeias), visando a ampla discussão sobre as ações relacionadas à governança e ao PGTA",
@@ -102,6 +106,7 @@
         ]
       },
       {
+        "id": 5,
         "posicao": 4,
         "nome": "Articulação externa",
         "descricao": "Mobilizações regionais, nacionais e internacionais que contemplem as pautas amplas voltadas aos direitos dos povos indígenas (saúde, educação, território)",
@@ -121,6 +126,7 @@
         ]
       },
       {
+        "id": 6,
         "posicao": 5,
         "nome": "Instrumentos de governança",
         "descricao": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)",
@@ -140,6 +146,7 @@
         ]
       },
       {
+        "id": 7,
         "posicao": 6,
         "nome": "Corpo técnico/Governança",
         "descricao": "Capacidade dos quadros técnicos mínimos necessários para a gestão da Associação e desenvolvimento dos projetos",
@@ -167,6 +174,7 @@
     "imagem": "fiscalização_e_protecao.png",
     "atividades": [
       {
+        "id": 8,
         "posicao": 7,
         "nome": "Elaboração e atualização de diagnóstico dos vetores de ameaça e plano de fiscalização",
         "descricao": "Construção dos diagnósticos e reuniões para a atualização dos mesmos (discussão de ameaças e estratégias)",
@@ -196,6 +204,7 @@
         ]
       },
       {
+        "id": 9,
         "posicao": 8,
         "nome": "Fiscalização e monitoramento territorial (atividades ilegais - desmatamento, garimpo, madeira, estradas)",
         "descricao": "Expedições de vigilância visando proteger e fiscalizar o território contra atividades ilegais na TI e no seu entorno e manutenção dos limites, incluindo o uso de ferramentas de monitoramento remoto (SIG)",
@@ -215,6 +224,7 @@
         ]
       },
       {
+        "id": 10,
         "posicao": 9,
         "nome": "Monitoramento e manejo ambiental (qualidade ambiental)",
         "descricao": "Construção dos diagnósticos, ações de proteção, restauração, conservação, monitoramento de impactos e manejo dos recursos naturais (como qualidade da água, fauna, flora, controle do fogo e uso de agrotóxicos)",
@@ -244,6 +254,7 @@
         ]
       },
       {
+        "id": 11,
         "posicao": 10,
         "nome": "Capacitações e elaboração de materiais relacionados à fiscalização territorial e proteção ambiental",
         "descricao": "Eventos, cursos e capacitações (ex.: Agentes Ambientais Indígenas) e elaboração de materiais didáticos voltados à fiscalização, proteção territorial, monitoramento e manejo ambiental",
@@ -273,6 +284,7 @@
         ]
       },
       {
+        "id": 12,
         "posicao": 11,
         "nome": "Equipamentos",
         "descricao": "Aquisição/manutenção/reposição de equipamentos básicos indispensáveis para as atividades de proteção e fiscalização da TI e seu entorno (veículos, drone, notebook, GPS), infraestrutura de vigilância e equipamentos para o monitoramento e manejo ambiental",
@@ -302,6 +314,7 @@
         ]
       },
       {
+        "id": 13,
         "posicao": 12,
         "nome": "Corpo técnico/Fiscalização e Proteção",
         "descricao": "Equipe necessária para a realização das atividades de fiscalização e proteção ambiental",
@@ -329,6 +342,7 @@
     "imagem": "fortalecimento_cultural.png",
     "atividades": [
       {
+        "id": 14,
         "posicao": 13,
         "nome": "Apoio à atividades culturais tradicionais",
         "descricao": "Iniciativas de fortalecimento e/ou resgate do patrimônio cultural e manifestações culturais tradicionais (eventos, registros audiovisuais, livros, equipamentos)",
@@ -358,6 +372,7 @@
         ]
       },
       {
+        "id": 15,
         "posicao": 14,
         "nome": "Apoio a atividades interculturais (pesquisas, intercâmbios e/ou eventos)",
         "descricao": "Ações de pesquisas interculturais e intercâmbios, visando o fortalecimento cultural",
@@ -377,6 +392,7 @@
         ]
       },
       {
+        "id": 16,
         "posicao": 15,
         "nome": "Corpo técnico/Fortalecimento Cultural",
         "descricao": "Equipe necessárias para a realização das atividades voltadas à cultura",
@@ -404,6 +420,7 @@
     "imagem": "geracao_de_renda.png",
     "atividades": [
       {
+        "id": 17,
         "posicao": 16,
         "nome": "Apoio a alternativas econômicas sustentáveis",
         "descricao": "Mapeamento, adequação, ampliação e/ou prospecção de recursos das TIs que tenham interface com o mercado, desenvolvimento do produto, cadeia de valor e seus elos, como beneficiamento e comercialização, incluindo aquisição de equipamentos, como caminhão e construção de UBAs",
@@ -433,6 +450,7 @@
         ]
       },
       {
+        "id": 18,
         "posicao": 17,
         "nome": "Corpo técnico/Geração de renda",
         "descricao": "Equipe necessária para a realização das atividades de geração de renda e alternativas econômicas",
@@ -460,6 +478,7 @@
     "imagem": "soberania_alimentar.png",
     "atividades": [
       {
+        "id": 19,
         "posicao": 18,
         "nome": "Iniciativas relacionadas à soberania alimentar",
         "descricao": "Diversidade de iniciativas que visam a soberania e segurança alimentar das comunidades por meio do fortalecimento da agrobiodiversidade, agroecologia, culinária tradicional e pequenas criações",
@@ -489,6 +508,7 @@
         ]
       },
       {
+        "id": 20,
         "posicao": 19,
         "nome": "Capacitações relacionadas a soberania alimentar",
         "descricao": "Atividades, eventos, cursos, capacitações e elaboração de materiais didáticos relacionados à soberania alimentar",
@@ -518,6 +538,7 @@
         ]
       },
       {
+        "id": 21,
         "posicao": 20,
         "nome": "Corpo técnico/Soberania Alimentar",
         "descricao": "Equipe necessária para realização das ações de soberania alimentar",
@@ -539,6 +560,7 @@
     "imagem": "infraestruturas_complementares.png",
     "atividades": [
       {
+        "id": 22,
         "posicao": 21,
         "nome": "Acesso a energia",
         "descricao": "Projetos e manutenção dos sistemas de energia adaptados à região com aquisição de equipamentos, implantação e distribuição do sistema (diferentes fontes como eólica, solar, motor a diesel, hídrica)",
@@ -568,6 +590,7 @@
         ]
       },
       {
+        "id": 23,
         "posicao": 22,
         "nome": "Acesso à comunicação",
         "descricao": "Implantação e manutenção dos sistemas de radiofonia, internet, visando a ampliação do acesso à comunicação",
@@ -597,6 +620,7 @@
         ]
       },
       {
+        "id": 24,
         "posicao": 23,
         "nome": "Acesso a transporte",
         "descricao": "Aquisição e manutenção de meios de transporte adequados à região, limpeza de igarapés e estradas",
@@ -626,6 +650,7 @@
         ]
       },
       {
+        "id": 25,
         "posicao": 24,
         "nome": "Corpo técnico/Infraestruturas complementares",
         "descricao": "Equipe necessária para apoiar na manutenção dos equipamentos relacionados à energia, comunicação e transporte",
@@ -653,6 +678,7 @@
     "imagem": "saude_e_saneamento_complementar.png",
     "atividades": [
       {
+        "id": 26,
         "posicao": 25,
         "nome": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
         "descricao": "Atividades, eventos e capacitações complementares de saúde e relacionados ao conhecimento e medicina tradicional",
@@ -682,6 +708,7 @@
         ]
       },
       {
+        "id": 27,
         "posicao": 26,
         "nome": "Iniciativas complementares à assistência usual do governo relacionadas a saneamento",
         "descricao": "Atividades, eventos e capacitações complementares de saneamento (poço semiartesiano, coleta e tratamento de lixo, banheiros ecológicos)",
@@ -719,6 +746,7 @@
     "imagem": "educacao_complementar.png",
     "atividades": [
       {
+        "id": 28,
         "posicao": 27,
         "nome": "Iniciativas complementares à educação usual implementada pelo governo",
         "descricao": "Acompanhamento das atividades e eventos relacionados à educação e realização de iniciativas complementares à educação usual do governo",
@@ -738,6 +766,7 @@
         ]
       },
       {
+        "id": 29,
         "posicao": 28,
         "nome": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
         "descricao": "Processos formativos relacionados à educação para professores indígenas e  elaboração e publicação de materiais didáticos complementares relacionados à educação",

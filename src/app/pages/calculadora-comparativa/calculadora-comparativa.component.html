@@ -76,7 +76,7 @@
                             <input class="form-check-input" type="checkbox" (change)="selecionarEixo($event,eixo)"
                                 id="{{'flexCheck' + eixo.id}}">
                             <label class="form-check-label" for="{{'flexCheck' + eixo.id}}">
-                                {{'thematic-axes-list.value-' + eixo.id| translate}}
+                                {{'thematic-axis.axis-' + eixo.id + '.name' | translate}}
                             </label>
                         </div>
                         <small *ngIf="calculadoraFormEnviado&&eixosSelecionados.length==0" class="text-danger">

@@ -145,6 +145,28 @@
       "paragraph-1": "Calculate the cost of managing an Indigenous Land, depending on its characteristics (size, population, village, complexity of access, degree of threat, degree of diversity and location of the association's headquarters), and its current level of management. ",
       "paragraph-2": "Once the user has accessed their results, they can see the cost projection for a “basic” level of management compared to a “good” level of management of the Indigenous Land.",
       "paragraph-3": "Click on the question marks in the value boxes to get detailed explanations of what they mean."
+    },
+    "section-result": {
+      "title": "Results",
+      "basic-management": "Investment for basic management",
+      "good-management": "Investment for good management",
+      "per-year": "/year",
+      "total-cost": "Total cost",
+      "download-pdf": "Download PDF",
+      "territory": "Territory",
+      "land-size": "Size",
+      "peoples": "Number of people",
+      "villages": "Number of villages",
+      "population": "Population",
+      "degree-of-threat": "Degree of threat",
+      "complexity-of-access": "Complexity of access",
+      "headquarters": "Location of the association's headquarters"
+    },
+    "costs-by-axis": {
+      "title": "Costs by axis",
+      "compare-button": "Compare more than one land",
+      "axis-per-year": "/year",
+      "axis-learn-more": "Read more"
     }
   },
   "comparative-version": {
@@ -430,14 +452,158 @@
     "value-1": "Recurring (annual)",
     "value-2": "Non-recurring (occasional)"
   },
-  "thematic-axes-list": {
-    "value-1": "Governance",
-    "value-2": "Monitoring and Protection",
-    "value-3": "Cultural strengthening",
-    "value-4": "Income Generation",
-    "value-5": "Food sovereignty",
-    "value-6": "Complementary Infrastructure",
-    "value-7": "Education (complementary practices)",
-    "value-8": "Health and Sanitation (complementary):"
+  "thematic-axis": {
+    "axis-1": {
+      "name": "Governance",
+      "description": "Structures within the associations that guide decision-making and the management of Indigenous Lands"
+    },
+    "axis-2": {
+      "name": "Monitoring and Protection",
+      "description": "Strategies and infrastructures for protection, defense and mitigation of existing impacts on Indigenous Lands."
+    },
+    "axis-3": {
+      "name": "Cultural strengthening",
+      "description": "Actions aimed at the resistance and cultural strengthening of Indigenous Peoples."
+    },
+    "axis-4": {
+      "name": "Income Generation",
+      "description": "Strategies and infrastructures to promote economic alternatives that value and strengthen the socio-environmental reality of Indigenous Lands."
+    },
+    "axis-5": {
+      "name": "Food sovereignty",
+      "description": "Actions to guarantee healthy food, strengthen agroecology, traditional cuisine and small-scale farming."
+    },
+    "axis-6": {
+      "name": "Complementary Infrastructure",
+      "description": "Additional investments in infrastructure and communication, energy and transportation actions."
+    },
+    "axis-7": {
+      "name": "Health and Sanitation (complementary):",
+      "description": "Additional actions to the usual government assistance on health and sanitation."
+    },
+    "axis-8": {
+      "name": "Education (complementary practices)",
+      "description": "Improving the management, curricular and didactic aspects of Indigenous schools and education"
+    }
+  },
+  "activities": {
+    "basic-metric": "Basic",
+    "good-metric": "Good",
+    "activity-1": {
+      "name": "Association's infrastructure",
+      "description": "Resources for the association's headquarters (physical space, equipment, computers, office supplies and maintenance); means of transportation to carry out activities (cars, trucks, boats and maintenance); means of communication from the headquarters (telephone, internet or radio and maintenance)"
+    },
+    "activity-2": {
+      "name": "Operational support",
+      "description": "Resources to develop the Association's activities and operation (assembly, rent, materials, including communication, legal/tax/technical/communication advice, notary fees, postage, meeting expenses, website maintenance)"
+    },
+    "activity-3": {
+      "name": "Training and Professional Development",
+      "description": "Courses, training, activities and preparation of teaching materials to support associations in administrative, financial and communication management"
+    },
+    "activity-4": {
+      "name": "Internal coordination",
+      "description": "Instances of governance and social coordination to bring leaders and communities together (meetings and visits to the villages), for a broad discussion on the  governance of  the PGTA."
+    },
+    "activity-5": {
+      "name": "External partnerships",
+      "description": "Regional, national and international campaigns for the rights of Indigenous peoples (access to healthcare, education, and territorial autonomy)"
+    },
+    "activity-6": {
+      "name": "Instrumentos de governança",
+      "description": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)"
+    },
+    "activity-7": {
+      "name": "Technical staff/Governance",
+      "description": "Capacity of the minimum technical staff required to manage the Association and develop projects"
+    },
+    "activity-8": {
+      "name": "Developing and updating a diagnosis of threatening factors and an inspection plan for monitoring threat level",
+      "description": "Construction of diagnoses and systems for updating them (discussion of threats and strategies)"
+    },
+    "activity-9": {
+      "name": "Territorial surveillance and monitoring (illegal activities - deforestation, mining, timber, roads)",
+      "description": "Surveillance expeditions to protect and monitor the territory against illegal activities and to maintain the boundaries, including the use of remote monitoring tools (GIS)"
+    },
+    "activity-10": {
+      "name": "Environmental monitoring and management (environmental quality)",
+      "description": "Assessment of needs and implementation of actions for protection, restoration, and conservation, including impact monitoring and management of natural resources (such as water quality, fauna, flora, fire control and pesticide use)."
+    },
+    "activity-11": {
+      "name": "Training and preparation of materials related to territorial surveillance and environmental protection",
+      "description": "Events, courses and training (e.g. Indigenous Environmental Agents) and the development of teaching materials aimed at enforcement, territorial protection, monitoring and environmental management"
+    },
+    "activity-12": {
+      "name": "Equipment",
+      "description": "Acquisition/maintenance/replacement of basic equipment essential for the protection and inspection activities of the Indigenous Lands and their surroundings (vehicles, drone, notebook, GPS), surveillance infrastructure and equipment for environmental monitoring and management"
+    },
+    "activity-13": {
+      "name": "Technical staff/Supervision and Protection",
+      "description": "Team needed to carry out environmental monitoring and protection activities"
+    },
+    "activity-14": {
+      "name": "Support for traditional cultural activities",
+      "description": "Initiatives to strengthen and/or rescue cultural heritage and traditional cultural manifestations (events, audiovisual recordings, books, equipment)"
+    },
+    "activity-15": {
+      "name": "Support for intercultural activities (research, exchanges and/or events)",
+      "description": "Intercultural research and exchanges aimed at cultural strengthening"
+    },
+    "activity-16": {
+      "name": "Technical staff/Cultural strengthening",
+      "description": "Team needed to carry out cultural activities"
+    },
+    "activity-17": {
+      "name": "Support for sustainable economic alternatives",
+      "description": "Mapping, adapting, expanding and/or prospecting for economic resources within Indigenous Lands from product development to marketing, including the acquisition of equipment such as trucks and the construction of Basic Health Care Units (UBAs for the Portuguese acronym)."
+    },
+    "activity-18": {
+      "name": "Technical staff/income generation",
+      "description": "Team needed to carry out income-generating activities and economic alternatives"
+    },
+    "activity-19": {
+      "name": "Initiatives related to food sovereignty",
+      "description": "Diversity of initiatives aimed at community food sovereignty and security by strengthening agro-biodiversity, agro-ecology, traditional cuisine and small farms"
+    },
+    "activity-20": {
+      "name": "Training related to food sovereignty",
+      "description": "Activities, events, courses, training and preparation of teaching materials related to food sovereignty"
+    },
+    "activity-21": {
+      "name": "Technical staff/Food sovereignty",
+      "description": "Team needed to carry out food sovereignty actions"
+    },
+    "activity-22": {
+      "name": "Access to energy",
+      "description": "Design and maintenance of energy systems adapted to the region with the purchase of equipment, implementation and distribution of the system (different sources such as wind, solar, diesel, hydro)"
+    },
+    "activity-23": {
+      "name": "Access to communication",
+      "description": "Implementation and maintenance of radio and internet systems to increase access to communication"
+    },
+    "activity-24": {
+      "name": "Access to transport",
+      "description": "Acquisition and maintenance of means of transportation suitable for the region, cleaning of streams and roads"
+    },
+    "activity-25": {
+      "name": "Technical staff/Additional infrastructure",
+      "description": "Staff needed to support the maintenance of equipment related to energy, communication and transportation"
+    },
+    "activity-26": {
+      "name": "Additional initiatives to the usual government assistance related to health",
+      "description": "Additional health activities, events and training related to traditional knowledge and medicine"
+    },
+    "activity-27": {
+      "name": "Additional Sanitation Initiatives ",
+      "description": "Additional sanitation activities, events and training (semi-artesian well, waste collection and treatment, ecological toilets)"
+    },
+    "activity-28": {
+      "name": "Additional initiatives to the usual education implemented by the government",
+      "description": "Monitoring education-related activities and events and carrying out the government's usual education Additional initiatives"
+    },
+    "activity-29": {
+      "name": "Training processes focused on education and the development of differentiated teaching materials",
+      "description": "Education-related training processes for Indigenous  teachers and the development and publication of Additional teaching materials related to education"
+    }
   }
 }
