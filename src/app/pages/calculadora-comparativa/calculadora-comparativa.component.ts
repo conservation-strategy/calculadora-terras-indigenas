@@ -36,6 +36,7 @@ import {
   UnorderedListType,
 } from 'pdfmake/interfaces';
 import Atividade from '../../core/models/Atividade';
+import Metrica from '../../core/models/Metrica';
 import SelectOption from '../../core/models/SelectOption';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-detalhes/modal-form-detalhes.component';
@@ -253,7 +254,7 @@ export class CalculadoraComparativaComponent implements OnInit {
       this.eixosSelecionados.push(eixo);
     } else {
       this.eixosSelecionados = this.eixosSelecionados.filter(
-        (x) => x.nome != eixo.nome
+        (x) => x.id != eixo.id
       );
     }
   }
@@ -331,17 +332,21 @@ export class CalculadoraComparativaComponent implements OnInit {
         valorTotal,
       });
     });
-
+    const nivelImplementacao = this.translateService.instant(
+      'current-situation-list.value-' + nivelImplementacaoAlmejado
+    );
     this.resultado = {
-      nivelImplementacao: this.listaNivelImplementacaoAlmejado.find(
-        (x) => x.value == nivelImplementacaoAlmejado
-      )!.label,
+      nivelImplementacao,
       tipoCusto: Number(tipoCusto),
       terrasIndigenas: resultadoTerrasIndigenas,
       terrasIndigenasSelecionadas: this.terrasIndigenasSelecionadas.map(
         (x: TerraIndigena) => x.nome
       ),
-      eixosSelecionados: this.eixosSelecionados.map((x: Eixo) => x.nome),
+      eixosSelecionados: this.eixosSelecionados.map((eixo: Eixo) => {
+        return this.translateService.instant(
+          'thematic-axis.axis-' + eixo.id + '.name'
+        );
+      }),
       detalhesEixosSelecionados: this.detalhesEixosSelecionados(
         resultadoTerrasIndigenas
       ),
@@ -396,6 +401,7 @@ export class CalculadoraComparativaComponent implements OnInit {
     );
 
     return {
+      id: eixo.id,
       eixo: eixo.nome,
       valorEixo,
     };
@@ -411,7 +417,7 @@ export class CalculadoraComparativaComponent implements OnInit {
       resultadoTerrasIndigenas.forEach(
         (terraIndigena: ResultadoTerraIndigena) => {
           terraIndigena.resultadoEixos.forEach((x) => {
-            if (x.eixo == eixo.nome) {
+            if (x.id == eixo.id) {
               total += x.valorEixo;
             }
           });
@@ -442,14 +448,14 @@ export class CalculadoraComparativaComponent implements OnInit {
   atualizarGrafico() {
     if (this.resultado) {
       this.chartOptions.data = [];
-      this.resultado.eixosSelecionados.forEach((eixo: string) => {
+      this.resultado.detalhesEixosSelecionados.forEach((eixo: Eixo) => {
         const dataPoints = [] as any;
         this.resultado!.terrasIndigenas.sort(
           (a: ResultadoTerraIndigena, b: ResultadoTerraIndigena) =>
             b.nome.localeCompare(a.nome)
         ).forEach((terraIndigena: any) => {
-          terraIndigena.resultadoEixos.forEach((item: any) => {
-            if (item.eixo == eixo) {
+          terraIndigena.resultadoEixos.forEach((item: ResultadoEixo) => {
+            if (item.id == eixo.id) {
               dataPoints.push({
                 y: item.valorEixo,
                 label: terraIndigena.nome,
@@ -459,7 +465,9 @@ export class CalculadoraComparativaComponent implements OnInit {
         });
         this.chartOptions.data.push({
           type: 'bar',
-          legendText: eixo,
+          legendText: this.translateService.instant(
+            'thematic-axis.axis-' + eixo.id + '.name'
+          ),
           showInLegend: true,
           dataPoints: dataPoints,
         });
@@ -710,12 +718,16 @@ export class CalculadoraComparativaComponent implements OnInit {
       });
     }
 
+    eixo = this.getAxisTranslastion(eixo);
     return {
+      id: eixo.id,
       nome: eixo.nome,
       descricao: eixo.descricao,
       valor: eixo.valor,
       atividades: atividades.map((atividade: Atividade) => {
+        atividade = this.getActivityTranslastion(atividade);
         return {
+          id: atividade.id,
           nome: atividade.nome,
           descricao: atividade.descricao,
           valor:
@@ -727,15 +739,56 @@ export class CalculadoraComparativaComponent implements OnInit {
                   '1.0-0'
                 )
               : '',
-          metricaBasico: atividade.metricaBasico.filter(
-            (x) => x.recorrente == isRecorrente
-          ),
-          metricaBom: atividade.metricaBom.filter(
-            (x) => x.recorrente == isRecorrente
-          ),
+          metricaBasico: atividade.metricaBasico
+            .filter((x) => x.recorrente == isRecorrente)
+            .map((metrica) => {
+              return this.getMetricTranslation(metrica, atividade.id, 'basic');
+            }),
+          metricaBom: atividade.metricaBom
+            .filter((x) => x.recorrente == isRecorrente)
+            .map((metrica) => {
+              return this.getMetricTranslation(metrica, atividade.id, 'good');
+            }),
         };
       }),
     };
+  }
+
+  getAxisTranslastion(eixo: Eixo) {
+    const translatedAxis = this.translateService.instant(
+      'thematic-axis.axis-' + eixo.id
+    );
+    if (translatedAxis != 'thematic-axis.axis-' + eixo.id) {
+      eixo.nome = translatedAxis.name;
+      eixo.descricao = translatedAxis.description;
+    }
+    return eixo;
+  }
+
+  getActivityTranslastion(atividade: Atividade) {
+    const activityName = 'activities.activity-' + atividade.id;
+    const translateActivity = this.translateService.instant(activityName);
+    if (translateActivity != activityName) {
+      atividade.nome = translateActivity.name;
+      atividade.descricao = translateActivity.description;
+    }
+    return atividade;
+  }
+
+  getMetricTranslation(metrica: Metrica, atividadeId: number, type: string) {
+    const metricType = type + '-metric';
+    const metricName = `activities.activity-${atividadeId}.${metricType}`;
+    const translateMetric = this.translateService.instant(metricName);
+    if (translateMetric != metricName) {
+      if (!metrica.recorrente) {
+        metrica.descricao = translateMetric['not-current-exemple'];
+        metrica.exemplo = translateMetric['not-current-exemple'];
+      } else {
+        metrica.descricao = translateMetric['current-description'];
+        metrica.exemplo = translateMetric['current-exemple'];
+      }
+    }
+    return metrica;
   }
 }
 
@@ -762,6 +815,7 @@ type ResultadoTerraIndigena = {
 };
 
 type ResultadoEixo = {
+  id: number;
   eixo: string;
   valorEixo: number;
 };

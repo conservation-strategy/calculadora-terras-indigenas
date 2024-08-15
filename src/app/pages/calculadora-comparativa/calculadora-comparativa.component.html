@@ -200,16 +200,22 @@
 <section class="section-container bg-gray" id="resultados" *ngIf="mostrarResultado&&resultado">
     <div class="container">
         <div class="d-flex justify-content-center">
-            <h1>Resultados</h1>
+            <h1>
+                {{'comparative-version.section-result.title' | translate}}
+            </h1>
         </div>
 
-        <button class="btn btn-lg btn-secondary px-5 mb-5 rounded-pill" (click)="gerarPdf()">Baixar PDF</button>
+        <button class="btn btn-lg btn-secondary px-5 mb-5 rounded-pill" (click)="gerarPdf()">
+            {{'comparative-version.section-result.download-pdf' | translate}}
+        </button>
         <p class="mb-3">
-            O custo previsto para as Terras Indígenas
+            {{'comparative-version.section-result.estimated-cost' | translate}}
             <strong>{{resultado.terrasIndigenasSelecionadas}}</strong><br>
-            para o eixos temáticos <strong>{{resultado.eixosSelecionados}}</strong> com o nível de implementação
-            <strong>{{resultado.nivelImplementacao}}</strong> , {{resultado.tipoCusto == 1 ? 'por ano, ': ''}}é
-            de:
+            {{'comparative-version.section-result.for-thematics-axis' | translate}}
+            <strong>{{resultado.eixosSelecionados}}</strong> {{'comparative-version.section-result.with-level' |
+            translate}}
+            <strong>{{resultado.nivelImplementacao}}</strong>, {{resultado.tipoCusto == 1 ?
+            ('comparative-version.section-result.is' | translate): ''}}
         </p>
         <div class="mb-5">
             <canvasjs-chart [options]="chartOptions" (chartInstance)="getChartInstance($event)" id="chart"
@@ -222,14 +228,20 @@
 <section class="section-container bg-white" id="custos_por_eixos" *ngIf="mostrarResultado&&resultado">
     <div class="container">
         <div class="d-flex justify-content-center">
-            <h1>Custos Por Eixos</h1>
+            <h1>
+                {{'comparative-version.costs-by-axis.title' | translate}}
+            </h1>
         </div>
         <div class="table-responsive">
             <table class="table table-sm table-bordered">
                 <thead>
                     <tr>
-                        <th>Terra Indigena</th>
-                        <th *ngFor="let eixo of resultado.eixosSelecionados">{{eixo}}</th>
+                        <th>
+                            {{'form.indigenous-land.name' | translate}}
+                        </th>
+                        <th *ngFor="let eixo of resultado.detalhesEixosSelecionados">
+                            {{'thematic-axis.axis-' + eixo.id + '.name' | translate}}
+                        </th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -253,19 +265,37 @@
             </table>
         </div>
 
-        <label class="mt-3">Características da(s) terra(s) selecionada(s)</label>
+        <label class="mt-3">
+            {{'comparative-version.costs-by-axis.characteristics' | translate}}
+        </label>
         <div class="table-responsive">
             <table class="table table-sm table-bordered">
                 <thead>
                     <tr>
-                        <th>Terra Indigena</th>
-                        <th>Tamanho</th>
-                        <th>Povos</th>
-                        <th>Aldeias</th>
-                        <th>População</th>
-                        <th>Grau de ameaça</th>
-                        <th>Complexidade de acesso</th>
-                        <th>Local sede da associação</th>
+                        <th>
+                            {{'form.indigenous-land.name' | translate}}
+                        </th>
+                        <th>
+                            {{'form.land-size.name' | translate}}
+                        </th>
+                        <th>
+                            {{'form.peoples.name' | translate}}
+                        </th>
+                        <th>
+                            {{'form.villages.name' | translate}}
+                        </th>
+                        <th>
+                            {{'form.population.name' | translate}}
+                        </th>
+                        <th>
+                            {{'form.degree-of-threat.name' | translate}}
+                        </th>
+                        <th>
+                            {{'form.complexity-of-access.name' | translate}}
+                        </th>
+                        <th>
+                            {{'form.headquarters.name' | translate}}
+                        </th>
                     </tr>
                 </thead>
                 <tbody>

@@ -166,7 +166,8 @@
       "title": "Custos Por Eixos",
       "compare-button": "Compare mais de uma terra",
       "axis-per-year": "/ano",
-      "axis-learn-more": "Saiba mais"
+      "axis-learn-more": "Saiba mais",
+      "no-info": "sem informação"
     }
   },
   "comparative-version": {
@@ -174,6 +175,19 @@
     "section-info": {
       "paragraph-1": "Versão de comparação entre terras indígenas, a Versão Comparativa calcula o custo total de gestão dos eixos temáticos selecionados em uma ou mais Terras Indígenas. O usuário deve definir a situação atual de gestão da(s) terra(s), bem como a situação almejada (investimento para gestão básica ou investimento para gestão boa).",
       "paragraph-2": "Essa versão é indicada para quem deseja comparar os resultados entre terras e/ou eixos e também para quem atua em mais de uma terra indígena e pretende ter informações gerais de custos de gestão de eixos selecionados."
+    },
+    "section-result": {
+      "title": "Resultados",
+      "download-pdf": "Baixar PDF",
+      "estimated-cost": "O custo previsto para as Terras Indígenas",
+      "for-thematics-axis": "para o eixos temáticos ",
+      "with-level": "com o nível de implementação",
+      "per-year": "por ano",
+      "is": "é de:"
+    },
+    "costs-by-axis": {
+      "title": "Custos Por Eixos",
+      "characteristics": "Características da(s) terra(s) selecionada(s)"
     }
   },
   "pgtas": {

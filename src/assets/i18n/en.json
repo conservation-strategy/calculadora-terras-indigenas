@@ -166,7 +166,8 @@
       "title": "Costs by axis",
       "compare-button": "Compare more than one land",
       "axis-per-year": "/year",
-      "axis-learn-more": "Read more"
+      "axis-learn-more": "Read more",
+      "no-info": "no information"
     }
   },
   "comparative-version": {
@@ -174,6 +175,19 @@
     "section-info": {
       "paragraph-1": "The Comparative Version calculates the total cost of implementing the PGTAsin one or more Indigenous Lands. The user must define the current management situation of the land(s), as well as the desired situation (investment for basic management or investment for good management).",
       "paragraph-2": "This version is best for those who want to compare results between territories and/or thematic axes and also for those who work with more than one Indigenous Land and want to have general information on the management costs of selected axes."
+    },
+    "section-result": {
+      "title": "Results",
+      "download-pdf": "Download PDF",
+      "estimated-cost": "The estimated cost for the Indigenous Lands",
+      "for-thematics-axis": "for the thematic axes ",
+      "with-level": "with the level of implementation",
+      "per-year": "per year",
+      "is": "is:"
+    },
+    "costs-by-axis": {
+      "title": "Costs by axis",
+      "characteristics": "Characteristics of the selected land(s)"
     }
   },
   "pgtas": {
@@ -491,119 +505,461 @@
     "good-metric": "Good",
     "activity-1": {
       "name": "Association's infrastructure",
-      "description": "Resources for the association's headquarters (physical space, equipment, computers, office supplies and maintenance); means of transportation to carry out activities (cars, trucks, boats and maintenance); means of communication from the headquarters (telephone, internet or radio and maintenance)"
+      "description": "Resources for the association's headquarters (physical space, equipment, computers, office supplies and maintenance); means of transportation to carry out activities (cars, trucks, boats and maintenance); means of communication from the headquarters (telephone, internet or radio and maintenance)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): maintenance",
+        "current-exemple": "Examples of costs: Maintenance of equipment and vehicles, software licenses, ongoing repairs to the association's infrastructure, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): maintenance / insurance for vehicles",
+        "current-exemple": "Examples of costs: maintenance of equipment and vehicles, electrical maintenance, vehicle insurance, monitoring system, ongoing repairs to the association's infrastructure, etc."
+      }
     },
     "activity-2": {
       "name": "Operational support",
-      "description": "Resources to develop the Association's activities and operation (assembly, rent, materials, including communication, legal/tax/technical/communication advice, notary fees, postage, meeting expenses, website maintenance)"
+      "description": "Resources to develop the Association's activities and operation (assembly, rent, materials, including communication, legal/tax/technical/communication advice, notary fees, postage, meeting expenses, website maintenance)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): statutory assembly / resources for rent, water, electricity, internet, postage / truck, bus and boat freight / office supplies / accounting advice",
+        "current-exemple": "Examples of costs: Bank fees, internet, energy, water, telephone, postage, auditing, accounting services, notary fees, office supplies, printing, tickets, food, accommodation, air freight, car rental, cabs, transportation, fuel, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current(annual): legal advice / communication advice / website maintenance / production of communication materials",
+        "current-exemple": "Examples of costs: Communications consultants, legal consultants, audiovisual consultants, lawyer, media management consultancy, website, communications plan, etc."
+      }
     },
     "activity-3": {
       "name": "Training and Professional Development",
-      "description": "Courses, training, activities and preparation of teaching materials to support associations in administrative, financial and communication management"
+      "description": "Courses, training, activities and preparation of teaching materials to support associations in administrative, financial and communication management",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): participate in or lead a training at least once every three years (administrative, financial and communication management) and/or hire professionals to run courses for the Indigenous communities).",
+        "current-exemple": "Examples of costs: fuel, food, consultancy, accommodation, tickets, freight, course materials, transport, etc. (examples of training: audiovisual, IT, project and report preparation, accountability, etc)."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): ongoing training",
+        "current-exemple": "Examples of costs: Fuel, food, consultancy, accommodation, tickets, merchandise, course materials, transportation, etc."
+      }
     },
     "activity-4": {
       "name": "Internal coordination",
-      "description": "Instances of governance and social coordination to bring leaders and communities together (meetings and visits to the villages), for a broad discussion on the  governance of  the PGTA."
+      "description": "Instances of governance and social coordination to bring leaders and communities together (meetings and visits to the villages), for a broad discussion on the  governance of  the PGTA.",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): meetings in the villages to share and discuss the actions of the associations (in addition to the Assembly)",
+        "current-exemple": "Examples of costs: Air, river and land freight, transportation, airfare, food, fuel, financial aid, consultancies, accommodation, stationery, payment for cooks, boatmen, etc. (supporting events such as the Xingu+ Meeting and council meetings, etc.)"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): additional resources for emergency meetings (conflict situations, etc.)",
+        "current-exemple": "Examples of costs: Air, river and land freight, transportation, airfare, food, fuel, subsistence allowance/financial aid, consultancy, accommodation, stationery, payment for cooks, boatmen, etc. (for emergency meetings on conflicts, etc.)"
+      }
     },
     "activity-5": {
       "name": "External partnerships",
-      "description": "Regional, national and international campaigns for the rights of Indigenous peoples (access to healthcare, education, and territorial autonomy)"
+      "description": "Regional, national and international campaigns for the rights of Indigenous peoples (access to healthcare, education, and territorial autonomy)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual meeting with state and regional Indigenous  organizations / mobilizations at national level (e.g. Indigenous April)",
+        "current-exemple": "Examples of costs: Food, financial aid, fuel, accommodation, land and airfare, camping materials, air, river and land freight, bus rental, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): funding for the participation in campaigns and meetings at a regional, national and/or international level for Indigenous Lands facing a high degree of threat, ",
+        "current-exemple": "Examples of costs: Indigenous consultants, a fund for events and gatherings, food, financial aid, fuel, accommodation, land and air travel costs, camping materials, air, river and land freight, bus rental, etc"
+      }
     },
     "activity-6": {
       "name": "Instrumentos de governança",
-      "description": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)"
+      "description": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "",
+        "current-exemple": ""
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "",
+        "current-exemple": ""
+      }
     },
     "activity-7": {
       "name": "Technical staff/Governance",
-      "description": "Capacity of the minimum technical staff required to manage the Association and develop projects"
+      "description": "Capacity of the minimum technical staff required to manage the Association and develop projects",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Examples of costs: Indigenous consultants, a fund for events and gatherings, food, financial aid, fuel, accommodation, land and air travel costs, camping materials, air, river and land freight, bus rental, etc",
+        "current-exemple": "Examples of costs: Salaries, wages and benefits"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): management/leadership team / administrative/financial team / operational team / team of Indigenous communicators",
+        "current-exemple": "Examples of costs: Salaries, wages and benefits"
+      }
     },
     "activity-8": {
       "name": "Developing and updating a diagnosis of threatening factors and an inspection plan for monitoring threat level",
-      "description": "Construction of diagnoses and systems for updating them (discussion of threats and strategies)"
+      "description": "Construction of diagnoses and systems for updating them (discussion of threats and strategies)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): meetings to survey/discuss threats and strategies, according to the Indigenous Lands’s degree of threat (Low: 1 meeting per year / Medium: 2 meetings per year / High: 3 meetings per year / Very High: 4 or more meetings per year)",
+        "current-exemple": "Examples of costs: Food, air, river and land freight, fuel, accommodation, field equipment, stationery, payment of cook, boatman, etc. (example of activities: monitoring of the PGTAs, hunting and fishing agreement, discussion of threats, Working Group on territorial protection, updating of diagnoses, etc.)"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): meetings to survey/discuss threats and strategies, according to the Indigenous Land’s degree of threat (Low: 2 meetings per year / Medium: 3 meetings per year / High: 4 meetings per year / Very high: 5 or more meetings per year)",
+        "current-exemple": "Current (annual): meetings to survey/discuss threats and strategies, according to the Indigenous Land’s degree of threat (Low: 2 meetings per year / Medium: 3 meetings per year / High: 4 meetings per year / Very high: 5 or more meetings per year)"
+      }
     },
     "activity-9": {
       "name": "Territorial surveillance and monitoring (illegal activities - deforestation, mining, timber, roads)",
-      "description": "Surveillance expeditions to protect and monitor the territory against illegal activities and to maintain the boundaries, including the use of remote monitoring tools (GIS)"
+      "description": "Surveillance expeditions to protect and monitor the territory against illegal activities and to maintain the boundaries, including the use of remote monitoring tools (GIS)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): expeditions to monitor/maintain the boundaries of the Indigenous Lands, according to its degree of threat (Low: 1 expedition per year / Medium: 2 expeditions per year / High: 3 expeditions per year / Very high: 4 expeditions per year) ",
+        "current-exemple": "Examples of costs: Fuel, food, overflights, field equipment, air, land and river freight, financial aid, uniforms, consultants, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): More surveillance expeditions per year live remote monitoring, andannual overflights (Indigenous Lands with a medium degree of threat)",
+        "current-exemple": "Examples of costs: GIS consultancy, Cybertracker program, acquisition and processing of satellite images, fuel, food, overflights, field equipment, air, land and river freight, financial aid, uniforms, consultancy, etc."
+      }
     },
     "activity-10": {
       "name": "Environmental monitoring and management (environmental quality)",
-      "description": "Assessment of needs and implementation of actions for protection, restoration, and conservation, including impact monitoring and management of natural resources (such as water quality, fauna, flora, fire control and pesticide use)."
+      "description": "Assessment of needs and implementation of actions for protection, restoration, and conservation, including impact monitoring and management of natural resources (such as water quality, fauna, flora, fire control and pesticide use).",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): meetings to survey/discuss needs, impacts and strategies for environmental monitoring according to the Indigenous Land’s degree of threat (Low: 1 meeting per year / Medium: 2 meetings per year / High: 3 meetings per year / Very high: 4 or more meetings per year)",
+        "current-exemple": "Examples of costs Food, fuel, consultancy, financial aid/cost assistance, field material, payment of cook, boatman, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): environmental monitoring and management project by environmental threat / technical advice needed for environmental monitoring",
+        "current-exemple": "Examples of costs: Technical advice, consultancy, food, fuel, financial aid/cost assistance, field material, payment of cook, boatman, etc. (example of activities: water and fisheries resources protection project, clean village project, neighborhood agreements, environmental management meeting, monitoring of mercury contamination in fish, etc.)"
+      }
     },
     "activity-11": {
       "name": "Training and preparation of materials related to territorial surveillance and environmental protection",
-      "description": "Events, courses and training (e.g. Indigenous Environmental Agents) and the development of teaching materials aimed at enforcement, territorial protection, monitoring and environmental management"
+      "description": "Events, courses and training (e.g. Indigenous Environmental Agents) and the development of teaching materials aimed at enforcement, territorial protection, monitoring and environmental management",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): training on monitoring and territorial protection (e.g. Indigenous Environmental Agents) according to the TI's level of threat (Low: 1 training every 2 years / Medium: 1 training per year / High: 2 trainings per year / Very high: 3 or more trainings per year) / specific annual training on environmental monitoring and management (e.g. fire control)",
+        "current-exemple": "Examples of costs: Fuel, food, consultancy, stationery, transportation, T-shirt, financial aid/cost assistance, accommodation, air and land tickets, freight (example of training courses: Environmental Education, Prevfogo, Mapbiomas, Environmental Managers course, etc.)"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual meeting or exchange with other peoples to improve knowledge and techniques on protection and enforcement",
+        "current-exemple": "Examples of costs: Fuel, food, consultancy, transportation, T-shirt, financial aid, accommodation, air and land tickets, etc."
+      }
     },
     "activity-12": {
       "name": "Equipment",
-      "description": "Acquisition/maintenance/replacement of basic equipment essential for the protection and inspection activities of the Indigenous Lands and their surroundings (vehicles, drone, notebook, GPS), surveillance infrastructure and equipment for environmental monitoring and management"
+      "description": "Acquisition/maintenance/replacement of basic equipment essential for the protection and inspection activities of the Indigenous Lands and their surroundings (vehicles, drone, notebook, GPS), surveillance infrastructure and equipment for environmental monitoring and management",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): equipment and vehicle maintenance",
+        "current-exemple": "Examples of costs: Maintenance of equipment and vehicles used for territorial protection"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): maintenance of additional equipment and infrastructure",
+        "current-exemple": "Examples of costs: Maintenance of vehicles and protective equipment, insurance, monitoring of the surveillance equipment depot and alarm system, etc."
+      }
     },
     "activity-13": {
       "name": "Technical staff/Supervision and Protection",
-      "description": "Team needed to carry out environmental monitoring and protection activities"
+      "description": "Team needed to carry out environmental monitoring and protection activities",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): team of Indigenous environmental agents",
+        "current-exemple": "Examples of costs: Salaries for specific protection staff (indigenous environmental agents)"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): one environmental agent per village  and additional technical staff for remote monitoring (GIS, ODK, Drone)",
+        "current-exemple": "Examples of costs: Salaries, benefits and charges for personnel linked to surveillance and remote monitoring and Indigenous  environmental agents"
+      }
     },
     "activity-14": {
       "name": "Support for traditional cultural activities",
-      "description": "Initiatives to strengthen and/or rescue cultural heritage and traditional cultural manifestations (events, audiovisual recordings, books, equipment)"
+      "description": "Initiatives to strengthen and/or rescue cultural heritage and traditional cultural manifestations (events, audiovisual recordings, books, equipment)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): TI's annual general cultural meeting / comply with TI's traditional cultural activity calendars",
+        "current-exemple": "Examples of costs: Fuel, food, travel, purchase of craft materials, financial aid/cost assistance, air, land and river freight, air and land tickets, consultancy (cameraman), accommodation, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): specific projects to support the implementation of traditional cultural activities (and/or the rescue of material culture) / annual workshop to strengthen and/or rescue cultural activities",
+        "current-exemple": "Examples of costs: Fuel, food, consultancy, travel, financial aid/cost assistance, air, land and river freight, air and land tickets, payment for cooks, boatmen, accommodation, etc."
+      }
     },
     "activity-15": {
       "name": "Support for intercultural activities (research, exchanges and/or events)",
-      "description": "Intercultural research and exchanges aimed at cultural strengthening"
+      "description": "Intercultural research and exchanges aimed at cultural strengthening",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): cultural research project carried out by Indigenous  researchers / annual participation in an exchange activity",
+        "current-exemple": "Examples of costs: Air and ground tickets, fuel, food, financial aid/cost assistance, freight, accommodation, consultancy, etc. (example of activities: women's exchange, cultural fair, youth meeting, etc.)"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual promotion of an exchange event",
+        "current-exemple": "Examples of costs: Fuel, food, consultancy, travel, financial aid/cost assistance, air, land and river freight, air and land tickets, payment for cooks, boatmen, accommodation, etc."
+      }
     },
     "activity-16": {
       "name": "Technical staff/Cultural strengthening",
-      "description": "Team needed to carry out cultural activities"
+      "description": "Team needed to carry out cultural activities",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): Indigenous  cultural agent in TI",
+        "current-exemple": "Examples of costs: Cultural agent salary"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): team of Indigenous  cultural agents, by people, working in cultural heritage",
+        "current-exemple": "Examples of costs: Salaries for cultural workers"
+      }
     },
     "activity-17": {
       "name": "Support for sustainable economic alternatives",
-      "description": "Mapping, adapting, expanding and/or prospecting for economic resources within Indigenous Lands from product development to marketing, including the acquisition of equipment such as trucks and the construction of Basic Health Care Units (UBAs for the Portuguese acronym)."
+      "description": "Mapping, adapting, expanding and/or prospecting for economic resources within Indigenous Lands from product development to marketing, including the acquisition of equipment such as trucks and the construction of Basic Health Care Units (UBAs for the Portuguese acronym).",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): transportation logistics (flow) / maintenance of equipment and vehicles / field materials and supplies / financial aid (1 structured chain, product or service)",
+        "current-exemple": "Examples of costs: (A production chain): food, fuel, financial aid/cost assistance, production consultancy, training, field and disposal support material, air, land and river freight, tickets, production inputs (packaging, labels, agricultural inputs, etc.), commercial transaction tax, seedlings, accommodation, backhoe service, warehouse/shop rent, vehicle maintenance, insurance, electricity, internet and water (production sheds), maintenance of production spaces, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): transportation logistics (flow) / maintenance of equipment and vehicles / field material and inputs / financial aid (2 or more structured chains, products or services)",
+        "current-exemple": "Examples of costs: (Two or more production chains): food, fuel, financial aid/cost assistance, production consultancy, training, field and disposal support material, air, land and river freight, tickets, production inputs (packaging, labels, agricultural inputs, etc.), commercial transaction tax, seedlings, accommodation, backhoe service, warehouse/shop rent, vehicle maintenance, insurance, electricity, internet and water (production sheds), maintenance of production spaces, etc."
+      }
     },
     "activity-18": {
       "name": "Technical staff/income generation",
-      "description": "Team needed to carry out income-generating activities and economic alternatives"
+      "description": "Team needed to carry out income-generating activities and economic alternatives",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): ongoing technical advice",
+        "current-exemple": "Examples of costs: Salaries for technical advisory staff"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): Indigenous  technical advisory team with specific training",
+        "current-exemple": "Examples of costs: Salaries for production-specific staff"
+      }
     },
     "activity-19": {
       "name": "Initiatives related to food sovereignty",
-      "description": "Diversity of initiatives aimed at community food sovereignty and security by strengthening agro-biodiversity, agro-ecology, traditional cuisine and small farms"
+      "description": "Diversity of initiatives aimed at community food sovereignty and security by strengthening agro-biodiversity, agro-ecology, traditional cuisine and small farms",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): field materials and supplies / protein consumption (farming and/or hunting and fishing) / logistics / maintenance of equipment and vehicles",
+        "current-exemple": "Fuel, food, bags for seedlings, tarpaulins, the purchase of fruit seeds and seedlings, tools and inputs for the fields, feed, maintenance of equipment and vehicles, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual seed exchange fair",
+        "current-exemple": "Examples of costs: Fuel, food, airfare, accommodation, air, land and river freight, financial aid/cost assistance, field equipment, consultancy, payment of cooks, boatmen, etc."
+      }
     },
     "activity-20": {
       "name": "Training related to food sovereignty",
-      "description": "Activities, events, courses, training and preparation of teaching materials related to food sovereignty"
+      "description": "Activities, events, courses, training and preparation of teaching materials related to food sovereignty",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual workshop to strengthen traditional cuisine",
+        "current-exemple": "Examples of costs Food, fuel, consultancy, financial aid/cost allowance, air and land tickets, air, land and river freight, payment of cook, boatman (example of activities: training on seedling production and planting), etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): workshops to strengthen traditional cuisine",
+        "current-exemple": "Examples of costs Food, fuel, consultancy, financial aid/cost allowance, air and land tickets, air, land and river freight, payment of cook, boatman (example of activities: training on seedling production and planting), etc."
+      }
     },
     "activity-21": {
       "name": "Technical staff/Food sovereignty",
-      "description": "Team needed to carry out food sovereignty actions"
+      "description": "Team needed to carry out food sovereignty actions",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): Agent in IT to work on the theme of food sovereignty",
+        "current-exemple": "Examples of costs: Staff salaries linked to food sovereignty actions"
+      }
     },
     "activity-22": {
       "name": "Access to energy",
-      "description": "Design and maintenance of energy systems adapted to the region with the purchase of equipment, implementation and distribution of the system (different sources such as wind, solar, diesel, hydro)"
+      "description": "Design and maintenance of energy systems adapted to the region with the purchase of equipment, implementation and distribution of the system (different sources such as wind, solar, diesel, hydro)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual maintenance of equipment and energy system",
+        "current-exemple": "Examples of costs: Maintenance of the energy infrastructure (solar panel, light engine), monthly fees, fuel, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): biannual maintenance of equipment and energy system",
+        "current-exemple": "Examples of costs: Maintenance of the solar energy infrastructure, monthly fees, etc."
+      }
     },
     "activity-23": {
       "name": "Access to communication",
-      "description": "Implementation and maintenance of radio and internet systems to increase access to communication"
+      "description": "Implementation and maintenance of radio and internet systems to increase access to communication",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual maintenance of equipment and communication system",
+        "current-exemple": "Examples of costs: Annual maintenance of radio and internet equipment, maintenance logistics (fuel, food, services, air, land and river freight), monthly internet fees, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): biannual maintenance of equipment and communication system",
+        "current-exemple": "Examples of costs: Half-yearly maintenance of radio and internet equipment, maintenance logistics (fuel, food, services, air, land and river freight), monthly internet fees, etc."
+      }
     },
     "activity-24": {
       "name": "Access to transport",
-      "description": "Acquisition and maintenance of means of transportation suitable for the region, cleaning of streams and roads"
+      "description": "Acquisition and maintenance of means of transportation suitable for the region, cleaning of streams and roads",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual community effort to clean access routes (roads and rivers) / transportation maintenance",
+        "current-exemple": "Examples of costs: Fuel, food, financial aid, maintenance, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): monthly transportation from TI to the nearest municipality (to resolve issues at the bank, supermarket, etc.)",
+        "current-exemple": "Examples of costs: Leasing/contracting a transportation service for travel, fuel, driver, maintenance."
+      }
     },
     "activity-25": {
       "name": "Technical staff/Additional infrastructure",
-      "description": "Staff needed to support the maintenance of equipment related to energy, communication and transportation"
+      "description": "Staff needed to support the maintenance of equipment related to energy, communication and transportation",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): 01 reference person to support emergency maintenance",
+        "current-exemple": "Examples of costs: Salary of infrastructure reference person (related to energy, communication and transportation)"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): 01 Indigenous  infrastructure agent trained per village",
+        "current-exemple": "Examples of costs: Salaries for specific Indigenous  infrastructure agents (related to energy, communication and transportation), training logistics (fuel, food, materials)"
+      }
     },
     "activity-26": {
       "name": "Additional initiatives to the usual government assistance related to health",
-      "description": "Additional health activities, events and training related to traditional knowledge and medicine"
+      "description": "Additional health activities, events and training related to traditional knowledge and medicine",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual workshop on Additional health practices (traditional caregivers {ex.raizeiros, phytotherapists, etc.}) / annual workshop on Additional health practices (midwives {care for pregnant women}) / annual round table discussion on Living Well and sensitive topics (e.g. alcohol and other drug abuse, epidemics, etc.)",
+        "current-exemple": "Examples of costs: Fuel, food, freight, airfare, consultancy, materials (example of activities: meeting of shamans, workshop/expedition, medicinal plants), etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): 02 annual workshops on Additional health practices (Traditional caregivers {ex.raizeiros, phytotherapists, etc}) / 02 annual workshops on Additional health practices (Midwives {care for pregnant women}) / 02 annual conversation circles on Good Living and sensitive topics (e.g. alcohol and other drug abuse, epidemics, etc.)",
+        "current-exemple": "Examples of costs: Fuel, food, freight, airfare, consultancy, materials (example of activities: meeting of shamans, workshop/expedition, medicinal plants), etc."
+      }
     },
     "activity-27": {
       "name": "Additional Sanitation Initiatives ",
-      "description": "Additional sanitation activities, events and training (semi-artesian well, waste collection and treatment, ecological toilets)"
+      "description": "Additional sanitation activities, events and training (semi-artesian well, waste collection and treatment, ecological toilets)",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): annual workshop on the correct disposal and separation of waste / selective collection by village",
+        "current-exemple": "Examples of costs: Fuel, food, consultancy, accommodation, tickets, freight, course materials, transport (example of a joint activity to collect garbage in the villages), etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): workshops on the correct disposal and separation of waste / good practice workshops on the use of sanitation equipment",
+        "current-exemple": "Examples of costs: Fuel, food, consultancy, accommodation, tickets, freight, course materials, transport (example of a joint activity to collect garbage in the villages), etc."
+      }
     },
     "activity-28": {
       "name": "Additional initiatives to the usual education implemented by the government",
-      "description": "Monitoring education-related activities and events and carrying out the government's usual education Additional initiatives"
+      "description": "Monitoring education-related activities and events and carrying out the government's usual education Additional initiatives",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): 03 Additional scholarships per TI to enable Indigenous  students to remain in universities/technical courses",
+        "current-exemple": "Examples of costs: Scholarships"
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): 04 or more Additional scholarships per TI to enable Indigenous  students to remain in universities/technical courses",
+        "current-exemple": "Examples of costs: Scholarships"
+      }
     },
     "activity-29": {
       "name": "Training processes focused on education and the development of differentiated teaching materials",
-      "description": "Education-related training processes for Indigenous  teachers and the development and publication of Additional teaching materials related to education"
+      "description": "Education-related training processes for Indigenous  teachers and the development and publication of Additional teaching materials related to education",
+      "basic-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): Training related to Additional education per year (e.g. training on the Indigenous  agenda for teachers, workshop on teaching materials in the mother tongue, etc.).",
+        "current-exemple": "Examples of costs: Fuel, air and land tickets, field equipment, food, air, land and river freight, consultancy, financial aid, etc."
+      },
+      "good-metric": {
+        "not-current-description": "",
+        "not-current-exemple": "",
+        "current-description": "Current (annual): Training related to Additional education (e.g. training on the Indigenous  agenda for teachers, workshop on teaching materials in the mother tongue, etc.)",
+        "current-exemple": "Examples of costs: Fuel, air and land tickets, field equipment, food, air, land and river freight, consultancy, financial aid, etc."
+      }
     }
   }
 }

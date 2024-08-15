@@ -40,6 +40,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import html2canvas from 'html2canvas';
 import { NgxMaskDirective } from 'ngx-mask';
 import Atividade from '../../core/models/Atividade';
+import Metrica from '../../core/models/Metrica';
 import SelectOption from '../../core/models/SelectOption';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-detalhes/modal-form-detalhes.component';
@@ -731,22 +732,30 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       (x) => x.value === Number(this.terraIndigenaSelecionada?.localSede)
     );
 
+    const noInfo = this.translateService.instant(
+      'indigenous-land-calculator.costs-by-axis.no-info'
+    );
+
     return [
       {
         name: 'land-size',
-        variavel: 'Tamanho',
+        variavel: this.translateService.instant(
+          'indigenous-land-calculator.section-result.land-size'
+        ),
         valor: Number(tamanho).toLocaleString('pt-BR'),
         valorOriginal: String(
           this.terraIndigenaSelecionada &&
             this.terraIndigenaSelecionada.tamanho > 0
             ? this.terraIndigenaSelecionada?.tamanho.toLocaleString('pt-BR')
-            : 'sem informação'
+            : noInfo
         ),
         alterada: tamanho != this.terraIndigenaSelecionada?.tamanho,
       },
       {
         name: 'peoples',
-        variavel: 'Número de povos',
+        variavel: this.translateService.instant(
+          'indigenous-land-calculator.section-result.peoples'
+        ),
         valor: String(grauDiversidade),
         valorOriginal: String(
           this.terraIndigenaSelecionada &&
@@ -754,59 +763,65 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             ? this.terraIndigenaSelecionada.grauDiversidade.toLocaleString(
                 'pt-BR'
               )
-            : 'sem informação'
+            : noInfo
         ),
         alterada:
           grauDiversidade != this.terraIndigenaSelecionada?.grauDiversidade,
       },
       {
         name: 'villages',
-        variavel: 'Número de aldeias',
+        variavel: this.translateService.instant(
+          'indigenous-land-calculator.section-result.villages'
+        ),
         valor: String(aldeias),
         valorOriginal: String(
           this.terraIndigenaSelecionada &&
             this.terraIndigenaSelecionada.aldeias > 0
             ? this.terraIndigenaSelecionada.aldeias.toLocaleString('pt-BR')
-            : 'sem informação'
+            : noInfo
         ),
         alterada: aldeias != this.terraIndigenaSelecionada?.aldeias,
       },
       {
         name: 'population',
-        variavel: 'População',
+        variavel: this.translateService.instant(
+          'indigenous-land-calculator.section-result.population'
+        ),
         valor: Number(populacao).toLocaleString('pt-BR'),
         valorOriginal: String(
           this.terraIndigenaSelecionada &&
             this.terraIndigenaSelecionada.populacao > 0
             ? this.terraIndigenaSelecionada.populacao.toLocaleString('pt-BR')
-            : 'sem informação'
+            : noInfo
         ),
         alterada: populacao != this.terraIndigenaSelecionada?.populacao,
       },
       {
         name: 'degree-of-threat',
-        variavel: 'Grau de ameaça',
+        variavel: this.translateService.instant(
+          'indigenous-land-calculator.section-result.degree-of-threat'
+        ),
         valor: String(
           this.listaGrauAmeaca.find((x) => x.value === Number(grauAmeaca))
             ?.label
         ),
         valorOriginal: String(
-          selectGrauAmeaca ? selectGrauAmeaca.label : 'sem informação'
+          selectGrauAmeaca ? selectGrauAmeaca.label : noInfo
         ),
         alterada: grauAmeaca != this.terraIndigenaSelecionada?.grauAmeaca,
       },
       {
         name: 'complexity-of-access',
-        variavel: 'Complexidade de acesso',
+        variavel: this.translateService.instant(
+          'indigenous-land-calculator.section-result.complexity-of-access'
+        ),
         valor: String(
           this.listaComplexidadeAcesso.find(
             (x) => x.value === Number(complexidadeAcesso)
           )?.label
         ),
         valorOriginal: String(
-          selectComplexidadeAcesso
-            ? selectComplexidadeAcesso.label
-            : 'sem informação'
+          selectComplexidadeAcesso ? selectComplexidadeAcesso.label : noInfo
         ),
         alterada:
           complexidadeAcesso !=
@@ -814,13 +829,13 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       },
       {
         name: 'headquarters',
-        variavel: 'Localização da sede da associação',
+        variavel: this.translateService.instant(
+          'indigenous-land-calculator.section-result.headquarters'
+        ),
         valor: String(
           this.listaLocalSede.find((x) => x.value === Number(localSede))?.label
         ),
-        valorOriginal: String(
-          selectLocalSede ? selectLocalSede.label : 'sem informação'
-        ),
+        valorOriginal: String(selectLocalSede ? selectLocalSede.label : noInfo),
         alterada: localSede != this.terraIndigenaSelecionada?.localSede,
       },
     ];
@@ -865,14 +880,14 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       });
     }
 
+    eixo = this.getAxisTranslastion(eixo);
     return {
-      id: eixo.id,
       nome: eixo.nome,
       descricao: eixo.descricao,
       valor: eixo.valor,
       atividades: atividades.map((atividade: Atividade) => {
+        atividade = this.getActivityTranslastion(atividade);
         return {
-          id: atividade.id,
           nome: atividade.nome,
           descricao: atividade.descricao,
           valor:
@@ -884,15 +899,56 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                   '1.0-0'
                 )
               : '',
-          metricaBasico: atividade.metricaBasico.filter(
-            (x) => x.recorrente == isRecorrente
-          ),
-          metricaBom: atividade.metricaBom.filter(
-            (x) => x.recorrente == isRecorrente
-          ),
+          metricaBasico: atividade.metricaBasico
+            .filter((x) => x.recorrente == isRecorrente)
+            .map((metrica) => {
+              return this.getMetricTranslation(metrica, atividade.id, 'basic');
+            }),
+          metricaBom: atividade.metricaBom
+            .filter((x) => x.recorrente == isRecorrente)
+            .map((metrica) => {
+              return this.getMetricTranslation(metrica, atividade.id, 'good');
+            }),
         };
       }),
     };
+  }
+
+  getAxisTranslastion(eixo: Eixo) {
+    const translatedAxis = this.translateService.instant(
+      'thematic-axis.axis-' + eixo.id
+    );
+    if (translatedAxis != 'thematic-axis.axis-' + eixo.id) {
+      eixo.nome = translatedAxis.name;
+      eixo.descricao = translatedAxis.description;
+    }
+    return eixo;
+  }
+
+  getActivityTranslastion(atividade: Atividade) {
+    const activityName = 'activities.activity-' + atividade.id;
+    const translateActivity = this.translateService.instant(activityName);
+    if (translateActivity != activityName) {
+      atividade.nome = translateActivity.name;
+      atividade.descricao = translateActivity.description;
+    }
+    return atividade;
+  }
+
+  getMetricTranslation(metrica: Metrica, atividadeId: number, type: string) {
+    const metricType = type + '-metric';
+    const metricName = `activities.activity-${atividadeId}.${metricType}`;
+    const translateMetric = this.translateService.instant(metricName);
+    if (translateMetric != metricName) {
+      if (!metrica.recorrente) {
+        metrica.descricao = translateMetric['not-current-exemple'];
+        metrica.exemplo = translateMetric['not-current-exemple'];
+      } else {
+        metrica.descricao = translateMetric['current-description'];
+        metrica.exemplo = translateMetric['current-exemple'];
+      }
+    }
+    return metrica;
   }
 }
 
