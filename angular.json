@@ -78,9 +78,8 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/css/styles.scss"],
             "scripts": [
-              "/node_modules/jquery/dist/jquery.js",
               "/node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           }
@@ -93,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
