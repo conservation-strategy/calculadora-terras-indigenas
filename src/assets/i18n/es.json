@@ -507,14 +507,14 @@
       "name": "Infraestructura de las asociaciones",
       "description": "Recursos para la sede de la asociación (espacio físico, equipamiento, ordenadores, material de oficina y mantenimiento); medios de transporte para la realización de actividades (coches, camiones, barcos y mantenimiento); medios de comunicación para la sede (teléfono, internet o radio y mantenimiento).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Sede / medios de comunicación / medios de transporte.",
+        "not-current-exemple": "Ejemplos de gastos: Equipos (teléfono móvil, impresora, datashow, ordenador, portátil, equipo audiovisual, radio, batería, disco duro externo, GPS, etc.), vehículos (carro, barco, motores, etc.), mobiliario (aire acondicionado, silla, mesa, cocina, puerta), otros (bomba de agua, material de construcción, armario, servicio de remodelación, instalación de internet, etc.).",
         "current-description": "Recurrente (anual): Mantenimiento.",
         "current-exemple": "Ejemplos de costos: Mantenimiento de equipos y vehículos, licencias de software, reparaciones continuas de la infraestructura de la asociación, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Sede propia / tienda / espacio de almacenamiento de producción / camión / autobús / garaje para vehículos / equipos audiovisuales / espacio para reuniones / alojamiento.",
+        "not-current-exemple": "Ejemplos de costos: Equipos (UPS, inversor, proyector, cámara profesional, equipos para islas de edición, etc.), vehículos (camión, autobús, barco, motor, etc.), mobiliario (mesa de reuniones, sillas, aire acondicionado, etc.), otros (materiales eléctricos, cerco eléctrico, materiales de construcción, arquitecto, equipos para el espacio de producción, renovación de las casas de apoyo, servicio de construcción de transbordadores, etc.).",
         "current-description": "Recurrente (anual) Mantenimiento / seguro de vehículos.",
         "current-exemple": "Ejemplos de costos: Mantenimiento de equipos y vehículos, mantenimiento eléctrico, seguro del vehículo, sistema de vigilancia, reparaciones continuas de la infraestructura de la asociación, etc."
       }
@@ -538,16 +538,15 @@
     "activity-3": {
       "name": "Formación y educación permanente",
       "description": "Cursos, capacitaciones, actividades y desarrollo de material didáctico para apoyar a las asociaciones en la gestión administrativa, financiera y de las comunicaciones.",
-
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Proyecto de material didáctico sobre gestión organizativa.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": "Recurrente (anual): Participar y/o realizar formación: al menos 1 cada 3 años (gestión administrativa, financiera y de comunicación) / asesoría técnica (profesionales contratados para realizar los cursos)",
         "current-exemple": "Ejemplos de costos: combustible, comida, consultoría, alojamiento, billetes, flete, material para los cursos, transporte, etc. (ejemplos de formación: audiovisual, informática, preparación de proyectos e informes, rendición de cuentas, etc.)."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Material didáctico sobre gestión organizativa.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
         "current-description": "Recurrente (anual): Formación continua",
         "current-exemple": "Ejemplos de costos: Combustible, comida, consultoría, alojamiento, billetes, flete, material didáctico, transporte, etc."
       }
@@ -585,17 +584,17 @@
       }
     },
     "activity-6": {
-      "name": "Instrumentos de governança",
-      "description": "Elaboração e atualização dos instrumentos de governança (PGTAs e Protocolos de Consulta)",
+      "name": "Instrumentos de gobernanza",
+      "description": "Elaboración y actualización de los instrumentos de gobernanza (PGTA y protocolos de consulta).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Construcción del PGTA / Construcción del Protocolo de Consulta.",
+        "not-current-exemple": "No recurrente (ocasional): Construcción del PGTA / Construcción del Protocolo de Consulta.",
         "current-description": "",
         "current-exemple": ""
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional):Actualización del PGTA cada 3 años / actualización del Protocolo de Consulta cada 5 años.",
+        "not-current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, material didáctico, flete aéreo, fluvial y terrestre, pasajes aéreos y terrestres, traductor, camisetas, impresión de la versión actualizada del PGTA y del Protocolo de Consulta, pago de cocineros, barqueros, etc.",
         "current-description": "",
         "current-exemple": ""
       }
@@ -620,14 +619,14 @@
       "name": "Elaboración y actualización de un diagnóstico de los vectores de amenaza y de un plan de inspección",
       "description": "Elaboración de diagnósticos y reuniones para actualizarlos (debate sobre amenazas y estrategias).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Borrador de documento de soporte y referencia para monitorear y actualizar vectores de amenazas.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": ". Recurrente (anual): Reuniones para estudiar/debatir amenazas y estrategias, según el grado de amenaza de la TI (Bajo: 1 reunión al año / Media: 2 reuniones al año / Alta: 3 reuniones al año / Muy alta: 4 o más reuniones al año).",
         "current-exemple": "Ejemplos de costos: Alimentación, flete aéreo, fluvial y terrestre, combustible, alojamiento, equipo de campamento, papelería, pago de cocinero, barquero, etc. (ejemplo de actividades: seguimiento del PGTA/MonitorGATI, convenio de caza y pesca, discusión de amenazas, Grupo de Trabajo sobre protección territorial, actualización de diagnósticos, etc.)."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Documento de apoyo y referencia para el seguimiento y actualización de los vectores de amenaza.",
+        "not-current-exemple": "No recurrente (ocasional): Documento de apoyo y referencia para el seguimiento y actualización de los vectores de amenaza.",
         "current-description": "Recurrente (anual): Reuniones para estudiar/debatir amenazas y estrategias, según el nivel de amenaza de la TI (Bajo: 2 reuniones al año / Medio: 3 reuniones al año / Alto: 4 reuniones al año / Muy alto: 5 o más reuniones al año.",
         "current-exemple": "Ejemplos de costos: Alimentación, flete aéreo, fluvial y terrestre, combustible, alojamiento, equipo de campamento, papelería, pago de cocinero, barquero, etc. (ejemplo de actividades: seguimiento del PGTA/MonitorGATI, convenio de caza y pesca, discusión de amenazas, Grupo de Trabajo sobre protección territorial, actualización de diagnósticos, etc.)."
       }
@@ -652,14 +651,14 @@
       "name": "Control y gestión ambiental (calidad ambiental)",
       "description": "Construcción de diagnósticos, acciones de protección, restauración, conservación, seguimiento de impactos y gestión de recursos naturales (como calidad del agua, fauna, flora, control de incendios y uso de pesticidas).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Proyecto de documento de apoyo y referencia para el seguimiento y la gestión.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": "Recurrente (anual): Reuniones para levantamiento/discusión de necesidades, impactos y estrategias de monitoreo ambiental según el grado de amenaza de la IT (Bajo: 1 reunión al año / Media: 2 reuniones al año / Alta: 3 reuniones al año / Muy alta: 4 o más reuniones al año) / proyecto de vigilancia y gestión ambiental según el grado de amenaza de la IT (Bajo: 1 proyecto / Medio: 2 proyectos / Alto: 3 proyectos / Muy alto: 4 o más proyectos al año).",
         "current-exemple": "Ejemplos de costos: Alimentación, combustible, consultoría, ayuda financiera, equipo de campamento, pago de cocinero, barquero, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Documento de apoyo y referencia para el seguimiento y la gestión.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
         "current-description": "Recurrente (anual): Proyecto de vigilancia y gestión ambiental por amenaza ambiental / asistencia técnica necesaria para la vigilancia ambiental.",
         "current-exemple": "Ejemplos de costos: Asistencia técnica, consultoría, alimentación combustible, ayuda financiera/viáticos, equipo de campo, pago de cocinero, barquero, etc. (ejemplo de actividades: proyecto de protección de los recursos hídricos y pesqueros, proyecto de aldea limpio, acuerdos vecinales, reunión de gestión ambiental, seguimiento de la contaminación por mercurio en peces, etc.)."
       }
@@ -668,14 +667,14 @@
       "name": "Capacitación y elaboración de materiales relacionados con la vigilancia territorial y la protección ambiental",
       "description": "Eventos, cursos y capacitaciones (por ejemplo, Agentes Ambientales Indígenas) y elaboración de material didáctico dirigido a la fiscalización, protección territorial, monitoreo y gestión ambiental.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional):Esquema de material didáctico para cursos de formación.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": ". Recurrente (anual): Capacitación en vigilancia y protección del territorio (por ejemplo, Agentes Ambientales Indígenas) según el nivel de amenaza de la TI (Bajo: 1 capacitación cada 2 años / Medio: 1 capacitación al año / Alto: 2 capacitaciones al año / Muy alto: 3 o más capacitaciones al año) / capacitación específica anual sobre vigilancia y gestión ambiental (ej. control de incendios).",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, papelería, transporte, camiseta, ayuda financiera/viáticos, alojamiento, pasajes aéreos y terrestres, flete (ejemplo de capacitaciones: Educación Ambiental, Prevfogo, Mapbiomas, curso de Gestores Ambientales, etc.)."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Material de formación",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
         "current-description": "Recurrente (anual): Reunión anual o intercambio con otros pueblos para mejorar los conocimientos y las técnicas de protección y supervisión.",
         "current-exemple": "Ejemplos de gastos: Combustible, alimentación, asesoría, transporte, camiseta, ayuda financiera, alojamiento, pasajes de avión y de avión, etc."
       }
@@ -684,14 +683,14 @@
       "name": "Equipamiento",
       "description": "Adquisición/mantenimiento/sustitución de equipamiento básico imprescindible para las actividades de protección e inspección de TI y su entorno (vehículos, drones, notebook, GPS), infraestructura de vigilancia y equipamiento para el monitoreo y gestión ambiental.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
+        "not-current-exemple": "Ejemplos de costos: Equipamiento (drone, batería, portátil, tableta, teléfono móvil, walkie talkie, cámara, GPS, TV, radio, disco duro externo, receptor, equipo de protección personal, equipo permanente, etc.), vehículos (los mismos vehículos que utiliza la asociación).",
         "current-description": "Recurrente (anual): Mantenimiento de equipos.",
         "current-exemple": "Ejemplos de costos: Mantenimiento de equipos y vehículos utilizados para la protección territorial."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional):Estructura por subregión para la vigilancia constante de las TI / medios de transporte específicos para las actividades de inspección.",
+        "not-current-exemple": "Ejemplos de costos: Vehículos propios para actividades de protección (coche, barco, moto, lancha motora, hélice, camión, motor fueraborda, furgoneta, etc.), mobiliario (congelador, generador, electrodomésticos, dispensador de agua, TV, antena, equipo base, etc.), otros (motor de energía, kit solar, material de construcción, mano de obra, estructura base, construcción de cobertizo para almacenar equipos, instalación de sistema de alarma, construcción de muro y puerta para almacén de vigilancia, etc.).",
         "current-description": "Recurrente (anual): Mantenimiento de equipos e infraestructuras.",
         "current-exemple": "Ejemplos de costos: Mantenimiento de vehículos y equipos de protección, seguros, control del depósito de equipos de vigilancia y del sistema de alarma, etc."
       }
@@ -716,14 +715,14 @@
       "name": "Apoyo a las actividades culturales tradicionales",
       "description": "Iniciativas para reforzar y/o rescatar el patrimonio cultural y las manifestaciones culturales tradicionales (eventos, registros audiovisuales, libros, equipos).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Planificación de la construcción de un instrumento propio de difusión de las acciones culturales en las TI (radio, sitio web, podcast, etc.).",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": "Recurrente (anual): Reunión cultural general anual de TI / cumplir los calendarios de actividades culturales tradicionales de las TI.",
         "current-exemple": "Ejemplos de gastos: Combustible, alimentación, viajes, compra de material para artesanía, ayuda financiera/asignación para gastos, flete aéreo, terrestre y fluvial, pasajes aéreos y terrestres, consultoría (camarógrafo), alojamiento, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Instrumento propio para dar a conocer las actividades culturales en las TI (radio, sitio web, podcast, etc.).",
+        "not-current-exemple": "Ejemplos de costos: Radio, ordenador, equipos audiovisuales, internet, consultoría, material gráfico, etc.",
         "current-description": "Recurrente (anual): Proyectos específicos para apoyar la realización de actividades culturales tradicionales (y/o el rescate de la cultura material) / taller anual para reforzar y/o rescatar actividades culturales.",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, viajes, ayuda financiera/viáticos, flete aéreo, terrestre y fluvial, pasajes aéreos y terrestres, pago de cocineros, barqueros, alojamiento, etc."
       }
@@ -764,14 +763,14 @@
       "name": "Apoyo a alternativas económicas sostenibles",
       "description": "Mapeo, adaptación, ampliación y/o prospección de los recursos de las TI que interactúan con el mercado, el desarrollo de productos, la cadena de valor y sus eslabones, como la transformación y la comercialización, incluida la adquisición de equipos como camiones y la construcción de Unidades de Atención Básica de Salud (UBAs).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Diagnóstico del potencial de los productos y/o servicios de la tierra indígena (turismo, carbono, etc.) / cadena estructurada (diagnóstico del producto y/o servicio, estrategia comercial, estructura de procesamiento de la producción).",
+        "not-current-exemple": "Ejemplos de costos: (Una cadena de producción): Equipos (ordenador, teléfono móvil, GPS, portátil, tableta, batería de radio, desbrozadora, motosierra, prensa, olla/sartén, carretilla, báscula, material eléctrico, despulpadora, etc.), vehículos (tractor, barco, motor, camión, remolque, coche), mobiliario (congelador, grupo electrógeno, máquinas de coser, material de molino harinero), otros (material de construcción, sistema de riego, panel solar, material de construcción para ferias, consultoría (diagnóstico, vídeo), etc.).",
         "current-description": "Recurrente (anual): Logística de transporte (flujo) / mantenimiento de equipos y vehículos / materiales y suministros de campo / ayuda financiera (01 cadena estructurada, producto o servicio).",
         "current-exemple": "Ejemplos de costos: (Una cadena de producción): Alimentos, combustible, ayuda financiera, consultoría de producción, capacitación, material de apoyo en campo y flujo, flete aéreo, terrestre y fluvial, pasajes, insumos de producción (envasado, etiquetado, insumos agrícolas, etc.), impuesto sobre transacciones comerciales, plantones, alojamiento, servicio de retroexcavadora, alquiler de almacén/tienda, mantenimiento de vehículos, seguros, electricidad, internet y agua (centro de producción), mantenimiento de espacios de producción, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Contrato de comercialización (Programa Nacional de Alimentación Escolar - PNAE, orígenes, empresas, cooperativas) / etiqueta de certificación (por ejemplo, Orígenes, orgánico) / asociación con estructura para hacer viable la producción (en todas las etapas) / dos (2) o más cadenas estructuradas (diagnóstico de productos y/o servicios, estrategia comercial, estructura de transformación de la producción).",
+        "not-current-exemple": "Ejemplos de costos: (Dos o más cadenas de producción): Equipos (ordenador, teléfono móvil, GPS, portátil, tableta, batería de radio, desbrozadora, motosierra, prensa, olla/sartén, carretilla, báscula, equipo eléctrico, despulpadora), vehículos (tractor, barco, motor, camión, remolque, coche), mobiliario (congelador, grupo electrógeno, máquinas de coser, equipo de molino harinero), otros (material de construcción, sistema de riego, panel solar, material de construcción para ferias, consultoría (diagnóstico, vídeo), etc.).",
         "current-description": "Recurrente (anual): Logística de transporte (flujo de salida) / mantenimiento de equipos y vehículos / material de campo e insumos / ayuda financiera (2 o más cadenas estructuradas, productos o servicios).",
         "current-exemple": "Ejemplos de costos: (Dos o más cadenas de producción): alimentos, combustible,/ayuda a los costos, asesoría de producción, capacitaciones, material de apoyo en el campo y flujo, flete aéreo, terrestre y fluvial, pasajes, insumos de producción (envasado, rotulado, etiquetas, insumos agrícolas, etc.), impuesto sobre transacciones comerciales, plantones, alojamiento, servicio de retroexcavadora, alquiler de almacén/tienda, mantenimiento de vehículos, seguros, electricidad, internet y agua (centro de producción), mantenimiento de espacios de producción, etc."
       }
@@ -796,14 +795,14 @@
       "name": "Iniciativas relacionadas con la soberanía alimentaria",
       "description": "Diversidad de iniciativas encaminadas a la soberanía y seguridad alimentaria de las comunidades mediante el fortalecimiento de la agrobiodiversidad, la agroecología, la cocina tradicional y las pequeñas explotaciones agrícolas.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Finca por familia y/o comunidad / una (1) o más casas de harina comunitarias / vivero familiar / huerto familiar.",
+        "not-current-exemple": "Ejemplos de costos: Material de construcción (gallineros), bomba de agua, depósito de agua (tanque), hormigonera, generador, carretilla, pozo amazónico, instalación eléctrica (viveros), material de pesca, puesta en marcha de la granja, casa de harina, etc.",
         "current-description": "Recurrente (anual): Materiales y suministros de campo / consumo de proteínas (agricultura y/o caza y pesca) / logística / mantenimiento de equipos y vehículos.",
         "current-exemple": "Combustible, alimentos, bolsas para los plantones, lonas, compra de semillas de frutas y plantones de fruta, herramientas e insumos para los campos, pienso, mantenimiento de equipos y vehículos, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Banco de semillas / certificación de métodos de producción (por ejemplo, certificación de sistemas alimentarios).",
+        "not-current-exemple": "Ejemplos de costos: Materiales de construcción, equipos, diagnósticos y servicios de consultoría.",
         "current-description": "Recurrente (anual): Feria anual de intercambio de semillas.",
         "current-exemple": "Ejemplos de costos: Combustible, comida, boletos de avión, alojamiento, flete aéreo, terrestre y fluvial, ayuda financiera/viáticos, material de campo, consultoría, pago de cocineros, barqueros, etc."
       }
@@ -812,14 +811,14 @@
       "name": "Capacitaciones relacionada con la soberanía alimentaria",
       "description": "Actividades, eventos, cursos, capacitaciones y preparación de material didáctico relacionados con la soberanía alimentaria.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional):  Esquema del material didáctico de apoyo.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": "Recurrente (anual): Taller anual para reforzar la cocina tradicional.",
         "current-exemple": "Ejemplos de costos: Alimentos, combustible, consultoría, ayuda financiera/asignación de gastos, boletos aéreos y terrestres, flete aéreo, terrestre y fluvial, pago de cocineros, barqueros (ejemplo de actividades: capacitación sobre producción y siembra de plántulas), etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Material didáctico de apoyo.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
         "current-description": "Recurrente (anual): Talleres para fortalecer la cocina tradicional.",
         "current-exemple": "Ejemplos de costos: Alimentos, combustible, consultoría, ayuda financiera/asignación de gastos, boletos aéreos y terrestres, flete aéreo, terrestre y fluvial, pago de cocineros, barqueros (ejemplo de actividades: capacitación sobre producción y siembra de plántulas), etc."
       }
@@ -838,14 +837,14 @@
       "name": "Acceso a la energía",
       "description": "Proyectos y mantenimiento de sistemas energéticos adaptados a la región con la adquisición de equipos, puesta en marcha y distribución del sistema (diferentes fuentes como eólica, solar, diésel, hidráulica).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Fuente de energía por comunidad (generador, solar o red eléctrica).",
+        "not-current-exemple": "Ejemplos de costos: Equipos (motor, batería, inversor, placas), logística para instalar la energía (combustible, comida, servicios), etc.",
         "current-description": "Recurrente (anual): Mantenimiento anual de equipos y del sistema de energía.",
         "current-exemple": "Ejemplos de costos: Mantenimiento de la infraestructura energética (panel solar, motor de luz), cuotas mensuales, combustible, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Sistema de energía solar.",
+        "not-current-exemple": "Ejemplos de costos: Kits de energía solar (panel, batería, etc.), módulos solares (sistema aislado), panel, logística para instalar la energía (combustible, electricidad, servicios), etc.",
         "current-description": "Recurrente (anual): Mantenimiento semestral de los equipos y del sistema energético.",
         "current-exemple": "Ejemplos de costos: Mantenimiento de la infraestructura de energía solar, cuotas mensuales, etc."
       }
@@ -854,14 +853,14 @@
       "name": "Acceso a la comunicación",
       "description": "Implantación y mantenimiento de sistemas de radio e Internet para aumentar el acceso a la comunicación.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Un (1) punto de Internet por comunidad / un (1) radio por comunidad.",
+        "not-current-exemple": "Ejemplos de costos: Kit de radio móvil (antena, batería, panel solar), kit de internet, logística para la instalación de internet y radio (combustible, comida, servicios, flete aéreo, terrestre y fluvial), etc.",
         "current-description": "Recurrente (anual): Mantenimiento anual de los equipos y del sistema de comunicación.",
         "current-exemple": "Ejemplos de costos: Mantenimiento anual de equipos de radio e internet, logística de mantenimiento (combustible, alimentación, servicios, flete aéreo, terrestre y fluvial), cuotas mensuales de internet, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "Ejemplos de costos: Kit de radio móvil (antena, batería, panel solar), kit de internet, logística para la instalación de internet y radio (combustible, comida, servicios, flete aéreo, terrestre y fluvial), etc.",
+        "not-current-exemple": "Ejemplos de costos: Kits de Internet de buena calidad, logística para la instalación (combustible, alimentación, servicios, flete aéreo, terrestre y fluvial), etc.",
         "current-description": "Recurrente (anual): Mantenimiento semestral de los equipos y del sistema de comunicación.",
         "current-exemple": "Ejemplos de costos: Mantenimiento semestral de los equipos de radio e internet, logística de mantenimiento (combustible, alimentación, servicios, flete aéreo, terrestre y fluvial), cuotas mensuales de internet, etc."
       }
@@ -870,14 +869,14 @@
       "name": "Acceso al transporte",
       "description": "Adquisición y mantenimiento de medios de transporte adecuados para la región, limpieza de arroyos y caminos.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Medio de transporte (barco/coche)",
+        "not-current-exemple": "Ejemplos de costos: Carros, barcos, renovación de transbordadores, compra de piezas permanentes, etc.",
         "current-description": "Recurrente (anual): Esfuerzo comunitario anual para limpiar las vías de acceso (carreteras y ríos) / mantenimiento del transporte",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, ayuda financiera/viáticos, mantenimiento, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Medio de transporte (autobús, furgoneta, etc.).",
+        "not-current-exemple": "Ejemplos de gastos: Transporte para viajar (autobús, barco, furgoneta, etc.).",
         "current-description": "Recurrente (anual): Transporte mensual desde la TI hasta la ciudad/municipio más cercano (para resolver problemas en el banco, supermercado, etc.).",
         "current-exemple": "Ejemplos de costos: Alquiler/contratación de un servicio de transporte para el trayecto, combustible, conductor, mantenimiento."
       }
@@ -902,14 +901,14 @@
       "name": "Iniciativas complementarias a las ayudas públicas habituales relacionadas con la salud",
       "description": "Actividades, eventos y formación complementaria en salud relacionados con el conocimiento y la medicina tradicional.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Diagnóstico de la salud complementaria (por ejemplo, cuántas comadronas/parteras, curanderos tradicionales, etc., dónde están {qué comunidad, TI, etc.}, cuáles son los puntos sensibles {por ejemplo, abuso de alcohol y drogas, salud mental, desnutrición infantil, medicalización, etc.}).",
+        "not-current-exemple": "Ejemplos de costos: Material didáctico, consultoría, logística para el diagnóstico (combustible, alimentos, flete aéreo, terrestre y fluvial).",
         "current-description": "Recurrente (anual): Taller anual sobre prácticas de salud complementarias (cuidadores tradicionales {por ejemplo, raizeiros, fitoterapeutas, etc.}) / taller anual sobre prácticas de salud complementarias (Matronas {atención a mujeres embarazadas}) / mesa redonda anual sobre Buen Vivir y temas sensibles (por ejemplo, abuso de alcohol y otras drogas, epidemias, etc.).",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, flete, pasaje aéreo, consultoría, materiales (ejemplo de actividades: reunión de chamanes, taller/expedición, plantas medicinales), etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional): Documento de apoyo y referencia sobre salud complementaria (para apoyar la visibilidad y la valoración del trabajo de los cuidadores tradicionales) / estrategia para valorar a los profesionales de la salud complementaria.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, diseño gráfico, impresión, logística para reuniones con autoridades sanitarias, etc.",
         "current-description": ". Recurrente (anual): Dos (2) talleres anuales sobre prácticas complementarias de salud (cuidadores tradicionales {por ejemplo, raizeiros, fitoterapeutas, etc}) / Dos (2) talleres anuales sobre prácticas complementarias de salud (Matronas {cuidado de mujeres embarazadas}) / Dos (2) círculos de conversación anuales sobre el Buen Vivir y temas sensibles (ejemplo, abuso de alcohol y otras drogas, epidemias, etc.)",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, flete, pasaje aéreo, consultoría, materiales (ejemplo de actividades: reunión de chamanes, taller/expedición, plantas medicinales), etc."
       }
@@ -918,14 +917,14 @@
       "name": "Iniciativas complementarias a las ayudas públicas habituales relacionadas con el saneamiento",
       "description": "Actividades, eventos y capacitaciones complementarias de saneamiento (pozo semiartesiano, recolección y tratamiento de residuos, baños ecológicos).",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "Ejemplos de costos: Consultoría, diseño gráfico, impresión, logística para reuniones con autoridades sanitarias, etc.",
+        "not-current-exemple": "Ejemplos de costos: Diagnóstico, consultoría, apertura y perforación de pozos semiartesianos, compra de materiales para el sistema de agua, transporte para la eliminación de residuos, etc.",
         "current-description": "Recurrente (anual): Taller anual sobre la correcta eliminación y separación residuos / recogida selectiva por pueblos.",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, alojamiento, pasajes, fletes, material para los cursos, transporte (ejemplo de una actividad conjunta para recoger residuos sólidos en los pueblos), etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "Ejemplos de costos: Diagnóstico, consultoría, apertura y perforación de pozos semiartesianos, compra de materiales para el sistema de agua, transporte para la eliminación de residuos, etc.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, diseño gráfico, impresión, logística para reuniones con autoridades de saneamiento, etc.",
         "current-description": "Recurrente (anual): talleres sobre la correcta eliminación y separación de basuras / talleres de buenas prácticas sobre el uso de equipos de saneamiento",
         "current-exemple": "Ejemplos de costos: Combustible, comida, consultoría, alojamiento, billetes, fletes, material para los cursos, transporte (ejemplo de una actividad conjunta para recoger basura en los pueblos), etc."
       }
@@ -950,14 +949,14 @@
       "name": "Procesos de formación dirigidos a la educación y al desarrollo de materiales didácticos diferenciados",
       "description": "Procesos de formación relacionados con la educación para docentes indígenas y elaboración y publicación de materiales didácticos complementarios relacionados con la educación.",
       "basic-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional):Proyecto de documento de apoyo y referencia sobre la educación indígena.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": "Recurrente (anual): Capacitación relacionada con la educación complementaria por año (por ejemplo, capacitación sobre la agenda indígena para docentes, taller sobre materiales didácticos en lengua materna, etc.).",
         "current-exemple": "Ejemplos de costos: Combustible, boletos aéreos y terrestres, equipo de campo, alimentación, flete aéreo, terrestre y fluvial, consultoría, ayuda financiera/viáticos, etc."
       },
       "good-metric": {
-        "not-current-description": "",
-        "not-current-exemple": "",
+        "not-current-description": "No recurrente (ocasional):  Documento de apoyo y referencia sobre la educación indígena.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, diseño gráfico, impresión, logística para reuniones con las autoridades educativas, etc.",
         "current-description": "Recurrente (anual): Capacitación relacionada con la educación complementaria (por ejemplo, capacitación sobre la agenda indígena para docentes, taller sobre materiales didácticos en lengua materna, etc.).",
         "current-exemple": "Ejemplos de costos: Combustible, pasajes aéreos y terrestres, equipo de campo, alimentación, flete aéreo, terrestre y fluvial, consultoría, ayuda financiera/viáticos, etc."
       }

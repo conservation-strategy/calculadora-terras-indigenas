@@ -27,7 +27,6 @@ export class EixosIlustracaoCompletaComponent implements OnInit {
   ngOnInit(): void {
     this.selectedLanguage = this.translateService.currentLang;
     this.translateService.onLangChange.subscribe((x) => {
-      console.log(x);
       this.selectedLanguage = x.lang;
     });
   }

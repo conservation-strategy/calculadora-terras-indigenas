@@ -13,7 +13,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class HeaderComponent {
   selectedLanguage: string;
   constructor(private translateService: TranslateService) {
-    const language = window.sessionStorage.getItem('selectedLanguage');
+    const language = window.localStorage.getItem('selectedLanguage');
     this.selectedLanguage = language ? language : '';
     this.changeLanguageSelection(this.selectedLanguage);
   }
@@ -25,11 +25,11 @@ export class HeaderComponent {
 
   changeLanguageSelection(language: string) {
     if (['pt', 'es', 'en'].includes(language)) {
-      window.sessionStorage.setItem('selectedLanguage', language);
+      window.localStorage.setItem('selectedLanguage', language);
       this.translateService.use(language);
       this.selectedLanguage = language;
     } else {
-      window.sessionStorage.setItem('selectedLanguage', 'pt');
+      window.localStorage.setItem('selectedLanguage', 'pt');
       this.translateService.use('pt');
       this.selectedLanguage = language;
     }
