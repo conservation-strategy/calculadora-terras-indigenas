@@ -140,6 +140,26 @@
   }
 }
 
+@media (max-width: 768px) {
+  #header {
+    h1 {
+      text-align: center;
+    }
+  }
+  #usos-possiveis {
+    h1 {
+      text-align: center;
+    }
+    img {
+      align-self: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
 @media (max-width: 576px) {
   #header {
     padding: 60px 0;

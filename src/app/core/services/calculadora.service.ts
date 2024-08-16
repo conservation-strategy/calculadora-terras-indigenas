@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import Coeficiente from '../models/Coeficiente';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { NivelImplmentacao } from '../../shared/enums';
+import Coeficiente from '../models/Coeficiente';
 
 @Injectable({
   providedIn: 'root',
@@ -43,7 +43,8 @@ export class CalculadoraService {
   }
 
   obterIPAddress() {
-    return this.http.get('https://api.ipify.org/?format=json');
+    return of('1');
+    //return this.http.get('https://api.ipify.org/?format=json');
   }
 
   calculadoraAgrupada(
