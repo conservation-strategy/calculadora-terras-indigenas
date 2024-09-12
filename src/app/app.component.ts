@@ -7,12 +7,14 @@ import {
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouteConfigLoadEnd } from '@angular/router';
 
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(ptBr);
+
+declare let gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -29,6 +31,13 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit() {
     this.router.events.subscribe((evt) => {
+     
+      if(evt instanceof RouteConfigLoadEnd ){
+        gtag('event', 'page_view', {
+          page_path: evt.route.path
+        });
+      }
+      
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
