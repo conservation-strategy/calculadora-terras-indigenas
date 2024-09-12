@@ -1,4 +1,7 @@
 {
+  "metatags": {
+    "title-prefix": "Indigenous Calculator"
+  },
   "menu": {
     "home": "Home page",
     "methodology": "Methodology",
@@ -12,6 +15,10 @@
     "contact": "contact"
   },
   "home": {
+    "metatags": {
+      "title": "Indigenous Land Management Costs",
+      "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous organizations in the Xingu basin plan their budgets and raise funds for the implementation of their PGTAs." 
+    },
     "section-header": {
       "title": "Indigenous Land Management Costs",
       "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous organizations in the Xingu basin plan their budgets and raise funds for the implementation of their PGTAs."
@@ -73,6 +80,10 @@
     }
   },
   "methodology": {
+    "metatags": {
+      "title": "METHODOLOGY",
+      "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous  organizations in the Xingu Basin plan their budgets and raise funds to implement their Territorial and Environmental Management Plans (PGTAs for the Portuguese acronym)." 
+    },
     "title": "METHODOLOGY",
     "section-calculator": {
       "title": "Calculator",

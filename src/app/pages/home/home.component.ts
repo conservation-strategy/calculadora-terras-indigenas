@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,6 +10,8 @@ import { EixosIlustracaoCompletaComponent } from '../../shared/components/eixos-
 import { EixosIlustracaoMobileComponent } from '../../shared/components/eixos-ilustracao-mobile/eixos-ilustracao-mobile.component';
 import { ParceirosComponent } from '../../shared/components/parceiros/parceiros.component';
 import { RealizacaoComponent } from '../../shared/components/realizacao/realizacao.component';
+
+import { MetaTagService } from '../../core/services/meta-tag.service';
 
 @Component({
   selector: 'app-home',
@@ -29,6 +31,15 @@ import { RealizacaoComponent } from '../../shared/components/realizacao/realizac
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-  constructor() {}
+export class HomeComponent implements OnInit {
+  constructor(private metaTagService: MetaTagService) {}
+
+  ngOnInit(): void {
+
+    this.metaTagService.updateMetaTags({
+      title_key: 'home.metatags.title',
+      description_key: 'home.metatags.description',
+    });
+
+  }
 }

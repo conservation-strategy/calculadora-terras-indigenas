@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { MetaTagService } from '../../core/services/meta-tag.service';
 
 @Component({
   selector: 'app-metodologia',
@@ -8,4 +9,16 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './metodologia.component.html',
   styleUrl: './metodologia.component.scss',
 })
-export class MetodologiaComponent {}
+export class MetodologiaComponent implements OnInit {
+  constructor(private metaTagService: MetaTagService) {}
+
+  ngOnInit(): void {
+
+    this.metaTagService.updateMetaTags({
+      title_key: 'methodology.metatags.title',
+      description_key: 'methodology.metatags.description',
+      filename: 'Principal_Fundo1.png'
+    });
+
+  }
+}
