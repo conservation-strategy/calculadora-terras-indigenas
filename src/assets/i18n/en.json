@@ -17,7 +17,7 @@
   "home": {
     "metatags": {
       "title": "Indigenous Land Management Costs",
-      "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous organizations in the Xingu basin plan their budgets and raise funds for the implementation of their PGTAs." 
+      "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous organizations in the Xingu basin plan their budgets and raise funds for the implementation of their PGTAs."
     },
     "section-header": {
       "title": "Indigenous Land Management Costs",
@@ -82,7 +82,7 @@
   "methodology": {
     "metatags": {
       "title": "METHODOLOGY",
-      "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous  organizations in the Xingu Basin plan their budgets and raise funds to implement their Territorial and Environmental Management Plans (PGTAs for the Portuguese acronym)." 
+      "description": "The Indigenous Land Management Cost Calculator is an online tool developed to help Indigenous  organizations in the Xingu Basin plan their budgets and raise funds to implement their Territorial and Environmental Management Plans (PGTAs for the Portuguese acronym)."
     },
     "title": "METHODOLOGY",
     "section-calculator": {
@@ -155,7 +155,8 @@
     "section-info": {
       "paragraph-1": "Calculate the cost of managing an Indigenous Land, depending on its characteristics (size, population, village, complexity of access, degree of threat, degree of diversity and location of the association's headquarters), and its current level of management. ",
       "paragraph-2": "Once the user has accessed their results, they can see the cost projection for a “basic” level of management compared to a “good” level of management of the Indigenous Land.",
-      "paragraph-3": "Click on the question marks in the value boxes to get detailed explanations of what they mean."
+      "paragraph-3": "Click on the question marks in the value boxes to get detailed explanations of what they mean.",
+      "paragraph-4": ""
     },
     "section-result": {
       "title": "Results",

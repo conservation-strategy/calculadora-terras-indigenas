@@ -17,7 +17,7 @@
   "home": {
     "metatags": {
       "title": "Projete necessidades financeiras da terra",
-      "description": "Conheça a Calculadora de Custos de Gestão, ferramenta online que projeta necessidades financeiras em terras indígenas da Bacia do Xingu, na Amazônia. Acesse já!" 
+      "description": "Conheça a Calculadora de Custos de Gestão, ferramenta online que projeta necessidades financeiras em terras indígenas da Bacia do Xingu, na Amazônia. Acesse já!"
     },
     "section-header": {
       "title": "Custos de gestão de terras indígenas",
@@ -82,7 +82,7 @@
   "methodology": {
     "metatags": {
       "title": "Metodologia de trabalho",
-      "description": "Entenda a metodologia da Calculadora de Custos de Gestão. Conheça o processo e os dados utilizados para estimar o investimento necessário nas terras indígenas." 
+      "description": "Entenda a metodologia da Calculadora de Custos de Gestão. Conheça o processo e os dados utilizados para estimar o investimento necessário nas terras indígenas."
     },
     "title": "METODOLOGIA",
     "section-calculator": {
@@ -122,7 +122,7 @@
       },
       "group-3": {
         "title": "TIs simuladas",
-        "description": "Qualquer TI que o usuário queira simular."
+        "description": "É possível realizar cálculos para TIs fora do Xingu, desde que todas as informações necessárias sejam fornecidas. No entanto, é importante considerar que, fora do contexto do Xingu, o nível de erro dos cálculos pode ser maior."
       },
       "paragraph-1": "Para os dois últimos grupos, os valores são extrapolados com maior margem de erro e, por isso, recomenda-se cuidado para considerar os valores previstos para estes grupos."
     },
@@ -148,7 +148,7 @@
   "calculator": {
     "metatags": {
       "title": "Ferramenta online",
-      "description": "Calcule o investimento necessário para implementação de um PGTA na terra indígena de sua escolha. Faça análises detalhadas em instantes." 
+      "description": "Calcule o investimento necessário para implementação de um PGTA na terra indígena de sua escolha. Faça análises detalhadas em instantes."
     },
     "title": "CALCULADORA DO CUSTO DE GESTÃO DE TERRAS INDÍGENAS",
     "button-1": "Acesse a calculadora",
@@ -158,8 +158,9 @@
     "title": "CALCULADORA DO CUSTO DE GESTÃO DE TERRAS INDÍGENAS",
     "section-info": {
       "paragraph-1": "Calcule o custo de gestão de todos os eixos temáticos de uma Terra Indígena, sendo possível alterar os valores de suas características (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da associação), e também alterar e/ou definir a situação atual de gestão da terra.",
-      "paragraph-2": "Nos resultados, o usuário poderá selecionar o acesso ao valor do 'investimento para gestão básica' e 'investimento para gestão boa'.",
-      "paragraph-3": "Clique nos pontos de interrogação das caixas de valores para ter explicações detalhadas sobre o que elas querem dizer."
+      "paragraph-2": "É possível realizar cálculos para TIs fora do Xingu, desde que todas as informações necessárias sejam fornecidas. No entanto, é importante considerar que, fora do contexto do Xingu, o nível de erro dos cálculos pode ser maior.",
+      "paragraph-3": "Nos resultados, o usuário poderá selecionar o acesso ao valor do 'investimento para gestão básica' e 'investimento para gestão boa'.",
+      "paragraph-4": "Clique nos pontos de interrogação das caixas de valores para ter explicações detalhadas sobre o que elas querem dizer.'."
     },
     "section-result": {
       "title": "Resultados",
@@ -208,14 +209,14 @@
   "pgtas": {
     "metatags": {
       "title": "Detalhamento dos PGTAs",
-      "description": "Explore os Planos de Gestão Territorial e Ambiental que foram utilizados como base para o desenvolvimento da Calculadora de Custos de Gestão." 
+      "description": "Explore os Planos de Gestão Territorial e Ambiental que foram utilizados como base para o desenvolvimento da Calculadora de Custos de Gestão."
     },
     "access-archive": "Acessar Arquivo"
   },
   "team": {
     "metatags": {
       "title": "Conheça os especialistas",
-      "description": "Descubra a equipe e principais organizações responsáveis pelo desenvolvimento da Calculadora de Custos de Gestão." 
+      "description": "Descubra a equipe e principais organizações responsáveis pelo desenvolvimento da Calculadora de Custos de Gestão."
     },
     "title": "EQUIPE",
     "general-coordination": " Coordenação Geral",
@@ -231,7 +232,7 @@
   "useful-links": {
     "metatags": {
       "title": "Links importantes",
-      "description": "Acesse links úteis para organizações, instituições e recursos voltados para a gestão e proteção das Terras Indígenas do Brasil." 
+      "description": "Acesse links úteis para organizações, instituições e recursos voltados para a gestão e proteção das Terras Indígenas do Brasil."
     },
     "title": "LINKS ÚTEIS",
     "link-1": {

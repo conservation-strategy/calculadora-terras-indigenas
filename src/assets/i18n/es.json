@@ -144,7 +144,8 @@
     "section-info": {
       "paragraph-1": "Estime el costo de la gestión de todos los ejes temáticos de una Tierra Indígena (TI), con la posibilidad de cambiar los valores de las características de una TI (tamaño, población, aldea, complejidad de acceso, grado de amenaza, grado de diversidad y ubicación de la sede de la asociación), así como cambiar y/o definir la situación actual de gestión de la tierra.",
       "paragraph-2": "En los resultados, el usuario puede acceder al valor de la 'inversión para una gestión básica' y la 'inversión para una buena gestión'.",
-      "paragraph-3": "Haga clic en los signos de interrogación de las casillas de valores para obtener explicaciones detalladas de lo que significan."
+      "paragraph-3": "Haga clic en los signos de interrogación de las casillas de valores para obtener explicaciones detalladas de lo que significan.",
+      "paragraph-4": ""
     },
     "section-result": {
       "title": "Resultados",
