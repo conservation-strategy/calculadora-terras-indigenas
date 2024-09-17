@@ -523,17 +523,30 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           },
 
           '\n',
-          'Calcula o custo total de implementação de todos os eixos temáticos em uma Terra Indígena selecionada, podendo o usuário alterar os valores das características da Terra Indígena (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da associação) e também definir o nível de implementação atual e desejado.',
+          'Calcula o custo de gestão de todos os eixos temáticos de uma Terra Indígena, sendo possível alterar os valores de suas características (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da associação), e também alterar e/ou definir a situação atual de gestão da terra',
           '\n',
-          'Essa versão é indicada para usuários que buscam informações mais detalhadas sobre a definição dos níveis de implementação dos eixos temáticos. Nessa versão não é possível selecionar apenas um eixo temático, nem mais de uma Terra Indígena.',
+
+          {
+            text: 'RESULTADO',
+            bold: true,
+          },
           '\n',
           {
             text: [
-              'O custo previsto para os eixos temáticos, com o nível de implementação ',
+              'O custo ',
+              {
+                text:
+                  this.resultado.tipoCusto == 1
+                    ? 'Recorrente (anual)'
+                    : 'Não Recorrente (eventual)',
+                bold: true,
+              },
+              ' previsto para a implementação do PGTA, com ',
               {
                 text: this.resultado.textoNivelImplementacaoAlmejado,
                 bold: true,
               },
+
               ' na ',
               {
                 text: this.resultado.terraIndigena,
@@ -573,7 +586,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
               body: [
                 [
                   {
-                    text: 'Parâmetros',
+                    text: 'Características',
                     bold: true,
                   },
                   {
@@ -602,6 +615,11 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             },
             pageBreak: 'after' as PageBreak,
           },
+          {
+            text: 'Resultados dos Custos por Eixos e Atividades',
+            bold: true,
+          },
+          '\n',
           {
             type: 'none' as UnorderedListType,
             ul: this.resultado.eixos.map((eixo) => {
@@ -687,6 +705,10 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           '\n',
           {
             text: '*Caso as características originais da Terra Indígena sejam alteradas no modelo pelo usuário, a CSF, o ISA e Rede Xingu+ não se responsabilizam pelos resultados*.',
+          },
+          '\n',
+          {
+            text: 'Agora, com esse cálculo em mãos, é o momento de planejar com parceiros as ações prioritárias a serem realizadas.',
           },
         ],
         footer: [
