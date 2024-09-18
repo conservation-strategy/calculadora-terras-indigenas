@@ -1,38 +1,64 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top" style="min-height: 50px;">
   <div class="container">
-    <a class="navbar-brand" routerLink="/"><img src="./assets/images/logo-menu-colorida.png" style="width: 80px;" /></a>
+    <a class="navbar-brand" routerLink="/">
+      <img src="./assets/images/logo-menu-colorida.png" style="width: 80px;" />
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav">
-        <li>
-          <a class="nav-link text-white py-0 mt-3 mt-md-0" routerLink="/">
+        <li class="li-menu">
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-md-none" routerLink="/" data-bs-toggle="collapse"
+            data-bs-target="#mynavbar">
+            {{'menu.home' | translate}}
+          </a>
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-none d-md-block" routerLink="/">
             {{'menu.home' | translate}}
           </a>
         </li>
         <li>
-          <a class="nav-link text-white py-0 mt-3 mt-md-0" routerLink="/metodologia">
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-md-none" data-bs-toggle="collapse"
+            data-bs-target="#mynavbar" routerLink="/metodologia">
+            {{'menu.methodology' | translate}}
+          </a>
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-none d-md-block" routerLink="/metodologia">
             {{'menu.methodology' | translate}}
           </a>
         </li>
         <li>
-          <a class="nav-link text-white py-0 mt-3 mt-md-0" routerLink="/calculadora">
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-md-none" data-bs-toggle="collapse"
+            data-bs-target="#mynavbar" routerLink="/calculadora">
+            {{'menu.calculator' | translate}}
+          </a>
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-none d-md-block" routerLink="/calculadora">
             {{'menu.calculator' | translate}}
           </a>
         </li>
         <li>
-          <a class="nav-link text-white py-0 mt-3 mt-md-0" routerLink="/pgtas">
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-md-none" data-bs-toggle="collapse"
+            data-bs-target="#mynavbar" routerLink="/pgtas">
+            {{'menu.pgtas' | translate}}
+          </a>
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-none d-md-block" routerLink="/pgtas">
             {{'menu.pgtas' | translate}}
           </a>
         </li>
         <li>
-          <a class="nav-link text-white py-0 mt-3 mt-md-0" routerLink="/equipe">
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-md-none" data-bs-toggle="collapse"
+            data-bs-target="#mynavbar" routerLink="/equipe">
+            {{'menu.team' | translate}}
+          </a>
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-none d-md-block" routerLink="/equipe">
             {{'menu.team' | translate}}
           </a>
         </li>
         <li>
-          <a class="nav-link text-white py-0 mt-3 mt-md-0" routerLink="/links_uteis">
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-md-none" data-bs-toggle="collapse"
+            data-bs-target="#mynavbar" routerLink="/links_uteis">
+            {{'menu.useful-links' | translate}}
+          </a>
+          <a class="nav-link text-white py-0 mt-3 mt-md-0 d-none d-md-block" routerLink="/links_uteis">
             {{'menu.useful-links' | translate}}
           </a>
         </li>
@@ -47,7 +73,5 @@
         </li>
       </ul>
     </div>
-
-
   </div>
 </nav>

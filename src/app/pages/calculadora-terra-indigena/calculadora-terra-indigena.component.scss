@@ -131,3 +131,11 @@
   width: 100%;
   height: 100%;
 }
+
+@media (max-width: 500px) {
+  #flexSwitchCheckDefault {
+    transform: rotate(90deg);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

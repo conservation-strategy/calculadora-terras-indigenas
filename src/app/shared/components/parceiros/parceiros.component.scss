@@ -42,3 +42,9 @@ img {
     max-height: 130px;
   }
 }
+
+@media (max-width: 500px) {
+  .logos {
+    justify-content: center;
+  }
+}
