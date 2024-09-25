@@ -393,10 +393,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       tipoCusto: Number(tipoCusto),
       valorTotal: this.calculatorService.obterSomatoria(resultadoCoeficientes),
       eixos: this.calcularEixos(resultadoCoeficientes),
-      textoNivelImplementacaoAlmejado:
-        this.listaNivelImplementacaoAlmejado.find(
-          (nivel: any) => nivel.value == Number(nivelImplementacaoAlmejado)
-        )!.label,
+      textoNivelImplementacaoAlmejado: this.translateService.instant(
+        'desired-situation-list.value-' + nivelImplementacaoAlmejado
+      ),
       variaveisUtilizadas: this.obterVariaveisUtilizadas(),
     };
     console.log('divResultado:', this.resultado);
@@ -481,12 +480,15 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     if (this.resultado) {
       const dataHora = new Date().toLocaleString();
       const variaveis = this.obterVariaveisUtilizadas();
+      const calculatorName = this.translateService.instant(
+        'pdf-main.calculator-name'
+      );
       const docDefinition = {
         pageMargins: [50, 80, 50, 40] as Margins,
         info: {
-          title: 'Calculadora do Custo de Gestão de Terras Indígenas',
+          title: calculatorName,
           author: 'CSF',
-          subject: 'Calculadora do Custo de Gestão de Terras Indígenas',
+          subject: calculatorName,
         },
         header: {
           columns: [
@@ -513,46 +515,41 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         content: [
           {
             text: [
-              'O cálculo abaixo foi realizado utilizando a ',
+              `${this.translateService.instant('pdf-main.intro')} `,
               {
-                text: 'Calculadora do Custo de Gestão de Terras Indígenas',
+                text: calculatorName,
                 bold: true,
               },
-              ' da calculadora.',
             ],
           },
-
           '\n',
-          'Calcula o custo de gestão de todos os eixos temáticos de uma Terra Indígena, sendo possível alterar os valores de suas características (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da associação), e também alterar e/ou definir a situação atual de gestão da terra',
+          this.translateService.instant('pdf-main.paragraph-1'),
           '\n',
-
           {
-            text: 'RESULTADO',
+            text: this.translateService.instant('pdf-main.result.title'),
             bold: true,
           },
           '\n',
           {
             text: [
-              'O custo ',
+              this.translateService.instant('pdf-main.result.part-1'),
               {
-                text:
-                  this.resultado.tipoCusto == 1
-                    ? 'Recorrente (anual)'
-                    : 'Não Recorrente (eventual)',
+                text: this.translateService.instant(
+                  'type-of-cost-list.value-' + this.resultado.tipoCusto
+                ),
                 bold: true,
               },
-              ' previsto para a implementação do PGTA, com ',
+              this.translateService.instant('pdf-main.result.part-2'),
               {
                 text: this.resultado.textoNivelImplementacaoAlmejado,
                 bold: true,
               },
-
-              ' na ',
+              this.translateService.instant('pdf-main.result.part-3'),
               {
                 text: this.resultado.terraIndigena,
                 bold: true,
               },
-              ' é de:',
+              this.translateService.instant('pdf-main.result.part-4'),
             ],
           },
           '\n',
@@ -569,7 +566,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                 fontSize: 20,
               },
               this.resultado?.tipoCusto === this.enumTipoCusto.Recorrente
-                ? ' /ano'
+                ? ` ${this.translateService.instant(
+                    'pdf-main.result.per-year'
+                  )}`
                 : ' /1x',
             ],
           },
@@ -586,11 +585,15 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
               body: [
                 [
                   {
-                    text: 'Características',
+                    text: this.translateService.instant(
+                      'pdf-main.table.header-1'
+                    ),
                     bold: true,
                   },
                   {
-                    text: 'Valores',
+                    text: this.translateService.instant(
+                      'pdf-main.table.header-2'
+                    ),
                     bold: true,
                   },
                 ],
@@ -602,7 +605,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                         x.valor,
                         {
                           text: x.alterada
-                            ? ` (Informação alterada pelo usuário. Valor original: ${x.valorOriginal})`
+                            ? ` (${this.translateService.instant(
+                                'pdf-main.table.changed-information'
+                              )} ${x.valorOriginal})`
                             : '',
                           background: '#fafad2',
                           fontSize: 8,
@@ -616,7 +621,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
             pageBreak: 'after' as PageBreak,
           },
           {
-            text: 'Resultados dos Custos por Eixos e Atividades',
+            text: this.translateService.instant(
+              'pdf-main.cost-results-by-axes'
+            ),
             bold: true,
           },
           '\n',
@@ -642,7 +649,9 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                       bold: true,
                     },
                     this.resultado?.tipoCusto === this.enumTipoCusto.Recorrente
-                      ? ' /ano'
+                      ? ` ${this.translateService.instant(
+                          'pdf-main.result.per-year'
+                        )}`
                       : ' /1x',
                   ],
                 },
@@ -669,7 +678,12 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                           return [
                             {
                               text: [
-                                { text: 'Básico: ', bold: true },
+                                {
+                                  text: `${this.translateService.instant(
+                                    'activities.basic-metric'
+                                  )}: `,
+                                  bold: true,
+                                },
                                 x.descricao,
                               ],
                             },
@@ -683,7 +697,12 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
                           return [
                             {
                               text: [
-                                { text: 'Bom: ', bold: true },
+                                {
+                                  text: `${this.translateService.instant(
+                                    'activities.good-metric'
+                                  )}: `,
+                                  bold: true,
+                                },
                                 x.descricao,
                               ],
                             },
@@ -700,22 +719,24 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
           },
           '\n\n',
           {
-            text: 'A CSF, o ISA e a Rede Xingu+ não se responsabilizam pelas consequências do uso da calculadora.',
+            text: this.translateService.instant('pdf-main.final-1'),
           },
           '\n',
           {
-            text: '*Caso as características originais da Terra Indígena sejam alteradas no modelo pelo usuário, a CSF, o ISA e Rede Xingu+ não se responsabilizam pelos resultados*.',
+            text: this.translateService.instant('pdf-main.final-2'),
           },
           '\n',
           {
-            text: 'Agora, com esse cálculo em mãos, é o momento de planejar com parceiros as ações prioritárias a serem realizadas.',
+            text: this.translateService.instant('pdf-main.final-3'),
           },
         ],
         footer: [
           {
             margin: 5,
             text: [
-              `Relatório gerado em ${dataHora} IP: ${this.ipUsuario}`,
+              `${this.translateService.instant(
+                'pdf-main.report-generated-on'
+              )} ${dataHora} IP: ${this.ipUsuario}`,
               '\n',
               'https://conservation-strategy.github.io/calculadora-terras-indigenas',
             ],
@@ -726,9 +747,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         ],
       };
 
-      pdfMake
-        .createPdf(docDefinition)
-        .download('Calculadora do Custo de Gestão de Terras Indígenas');
+      pdfMake.createPdf(docDefinition).download(calculatorName);
     }
   }
 
@@ -743,15 +762,15 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       localSede,
     } = this.calculadoraForm.value;
 
-    const selectGrauAmeaca = this.listaGrauAmeaca.find(
-      (x) => x.value === Number(this.terraIndigenaSelecionada?.grauAmeaca)
+    const selectGrauAmeaca = this.translateService.instant(
+      'degree-of-threat-list.value-' + this.terraIndigenaSelecionada?.grauAmeaca
     );
-    const selectComplexidadeAcesso = this.listaComplexidadeAcesso.find(
-      (x) =>
-        x.value === Number(this.terraIndigenaSelecionada?.complexidadeAcesso)
+    const selectComplexidadeAcesso = this.translateService.instant(
+      'complexity-of-access-list.value-' +
+        this.terraIndigenaSelecionada?.complexidadeAcesso
     );
-    const selectLocalSede = this.listaLocalSede.find(
-      (x) => x.value === Number(this.terraIndigenaSelecionada?.localSede)
+    const selectLocalSede = this.translateService.instant(
+      'headquarters-list.value-' + this.terraIndigenaSelecionada?.localSede
     );
 
     const noInfo = this.translateService.instant(
@@ -823,13 +842,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         variavel: this.translateService.instant(
           'indigenous-land-calculator.section-result.degree-of-threat'
         ),
-        valor: String(
-          this.listaGrauAmeaca.find((x) => x.value === Number(grauAmeaca))
-            ?.label
-        ),
-        valorOriginal: String(
-          selectGrauAmeaca ? selectGrauAmeaca.label : noInfo
-        ),
+        valor: selectGrauAmeaca ? selectGrauAmeaca : '',
+        valorOriginal: selectGrauAmeaca ? selectGrauAmeaca : noInfo,
         alterada: grauAmeaca != this.terraIndigenaSelecionada?.grauAmeaca,
       },
       {
@@ -837,14 +851,10 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         variavel: this.translateService.instant(
           'indigenous-land-calculator.section-result.complexity-of-access'
         ),
-        valor: String(
-          this.listaComplexidadeAcesso.find(
-            (x) => x.value === Number(complexidadeAcesso)
-          )?.label
-        ),
-        valorOriginal: String(
-          selectComplexidadeAcesso ? selectComplexidadeAcesso.label : noInfo
-        ),
+        valor: selectComplexidadeAcesso ? selectComplexidadeAcesso : '',
+        valorOriginal: selectComplexidadeAcesso
+          ? selectComplexidadeAcesso
+          : noInfo,
         alterada:
           complexidadeAcesso !=
           this.terraIndigenaSelecionada?.complexidadeAcesso,
@@ -854,10 +864,8 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
         variavel: this.translateService.instant(
           'indigenous-land-calculator.section-result.headquarters'
         ),
-        valor: String(
-          this.listaLocalSede.find((x) => x.value === Number(localSede))?.label
-        ),
-        valorOriginal: String(selectLocalSede ? selectLocalSede.label : noInfo),
+        valor: selectLocalSede ? selectLocalSede : '',
+        valorOriginal: String(selectLocalSede ? selectLocalSede : noInfo),
         alterada: localSede != this.terraIndigenaSelecionada?.localSede,
       },
     ];

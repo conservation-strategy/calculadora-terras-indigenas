@@ -973,5 +973,28 @@
         "current-exemple": "Examples of costs: Fuel, air and land tickets, field equipment, food, air, land and river freight, consultancy, financial aid, etc."
       }
     }
+  },
+  "pdf-main": {
+    "calculator-name": "Indigenous Land Management Cost Calculator",
+    "intro": "The calculation below was made using the",
+    "paragraph-1": "It calculates the management cost of all thematic areas of an Indigenous Land, allowing the modification of characteristics such as size, population, village, access complexity, threat level, diversity level, and the location of the association's headquarters. It is also possible to alter and/or define the current management situation of the land.",
+    "result": {
+      "title": "RESULT",
+      "part-1": "The projected ",
+      "part-2": " cost for the implementation of the PGTA, with ",
+      "part-3": " in ",
+      "part-4": " is ",
+      "per-year": "/year"
+    },
+    "table": {
+      "header-1": "Characteristics",
+      "header-2": "Values",
+      "changed-information": "Information modified by user. Original value:"
+    },
+    "cost-results-by-axes": "Cost Results by Axes and Activities",
+    "final-1": "CSF, ISA, and the Xingu+ Network are not responsible for the consequences of using the calculator.",
+    "final-2": "If the original characteristics of the Indigenous Land are modified in the model by the user, CSF, ISA, and the Xingu+ Network are not responsible for the results.",
+    "final-3": "Now, with this calculation in hand, it is time to plan with partners the priority actions to be carried out.",
+    "report-generated-on": "Report generated on"
   }
 }

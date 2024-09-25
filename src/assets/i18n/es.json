@@ -152,7 +152,7 @@
       "basic-management": "Inversión para la gestión básica",
       "good-management": "Inversión para una buena gestión",
       "total-cost": "Costo total",
-      "per-year": "/ano",
+      "per-year": "/año",
       "download-pdf": "Descargar PDF",
       "territory": "Territorio",
       "land-size": "Tamaño",
@@ -166,7 +166,7 @@
     "costs-by-axis": {
       "title": "Costs por eje",
       "compare-button": "Comparar más de una tierra indígena",
-      "axis-per-year": "/ano",
+      "axis-per-year": "/año",
       "axis-learn-more": "Seguir leyendo",
       "no-info": "sin información"
     }
@@ -242,75 +242,75 @@
     "indigenous-land": {
       "name": "Tierra Indígena",
       "placeholder": "Seleccione la Tierra Indígena",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "checkbox-edit": "Quiero actualizar los datos de la Tierra Indígena",
     "land-size": {
       "name": "Tamaño de la tierra (hectáreas)",
       "description": "Tamaño de la Tierra Indígena, en hectáreas",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "villages": {
       "name": "Número de aldeas",
       "description": "Cantidad de aldeas en la Tierra Indígena",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "peoples": {
       "name": "Número de pueblos",
       "description": "Número de pueblos que viven en la Tierra Indígena",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "population": {
       "name": "Población",
       "description": "Número de personas que viven en la Tierra Indígena",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "headquarters": {
       "name": "Ubicación de la sede",
       "placeholder": "Ubicación de la sede",
       "description": "Sede de la asociación: ciudad o aldea",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "degree-of-threat": {
       "name": "Grado de amenaza",
       "placeholder": "Grado de amenaza",
       "description": "Clasificación basada en el tipo y la intensidad de las amenazas a la Tierra Indígena",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "complexity-of-access": {
       "name": "Complejidad del acceso",
       "placeholder": "Complejidad del acceso",
       "description": "Clasificación del nivel de dificultad de acceso para la mayoría de las aldeas del Territorio Indígena",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "current-situation": {
       "name": "Situación actual de la gestión de la tierra",
       "placeholder": "Situación actual de la gestión de la tierra",
       "description": "Situación actual de la gestión de la tierra",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "current-situation-comparative": {
       "name": "Situación actual de la gestión de la tierra",
       "placeholder": "Situación actual de la gestión de la tierra",
       "description": "Situación actual de la gestión de la tierra",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "desired-situation": {
       "name": "Situación deseada de la gestión de la tierra",
       "placeholder": "Situación deseada de la gestión de la tierra",
       "description": "Situación deseada de la gestión de la tierra",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "thematic-axes": {
       "name": "Ejes temáticos",
       "placeholder": "Ejes temáticos",
       "description": "Ejes temáticos definidos a partir de los grandes temas de los PGTA.",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "type-of-cost": {
       "name": "Tipo de costo ",
       "description": "Los costos recurrentes son gastos anuales y los no recurrentes se refieren a gastos que no se repiten cada año.",
-      "validation": "Required Field."
+      "validation": "Campo Requerido."
     },
     "inflation": {
       "name": "Inflación acumulada desde 2023 (%)",
@@ -962,5 +962,28 @@
         "current-exemple": "Ejemplos de costos: Combustible, pasajes aéreos y terrestres, equipo de campo, alimentación, flete aéreo, terrestre y fluvial, consultoría, ayuda financiera/viáticos, etc."
       }
     }
+  },
+  "pdf-main": {
+    "calculator-name": "Calculadora de Costo de Gestión de Tierras Indígenas",
+    "intro": "El cálculo a continuación se realizó utilizando la",
+    "paragraph-1": "Calcula el costo de gestión de todos los ejes temáticos de una Tierra Indígena, siendo posible modificar los valores de sus características (tamaño, población, aldea, complejidad de acceso, grado de amenaza, grado de diversidad y ubicación de la sede de la asociación), y también cambiar y/o definir la situación actual de gestión de la tierra.",
+    "result": {
+      "title": "RESULTADO",
+      "part-1": "El costo ",
+      "part-2": " previsto para la implementación del PGTA, con ",
+      "part-3": " en ",
+      "part-4": " es de: ",
+      "per-year": "/año"
+    },
+    "table": {
+      "header-1": "Características",
+      "header-2": "Valores",
+      "changed-information": "Información modificada por el usuário. Valor original:"
+    },
+    "cost-results-by-axes": "Resultados de Costos por Ejes y Actividades",
+    "final-1": "CSF, ISA y la Red Xingu+ no se responsabilizan por las consecuencias del uso de la calculadora.",
+    "final-2": "Si las características originales de la Tierra Indígena son modificadas en el modelo por el usuario, CSF, ISA y la Red Xingu+ no se responsabilizan por los resultados.",
+    "final-3": "Ahora, con este cálculo en mano, es el momento de planificar con los socios las acciones prioritarias a realizar.",
+    "report-generated-on": "Relatório generado en"
   }
 }

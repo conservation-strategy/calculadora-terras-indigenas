@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { NivelImplmentacao } from '../../shared/enums';
 import Coeficiente from '../models/Coeficiente';
 
@@ -43,8 +43,7 @@ export class CalculadoraService {
   }
 
   obterIPAddress() {
-    return of('1');
-    //return this.http.get('https://api.ipify.org/?format=json');
+    return this.http.get('https://api.ipify.org/?format=json');
   }
 
   calculadoraAgrupada(

@@ -647,5 +647,28 @@
       "name": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
       "description": "Processos formativos relacionados à educação para professores indígenas e  elaboração e publicação de materiais didáticos complementares relacionados à educação"
     }
+  },
+  "pdf-main": {
+    "calculator-name": "Calculadora do Custo de Gestão de Terras Indígenas",
+    "intro": "O cálculo abaixo foi realizado utilizando a",
+    "paragraph-1": "Calcula o custo de gestão de todos os eixos temáticos de uma Terra Indígena, sendo possível alterar os valores de suas características (tamanho, população, aldeia, complexidade de acesso, grau de ameaça, grau de diversidade e localização da sede da associação), e também alterar e/ou definir a situação atual de gestão da terra",
+    "result": {
+      "title": "RESULTADO",
+      "part-1": "O custo ",
+      "part-2": " previsto para a implementação do PGTA, com ",
+      "part-3": " na ",
+      "part-4": " é de: ",
+      "per-year": "/ano"
+    },
+    "table": {
+      "header-1": "Características",
+      "header-2": "Valores",
+      "changed-information": "Informação alterada pelo usuário. Valor original:"
+    },
+    "cost-results-by-axes": "Resultados dos Custos por Eixos e Atividades",
+    "final-1": "A CSF, o ISA e a Rede Xingu+ não se responsabilizam pelas consequências do uso da calculadora.",
+    "final-2": "Caso as características originais da Terra Indígena sejam alteradas no modelo pelo usuário, a CSF, o ISA e Rede Xingu+ não se responsabilizam pelos resultados.",
+    "final-3": "Agora, com esse cálculo em mãos, é o momento de planejar com parceiros as ações prioritárias a serem realizadas.",
+    "report-generated-on": "Relatório gerado em"
   }
 }
