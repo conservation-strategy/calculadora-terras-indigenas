@@ -996,5 +996,36 @@
     "final-2": "If the original characteristics of the Indigenous Land are modified in the model by the user, CSF, ISA, and the Xingu+ Network are not responsible for the results.",
     "final-3": "Now, with this calculation in hand, it is time to plan with partners the priority actions to be carried out.",
     "report-generated-on": "Report generated on"
+  },
+  "pdf-secondary": {
+    "calculator-name": "Comparative Version",
+    "intro": "The calculation below was performed using",
+    "paragraph-1": "Comparative version between indigenous lands, the Comparative Version calculates the total management cost of the selected thematic axes in one or more Indigenous Lands. The user must define the current management situation of the land(s), as well as the desired situation (investment for basic management or investment for good management).",
+    "paragraph-2": "This version is indicated for those who want to compare results between lands and/or axes and also for those who work in more than one indigenous land and intend to have general information on management costs of selected axes.",
+    "result": {
+      "title": "RESULT",
+      "part-1": "The cost ",
+      "part-2": " forecast for the thematic axes ",
+      "part-3": " with ",
+      "part-4": " in the indigenous lands ",
+      "part-5": " is: ",
+      "per-year": "/year"
+    },
+    "cost-by-axes": "Costs by Axes",
+    "characteristics-of-selected-lands": "Characteristics of Selected Lands",
+    "table-characteristics": {
+      "header-1": "Indigenous Land",
+      "header-2": "Land size (hectares)",
+      "header-3": "Number of peoples",
+      "header-4": "Number of villages",
+      "header-5": "Population",
+      "header-6": "Threat level",
+      "header-7": "Access complexity",
+      "header-8": "Headquarters location"
+    },
+    "final-1": "CSF, ISA, and the Xingu+ Network are not responsible for the consequences of using the calculator.",
+    "final-2": "If the original characteristics of the Indigenous Land are modified in the model by the user, CSF, ISA, and the Xingu+ Network are not responsible for the results.",
+    "final-3": "Now, with this calculation in hand, it is time to plan with partners the priority actions to be carried out.",
+    "report-generated-on": "Report generated on"
   }
 }

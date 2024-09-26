@@ -985,5 +985,36 @@
     "final-2": "Si las características originales de la Tierra Indígena son modificadas en el modelo por el usuario, CSF, ISA y la Red Xingu+ no se responsabilizan por los resultados.",
     "final-3": "Ahora, con este cálculo en mano, es el momento de planificar con los socios las acciones prioritarias a realizar.",
     "report-generated-on": "Relatório generado en"
+  },
+  "pdf-secondary": {
+    "calculator-name": "Versión Comparativa",
+    "intro": "El cálculo a continuación fue realizado utilizando",
+    "paragraph-1": "Versión de comparación entre tierras indígenas, la Versión Comparativa calcula el costo total de gestión de los ejes temáticos seleccionados en una o más Tierras Indígenas. El usuario debe definir la situación actual de gestión de la(s) tierra(s), así como la situación deseada (inversión para gestión básica o inversión para gestión buena).",
+    "paragraph-2": "Esta versión es indicada para aquellos que desean comparar resultados entre tierras y/o ejes y también para aquellos que trabajan en más de una tierra indígena y pretenden tener información general de costos de gestión de ejes seleccionados.",
+    "result": {
+      "title": "RESULTADO",
+      "part-1": "El costo ",
+      "part-2": " previsto para los ejes temáticos ",
+      "part-3": " con ",
+      "part-4": " en las tierras indígenas ",
+      "part-5": " es de: ",
+      "per-year": "/año"
+    },
+    "cost-by-axes": "Costos por Ejes",
+    "characteristics-of-selected-lands": "Características de las tierras seleccionadas",
+    "table-characteristics": {
+      "header-1": "Tierra indígena",
+      "header-2": "Tamaño de la tierra (hectáreas)",
+      "header-3": "Número de pueblos",
+      "header-4": "Número de aldeas",
+      "header-5": "Población",
+      "header-6": "Grado de amenaza",
+      "header-7": "Complejidad de acceso",
+      "header-8": "Ubicación de la sede"
+    },
+    "final-1": "CSF, ISA y la Red Xingu+ no se responsabilizan por las consecuencias del uso de la calculadora.",
+    "final-2": "Si las características originales de la Tierra Indígena son modificadas en el modelo por el usuario, CSF, ISA y la Red Xingu+ no se responsabilizan por los resultados.",
+    "final-3": "Ahora, con este cálculo en mano, es el momento de planificar con los socios las acciones prioritarias a realizar.",
+    "report-generated-on": "Relatório generado en"
   }
 }

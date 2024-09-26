@@ -295,23 +295,6 @@ export class CalculadoraComparativaComponent implements OnInit {
         resultadoEixos.push(resultado);
         valorTotal += resultado.valorEixo;
       });
-      const listaGrauAmeaca = [
-        { label: 'Baixo', value: 1 },
-        { label: 'Médio', value: 2 },
-        { label: 'Alto', value: 3 },
-        { label: 'Altíssimo', value: 4 },
-      ];
-
-      const listaComplexidadeAcesso = [
-        { label: 'Fácil', value: 1 },
-        { label: 'Médio', value: 2 },
-        { label: 'Difícil', value: 3 },
-      ];
-
-      const listaLocalSede = [
-        { label: 'Cidade', value: 0 },
-        { label: 'Aldeia', value: 1 },
-      ];
       resultadoTerrasIndigenas.push({
         nome: terraIndigena.nome,
 
@@ -319,15 +302,15 @@ export class CalculadoraComparativaComponent implements OnInit {
         grauDiversidade: terraIndigena.grauDiversidade,
         aldeias: terraIndigena.aldeias,
         populacao: Number(terraIndigena.populacao).toLocaleString('pt-BR'),
-        grauAmeaca: listaGrauAmeaca.filter(
-          (x) => x.value == terraIndigena.grauAmeaca
-        )[0].label,
-        complexidadeAcesso: listaComplexidadeAcesso.filter(
-          (x) => x.value == terraIndigena.complexidadeAcesso
-        )[0].label,
-        localSede: listaLocalSede.filter(
-          (x) => x.value == terraIndigena.localSede
-        )[0].label,
+        grauAmeaca: this.translateService.instant(
+          'degree-of-threat-list.value-' + terraIndigena.grauAmeaca
+        ),
+        complexidadeAcesso: this.translateService.instant(
+          'complexity-of-access-list.value-' + terraIndigena.complexidadeAcesso
+        ),
+        localSede: this.translateService.instant(
+          'headquarters-list.value-' + terraIndigena.localSede
+        ),
         resultadoEixos,
         valorTotal,
       });
@@ -489,9 +472,17 @@ export class CalculadoraComparativaComponent implements OnInit {
   gerarPdf() {
     if (this.resultado) {
       const dataHora = new Date().toLocaleString();
+      const calculatorName = this.translateService.instant(
+        'pdf-secondary.calculator-name'
+      );
       const tableRows: any = [
         [
-          { text: 'Terra indigena', style: 'tableHeader' },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-1'
+            ),
+            style: 'tableHeader',
+          },
           ...this.resultado.eixosSelecionados.map((eixo) => {
             return {
               text: eixo,
@@ -530,14 +521,54 @@ export class CalculadoraComparativaComponent implements OnInit {
 
       const tableRows2: any = [
         [
-          { text: 'Terra indigena', style: 'tableHeader' },
-          { text: 'Tamanho da terra (hectares)', style: 'tableHeader' },
-          { text: 'Número de povos', style: 'tableHeader' },
-          { text: 'Número de aldeias', style: 'tableHeader' },
-          { text: 'População', style: 'tableHeader' },
-          { text: 'Grau de ameaça', style: 'tableHeader' },
-          { text: 'Complexidade de acesso', style: 'tableHeader' },
-          { text: 'Localização da sede', style: 'tableHeader' },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-1'
+            ),
+            style: 'tableHeader',
+          },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-2'
+            ),
+            style: 'tableHeader',
+          },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-3'
+            ),
+            style: 'tableHeader',
+          },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-4'
+            ),
+            style: 'tableHeader',
+          },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-5'
+            ),
+            style: 'tableHeader',
+          },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-6'
+            ),
+            style: 'tableHeader',
+          },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-7'
+            ),
+            style: 'tableHeader',
+          },
+          {
+            text: this.translateService.instant(
+              'pdf-secondary.table-characteristics.header-8'
+            ),
+            style: 'tableHeader',
+          },
         ],
       ];
       this.resultado.terrasIndigenas.forEach(
@@ -583,9 +614,9 @@ export class CalculadoraComparativaComponent implements OnInit {
         pageOrientation: 'landscape' as PageOrientation,
         pageMargins: [50, 80, 50, 40] as Margins,
         info: {
-          title: 'Calculadora Versão Agrupada',
+          title: calculatorName,
           author: 'CSF',
-          subject: 'Calculadora Versão Agrupada',
+          subject: calculatorName,
         },
         header: {
           columns: [
@@ -612,54 +643,47 @@ export class CalculadoraComparativaComponent implements OnInit {
         content: [
           {
             text: [
-              'O cálculo abaixo foi realizado utilizando a ',
+              `${this.translateService.instant('pdf-secondary.intro')} `,
               {
-                text: 'Versão Comparativa',
+                text: calculatorName,
                 bold: true,
               },
-              ' da calculadora.',
             ],
           },
           '\n',
-          'Versão de comparação entre terras indígenas, a Versão Comparativa calcula o custo total de gestão dos eixos temáticos selecionados em uma ou mais Terras Indígenas. O usuário deve definir a situação atual de gestão da(s) terra(s), bem como a situação almejada (investimento para gestão básica ou investimento para gestão boa).',
-          'Essa versão é indicada para quem deseja comparar os resultados entre terras e/ou eixos e também para quem atua em mais de uma terra indígena e pretende ter informações gerais de custos de gestão de eixos selecionados.',
+          this.translateService.instant('pdf-secondary.paragraph-1'),
+          this.translateService.instant('pdf-secondary.paragraph-2'),
           '\n',
           {
-            text: 'RESULTADO',
+            text: this.translateService.instant('pdf-secondary.result.title'),
             bold: true,
           },
           '\n',
           {
             text: [
-              'O custo ',
+              this.translateService.instant('pdf-secondary.result.part-1'),
               {
-                text:
-                  this.resultado.tipoCusto == 1
-                    ? 'Recorrente (anual)'
-                    : 'Não Recorrente (eventual)',
+                text: this.translateService.instant(
+                  'type-of-cost-list.value-' + this.resultado.tipoCusto
+                ),
                 bold: true,
               },
-
-              ' previsto para os eixos temáticos ',
+              this.translateService.instant('pdf-secondary.result.part-2'),
               {
                 text: this.resultado.eixosSelecionados.join(', '),
                 bold: true,
               },
-              ' com ',
+              this.translateService.instant('pdf-secondary.result.part-3'),
               {
                 text: this.resultado.nivelImplementacao,
                 bold: true,
               },
-              `${
-                this.resultado.terrasIndigenasSelecionadas.length > 1
-                  ? ' nas terras indígenas '
-                  : ' na terra indígena '
-              }`,
+              this.translateService.instant('pdf-secondary.result.part-4'),
               {
                 text: this.resultado.terrasIndigenasSelecionadas.join(', '),
                 bold: true,
               },
-              ' é de:',
+              this.translateService.instant('pdf-secondary.result.part-5'),
             ],
           },
 
@@ -671,7 +695,7 @@ export class CalculadoraComparativaComponent implements OnInit {
             alignment: 'center' as Alignment,
           } as ContentImage,
           '\n\n',
-          'Custos por Eixos',
+          this.translateService.instant('pdf-secondary.cost-by-axes'),
           {
             table: {
               widths: ['*', ...this.eixosSelecionados.map((x) => '*'), '*'],
@@ -680,7 +704,9 @@ export class CalculadoraComparativaComponent implements OnInit {
             },
           },
           '\n\n',
-          'Características da(s) terra(s) selecionada(s)',
+          this.translateService.instant(
+            'pdf-secondary.characteristics-of-selected-lands'
+          ),
           {
             table: {
               widths: ['*', '*', '*', '*', '*', '*', '*', '*'],
@@ -717,7 +743,12 @@ export class CalculadoraComparativaComponent implements OnInit {
                           return [
                             {
                               text: [
-                                { text: 'Básico: ', bold: true },
+                                {
+                                  text: `${this.translateService.instant(
+                                    'activities.basic-metric'
+                                  )}: `,
+                                  bold: true,
+                                },
                                 x.descricao,
                               ],
                             },
@@ -731,7 +762,12 @@ export class CalculadoraComparativaComponent implements OnInit {
                           return [
                             {
                               text: [
-                                { text: 'Bom: ', bold: true },
+                                {
+                                  text: `${this.translateService.instant(
+                                    'activities.good-metric'
+                                  )}: `,
+                                  bold: true,
+                                },
                                 x.descricao,
                               ],
                             },
@@ -748,18 +784,20 @@ export class CalculadoraComparativaComponent implements OnInit {
           },
           '\n\n',
           {
-            text: 'A CSF, o ISA e a Rede Xingu+ não se responsabilizam pelas consequências do uso da calculadora.',
+            text: this.translateService.instant('pdf-secondary.final-1'),
           },
           '\n',
           {
-            text: 'Agora, com esse cálculo em mãos, é o momento de planejar com parceiros as ações prioritárias a serem realizadas.',
+            text: this.translateService.instant('pdf-secondary.final-3'),
           },
         ],
         footer: [
           {
             margin: 5,
             text: [
-              `Relatório gerado em ${dataHora} IP: ${this.ipUsuario}`,
+              `${this.translateService.instant(
+                'pdf-secondary.report-generated-on'
+              )} ${dataHora} IP: ${this.ipUsuario}`,
               '\n',
               'https://conservation-strategy.github.io/calculadora-terras-indigenas',
             ],
