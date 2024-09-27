@@ -37,7 +37,7 @@
     },
     "section-methodology": {
       "title": "Metodología",
-      "description": " Para calcular los costos de los Planes de Gestión Territorial y Ambiental (PGTA de Tierras Indígenas, la calculadora utiliza relaciones estadísticas entre varias características de la tierra. Con base en estas características y la recopilación de datos, la herramienta estima los costos de implementación de los PGTA. Más información sobre las características de las tierras indígenas que el modelo tuvo en cuenta para el cálculo:",
+      "description": "Para calcular los costos de los Planes de Gestión Territorial y Ambiental (PGTA de Tierras Indígenas), la calculadora utiliza relaciones estadísticas entre varias características de la tierra. Con base en estas características y la recopilación de datos, la herramienta estima los costos de implementación de los PGTA. Más información sobre las características de las tierras indígenas que el modelo tuvo en cuenta para el cálculo:",
       "item-1": {
         "title": "Tamaño de la tierra",
         "description": "Extensión de la tierra indígena, en hectáreas"
@@ -56,7 +56,7 @@
       },
       "item-5": {
         "title": "Grado de amenaza",
-        "description": "Clasificación basada en el tipo y la intensidad de las amenazas ala Tierra Indígena"
+        "description": "Clasificación basada en el tipo y la intensidad de las amenazas a la Tierra Indígena"
       },
       "item-6": {
         "title": "Complejidad del acceso",
@@ -64,7 +64,7 @@
       },
       "item-7": {
         "title": "Ubicación de la sede",
-        "description": "Lugar dónde se encuentra la sede de la asociación, ya sea en unaciudad oenunaaldea"
+        "description": "Lugar dónde se encuentra la sede de la asociación, ya sea en una ciudad o en una aldea"
       },
       "learn-more": "Más información sobre la metodología"
     },
@@ -81,8 +81,9 @@
     },
     "section-pgta-costs": {
       "title": "Costos de los PGTA",
-      "paragraph-1": "Para estimar los costos de los PGTA, la calculadora establece relaciones estadísticas entre las características de las Tierras Indígenas, como el tamaño, el número de aldeas, el grado de amenaza, la complejidad del acceso, las posibles situaciones de inversión de las actividades previstas en los Planes de Gestión de las Tierras Indígenas (PGTA) y sus costos promedio de implementación. Cada actividad cuenta con una fórmula de predicción de costos medios basada en (i) el gasto medio histórico de ocho Tierras Indígenas de las que se han recogido y analizado datos, y (ii) proyecciones de costos para escenarios hipotéticos que tienen en cuenta posibles cambios en las características de las Tierras Indígenas y la situación de inversión para la implementación de las actividades a lo largo del tiempo. De esta forma, es posible estimar los costos en función de la situación de la inversión en gestión y de las características de las Tierras Indígenas.",
-      "paragraph-2": "Cada actividad cuenta con una fórmula de predicción de costos medios basada en (i) el gasto medio histórico de ocho Tierras Indígenas de las que se han recogido y analizado datos, y (ii) proyecciones de costos para escenarios hipotéticos que tienen en cuenta posibles cambios en las características de las Tierras Indígenas y la situación de inversión para la implementación de las actividades a lo largo del tiempo. De esta forma, es posible estimar los costos en función de la situación de la inversión en gestión y de las características de las Tierras Indígenas. Los valores de los costos se obtienen de promedios observados durante la recogida de datos con las organizaciones indígenas y de apoyo. Por ejemplo, si una tierra indígena gastó 1 000 000 de reales en una actividad y otra tierra con características similares gastó 2 000 000 de reales, el costo promedio previsto sería de 1 500 000 reales. La comparación entre el valor medio previsto y el valor real puede variar (por ejemplo, ±R$500 000). Esta variación no indica un error en el modelo, sino que existe una diferencia entre el costo de la actividad de una organización y la media combinada de todas las organizaciones. Así, la mitad de las previsiones tendrán un margen de error al alza y la otra mitad a la baja. Al sumar las distintas actividades de un PGTA, este margen de error tiende a anularse, es decir, el valor total de un PGTA tendrá este margen de error suavizado."
+      "paragraph-1": "Para estimar los costos de los PGTA, la calculadora establece relaciones estadísticas entre las características de las Tierras Indígenas, como el tamaño, el número de aldeas, el grado de amenaza, la complejidad del acceso, las posibles situaciones de inversión de las actividades previstas en los Planes de Gestión de las Tierras Indígenas (PGTA) y sus costos promedio de implementación.",
+      "paragraph-2": "Cada actividad cuenta con una fórmula de predicción de costos medios basada en (i) el gasto medio histórico de ocho Tierras Indígenas de las que se han recogido y analizado datos, y (ii) proyecciones de costos para escenarios hipotéticos que tienen en cuenta posibles cambios en las características de las Tierras Indígenas y la situación de inversión para la implementación de las actividades a lo largo del tiempo. De esta forma, es posible estimar los costos en función de la situación de la inversión en gestión y de las características de las Tierras Indígenas.",
+      "paragraph-3": "Los valores de los costos se obtienen de promedios observados durante la recogida de datos con las organizaciones indígenas y de apoyo. Por ejemplo, si una tierra indígena gastó 1 000 000 de reales en una actividad y otra tierra con características similares gastó 2 000 000 de reales, el costo promedio previsto sería de 1 500 000 reales. La comparación entre el valor medio previsto y el valor real puede variar (por ejemplo, ±R$500 000). Esta variación no indica un error en el modelo, sino que existe una diferencia entre el costo de la actividad de una organización y la media combinada de todas las organizaciones. Así, la mitad de las previsiones tendrán un margen de error al alza y la otra mitad a la baja. Al sumar las distintas actividades de un PGTA, este margen de error tiende a anularse, es decir, el valor total de un PGTA tendrá este margen de error suavizado."
     },
     "section-types-of-costs": {
       "title": "Tipos de costos y actividades",
@@ -100,14 +101,14 @@
     },
     "section-division-of-indigenous-land": {
       "title": "División de tierras indígenas",
-      "groups": "En la Calculadora, las IT se dividen en tres grupos",
+      "groups": "En la Calculadora, las TI se dividen en tres grupos:",
       "group-1": {
         "title": "TI con datos recogidos",
         "description": "Agrupadas en ocho (8) TIs en la cuenca del Xingú con datos de costos disponibles a través de organizaciones indígenas y de apoyo."
       },
       "group-2": {
         "title": "TI con datos extrapolados",
-        "description": "Se trata de trece (13) TIs  en la cuenca del Xingú con información sobre características (tamaño, población, grado de amenaza, "
+        "description": "Se trata de trece (13) TIs  en la cuenca del Xingú con información sobre características (tamaño, población, grado de amenaza etc.)."
       },
       "group-3": {
         "title": "TI simulada",
@@ -143,9 +144,9 @@
     "title": "CALCULADORA DE COSTOS DE GESTIÓN DE TIERRAS INDÍGENAS",
     "section-info": {
       "paragraph-1": "Estime el costo de la gestión de todos los ejes temáticos de una Tierra Indígena (TI), con la posibilidad de cambiar los valores de las características de una TI (tamaño, población, aldea, complejidad de acceso, grado de amenaza, grado de diversidad y ubicación de la sede de la asociación), así como cambiar y/o definir la situación actual de gestión de la tierra.",
-      "paragraph-2": "En los resultados, el usuario puede acceder al valor de la 'inversión para una gestión básica' y la 'inversión para una buena gestión'.",
-      "paragraph-3": "Haga clic en los signos de interrogación de las casillas de valores para obtener explicaciones detalladas de lo que significan.",
-      "paragraph-4": ""
+      "paragraph-2": "Es posible realizar cálculos para TIs fuera del Xingu, siempre que se proporcionen todos los datos necesarios. Sin embargo, es importante considerar que, fuera del contexto del Xingu, el nivel de error de los cálculos puede ser mayor.",
+      "paragraph-3": "En los resultados, el usuario puede acceder al valor de la 'inversión para una gestión básica' y la 'inversión para una buena gestión'.",
+      "paragraph-4": "Haga clic en los signos de interrogación de las casillas de valores para obtener explicaciones detalladas de lo que significan."
     },
     "section-result": {
       "title": "Resultados",
@@ -158,13 +159,13 @@
       "land-size": "Tamaño",
       "peoples": "Número de pueblos",
       "villages": "Número de aldeas",
-      "population": "Número de aldeas",
+      "population": "Población",
       "degree-of-threat": "Grado de amenaza",
       "complexity-of-access": "Complejidad del acceso",
       "headquarters": "Ubicación de la sede de la asociación"
     },
     "costs-by-axis": {
-      "title": "Costs por eje",
+      "title": "Costos por eje",
       "compare-button": "Comparar más de una tierra indígena",
       "axis-per-year": "/año",
       "axis-learn-more": "Seguir leyendo",
@@ -187,7 +188,7 @@
       "is": "es:"
     },
     "costs-by-axis": {
-      "title": "Costs por eje",
+      "title": "COSTOS POR EJE",
       "characteristics": "Características de los terrenos seleccionados"
     }
   },
@@ -324,7 +325,7 @@
     "type-of-cost": {
       "paragraph-1": "Los costos se clasificaron en dos tipos:",
       "paragraph-2": "Los costos recurrentes son de funcionamiento, se componen de los costos anuales de ejecución de las actividades, como los salarios, el mantenimiento de los equipos, la compra de gasolina y la formación anual.",
-      "paragraph-3": "Os custos não recorrentes envolvem despesas que não são anuais, como investimentos em equipamentos e construções, materiais didáticos, elaboração de PGTAs."
+      "paragraph-3": "Los costos no recurrentes implican gastos que no son anuales, como las inversiones en equipos y edificios, el material didáctico y la preparación de los PGTA."
     },
     "degree-of-threat": {
       "paragraph-1": "Clasificación basada en el tipo y la intensidad de las amenazas a la Tierra Indígena (como la minería ilegal, el tráfico de madera, los incendios, el acaparamiento/tráfico de tierras, la deforestación, la regularización de tierras pendientes, las obras de infraestructura y los pesticidas). Los niveles de clasificación son: bajo, medio, alto y muy alto.",
@@ -538,7 +539,7 @@
     },
     "activity-3": {
       "name": "Formación y educación permanente",
-      "description": "Cursos, capacitaciones, actividades y desarrollo de material didáctico para apoyar a las asociaciones en la gestión administrativa, financiera y de las comunicaciones.",
+      "description": "Cursos, capacitaciones, actividades y preparación de material didáctico para apoyar a las asociaciones en la gestión administrativa, financiera y de las comunicaciones.",
       "basic-metric": {
         "not-current-description": "No recurrente (ocasional): Proyecto de material didáctico sobre gestión organizativa.",
         "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
@@ -589,12 +590,12 @@
       "description": "Elaboración y actualización de los instrumentos de gobernanza (PGTA y protocolos de consulta).",
       "basic-metric": {
         "not-current-description": "No recurrente (ocasional): Construcción del PGTA / Construcción del Protocolo de Consulta.",
-        "not-current-exemple": "No recurrente (ocasional): Construcción del PGTA / Construcción del Protocolo de Consulta.",
+        "not-current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, material didáctico, flete aéreo, fluvial y terrestre, pasajes aéreos y terrestres, traductor, camisetas, impresión del PGTA y del Protocolo de Consulta, pago del cocinero, barquero, etc. (reuniones sobre PGTA, Protocolo de Consulta, Etnomapeo, etc.).",
         "current-description": "",
         "current-exemple": ""
       },
       "good-metric": {
-        "not-current-description": "No recurrente (ocasional):Actualización del PGTA cada 3 años / actualización del Protocolo de Consulta cada 5 años.",
+        "not-current-description": "No recurrente (ocasional): Actualización del PGTA cada 3 años / actualización del Protocolo de Consulta cada 5 años.",
         "not-current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, material didáctico, flete aéreo, fluvial y terrestre, pasajes aéreos y terrestres, traductor, camisetas, impresión de la versión actualizada del PGTA y del Protocolo de Consulta, pago de cocineros, barqueros, etc.",
         "current-description": "",
         "current-exemple": ""
@@ -622,12 +623,12 @@
       "basic-metric": {
         "not-current-description": "No recurrente (ocasional): Borrador de documento de soporte y referencia para monitorear y actualizar vectores de amenazas.",
         "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
-        "current-description": ". Recurrente (anual): Reuniones para estudiar/debatir amenazas y estrategias, según el grado de amenaza de la TI (Bajo: 1 reunión al año / Media: 2 reuniones al año / Alta: 3 reuniones al año / Muy alta: 4 o más reuniones al año).",
+        "current-description": "Recurrente (anual): Reuniones para estudiar/debatir amenazas y estrategias, según el grado de amenaza de la TI (Bajo: 1 reunión al año / Media: 2 reuniones al año / Alta: 3 reuniones al año / Muy alta: 4 o más reuniones al año).",
         "current-exemple": "Ejemplos de costos: Alimentación, flete aéreo, fluvial y terrestre, combustible, alojamiento, equipo de campamento, papelería, pago de cocinero, barquero, etc. (ejemplo de actividades: seguimiento del PGTA/MonitorGATI, convenio de caza y pesca, discusión de amenazas, Grupo de Trabajo sobre protección territorial, actualización de diagnósticos, etc.)."
       },
       "good-metric": {
         "not-current-description": "No recurrente (ocasional): Documento de apoyo y referencia para el seguimiento y actualización de los vectores de amenaza.",
-        "not-current-exemple": "No recurrente (ocasional): Documento de apoyo y referencia para el seguimiento y actualización de los vectores de amenaza.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
         "current-description": "Recurrente (anual): Reuniones para estudiar/debatir amenazas y estrategias, según el nivel de amenaza de la TI (Bajo: 2 reuniones al año / Medio: 3 reuniones al año / Alto: 4 reuniones al año / Muy alto: 5 o más reuniones al año.",
         "current-exemple": "Ejemplos de costos: Alimentación, flete aéreo, fluvial y terrestre, combustible, alojamiento, equipo de campamento, papelería, pago de cocinero, barquero, etc. (ejemplo de actividades: seguimiento del PGTA/MonitorGATI, convenio de caza y pesca, discusión de amenazas, Grupo de Trabajo sobre protección territorial, actualización de diagnósticos, etc.)."
       }
@@ -668,23 +669,23 @@
       "name": "Capacitación y elaboración de materiales relacionados con la vigilancia territorial y la protección ambiental",
       "description": "Eventos, cursos y capacitaciones (por ejemplo, Agentes Ambientales Indígenas) y elaboración de material didáctico dirigido a la fiscalización, protección territorial, monitoreo y gestión ambiental.",
       "basic-metric": {
-        "not-current-description": "No recurrente (ocasional):Esquema de material didáctico para cursos de formación.",
+        "not-current-description": "No recurrente (ocasional): Esquema de material didáctico para cursos de formación.",
         "not-current-exemple": "Ejemplos de costos: Consultoría, combustible, alimentación, alojamiento, transporte, etc.",
         "current-description": ". Recurrente (anual): Capacitación en vigilancia y protección del territorio (por ejemplo, Agentes Ambientales Indígenas) según el nivel de amenaza de la TI (Bajo: 1 capacitación cada 2 años / Medio: 1 capacitación al año / Alto: 2 capacitaciones al año / Muy alto: 3 o más capacitaciones al año) / capacitación específica anual sobre vigilancia y gestión ambiental (ej. control de incendios).",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, papelería, transporte, camiseta, ayuda financiera/viáticos, alojamiento, pasajes aéreos y terrestres, flete (ejemplo de capacitaciones: Educación Ambiental, Prevfogo, Mapbiomas, curso de Gestores Ambientales, etc.)."
       },
       "good-metric": {
         "not-current-description": "No recurrente (ocasional): Material de formación",
-        "not-current-exemple": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
+        "not-current-exemple": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc",
         "current-description": "Recurrente (anual): Reunión anual o intercambio con otros pueblos para mejorar los conocimientos y las técnicas de protección y supervisión.",
-        "current-exemple": "Ejemplos de gastos: Combustible, alimentación, asesoría, transporte, camiseta, ayuda financiera, alojamiento, pasajes de avión y de avión, etc."
+        "current-exemple": "Ejemplos de gastos: Combustible, alimentación, asesoría, transporte, camiseta, ayuda financiera, alojamiento, pasajes de avión y terrestre, etc."
       }
     },
     "activity-12": {
       "name": "Equipamiento",
       "description": "Adquisición/mantenimiento/sustitución de equipamiento básico imprescindible para las actividades de protección e inspección de TI y su entorno (vehículos, drones, notebook, GPS), infraestructura de vigilancia y equipamiento para el monitoreo y gestión ambiental.",
       "basic-metric": {
-        "not-current-description": "Ejemplos de costos: Consultoría, logística, diseño gráfico, impresión, etc.",
+        "not-current-description": "No recurrente (ocasional): Kit de equipo para expediciones (GPS, drone, EPI, teléfono móvil, medios de transporte).",
         "not-current-exemple": "Ejemplos de costos: Equipamiento (drone, batería, portátil, tableta, teléfono móvil, walkie talkie, cámara, GPS, TV, radio, disco duro externo, receptor, equipo de protección personal, equipo permanente, etc.), vehículos (los mismos vehículos que utiliza la asociación).",
         "current-description": "Recurrente (anual): Mantenimiento de equipos.",
         "current-exemple": "Ejemplos de costos: Mantenimiento de equipos y vehículos utilizados para la protección territorial."
@@ -836,7 +837,7 @@
     },
     "activity-22": {
       "name": "Acceso a la energía",
-      "description": "Proyectos y mantenimiento de sistemas energéticos adaptados a la región con la adquisición de equipos, puesta en marcha y distribución del sistema (diferentes fuentes como eólica, solar, diésel, hidráulica).",
+      "description": "Proyectos y mantenimiento de sistemas energéticos adaptados a la región con la compra de equipos, puesta en marcha y distribución del sistema (diferentes fuentes como eólica, solar, diésel, hidráulica).",
       "basic-metric": {
         "not-current-description": "No recurrente (ocasional): Fuente de energía por comunidad (generador, solar o red eléctrica).",
         "not-current-exemple": "Ejemplos de costos: Equipos (motor, batería, inversor, placas), logística para instalar la energía (combustible, comida, servicios), etc.",
@@ -860,7 +861,7 @@
         "current-exemple": "Ejemplos de costos: Mantenimiento anual de equipos de radio e internet, logística de mantenimiento (combustible, alimentación, servicios, flete aéreo, terrestre y fluvial), cuotas mensuales de internet, etc."
       },
       "good-metric": {
-        "not-current-description": "Ejemplos de costos: Kit de radio móvil (antena, batería, panel solar), kit de internet, logística para la instalación de internet y radio (combustible, comida, servicios, flete aéreo, terrestre y fluvial), etc.",
+        "not-current-description": "No recurrente (ocasional):  Dos (2) o más puntos de Internet de calidad por comunidad.",
         "not-current-exemple": "Ejemplos de costos: Kits de Internet de buena calidad, logística para la instalación (combustible, alimentación, servicios, flete aéreo, terrestre y fluvial), etc.",
         "current-description": "Recurrente (anual): Mantenimiento semestral de los equipos y del sistema de comunicación.",
         "current-exemple": "Ejemplos de costos: Mantenimiento semestral de los equipos de radio e internet, logística de mantenimiento (combustible, alimentación, servicios, flete aéreo, terrestre y fluvial), cuotas mensuales de internet, etc."
@@ -902,7 +903,7 @@
       "name": "Iniciativas complementarias a las ayudas públicas habituales relacionadas con la salud",
       "description": "Actividades, eventos y formación complementaria en salud relacionados con el conocimiento y la medicina tradicional.",
       "basic-metric": {
-        "not-current-description": "No recurrente (ocasional): Diagnóstico de la salud complementaria (por ejemplo, cuántas comadronas/parteras, curanderos tradicionales, etc., dónde están {qué comunidad, TI, etc.}, cuáles son los puntos sensibles {por ejemplo, abuso de alcohol y drogas, salud mental, desnutrición infantil, medicalización, etc.}).",
+        "not-current-description": " No recurrente (ocasional): Diagnóstico de la salud complementaria (por ejemplo, cuántas comadronas/parteras, curanderos tradicionales, etc., dónde están {qué comunidad, TI, etc.}, cuáles son los puntos sensibles {por ejemplo, abuso de alcohol y drogas, salud mental, desnutrición infantil, medicalización, etc.}).",
         "not-current-exemple": "Ejemplos de costos: Material didáctico, consultoría, logística para el diagnóstico (combustible, alimentos, flete aéreo, terrestre y fluvial).",
         "current-description": "Recurrente (anual): Taller anual sobre prácticas de salud complementarias (cuidadores tradicionales {por ejemplo, raizeiros, fitoterapeutas, etc.}) / taller anual sobre prácticas de salud complementarias (Matronas {atención a mujeres embarazadas}) / mesa redonda anual sobre Buen Vivir y temas sensibles (por ejemplo, abuso de alcohol y otras drogas, epidemias, etc.).",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, flete, pasaje aéreo, consultoría, materiales (ejemplo de actividades: reunión de chamanes, taller/expedición, plantas medicinales), etc."
@@ -918,13 +919,13 @@
       "name": "Iniciativas complementarias a las ayudas públicas habituales relacionadas con el saneamiento",
       "description": "Actividades, eventos y capacitaciones complementarias de saneamiento (pozo semiartesiano, recolección y tratamiento de residuos, baños ecológicos).",
       "basic-metric": {
-        "not-current-description": "Ejemplos de costos: Consultoría, diseño gráfico, impresión, logística para reuniones con autoridades sanitarias, etc.",
+        "not-current-description": "No recurrente (ocasional): Diagnóstico de saneamiento complementario / transporte adecuado para la correcta eliminación de residuos por aldea / pozo semiartesiano.",
         "not-current-exemple": "Ejemplos de costos: Diagnóstico, consultoría, apertura y perforación de pozos semiartesianos, compra de materiales para el sistema de agua, transporte para la eliminación de residuos, etc.",
         "current-description": "Recurrente (anual): Taller anual sobre la correcta eliminación y separación residuos / recogida selectiva por pueblos.",
         "current-exemple": "Ejemplos de costos: Combustible, alimentación, consultoría, alojamiento, pasajes, fletes, material para los cursos, transporte (ejemplo de una actividad conjunta para recoger residuos sólidos en los pueblos), etc."
       },
       "good-metric": {
-        "not-current-description": "Ejemplos de costos: Diagnóstico, consultoría, apertura y perforación de pozos semiartesianos, compra de materiales para el sistema de agua, transporte para la eliminación de residuos, etc.",
+        "not-current-description": "No recurrente (ocasional): Documento de apoyo y referencia sobre saneamiento complementario.",
         "not-current-exemple": "Ejemplos de costos: Consultoría, diseño gráfico, impresión, logística para reuniones con autoridades de saneamiento, etc.",
         "current-description": "Recurrente (anual): talleres sobre la correcta eliminación y separación de basuras / talleres de buenas prácticas sobre el uso de equipos de saneamiento",
         "current-exemple": "Ejemplos de costos: Combustible, comida, consultoría, alojamiento, billetes, fletes, material para los cursos, transporte (ejemplo de una actividad conjunta para recoger basura en los pueblos), etc."
@@ -1015,6 +1016,6 @@
     "final-1": "CSF, ISA y la Red Xingu+ no se responsabilizan por las consecuencias del uso de la calculadora.",
     "final-2": "Si las características originales de la Tierra Indígena son modificadas en el modelo por el usuario, CSF, ISA y la Red Xingu+ no se responsabilizan por los resultados.",
     "final-3": "Ahora, con este cálculo en mano, es el momento de planificar con los socios las acciones prioritarias a realizar.",
-    "report-generated-on": "Relatório generado en"
+    "report-generated-on": "Informe generado en "
   }
 }
