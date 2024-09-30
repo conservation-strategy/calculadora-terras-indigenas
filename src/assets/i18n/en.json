@@ -44,7 +44,7 @@
     },
     "section-methodology": {
       "title": "Methodology",
-      "description": "To calculate the costs of Indigenous Land Management Plans (PGTAs), the calculator uses statistical relationships between various characteristics of each Indigenous Land.. The tool then estimates the costs of implementing the management plan. Find out more about the characteristics of Indigenous Lands that the model took ",
+      "description": "To calculate the costs of Indigenous Land Management Plans (PGTAs), the calculator uses statistical relationships between various characteristics of each Indigenous Land.. The tool then estimates the costs of implementing the management plan. Find out more about the characteristics of Indigenous Lands that the model took into account for this calculation:",
       "item-1": {
         "title": "Size of the land",
         "description": "Extent of the Indigenous Land, in hectares."
@@ -112,7 +112,7 @@
     },
     "section-division-of-indigenous-land": {
       "title": "Division of Indigenous Lands",
-      "groups": "In the Calculator, Indigenous Lands are divided into three groups",
+      "groups": "In the Calculator, Indigenous Lands are divided into three groups:",
       "group-1": {
         "title": "Indigenous Lands with collected data ",
         "description": "Direct data was collected and integrated into this Calculator from 8 Indigenous territories s in the Xingu Basin."
@@ -154,13 +154,14 @@
   "indigenous-land-calculator": {
     "title": "INDIGENOUS LAND MANAGEMENT COST CALCULATOR",
     "section-info": {
-      "paragraph-1": "Calculate the cost of managing an Indigenous Land, depending on its characteristics (size, population, village, complexity of access, degree of threat, degree of diversity and location of the association's headquarters), and its current level of management. ",
-      "paragraph-2": "Once the user has accessed their results, they can see the cost projection for a “basic” level of management compared to a “good” level of management of the Indigenous Land.",
-      "paragraph-3": "Click on the question marks in the value boxes to get detailed explanations of what they mean.",
-      "paragraph-4": ""
+      "paragraph-1": "Calculate the cost of managing an Indigenous Land, depending on its characteristics (size, population, village, complexity of access, degree of threat, degree of diversity and location of the association's headquarters), and its current level of management.",
+      "paragraph-2": "It is possible to perform calculations for TIs outside of the Xingu, as long as all necessary information is provided. However, it is important to consider that outside the Xingu context, the margin of error in the calculations may be higher.",
+      "paragraph-3": "Once the user has accessed their results, they can see the cost projection for a “basic” level of management compared to a “good” level of management of the Indigenous Land.",
+      "paragraph-4": "Click on the question marks in the value boxes to get detailed explanations of what they mean."
     },
     "section-result": {
       "title": "Results",
+      "objective": "Objective",
       "basic-management": "Investment for basic management",
       "good-management": "Investment for good management",
       "per-year": "/year",
@@ -482,7 +483,7 @@
   "thematic-axis": {
     "axis-1": {
       "name": "Governance",
-      "description": "Structures within the associations that guide decision-making and the management of Indigenous Lands"
+      "description": "Structures within the associations that guide decision-making and the management of Indigenous Lands."
     },
     "axis-2": {
       "name": "Monitoring and Protection",
@@ -505,7 +506,7 @@
       "description": "Additional investments in infrastructure and communication, energy and transportation actions."
     },
     "axis-7": {
-      "name": "Health and Sanitation (complementary):",
+      "name": "Health and Sanitation (complementary)",
       "description": "Additional actions to the usual government assistance on health and sanitation."
     },
     "axis-8": {
@@ -618,7 +619,7 @@
       "basic-metric": {
         "not-current-description": "",
         "not-current-exemple": "",
-        "current-description": "Examples of costs: Indigenous consultants, a fund for events and gatherings, food, financial aid, fuel, accommodation, land and air travel costs, camping materials, air, river and land freight, bus rental, etc",
+        "current-description": "Current (annual): staff managerial,political, administrative,financial, and operational / for projects with specific technical needs",
         "current-exemple": "Examples of costs: Salaries, wages and benefits"
       },
       "good-metric": {
@@ -641,7 +642,7 @@
         "not-current-description": "Non-recurring (occasional): support and reference document for monitoring and updating threat vectors",
         "not-current-exemple": "Examples of costs: Consulting, logistics, graphic design, printing, etc.",
         "current-description": "Current (annual): meetings to survey/discuss threats and strategies, according to the Indigenous Land’s degree of threat (Low: 2 meetings per year / Medium: 3 meetings per year / High: 4 meetings per year / Very high: 5 or more meetings per year)",
-        "current-exemple": "Current (annual): meetings to survey/discuss threats and strategies, according to the Indigenous Land’s degree of threat (Low: 2 meetings per year / Medium: 3 meetings per year / High: 4 meetings per year / Very high: 5 or more meetings per year)"
+        "current-exemple": "Examples of costs: Food, air, river and land freight, fuel, accommodation, field equipment, stationery, payment of cook, boatman, etc. (example of activities: monitoring of the PGTA/MonitorGATI, hunting and fishing monitoring, discussion of threats, Working Group on territorial protection, updating of diagnoses, etc.)"
       }
     },
     "activity-9": {

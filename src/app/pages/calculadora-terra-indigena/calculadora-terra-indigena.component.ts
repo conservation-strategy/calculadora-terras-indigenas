@@ -971,7 +971,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     const translateMetric = this.translateService.instant(metricName);
     if (translateMetric != metricName) {
       if (!metrica.recorrente) {
-        metrica.descricao = translateMetric['not-current-exemple'];
+        metrica.descricao = translateMetric['not-current-description'];
         metrica.exemplo = translateMetric['not-current-exemple'];
       } else {
         metrica.descricao = translateMetric['current-description'];

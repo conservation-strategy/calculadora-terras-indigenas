@@ -150,6 +150,7 @@
     },
     "section-result": {
       "title": "Resultados",
+      "objective": "Objetivo",
       "basic-management": "Inversión para la gestión básica",
       "good-management": "Inversión para una buena gestión",
       "total-cost": "Costo total",
@@ -985,7 +986,7 @@
     "final-1": "CSF, ISA y la Red Xingu+ no se responsabilizan por las consecuencias del uso de la calculadora.",
     "final-2": "Si las características originales de la Tierra Indígena son modificadas en el modelo por el usuario, CSF, ISA y la Red Xingu+ no se responsabilizan por los resultados.",
     "final-3": "Ahora, con este cálculo en mano, es el momento de planificar con los socios las acciones prioritarias a realizar.",
-    "report-generated-on": "Relatório generado en"
+    "report-generated-on": "Informe generado en "
   },
   "pdf-secondary": {
     "calculator-name": "Versión Comparativa",

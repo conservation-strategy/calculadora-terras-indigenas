@@ -165,6 +165,7 @@
     },
     "section-result": {
       "title": "Resultados",
+      "objective": "Objetivo",
       "basic-management": "Investimento para gestão básica",
       "good-management": "Investimento para gestão boa",
       "total-cost": "Custo Total",
