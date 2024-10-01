@@ -44,7 +44,7 @@
     },
     "section-methodology": {
       "title": "Methodology",
-      "description": "To calculate the costs of Indigenous Land Management Plans (PGTAs), the calculator uses statistical relationships between various characteristics of each Indigenous Land.. The tool then estimates the costs of implementing the management plan. Find out more about the characteristics of Indigenous Lands that the model took into account for this calculation:",
+      "description": "To calculate the costs of Indigenous Land Management Plans (PGTAs), the calculator uses statistical relationships between various characteristics of each Indigenous Land. The tool then estimates the costs of implementing the management plan. Find out more about the characteristics of Indigenous Lands that the model took into account for this calculation:",
       "item-1": {
         "title": "Size of the land",
         "description": "Extent of the Indigenous Land, in hectares."
@@ -582,8 +582,8 @@
       }
     },
     "activity-5": {
-      "name": "External partnerships",
-      "description": "Regional, national and international campaigns for the rights of Indigenous peoples (access to healthcare, education, and territorial autonomy)",
+      "name": "External coordination",
+      "description": "Regional, national and international gatherings that include broad agendas for the affirming the rights of Indigenous  peoples (to health, education, and territory etc.).",
       "basic-metric": {
         "not-current-description": "",
         "not-current-exemple": "",
@@ -695,10 +695,10 @@
     },
     "activity-12": {
       "name": "Equipment",
-      "description": "Acquisition/maintenance/replacement of basic equipment essential for the protection and inspection activities of the Indigenous Lands and their surroundings (vehicles, drone, notebook, GPS), surveillance infrastructure and equipment for environmental monitoring and management",
+      "description": "Acquisition/maintenance/replacement of basic equipment essential for the protection and inspection activities of the TI and its surroundings (vehicles, drone, notebook, GPS), surveillance infrastructure and equipment for environmental monitoring and management",
       "basic-metric": {
         "not-current-description": "Non-recurring (occasional): equipment kit for expeditions (GPS, drone, PPE, cell phone, means of transport)",
-        "not-current-exemple": "Examples of costs: Equipment (drone, battery, notebook, tablet, cell phone, walkie talkie, camera, GPS, TV, radio, external hard drive, ",
+        "not-current-exemple": "Examples of costs: Equipment (drone, battery, notebook, tablet, cell phone, walkie talkie, camera, GPS, TV, radio, external hard drive, receiver, personal protective equipment, permanent equipment, etc.) Vehicles (the same vehicles used by the association)",
         "current-description": "Current (annual): equipment and vehicle maintenance",
         "current-exemple": "Examples of costs: Maintenance of equipment and vehicles used for territorial protection"
       },
@@ -810,7 +810,7 @@
       "description": "Diversity of initiatives aimed at community food sovereignty and security by strengthening agro-biodiversity, agro-ecology, traditional cuisine and small farms",
       "basic-metric": {
         "not-current-description": "Non-recurring (occasional): garden per family and/or community / 01 or more community flour houses / family nursery / family orchard",
-        "not-current-exemple": "Examples of costs: Examples of costs: Construction material (chicken coops), water pump, water tank, concrete mixer, generator, wheelbarrow, Amazonian well, electrical installation (nurseries), fishing equipment, implementation of farm, flour house, etc.",
+        "not-current-exemple": "Examples of costs: Construction material (chicken coops), water pump, water tank, concrete mixer, generator, wheelbarrow, Amazonian well, electrical installation (nurseries), fishing equipment, implementation of farm, flour house, etc.",
         "current-description": "Current (annual): field materials and supplies / protein consumption (farming and/or hunting and fishing) / logistics / maintenance of equipment and vehicles",
         "current-exemple": "Fuel, food, bags for seedlings, tarpaulins, the purchase of fruit seeds and seedlings, tools and inputs for the fields, feed, maintenance of equipment and vehicles, etc."
       },
@@ -865,7 +865,7 @@
     },
     "activity-23": {
       "name": "Access to communication",
-      "description": "Implementation and maintenance of radio and internet systems to increase access to communication",
+      "description": "Implementation and maintenance of radio and internet systems to increase access to communication and information for the Indigenous Lands",
       "basic-metric": {
         "not-current-description": "Non-recurring (occasional): 01 internet point per village / 01 radio per village",
         "not-current-exemple": "Examples of costs: mobile radio kit (antenna, battery, solar panel), internet kit, internet and radio installation logistics (fuel, food, services, air, land and river freight), etc.",
