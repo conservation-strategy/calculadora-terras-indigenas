@@ -43,6 +43,8 @@ import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-d
 import { TipoCusto, TipoCustoTexto } from '../../shared/enums';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
+declare let gtag: Function;
+
 @Component({
   selector: 'app-calculadora-comparativa',
   standalone: true,
@@ -336,6 +338,10 @@ export class CalculadoraComparativaComponent implements OnInit {
     };
 
     this.mostrarDivResultado();
+
+    gtag('event', 'form_submit', {
+      form_name: 'calculadora-comparativa'
+    });
   }
 
   calcularResultadoTerraIndigena(
@@ -817,6 +823,11 @@ export class CalculadoraComparativaComponent implements OnInit {
         },
       };
       pdfMake.createPdf(docDefinition).download('Versão Comparativa');
+
+      gtag('event', 'download_pdf', {
+        pdf_name: 'Versão Comparativa',
+        calculator_name: calculatorName
+      });
     }
   }
 

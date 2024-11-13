@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { MetaTagService } from '../../core/services/meta-tag.service';
 
+declare let gtag: Function;
+
 @Component({
   selector: 'app-metodologia',
   standalone: true,
@@ -20,5 +22,11 @@ export class MetodologiaComponent implements OnInit {
       filename: 'Principal_Fundo1.png'
     });
 
+  }
+
+  downloadPdf(){
+    gtag('event', 'download_pdf', {
+      pdf_name: 'Methodology'
+    });
   }
 }

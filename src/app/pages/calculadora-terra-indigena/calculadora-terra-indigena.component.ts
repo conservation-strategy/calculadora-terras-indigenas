@@ -47,6 +47,8 @@ import { ModalFormDetalhesComponent } from '../../shared/components/modal-form-d
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
+declare let gtag: Function;
+
 @Component({
   selector: 'app-calculadora-terra-indigena',
   standalone: true,
@@ -335,6 +337,10 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
     this.habilitarDesabilitarEdicao(true);
     this.limparResultado();
     this.validarFormulario();
+
+    gtag('event', 'form_submit', {
+      form_name: 'calculadora-terra-indigena'
+    });
   }
 
   validarFormulario(comLoading: boolean = true): void {
@@ -748,6 +754,11 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       };
 
       pdfMake.createPdf(docDefinition).download(calculatorName);
+
+      gtag('event', 'download_pdf', {
+        pdf_name: 'calculadora-terra-indigena',
+        calculator_name: calculatorName
+      });
     }
   }
 
