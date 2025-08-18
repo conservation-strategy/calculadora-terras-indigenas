@@ -17,6 +17,7 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { CalculadoraService } from '../../core/services/calculadora.service';
+import { ExcelExportService } from '../../core/services/excel-export.service';
 import { ModalEixoDetalhesComponent } from '../../shared/components/modal-eixo-detalhes/modal-eixo-detalhes.component';
 import { NumbersOnlyDirective } from '../../shared/numbers-only.directive';
 
@@ -67,7 +68,7 @@ declare let gtag: Function;
     NgxMaskDirective,
     TranslateModule,
   ],
-  providers: [CalculadoraService, CurrencyPipe, TranslateService],
+  providers: [CalculadoraService, ExcelExportService, CurrencyPipe, TranslateService],
   templateUrl: './calculadora-terra-indigena.component.html',
   styleUrl: './calculadora-terra-indigena.component.scss',
 })
@@ -158,6 +159,7 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
 
   constructor(
     private calculatorService: CalculadoraService,
+    private excelExportService: ExcelExportService,
     private currencyPipe: CurrencyPipe,
     private translateService: TranslateService
   ) {}
@@ -758,6 +760,17 @@ export class CalculadoraTerraIndigenaComponent implements OnInit {
       gtag('event', 'download_pdf', {
         pdf_name: 'calculadora-terra-indigena',
         calculator_name: calculatorName
+      });
+    }
+  }
+
+  exportarXls() {
+    if (this.resultado) {
+      this.excelExportService.exportGovernancaRecorrente(this.resultado, this.tipoResultadoBom);
+      
+      gtag('event', 'download_excel', {
+        excel_name: 'governanca-recorrente',
+        calculator_name: 'calculadora-terra-indigena'
       });
     }
   }

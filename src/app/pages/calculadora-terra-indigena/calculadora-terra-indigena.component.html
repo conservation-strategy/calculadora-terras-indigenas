@@ -380,9 +380,14 @@
                         <small *ngIf="resultado.tipoCusto == enumTipoCusto.NaoRecorrente">/1x</small>
                     </h4>
                 </div>
-                <button class="btn btn-lg btn-secondary px-5 rounded-pill" (click)="gerarPdf()">
-                    {{'indigenous-land-calculator.section-result.download-pdf' | translate}}
-                </button>
+                <div class="d-flex flex-wrap gap-3 mb-3">
+                    <button class="btn btn-lg btn-secondary px-4 rounded-pill flex-fill" (click)="gerarPdf()">
+                        {{'indigenous-land-calculator.section-result.download-pdf' | translate}}
+                    </button>
+                    <button class="btn btn-lg btn-secondary px-4 rounded-pill flex-fill" (click)="exportarXls()">
+                        Exportar XLS
+                    </button>
+                </div>
             </div>
             <div class="col-lg-6 mb-3">
                 <canvasjs-chart [options]="chartOptions" id="chart" [styles]="{width: '100%', height:'300px'}"
