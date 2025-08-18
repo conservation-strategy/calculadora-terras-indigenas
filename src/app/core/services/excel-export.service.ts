@@ -56,7 +56,7 @@ export class ExcelExportService {
       // Create a more descriptive filename
       const terraIndigena = resultado.terraIndigena || 'Terra_Indigena';
       const tipoCusto = tipoResultadoBom ? 'Bom' : 'Basico';
-      const filename = `Governanca_Recorrente_${terraIndigena}_${tipoCusto}_${new Date().toISOString().split('T')[0]}.xlsx`;
+      const filename = `Gestao_${terraIndigena}_${tipoCusto}_${new Date().toISOString().split('T')[0]}.xlsx`;
       
       saveAs(blob, filename);
       
