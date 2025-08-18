@@ -48,6 +48,10 @@ export class ExcelExportService {
       // Create Governança Recorrente sheet
       const governancaSheet = this.createGovernancaRecorrenteSheet(resultado, tipoResultadoBom);
       XLSX.utils.book_append_sheet(workbook, governancaSheet, 'Recorrente - Governança');
+
+      // Create Fiscalização e Proteção Recorrente sheet
+      const fiscalizacaoSheet = this.createFiscalizacaoProtecaoRecorrenteSheet(resultado, tipoResultadoBom);
+      XLSX.utils.book_append_sheet(workbook, fiscalizacaoSheet, 'Recorrente - Fiscalização');
       
       // Generate and download
       const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
@@ -239,16 +243,393 @@ export class ExcelExportService {
     
     return sheet;
   }
+
+  private createFiscalizacaoProtecaoRecorrenteSheet(resultado: any, tipoResultadoBom: boolean): XLSX.WorkSheet {
+    const data: any[] = [];
+    
+    // Header
+    data.push(['RECORRENTE - FISCALIZAÇÃO E PROTEÇÃO']);
+    data.push([]);
+    
+    // Metadata
+    if (resultado.terraIndigena) {
+      data.push(['Terra Indígena:', resultado.terraIndigena]);
+    }
+    data.push(['Tipo de Resultado:', tipoResultadoBom ? 'Bom' : 'Básico']);
+    data.push(['Data de Geração:', new Date().toLocaleDateString('pt-BR')]);
+    data.push([]);
+    
+    // Instruction
+    data.push(['INSTRUÇÃO:']);
+    data.push(['O usuário deve alterar as quantidades para alcançar o valor sugerido. O usuário pode editar também os valores unitários sugeridos.']);
+    data.push([]);
+    
+    // Headers
+    data.push(['Objetivo de gestão', 'Item de Custo', 'Valor Unitário (R$)', 'Unidade de Medida', 'Quantidade', 'Valor Total (R$)']);
+    
+    // --- Elaboração e atualização de diagnóstico ---
+    data.push([]);
+    data.push(['ELABORAÇÃO E ATUALIZAÇÃO DE DIAGNÓSTICO']);
+    data.push([]);
+    
+    const elaboracaoBasico = [
+      { tipo: 'Básico', item: 'Alimentação', valor: 60, unidade: 'por dia' },
+      { tipo: 'Básico', item: 'Frete aéreo, fluvial e terrestre', valor: 3000, unidade: 'por operação' },
+      { tipo: 'Básico', item: 'Combustível', valor: 1000, unidade: 'unitário' },
+      { tipo: 'Básico', item: 'Hospedagem', valor: 200, unidade: 'por diária' },
+      { tipo: 'Básico', item: 'Material de campo', valor: 1000, unidade: 'unitário' },
+      { tipo: 'Básico', item: 'Material de papelaria', valor: 800, unidade: 'por mês' },
+      { tipo: 'Básico', item: 'Pagamento de cozinheira e barqueiro', valor: 1000, unidade: 'unitário' },
+    ];
+
+    const elaboracaoStartRow = data.length + 1;
+    elaboracaoBasico.forEach(item => {
+      const currentRow = data.length + 1;
+      const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+      data.push([
+        item.tipo,
+        item.item,
+        { t: 'n', v: item.valor, z: '#,##0' },
+        item.unidade,
+        { t: 'n', v: 1, z: '#,##0' },
+        { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+      ]);
+    });
+
+    if (tipoResultadoBom) {
+      const elaboracaoBom = [
+        { tipo: 'Bom', item: 'Mesmo itens acima com mais reuniões', valor: 1000, unidade: 'unitário' }
+      ];
+      elaboracaoBom.forEach(item => {
+        const currentRow = data.length + 1;
+        const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+        data.push([
+          item.tipo,
+          item.item,
+          { t: 'n', v: item.valor, z: '#,##0' },
+          item.unidade,
+          { t: 'n', v: 1, z: '#,##0' },
+          { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
+      });
+    }
+
+    const elaboracaoEndRow = data.length;
+    data.push([]);
+    const elaboracaoSubtotalRow = data.length + 1;
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${elaboracaoStartRow}:F${elaboracaoEndRow})`, z: '#,##0'}]);
+    const elaboracaoCalculado = this.getActivityCalculatedValue(resultado, 'Elaboração e atualização de diagnóstico', 2);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(elaboracaoCalculado), z: '#,##0'}]);
+
+    // Separator
+    data.push([]);
+    data.push(['', '─', '─', '─', '─', '─']);
+    data.push([]);
+
+    // --- Fiscalização e monitoramento territorial ---
+    data.push(['FISCALIZAÇÃO E MONITORAMENTO TERRITORIAL']);
+    data.push([]);
+
+    const fiscalizacaoBasico = [
+        { tipo: 'Básico', item: 'Combustível', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Alimentação', valor: 60, unidade: 'por dia' },
+        { tipo: 'Básico', item: 'Sobrevoo', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Material de campo', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Frete aéreo, terrestre e fluvial', valor: 3000, unidade: 'por operação' },
+        { tipo: 'Básico', item: 'Ajuda de custo', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Uniforme', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Consultoria', valor: 7000, unidade: 'por mês' },
+    ];
+
+    const fiscalizacaoStartRow = data.length + 1;
+    fiscalizacaoBasico.forEach(item => {
+      const currentRow = data.length + 1;
+      const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+      data.push([
+        item.tipo,
+        item.item,
+        { t: 'n', v: item.valor, z: '#,##0' },
+        item.unidade,
+        { t: 'n', v: 1, z: '#,##0' },
+        { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+      ]);
+    });
+
+    if (tipoResultadoBom) {
+        const fiscalizacaoBom = [
+            { tipo: 'Bom', item: 'Consultoria SIG', valor: 7000, unidade: 'por mês' },
+            { tipo: 'Bom', item: 'Programa Cybertracker', valor: 1000, unidade: 'unitário' },
+            { tipo: 'Bom', item: 'Aquisição e processamento de imagens de satélite', valor: 1000, unidade: 'unitário' },
+        ];
+        fiscalizacaoBom.forEach(item => {
+        const currentRow = data.length + 1;
+        const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+        data.push([
+            item.tipo,
+            item.item,
+            { t: 'n', v: item.valor, z: '#,##0' },
+            item.unidade,
+            { t: 'n', v: 1, z: '#,##0' },
+            { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
+      });
+    }
+
+    const fiscalizacaoEndRow = data.length;
+    data.push([]);
+    const fiscalizacaoSubtotalRow = data.length + 1;
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${fiscalizacaoStartRow}:F${fiscalizacaoEndRow})`, z: '#,##0'}]);
+    const fiscalizacaoCalculado = this.getActivityCalculatedValue(resultado, 'Fiscalização e monitoramento territorial', 2);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(fiscalizacaoCalculado), z: '#,##0'}]);
+
+    // Separator
+    data.push([]);
+    data.push(['', '─', '─', '─', '─', '─']);
+    data.push([]);
+
+    // --- Monitoramento e manejo ambiental ---
+    data.push(['MONITORAMENTO E MANEJO AMBIENTAL']);
+    data.push([]);
+
+    const monitoramentoBasico = [
+        { tipo: 'Básico', item: 'Alimentação', valor: 60, unidade: 'por dia' },
+        { tipo: 'Básico', item: 'Combustível', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Consultoria', valor: 7000, unidade: 'por mês' },
+        { tipo: 'Básico', item: 'Ajuda de custo', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Material de campo', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Pagamento de cozinheira e barqueiro', valor: 1000, unidade: 'unitário' },
+    ];
+
+    const monitoramentoStartRow = data.length + 1;
+    monitoramentoBasico.forEach(item => {
+      const currentRow = data.length + 1;
+      const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+      data.push([
+        item.tipo,
+        item.item,
+        { t: 'n', v: item.valor, z: '#,##0' },
+        item.unidade,
+        { t: 'n', v: 1, z: '#,##0' },
+        { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+      ]);
+    });
+
+    if (tipoResultadoBom) {
+        const monitoramentoBom = [
+            { tipo: 'Bom', item: 'Assessoria técnica para monitoramento ambiental', valor: 7000, unidade: 'por mês' },
+        ];
+        monitoramentoBom.forEach(item => {
+        const currentRow = data.length + 1;
+        const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+        data.push([
+            item.tipo,
+            item.item,
+            { t: 'n', v: item.valor, z: '#,##0' },
+            item.unidade,
+            { t: 'n', v: 1, z: '#,##0' },
+            { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
+      });
+    }
+
+    const monitoramentoEndRow = data.length;
+    data.push([]);
+    const monitoramentoSubtotalRow = data.length + 1;
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${monitoramentoStartRow}:F${monitoramentoEndRow})`, z: '#,##0'}]);
+    const monitoramentoCalculado = this.getActivityCalculatedValue(resultado, 'Monitoramento e manejo ambiental', 2);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(monitoramentoCalculado), z: '#,##0'}]);
+
+    // Separator
+    data.push([]);
+    data.push(['', '─', '─', '─', '─', '─']);
+    data.push([]);
+
+    // --- Capacitações em fiscalização e proteção ambiental ---
+    data.push(['CAPACITAÇÕES EM FISCALIZAÇÃO E PROTEÇÃO AMBIENTAL']);
+    data.push([]);
+
+    const capacitacoesBasico = [
+        { tipo: 'Básico', item: 'Alimentação', valor: 60, unidade: 'por dia' },
+        { tipo: 'Básico', item: 'Combustível', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Consultoria', valor: 7000, unidade: 'por mês' },
+        { tipo: 'Básico', item: 'Material de papelaria', valor: 800, unidade: 'por mês' },
+        { tipo: 'Básico', item: 'Transporte', valor: 5000, unidade: 'por mês' },
+        { tipo: 'Básico', item: 'Camiseta', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Ajuda de custo', valor: 1000, unidade: 'unitário' },
+        { tipo: 'Básico', item: 'Hospedagem', valor: 200, unidade: 'por diária' },
+    ];
+
+    const capacitacoesStartRow = data.length + 1;
+    capacitacoesBasico.forEach(item => {
+      const currentRow = data.length + 1;
+      const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+      data.push([
+        item.tipo,
+        item.item,
+        { t: 'n', v: item.valor, z: '#,##0' },
+        item.unidade,
+        { t: 'n', v: 1, z: '#,##0' },
+        { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+      ]);
+    });
+
+    if (tipoResultadoBom) {
+        const capacitacoesBom = [
+            { tipo: 'Bom', item: 'Intercâmbio com outros povos sobre fiscalização', valor: 1000, unidade: 'unitário' },
+        ];
+        capacitacoesBom.forEach(item => {
+        const currentRow = data.length + 1;
+        const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+        data.push([
+            item.tipo,
+            item.item,
+            { t: 'n', v: item.valor, z: '#,##0' },
+            item.unidade,
+            { t: 'n', v: 1, z: '#,##0' },
+            { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
+        });
+    }
+
+    const capacitacoesEndRow = data.length;
+    data.push([]);
+    const capacitacoesSubtotalRow = data.length + 1;
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${capacitacoesStartRow}:F${capacitacoesEndRow})`, z: '#,##0'}]);
+    const capacitacoesCalculado = this.getActivityCalculatedValue(resultado, 'Capacitações em fiscalização e proteção ambiental', 2);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(capacitacoesCalculado), z: '#,##0'}]);
+
+    // Separator
+    data.push([]);
+    data.push(['', '─', '─', '─', '─', '─']);
+    data.push([]);
+
+    // --- Equipamentos ---
+    data.push(['EQUIPAMENTOS']);
+    data.push([]);
+
+    const equipamentosBasico = [
+        { tipo: 'Básico', item: 'Manutenção dos equipamentos e veículos utilizados', valor: 2000, unidade: 'por evento' },
+    ];
+
+    const equipamentosStartRow = data.length + 1;
+    equipamentosBasico.forEach(item => {
+        const currentRow = data.length + 1;
+        const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+        data.push([
+            item.tipo,
+            item.item,
+            { t: 'n', v: item.valor, z: '#,##0' },
+            item.unidade,
+            { t: 'n', v: 1, z: '#,##0' },
+            { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
+    });
+
+    if (tipoResultadoBom) {
+        const equipamentosBom = [
+            { tipo: 'Bom', item: 'Seguro', valor: 3000, unidade: 'por ano' },
+            { tipo: 'Bom', item: 'Sistema de alarme', valor: 1000, unidade: 'unitário' },
+        ];
+        equipamentosBom.forEach(item => {
+            const currentRow = data.length + 1;
+            const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+            data.push([
+                item.tipo,
+                item.item,
+                { t: 'n', v: item.valor, z: '#,##0' },
+                item.unidade,
+                { t: 'n', v: 1, z: '#,##0' },
+                { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+            ]);
+        });
+    }
+
+    const equipamentosEndRow = data.length;
+    data.push([]);
+    const equipamentosSubtotalRow = data.length + 1;
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${equipamentosStartRow}:F${equipamentosEndRow})`, z: '#,##0'}]);
+    const equipamentosCalculado = this.getActivityCalculatedValue(resultado, 'Equipamentos', 2);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(equipamentosCalculado), z: '#,##0'}]);
+
+    // Separator
+    data.push([]);
+    data.push(['', '─', '─', '─', '─', '─']);
+    data.push([]);
+
+    // --- Corpo técnico/Fiscalização ---
+    data.push(['CORPO TÉCNICO/FISCALIZAÇÃO']);
+    data.push([]);
+
+    const corpoTecnicoBasico = [
+        { tipo: 'Básico', item: 'Salário dos agentes ambientais indígenas', valor: 3500, unidade: 'por mês' },
+    ];
+
+    const corpoTecnicoStartRow = data.length + 1;
+    corpoTecnicoBasico.forEach(item => {
+        const currentRow = data.length + 1;
+        const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+        data.push([
+            item.tipo,
+            item.item,
+            { t: 'n', v: item.valor, z: '#,##0' },
+            item.unidade,
+            { t: 'n', v: 1, z: '#,##0' },
+            { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
+    });
+
+    if (tipoResultadoBom) {
+        const corpoTecnicoBom = [
+            { tipo: 'Bom', item: 'Salários e encargos de equipe de monitoramento remoto', valor: 3500, unidade: 'por mês' },
+        ];
+        corpoTecnicoBom.forEach(item => {
+            const currentRow = data.length + 1;
+            const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
+            data.push([
+                item.tipo,
+                item.item,
+                { t: 'n', v: item.valor, z: '#,##0' },
+                item.unidade,
+                { t: 'n', v: 1, z: '#,##0' },
+                { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+            ]);
+        });
+    }
+
+    const corpoTecnicoEndRow = data.length;
+    data.push([]);
+    const corpoTecnicoSubtotalRow = data.length + 1;
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${corpoTecnicoStartRow}:F${corpoTecnicoEndRow})`, z: '#,##0'}]);
+    const corpoTecnicoCalculado = this.getActivityCalculatedValue(resultado, 'Corpo técnico/Fiscalização', 2);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(corpoTecnicoCalculado), z: '#,##0'}]);
+    
+    // --- Final Total ---
+    data.push([]);
+    data.push(['', '─', '─', '─', '─', '─']);
+    data.push([]);
+    data.push(['', 'TOTAL GERAL FISCALIZAÇÃO E PROTEÇÃO', '', '', '', {t:'n', f:`F${elaboracaoSubtotalRow}+F${fiscalizacaoSubtotalRow}+F${monitoramentoSubtotalRow}+F${capacitacoesSubtotalRow}+F${equipamentosSubtotalRow}+F${corpoTecnicoSubtotalRow}`, z: '#,##0'}]);
+
+
+    const sheet = XLSX.utils.aoa_to_sheet(data);
+
+    sheet['!cols'] = [
+      { width: 12 }, { width: 45 }, { width: 18 }, { width: 20 }, { width: 12 }, { width: 18 }
+    ];
+    
+    this.applyBasicStyling(sheet, data.length);
+    
+    return sheet;
+  }
   
-  private getActivityCalculatedValue(resultado: any, activityName: string): number {
+  private getActivityCalculatedValue(resultado: any, activityName: string, eixoId: number = 1): number {
     // The calculator stores results in resultado.eixos where each eixo has activities
     if (resultado && resultado.eixos && Array.isArray(resultado.eixos)) {
       // Find the Governança eixo (id: 1)
-      const governancaEixo = resultado.eixos.find((e: any) => e.id === 1);
+      const eixo = resultado.eixos.find((e: any) => e.id === eixoId);
       
-      if (governancaEixo && governancaEixo.atividades && Array.isArray(governancaEixo.atividades)) {
+      if (eixo && eixo.atividades && Array.isArray(eixo.atividades)) {
         // Find the specific activity by name
-        const atividade = governancaEixo.atividades.find((a: any) => {
+        const atividade = eixo.atividades.find((a: any) => {
           if (!a.nome) return false;
           const searchName = activityName.toLowerCase();
           const atividadeName = a.nome.toLowerCase();
@@ -262,7 +643,7 @@ export class ExcelExportService {
     }
     
     // If no match found, log for debugging
-    console.warn(`Activity value not found for: ${activityName}`);
+    console.warn(`Activity value not found for: ${activityName} in eixo ${eixoId}`);
     return 0;
   }
   
