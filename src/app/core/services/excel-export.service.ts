@@ -84,11 +84,11 @@ export class ExcelExportService {
     
     // Instruction
     data.push(['INSTRUÇÃO:']);
-    data.push(['Usuário deve alterar as quantidades para alcançar o valor sugerido.']);
+    data.push(['O usuário deve alterar as quantidades para alcançar o valor sugerido. O usuário pode editar também os valores unitários sugeridos.']);
     data.push([]);
     
     // Headers
-    data.push(['Tipo', 'Item de Custo', 'Valor Unitário (R$)', 'Unidade de Medida', 'Quantidade', 'Valor Total (R$)']);
+    data.push(['Objetivo de gestão', 'Item de Custo', 'Valor Unitário (R$)', 'Unidade de Medida', 'Quantidade', 'Valor Total (R$)']);
     
     // --- Infraestrutura das associações ---
     data.push([]);
@@ -105,7 +105,14 @@ export class ExcelExportService {
     infraestruturaBasico.forEach(item => {
       const currentRow = data.length + 1;
       const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
-      data.push([item.tipo, item.item, item.valor, item.unidade, 1, {t:'n', f:`C${currentRow}*E${currentRow}${multiplyYear}`}]);
+      data.push([
+        item.tipo,
+        item.item,
+        { t: 'n', v: item.valor, z: '#,##0' },
+        item.unidade,
+        { t: 'n', v: 1, z: '#,##0' },
+        { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+      ]);
     });
 
     if (tipoResultadoBom) {
@@ -119,16 +126,23 @@ export class ExcelExportService {
       infraestruturaBom.forEach(item => {
         const currentRow = data.length + 1;
         const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
-        data.push([item.tipo, item.item, item.valor, item.unidade, 1, {t:'n', f:`C${currentRow}*E${currentRow}${multiplyYear}`}]);
+        data.push([
+          item.tipo,
+          item.item,
+          { t: 'n', v: item.valor, z: '#,##0' },
+          item.unidade,
+          { t: 'n', v: 1, z: '#,##0' },
+          { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
       });
     }
 
     const infraEndRow = data.length;
     data.push([]);
     const infraSubtotalRow = data.length + 1;
-    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${infraStartRow}:F${infraEndRow})`}]);
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${infraStartRow}:F${infraEndRow})`, z: '#,##0'}]);
     const infraCalculado = this.getActivityCalculatedValue(resultado, 'Infraestrutura das associações');
-    data.push(['', 'Total/ano sugerido', '', '', '', Math.round(infraCalculado)]);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(infraCalculado), z: '#,##0'}]);
     
     // Separator
     data.push([]);
@@ -166,7 +180,14 @@ export class ExcelExportService {
     funcionamentoBasico.forEach(item => {
       const currentRow = data.length + 1;
       const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
-      data.push([item.tipo, item.item, item.valor, item.unidade, 1, {t:'n', f:`C${currentRow}*E${currentRow}${multiplyYear}`}]);
+      data.push([
+        item.tipo,
+        item.item,
+        { t: 'n', v: item.valor, z: '#,##0' },
+        item.unidade,
+        { t: 'n', v: 1, z: '#,##0' },
+        { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+      ]);
     });
 
     if (tipoResultadoBom) {
@@ -182,22 +203,29 @@ export class ExcelExportService {
       funcionamentoBom.forEach(item => {
         const currentRow = data.length + 1;
         const multiplyYear = item.unidade === 'por mês' ? '*12' : '';
-        data.push([item.tipo, item.item, item.valor, item.unidade, 1, {t:'n', f:`C${currentRow}*E${currentRow}${multiplyYear}`}]);
+        data.push([
+            item.tipo,
+            item.item,
+            { t: 'n', v: item.valor, z: '#,##0' },
+            item.unidade,
+            { t: 'n', v: 1, z: '#,##0' },
+            { t: 'n', f: `C${currentRow}*E${currentRow}${multiplyYear}`, z: '#,##0' }
+        ]);
       });
     }
 
     const funcEndRow = data.length;
     data.push([]);
     const funcSubtotalRow = data.length + 1;
-    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${funcStartRow}:F${funcEndRow})`}]);
+    data.push(['', 'Total/ano da Atividade', '', '', '', {t:'n', f:`SUM(F${funcStartRow}:F${funcEndRow})`, z: '#,##0'}]);
     const funcCalculado = this.getActivityCalculatedValue(resultado, 'Funcionamento das associações');
-    data.push(['', 'Total/ano sugerido', '', '', '', Math.round(funcCalculado)]);
+    data.push(['', 'Total/ano sugerido', '', '', '', {t:'n', v: Math.round(funcCalculado), z: '#,##0'}]);
     
     // --- Final Total ---
     data.push([]);
     data.push(['', '─', '─', '─', '─', '─']);
     data.push([]);
-    data.push(['', 'TOTAL GERAL GOVERNANÇA', '', '', '', {t:'n', f:`F${infraSubtotalRow}+F${funcSubtotalRow}`}]);
+    data.push(['', 'TOTAL GERAL GOVERNANÇA', '', '', '', {t:'n', f:`F${infraSubtotalRow}+F${funcSubtotalRow}`, z: '#,##0'}]);
 
     // Create worksheet
     const sheet = XLSX.utils.aoa_to_sheet(data);
@@ -262,15 +290,7 @@ export class ExcelExportService {
     
     // Set column widths (already done in createGovernancaRecorrenteSheet)
     
-    // Add some basic cell formatting hints
-    // Note: These are just hints and may not work in all Excel versions
-    if (sheet['!cols']) {
-      sheet['!cols'].forEach((col: any, index: number) => {
-        if (index === 2 || index === 5) { // Valor Unitário and Valor Total columns
-          col.style = { numFmt: 'R$ #,##0' };
-        }
-      });
-    }
+    // Cell-level formatting is now applied directly during cell creation.
     
     // Add some basic range formatting hints
     // This is a placeholder for when we implement more advanced styling
