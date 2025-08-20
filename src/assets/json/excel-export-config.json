@@ -6,59 +6,53 @@
     "totalHeader": "TOTAL GERAL GOVERNANÇA",
     "activities": [
       {
-        "name": "INFRAESTRUTURA DAS ASSOCIAÇÕES",
-        "lookupName": "Infraestrutura das associações",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Manutenção de equipamentos e veículos", "valor": 2000, "unidade": "por evento" },
-            { "tipo": "Básico", "item": "Licenças de softwares", "valor": 1500, "unidade": "por ano" },
-            { "tipo": "Básico", "item": "Reparos correntes da infraestrutura da associação", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Manutenção de equipamentos e veículos", "valor": 2000, "unidade": "por evento" },
-            { "tipo": "Bom", "item": "Manutenção elétrica", "valor": 2000, "unidade": "por evento" },
-            { "tipo": "Bom", "item": "Seguro dos veículos", "valor": 5000, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Sistema de monitoramento", "valor": 8000, "unidade": "por sistema" },
-            { "tipo": "Bom", "item": "Reparos correntes da infraestrutura da associação", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Infraestrutura das associações",
+        "costItems": [
+          { "tipo": "Básico", "item": "Manutenção de equipamentos e veículos", "valor": 2000, "unidade": "por evento" },
+          { "tipo": "Básico", "item": "Licenças de softwares", "valor": 1500, "unidade": "por ano" },
+          { "tipo": "Básico", "item": "Reparos correntes da infraestrutura da associação", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Manutenção de equipamentos e veículos", "valor": 2000, "unidade": "por evento" },
+          { "tipo": "Bom", "item": "Manutenção elétrica", "valor": 2000, "unidade": "por evento" },
+          { "tipo": "Bom", "item": "Seguro dos veículos", "valor": 5000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Sistema de monitoramento", "valor": 8000, "unidade": "por sistema" },
+          { "tipo": "Bom", "item": "Reparos correntes da infraestrutura da associação", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "FUNCIONAMENTO DAS ASSOCIAÇÕES",
-        "lookupName": "Funcionamento das associações",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Tarifa bancária", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Internet", "valor": 150, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Energia", "valor": 250, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Água", "valor": 120, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Telefone", "valor": 100, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Correios", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Auditoria", "valor": 1000, "unidade": "por serviço" },
-            { "tipo": "Básico", "item": "Serviços contábeis", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Despesa com cartório", "valor": 1000, "unidade": "por serviço" },
-            { "tipo": "Básico", "item": "Material de escritório", "valor": 800, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Confecção de material gráfico", "valor": 500, "unidade": "por tiragem" },
-            { "tipo": "Básico", "item": "Impressões", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Passagens", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
-            { "tipo": "Básico", "item": "Frete aéreo", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Aluguel de veículo", "valor": 5000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Táxi", "valor": 400, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Transporte", "valor": 5000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Assessoria de comunicação", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Assessoria jurídica", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Consultoria de audiovisual", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Advogado", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Assessoria de gestão de mídias", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Site", "valor": 1000, "unidade": "por ano" },
-            { "tipo": "Bom", "item": "Plano de comunicação", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Funcionamento das associações",
+        "costItems": [
+          { "tipo": "Básico", "item": "Tarifa bancária", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Internet", "valor": 150, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Energia", "valor": 250, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Água", "valor": 120, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Telefone", "valor": 100, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Correios", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Auditoria", "valor": 1000, "unidade": "por serviço" },
+          { "tipo": "Básico", "item": "Serviços contábeis", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Despesa com cartório", "valor": 1000, "unidade": "por serviço" },
+          { "tipo": "Básico", "item": "Material de escritório", "valor": 800, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Confecção de material gráfico", "valor": 500, "unidade": "por tiragem" },
+          { "tipo": "Básico", "item": "Impressões", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Passagens", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
+          { "tipo": "Básico", "item": "Frete aéreo", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Aluguel de veículo", "valor": 5000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Táxi", "valor": 400, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Transporte", "valor": 5000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Assessoria de comunicação", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Assessoria jurídica", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Consultoria de audiovisual", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Advogado", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Assessoria de gestão de mídias", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Site", "valor": 1000, "unidade": "por ano" },
+          { "tipo": "Bom", "item": "Plano de comunicação", "valor": 1000, "unidade": "unitário" }
+        ]
       }
     ]
   },
@@ -69,104 +63,86 @@
     "totalHeader": "TOTAL GERAL FISCALIZAÇÃO E PROTEÇÃO",
     "activities": [
       {
-        "name": "ELABORAÇÃO E ATUALIZAÇÃO DE DIAGNÓSTICO",
-        "lookupName": "Elaboração e atualização de diagnóstico",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Frete aéreo, fluvial e terrestre", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
-            { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Material de papelaria", "valor": 800, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Mesmo itens acima com mais reuniões", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Elaboração e atualização de diagnóstico",
+        "costItems": [
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Frete aéreo, fluvial e terrestre", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
+          { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Material de papelaria", "valor": 800, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Mesmo itens acima com mais reuniões", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "FISCALIZAÇÃO E MONITORAMENTO TERRITORIAL",
-        "lookupName": "Fiscalização e monitoramento territorial",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Sobrevoo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Uniforme", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Consultoria SIG", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Programa Cybertracker", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Aquisição e processamento de imagens de satélite", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Fiscalização e monitoramento territorial",
+        "costItems": [
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Sobrevoo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Uniforme", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Consultoria SIG", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Programa Cybertracker", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Aquisição e processamento de imagens de satélite", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "MONITORAMENTO E MANEJO AMBIENTAL",
-        "lookupName": "Monitoramento e manejo ambiental",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Assessoria técnica para monitoramento ambiental", "valor": 7000, "unidade": "por mês" }
-          ]
-        }
+        "name": "Monitoramento e manejo ambiental",
+        "costItems": [
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Assessoria técnica para monitoramento ambiental", "valor": 7000, "unidade": "por mês" }
+        ]
       },
       {
-        "name": "CAPACITAÇÕES EM FISCALIZAÇÃO E PROTEÇÃO AMBIENTAL",
-        "lookupName": "Capacitações em fiscalização e proteção ambiental",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Material de papelaria", "valor": 800, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Transporte", "valor": 5000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Camiseta", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Intercâmbio com outros povos sobre fiscalização", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Capacitações em fiscalização e proteção ambiental",
+        "costItems": [
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Material de papelaria", "valor": 800, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Transporte", "valor": 5000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Camiseta", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Intercâmbio com outros povos sobre fiscalização", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "EQUIPAMENTOS",
-        "lookupName": "Equipamentos",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Manutenção dos equipamentos e veículos utilizados", "valor": 2000, "unidade": "por evento" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Seguro", "valor": 3000, "unidade": "por ano" },
-            { "tipo": "Bom", "item": "Sistema de alarme", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Equipamentos",
+        "costItems": [
+          { "tipo": "Básico", "item": "Manutenção dos equipamentos e veículos utilizados", "valor": 2000, "unidade": "por evento" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Seguro", "valor": 3000, "unidade": "por ano" },
+          { "tipo": "Bom", "item": "Sistema de alarme", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "CORPO TÉCNICO/FISCALIZAÇÃO",
-        "lookupName": "Corpo técnico/Fiscalização",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Salário dos agentes ambientais indígenas", "valor": 3500, "unidade": "por mês" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Salários e encargos de equipe de monitoramento remoto", "valor": 3500, "unidade": "por mês" }
-          ]
-        }
+        "name": "Corpo técnico/Fiscalização",
+        "costItems": [
+          { "tipo": "Básico", "item": "Salário dos agentes ambientais indígenas", "valor": 3500, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Salários e encargos de equipe de monitoramento remoto", "valor": 3500, "unidade": "por mês" }
+        ]
       }
     ]
   },
@@ -177,56 +153,47 @@
     "totalHeader": "TOTAL GERAL FORTALECIMENTO CULTURAL",
     "activities": [
       {
-        "name": "ATIVIDADES CULTURAIS TRADICIONAIS",
-        "lookupName": "Atividades culturais tradicionais",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Deslocamento", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Compra de materiais para artesanato", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Auxílio financeiro", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" },
-            { "tipo": "Básico", "item": "Consultoria (cinegrafista)", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Oficina de resgate de atividades culturais", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Projetos culturais com apoio estruturado", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Atividades culturais tradicionais",
+        "costItems": [
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Deslocamento", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Compra de materiais para artesanato", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Auxílio financeiro", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" },
+          { "tipo": "Básico", "item": "Consultoria (cinegrafista)", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Oficina de resgate de atividades culturais", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Projetos culturais com apoio estruturado", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "ATIVIDADES INTERCULTURAIS",
-        "lookupName": "Atividades interculturais",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Auxílio financeiro", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Frete", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Evento anual de intercâmbio cultural", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Deslocamento", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Atividades interculturais",
+        "costItems": [
+          { "tipo": "Básico", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Auxílio financeiro", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Frete", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Evento anual de intercâmbio cultural", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Deslocamento", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "CORPO TÉCNICO/CULTURA",
-        "lookupName": "Corpo técnico/Cultura",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Salário agente cultural", "valor": 3500, "unidade": "por mês" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Salário equipe de agentes culturais", "valor": 3500, "unidade": "por mês" }
-          ]
-        }
+        "name": "Corpo técnico/Cultura",
+        "costItems": [
+          { "tipo": "Básico", "item": "Salário agente cultural", "valor": 3500, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Salário equipe de agentes culturais", "valor": 3500, "unidade": "por mês" }
+        ]
       }
     ]
   },
@@ -237,46 +204,40 @@
     "totalHeader": "TOTAL GERAL GERAÇÃO DE RENDA",
     "activities": [
       {
-        "name": "ALTERNATIVAS ECONÔMICAS SUSTENTÁVEIS",
-        "lookupName": "Apoio a alternativas econômicas sustentáveis",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Auxílio financeiro", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Consultoria sobre produção", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Capacitações", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Material de apoio ao escoamento", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Passagens", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Insumos para produção (embalagem, rótulo, insumos agrícolas)", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Imposto da transação comercial", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Mudas", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
-            { "tipo": "Básico", "item": "Serviço de retroescavadeira", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Aluguel de depósito ou loja", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Manutenção de veículos", "valor": 2000, "unidade": "por evento" },
-            { "tipo": "Básico", "item": "Seguro", "valor": 3000, "unidade": "por ano" },
-            { "tipo": "Básico", "item": "Energia elétrica, internet e água", "valor": 150, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Manutenção dos espaços de produção", "valor": 2000, "unidade": "por evento" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Mesmos itens do básico para duas ou mais cadeias produtivas", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Apoio a alternativas econômicas sustentáveis",
+        "costItems": [
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Auxílio financeiro", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Consultoria sobre produção", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Capacitações", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Material de apoio ao escoamento", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Passagens", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Insumos para produção (embalagem, rótulo, insumos agrícolas)", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Imposto da transação comercial", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Mudas", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
+          { "tipo": "Básico", "item": "Serviço de retroescavadeira", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Aluguel de depósito ou loja", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Manutenção de veículos", "valor": 2000, "unidade": "por evento" },
+          { "tipo": "Básico", "item": "Seguro", "valor": 3000, "unidade": "por ano" },
+          { "tipo": "Básico", "item": "Energia elétrica, internet e água", "valor": 150, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Manutenção dos espaços de produção", "valor": 2000, "unidade": "por evento" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Mesmos itens do básico para duas ou mais cadeias produtivas", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "CORPO TÉCNICO/GERAÇÃO DE RENDA",
-        "lookupName": "Corpo técnico/Geração de renda",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Salário de pessoal vinculado à assessoria técnica", "valor": 7000, "unidade": "por mês" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Salário de equipe indígena com formação específica", "valor": 3500, "unidade": "por mês" }
-          ]
-        }
+        "name": "Corpo técnico/Geração de renda",
+        "costItems": [
+          { "tipo": "Básico", "item": "Salário de pessoal vinculado à assessoria técnica", "valor": 7000, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Salário de equipe indígena com formação específica", "valor": 3500, "unidade": "por mês" }
+        ]
       }
     ]
   },
@@ -287,48 +248,39 @@
     "totalHeader": "TOTAL GERAL SOBERANIA ALIMENTAR",
     "activities": [
       {
-        "name": "INICIATIVAS DE SOBERANIA ALIMENTAR",
-        "lookupName": "Iniciativas relacionadas à soberania alimentar",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Material e insumos de campo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Consumo de proteína (criação, caça e pesca)", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Logística", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Manutenção de equipamentos e veículos", "valor": 2000, "unidade": "por evento" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Feira anual de troca de sementes", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
-            { "tipo": "Bom", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Bom", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Iniciativas relacionadas à soberania alimentar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Material e insumos de campo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Consumo de proteína (criação, caça e pesca)", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Logística", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Manutenção de equipamentos e veículos", "valor": 2000, "unidade": "por evento" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Feira anual de troca de sementes", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Hospedagem", "valor": 200, "unidade": "por diária" },
+          { "tipo": "Bom", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Bom", "item": "Pagamento de cozinheira e barqueiro", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "CAPACITAÇÕES EM SOBERANIA ALIMENTAR",
-        "lookupName": "Capacitações relacionadas a soberania alimentar",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Oficinas sobre produção e plantio de mudas", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" }
-          ]
-        }
+        "name": "Capacitações relacionadas a soberania alimentar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Oficinas sobre produção e plantio de mudas", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" }
+        ]
       },
       {
-        "name": "CORPO TÉCNICO/SOBERANIA ALIMENTAR",
-        "lookupName": "Corpo técnico/Soberania Alimentar",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Salário de pessoal vinculado às ações de soberania alimentar", "valor": 3500, "unidade": "por mês" }
-          ],
-          "bom": []
-        }
+        "name": "Corpo técnico/Soberania Alimentar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Salário de pessoal vinculado às ações de soberania alimentar", "valor": 3500, "unidade": "por mês" }
+        ],
+        "costItemsBom": []
       }
     ]
   },
@@ -339,60 +291,48 @@
     "totalHeader": "TOTAL GERAL INFRAESTRUTURAS COMPLEMENTARES",
     "activities": [
       {
-        "name": "ACESSO À ENERGIA",
-        "lookupName": "Acesso a energia",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Manutenção da infraestrutura de energia (placa solar, motor de luz)", "valor": 2000, "unidade": "por evento" },
-            { "tipo": "Básico", "item": "Mensalidade do sistema", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Manutenção semestral do sistema de energia", "valor": 2000, "unidade": "por evento" }
-          ]
-        }
+        "name": "Acesso a energia",
+        "costItems": [
+          { "tipo": "Básico", "item": "Manutenção da infraestrutura de energia (placa solar, motor de luz)", "valor": 2000, "unidade": "por evento" },
+          { "tipo": "Básico", "item": "Mensalidade do sistema", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Manutenção semestral do sistema de energia", "valor": 2000, "unidade": "por evento" }
+        ]
       },
       {
-        "name": "ACESSO À COMUNICAÇÃO",
-        "lookupName": "Acesso à comunicação",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Manutenção anual dos equipamentos de rádio e internet", "valor": 2000, "unidade": "por evento" },
-            { "tipo": "Básico", "item": "Logística de manutenção", "valor": 2000, "unidade": "por evento" },
-            { "tipo": "Básico", "item": "Mensalidade de internet", "valor": 150, "unidade": "por mês" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Manutenção semestral dos equipamentos de rádio e internet", "valor": 2000, "unidade": "por evento" }
-          ]
-        }
+        "name": "Acesso à comunicação",
+        "costItems": [
+          { "tipo": "Básico", "item": "Manutenção anual dos equipamentos de rádio e internet", "valor": 2000, "unidade": "por evento" },
+          { "tipo": "Básico", "item": "Logística de manutenção", "valor": 2000, "unidade": "por evento" },
+          { "tipo": "Básico", "item": "Mensalidade de internet", "valor": 150, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Manutenção semestral dos equipamentos de rádio e internet", "valor": 2000, "unidade": "por evento" }
+        ]
       },
       {
-        "name": "ACESSO AO TRANSPORTE",
-        "lookupName": "Acesso a transporte",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Mutirão comunitário anual para limpeza de vias", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Manutenção de transporte", "valor": 2000, "unidade": "por evento" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Transporte mensal da TI para o município", "valor": 5000, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Motorista", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Acesso a transporte",
+        "costItems": [
+          { "tipo": "Básico", "item": "Mutirão comunitário anual para limpeza de vias", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Manutenção de transporte", "valor": 2000, "unidade": "por evento" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Transporte mensal da TI para o município", "valor": 5000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Motorista", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "CORPO TÉCNICO/INFRAESTRUTURA",
-        "lookupName": "Corpo técnico/Infraestruturas complementares",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Salário de pessoa referência para infraestrutura", "valor": 3500, "unidade": "por mês" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Salário de agentes indígenas para infraestrutura", "valor": 3500, "unidade": "por mês" },
-            { "tipo": "Bom", "item": "Logística das capacitações", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Corpo técnico/Infraestruturas complementares",
+        "costItems": [
+          { "tipo": "Básico", "item": "Salário de pessoa referência para infraestrutura", "valor": 3500, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Salário de agentes indígenas para infraestrutura", "valor": 3500, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Logística das capacitações", "valor": 1000, "unidade": "unitário" }
+        ]
       }
     ]
   },
@@ -403,40 +343,34 @@
     "totalHeader": "TOTAL GERAL SAÚDE E SANEAMENTO COMPLEMENTAR",
     "activities": [
       {
-        "name": "PRÁTICAS COMPLEMENTARES DE SAÚDE",
-        "lookupName": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Oficina sobre cuidadores tradicionais (raizeiros, fitoterápicos)", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Oficina sobre parteiras", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Roda de conversa sobre Bem Viver e temas sensíveis", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Frete", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Passagem", "valor": 1000, "unidade": "por trecho" },
-            { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Materiais", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Duas oficinas sobre cada prática de saúde", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Duas rodas de conversa sobre Bem Viver", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
+        "costItems": [
+          { "tipo": "Básico", "item": "Oficina sobre cuidadores tradicionais (raizeiros, fitoterápicos)", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Oficina sobre parteiras", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Roda de conversa sobre Bem Viver e temas sensíveis", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Frete", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Passagem", "valor": 1000, "unidade": "por trecho" },
+          { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Materiais", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Duas oficinas sobre cada prática de saúde", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Duas rodas de conversa sobre Bem Viver", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "PRÁTICAS COMPLEMENTARES DE SANEAMENTO",
-        "lookupName": "Iniciativas complementares à assistência usual do governo relacionadas a saneamento",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Oficina sobre descarte e separação do lixo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Coleta seletiva por aldeia", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Oficinas sobre descarte correto e boas práticas com equipamentos", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Materiais dos cursos", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Bom", "item": "Transporte", "valor": 5000, "unidade": "por mês" }
-          ]
-        }
+        "name": "Iniciativas complementares à assistência usual do governo relacionadas a saneamento",
+        "costItems": [
+          { "tipo": "Básico", "item": "Oficina sobre descarte e separação do lixo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Coleta seletiva por aldeia", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Oficinas sobre descarte correto e boas práticas com equipamentos", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Materiais dos cursos", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Transporte", "valor": 5000, "unidade": "por mês" }
+        ]
       }
     ]
   },
@@ -447,35 +381,29 @@
     "totalHeader": "TOTAL GERAL EDUCAÇÃO COMPLEMENTAR",
     "activities": [
       {
-        "name": "INICIATIVAS EDUCACIONAIS COMPLEMENTARES",
-        "lookupName": "Iniciativas complementares à educação usual implementada pelo governo",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Três bolsas complementares por TI", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Quatro ou mais bolsas complementares por TI", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Iniciativas complementares à educação usual implementada pelo governo",
+        "costItems": [
+          { "tipo": "Básico", "item": "Três bolsas complementares por TI", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Quatro ou mais bolsas complementares por TI", "valor": 1000, "unidade": "unitário" }
+        ]
       },
       {
-        "name": "FORMAÇÃO E MATERIAIS DIDÁTICOS",
-        "lookupName": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
-        "items": {
-          "basico": [
-            { "tipo": "Básico", "item": "Formação para professores indígenas", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Oficina sobre materiais didáticos na língua materna", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" },
-            { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
-            { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
-            { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
-            { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
-            { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" }
-          ],
-          "bom": [
-            { "tipo": "Bom", "item": "Mais formações e oficinas na língua materna", "valor": 1000, "unidade": "unitário" }
-          ]
-        }
+        "name": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
+        "costItems": [
+          { "tipo": "Básico", "item": "Formação para professores indígenas", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Oficina sobre materiais didáticos na língua materna", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" },
+          { "tipo": "Básico", "item": "Material de campo", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
+          { "tipo": "Básico", "item": "Frete aéreo, terrestre e fluvial", "valor": 3000, "unidade": "por operação" },
+          { "tipo": "Básico", "item": "Consultoria", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Ajuda de custo", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "Bom", "item": "Mais formações e oficinas na língua materna", "valor": 1000, "unidade": "unitário" }
+        ]
       }
     ]
   }

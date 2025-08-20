@@ -1,0 +1,380 @@
+[
+  {
+    "sheetName": "Não Recorrente - Governança",
+    "header": "Detalhamento de custos para o eixo Governança",
+    "totalHeader": "Total/ano do Eixo Governança",
+    "eixoId": 1,
+    "activities": [
+      {
+        "name": "Infraestrutura das associações",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Equipamentos: celular, impressora, datashow, computador, notebook, equipamento audiovisual, rádio, bateria, HD externo, GPS",
+            "valor": 1000,
+            "unidade": "unitário"
+          },
+          {
+            "tipo": "Básico",
+            "item": "Veículos: carro, barco, motores",
+            "valor": 5000,
+            "unidade": "por mês"
+          },
+          {
+            "tipo": "Básico",
+            "item": "Mobília: ar condicionado, cadeira, mesa, fogão, porta",
+            "valor": 1000,
+            "unidade": "unitário"
+          },
+          {
+            "tipo": "Básico",
+            "item": "Outros: bomba d'água, material de construção, armário, serviço de reforma, instalação de internet",
+            "valor": 150,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Equipamentos: nobreak, inversor, projetor, câmera profissional, equipamentos para ilhas de edição",
+            "valor": 1000,
+            "unidade": "unitário"
+          },
+          {
+            "tipo": "BOM",
+            "item": "Veículos: caminhão, ônibus, barcos, motores",
+            "valor": 5000,
+            "unidade": "por mês"
+          },
+          {
+            "tipo": "BOM",
+            "item": "Mobília: mesa de reunião, cadeiras, ar condicionado",
+            "valor": 1000,
+            "unidade": "unitário"
+          },
+          {
+            "tipo": "BOM",
+            "item": "Outros: materiais elétricos, cerca elétrica, materiais de construção, arquiteto, equipamentos para espaço da produção, reformas, balsa",
+            "valor": 1000,
+            "unidade": "unitário"
+          }
+        ]
+      },
+      {
+        "name": "Treinamento e formação contínua",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Consultoria para esboço de material didático sobre gestão",
+            "valor": 7000,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Material didático sobre gestão organizacional (consultoria, diagramação, impressão)",
+            "valor": 7000,
+            "unidade": "por mês"
+          }
+        ]
+      },
+      {
+        "name": "Instrumentos de governança",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Construção do PGTA e Protocolo de Consulta",
+            "valor": 1000,
+            "unidade": "unitário"
+          },
+          {
+            "tipo": "Ambos",
+            "item": "Combustível, alimentação, consultoria, material didático, passagem, frete, tradutor, camisetas, impressão, pagamento de cozinheira e barqueiro",
+            "valor": 7000,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Atualização do PGTA e Protocolo de Consulta",
+            "valor": 1000,
+            "unidade": "unitário"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "sheetName": "Não Rec - Fiscalização",
+    "header": "Detalhamento de custos para o eixo Fiscalização e Proteção",
+    "totalHeader": "Total/ano do Eixo Fiscalização e Proteção",
+    "eixoId": 2,
+    "activities": [
+      {
+        "name": "Diagnóstico de ameaças",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Consultoria para esboço de documento de apoio",
+            "valor": 7000,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Documento completo de apoio com impressão e diagramação",
+            "valor": 500,
+            "unidade": "por tiragem"
+          }
+        ]
+      },
+      {
+        "name": "Monitoramento e manejo ambiental",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Consultoria para esboço de documento de apoio",
+            "valor": 7000,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Documento completo de apoio com impressão e diagramação",
+            "valor": 500,
+            "unidade": "por tiragem"
+          }
+        ]
+      },
+      {
+        "name": "Capacitações e materiais",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Esboço de material didático para formações",
+            "valor": 1000,
+            "unidade": "unitário"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Material didático finalizado com impressão e diagramação",
+            "valor": 500,
+            "unidade": "por tiragem"
+          }
+        ]
+      },
+      {
+        "name": "Equipamentos",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Kit de equipamentos para expedições (GPS, drone, EPI, celular, transporte)",
+            "valor": 5000,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Infraestrutura por sub-região e meios de transporte para fiscalização",
+            "valor": 5000,
+            "unidade": "por mês"
+          }
+        ]
+      },
+      {
+        "name": "Corpo técnico",
+        "costItems": [
+          {
+            "tipo": "Ambos",
+            "item": "Equipe para atividades de fiscalização e monitoramento",
+            "valor": 3500,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": []
+      }
+    ]
+  },
+  {
+    "sheetName": "Não Rec - Fortalecimento",
+    "header": "Detalhamento de custos para o eixo Fortalecimento Cultural",
+    "totalHeader": "Total/ano do Eixo Fortalecimento Cultural",
+    "eixoId": 3,
+    "activities": [
+      {
+        "name": "Cultura tradicional",
+        "costItems": [
+          {
+            "tipo": "Básico",
+            "item": "Planejamento para instrumento de divulgação cultural (rádio, site, podcast)",
+            "valor": 1000,
+            "unidade": "por ano"
+          }
+        ],
+        "costItemsBom": [
+          {
+            "tipo": "BOM",
+            "item": "Implementação de instrumento de divulgação cultural (rádio, site, podcast)",
+            "valor": 1000,
+            "unidade": "por ano"
+          },
+          {
+            "tipo": "BOM",
+            "item": "Equipamentos audiovisuais, material gráfico e internet",
+            "valor": 150,
+            "unidade": "por mês"
+          }
+        ]
+      },
+      {
+        "name": "Corpo técnico cultural",
+        "costItems": [
+          {
+            "tipo": "Ambos",
+            "item": "Equipe para execução das ações culturais",
+            "valor": 3500,
+            "unidade": "por mês"
+          }
+        ],
+        "costItemsBom": []
+      }
+    ]
+  },
+  {
+    "sheetName": "Não Rec - Geração de Renda",
+    "header": "Detalhamento de custos para o eixo Geração de Renda",
+    "totalHeader": "Total/ano do Eixo Geração de Renda",
+    "eixoId": 4,
+    "activities": [
+      {
+        "name": "Alternativas econômicas sustentáveis",
+        "costItems": [
+          { "tipo": "Básico", "item": "Diagnóstico do potencial dos produtos/serviços da TI", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Equipamentos: computador, celular, GPS, notebook, tablet, bateria, roçadeira, prensa, balança, etc.", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Veículos: trator, barco, motor, caminhão, carro", "valor": 5000, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Mobília: freezer, gerador, máquinas de costura, equipamentos para casa de farinha", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Outros: material de construção, sistema de irrigação, placa solar, construção de feiras, consultoria", "valor": 7000, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "BOM", "item": "Contrato de comercialização (PNAE, Origens, etc.)", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "BOM", "item": "Selo de certificação (Origens, orgânico, etc.)", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "BOM", "item": "Estrutura para viabilizar produção em todas as etapas", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "BOM", "item": "Duas ou mais cadeias produtivas estruturadas", "valor": 1000, "unidade": "unitário" }
+        ]
+      },
+      {
+        "name": "Corpo técnico/Geração de renda",
+        "costItems": [
+          { "tipo": "Ambos", "item": "Equipe técnica para alternativas econômicas", "valor": 3500, "unidade": "por mês" }
+        ],
+        "costItemsBom": []
+      }
+    ]
+  },
+  {
+    "sheetName": "Não Rec - Soberania Alimentar",
+    "header": "Detalhamento de custos para o eixo Soberania Alimentar",
+    "totalHeader": "Total/ano do Eixo Soberania Alimentar",
+    "eixoId": 5,
+    "activities": [
+      {
+        "name": "Soberania alimentar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Roça por família ou comunitária", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Casas de farinha comunitárias", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Viveiro ou pomar familiar", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Equipamentos e materiais (galinheiros, bombas, caixas d’água, etc.)", "valor": 120, "unidade": "por mês" }
+        ],
+        "costItemsBom": [
+          { "tipo": "BOM", "item": "Banco de sementes", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "BOM", "item": "Certificação sobre o modo de produção", "valor": 1000, "unidade": "unitário" }
+        ]
+      },
+      {
+        "name": "Capacitações em soberania alimentar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Esboço de material didático de apoio", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "BOM", "item": "Material didático finalizado com impressão e diagramação", "valor": 500, "unidade": "por tiragem" }
+        ]
+      },
+      {
+        "name": "Corpo técnico/Soberania alimentar",
+        "costItems": [
+          { "tipo": "Ambos", "item": "Equipe para ações de soberania alimentar", "valor": 3500, "unidade": "por mês" }
+        ],
+        "costItemsBom": []
+      }
+    ]
+  },
+  {
+    "sheetName": "Não Rec - Infraestruturas",
+    "header": "Detalhamento de custos para o eixo Infraestruturas complementares",
+    "totalHeader": "Total/ano do Eixo Infraestruturas complementares",
+    "eixoId": 6,
+    "activities": [
+      {
+        "name": "Infraestrutura complementar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Construção ou reforma de sede ou base", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Infraestrutura de comunicação (rádio, torre, internet)", "valor": 150, "unidade": "por mês" },
+          { "tipo": "Básico", "item": "Infraestrutura para armazenamento ou comercialização de produtos", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "BOM", "item": "Infraestrutura de base para expedições", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "BOM", "item": "Sistema de energia fotovoltaica", "valor": 250, "unidade": "por mês" },
+          { "tipo": "BOM", "item": "Poços artesianos, sistema de água e esgoto", "valor": 120, "unidade": "por mês" }
+        ]
+      }
+    ]
+  },
+  {
+    "sheetName": "Não Rec - Saúde e Saneamento",
+    "header": "Detalhamento de custos para o eixo Saúde e Saneamento",
+    "totalHeader": "Total/ano do Eixo Saúde e Saneamento",
+    "eixoId": 7,
+    "activities": [
+      {
+        "name": "Saúde complementar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Diagnóstico sobre situação sanitária, doenças prevalentes e cuidados tradicionais", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Distribuição de remédios tradicionais e kits de saúde", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Construção de casa de saúde ou farmácia indígena", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "BOM", "item": "Implantação de espaço para parteiras e cuidadores tradicionais", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "BOM", "item": "Formação sobre plantas medicinais e práticas tradicionais", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "BOM", "item": "Infraestrutura de saneamento: fossa, banheiro, lavatório, sistema de água", "valor": 120, "unidade": "por mês" }
+        ]
+      }
+    ]
+  },
+  {
+    "sheetName": "Não Rec - Educação complementar",
+    "header": "Detalhamento de custos para o eixo Educação complementar",
+    "totalHeader": "Total/ano do Eixo Educação complementar",
+    "eixoId": 8,
+    "activities": [
+      {
+        "name": "Educação complementar",
+        "costItems": [
+          { "tipo": "Básico", "item": "Diagnóstico da situação educacional indígena na TI", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Construção ou reforma de espaço educativo diferenciado", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Básico", "item": "Aquisição de materiais pedagógicos específicos", "valor": 1000, "unidade": "unitário" }
+        ],
+        "costItemsBom": [
+          { "tipo": "BOM", "item": "Produção de material didático tradicional (consultoria, impressão, audiovisual, etc.)", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "BOM", "item": "Apoio à formação de professores indígenas", "valor": 1000, "unidade": "unitário" }
+        ]
+      }
+    ]
+  }
+]
