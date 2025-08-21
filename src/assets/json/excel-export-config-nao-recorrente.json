@@ -1,7 +1,7 @@
 [
   {
     "sheetName": "Não Recorrente - Governança",
-    "header": "Detalhamento de custos para o eixo Governança",
+    "header": "Detalhamento de custos não recorrentes para o eixo Governança",
     "totalHeader": "Total/ano do Eixo Governança",
     "eixoId": 1,
     "activities": [
@@ -89,7 +89,7 @@
   },
   {
     "sheetName": "Não Rec - Fiscalização",
-    "header": "Detalhamento de custos para o eixo Fiscalização e Proteção",
+    "header": "Detalhamento de custos não recorrentes para o eixo Fiscalização e Proteção",
     "totalHeader": "Total/ano do Eixo Fiscalização e Proteção",
     "eixoId": 2,
     "activities": [
@@ -185,7 +185,7 @@
   },
   {
     "sheetName": "Não Rec - Fortalecimento",
-    "header": "Detalhamento de custos para o eixo Fortalecimento Cultural",
+    "header": "Detalhamento de custos não recorrentes para o eixo Fortalecimento Cultural",
     "totalHeader": "Total/ano do Eixo Fortalecimento Cultural",
     "eixoId": 3,
     "activities": [
@@ -230,7 +230,7 @@
   },
   {
     "sheetName": "Não Rec - Geração de Renda",
-    "header": "Detalhamento de custos para o eixo Geração de Renda",
+    "header": "Detalhamento de custos não recorrentes para o eixo Geração de Renda",
     "totalHeader": "Total/ano do Eixo Geração de Renda",
     "eixoId": 4,
     "activities": [
@@ -261,7 +261,7 @@
   },
   {
     "sheetName": "Não Rec - Soberania Alimentar",
-    "header": "Detalhamento de custos para o eixo Soberania Alimentar",
+    "header": "Detalhamento de custos não recorrentes para o eixo Soberania Alimentar",
     "totalHeader": "Total/ano do Eixo Soberania Alimentar",
     "eixoId": 5,
     "activities": [
@@ -298,7 +298,7 @@
   },
   {
     "sheetName": "Não Rec - Infraestruturas",
-    "header": "Detalhamento de custos para o eixo Infraestruturas complementares",
+    "header": "Detalhamento de custos não recorrentes para o eixo Infraestruturas complementares",
     "totalHeader": "Total/ano do Eixo Infraestruturas complementares",
     "eixoId": 6,
     "activities": [
@@ -319,7 +319,7 @@
   },
   {
     "sheetName": "Não Rec - Saúde e Saneamento",
-    "header": "Detalhamento de custos para o eixo Saúde e Saneamento",
+    "header": "Detalhamento de custos não recorrentes para o eixo Saúde e Saneamento",
     "totalHeader": "Total/ano do Eixo Saúde e Saneamento",
     "eixoId": 7,
     "activities": [
@@ -340,7 +340,7 @@
   },
   {
     "sheetName": "Não Rec - Educação complementar",
-    "header": "Detalhamento de custos para o eixo Educação complementar",
+    "header": "Detalhamento de custos não recorrentes para o eixo Educação complementar",
     "totalHeader": "Total/ano do Eixo Educação complementar",
     "eixoId": 8,
     "activities": [

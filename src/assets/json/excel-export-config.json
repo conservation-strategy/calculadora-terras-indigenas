@@ -1,7 +1,7 @@
 [
   {
     "sheetName": "Rec - Governança",
-    "header": "RECORRENTE - GOVERNANÇA",
+    "header": "Detalhamento de custos recorrentes para o eixo Governança",
     "eixoId": 1,
     "totalHeader": "TOTAL GERAL GOVERNANÇA",
     "activities": [
@@ -58,7 +58,7 @@
   },
   {
     "sheetName": "Rec - Fiscalização",
-    "header": "RECORRENTE - FISCALIZAÇÃO E PROTEÇÃO",
+    "header": "Detalhamento de custos recorrentes para o eixo Fiscalização e Proteção",
     "eixoId": 2,
     "totalHeader": "TOTAL GERAL FISCALIZAÇÃO E PROTEÇÃO",
     "activities": [
@@ -148,7 +148,7 @@
   },
   {
     "sheetName": "Rec - Fortalecimento",
-    "header": "RECORRENTE - FORTALECIMENTO CULTURAL",
+    "header": "Detalhamento de custos recorrentes para o eixo Fortalecimento cultural",
     "eixoId": 3,
     "totalHeader": "TOTAL GERAL FORTALECIMENTO CULTURAL",
     "activities": [
@@ -199,7 +199,7 @@
   },
   {
     "sheetName": "Rec - Geração de Renda",
-    "header": "RECORRENTE - GERAÇÃO DE RENDA",
+    "header": "Detalhamento de custos recorrentes para o eixo Geração de renda",
     "eixoId": 4,
     "totalHeader": "TOTAL GERAL GERAÇÃO DE RENDA",
     "activities": [
@@ -243,7 +243,7 @@
   },
   {
     "sheetName": "Rec - Soberania Alimentar",
-    "header": "RECORRENTE - SOBERANIA ALIMENTAR",
+    "header": "Detalhamento de custos recorrentes para o eixo Soberania alimentar",
     "eixoId": 5,
     "totalHeader": "TOTAL GERAL SOBERANIA ALIMENTAR",
     "activities": [
@@ -286,7 +286,7 @@
   },
   {
     "sheetName": "Rec - Infraestruturas",
-    "header": "RECORRENTE - INFRAESTRUTURAS COMPLEMENTARES",
+    "header": "Detalhamento de custos recorrentes para o eixo Infraestruturas complementares",
     "eixoId": 6,
     "totalHeader": "TOTAL GERAL INFRAESTRUTURAS COMPLEMENTARES",
     "activities": [
@@ -338,7 +338,7 @@
   },
   {
     "sheetName": "Rec - Saúde e Saneamento",
-    "header": "RECORRENTE - SAÚDE E SANEAMENTO COMPLEMENTAR",
+    "header": "Detalhamento de custos recorrentes para o eixo Saúde e saneamento complementar",
     "eixoId": 7,
     "totalHeader": "TOTAL GERAL SAÚDE E SANEAMENTO COMPLEMENTAR",
     "activities": [
@@ -376,7 +376,7 @@
   },
   {
     "sheetName": "Rec - Educação",
-    "header": "RECORRENTE - EDUCAÇÃO COMPLEMENTAR",
+    "header": "Detalhamento de custos recorrentes para o eixo educação complementar",
     "eixoId": 8,
     "totalHeader": "TOTAL GERAL EDUCAÇÃO COMPLEMENTAR",
     "activities": [
