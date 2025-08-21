@@ -133,14 +133,16 @@ export class ExcelExportService {
       data.push([]);
       const subtotalRow = data.length + 1;
       activitySubtotalRows.push(subtotalRow);
-      data.push(['', { v: 'Total/ano da Atividade', t: 's', s: boldStyle }, '', '', '', { t: 'n', f: `SUM(F${activityStartRow}:F${activityEndRow})`, z: '#,##0', s: boldStyle }]);
+      const totalText = tipoCusto === TipoCusto.Recorrente ? 'Total/ano da Atividade' : 'Total da Atividade';
+      data.push(['', { v: `${totalText} (editar quantidades dos itens para atingir o valor sugerido pela calculadora)`, t: 's', s: boldStyle }, '', '', '', { t: 'n', f: `SUM(F${activityStartRow}:F${activityEndRow})`, z: '#,##0', s: boldStyle }]);
 
       const calculatedValue = this.getActivityCalculatedValue(
         resultado,
         activity.name,
         config.eixoId
-      );
-      data.push(['', { v: 'Total/ano sugerido', t: 's', s: boldStyle }, '', '', '', { t: 'n', v: Math.round(calculatedValue), z: '#,##0', s: boldStyle }]);
+      );  
+      const totalSugeridoText = tipoCusto === TipoCusto.Recorrente ? 'Total/ano sugerido pela calculadora' : 'Total sugerido pela calculadora';
+      data.push(['', { v: totalSugeridoText, t: 's', s: boldStyle }, '', '', '', { t: 'n', v: Math.round(calculatedValue), z: '#,##0', s: boldStyle }]);
 
       if (index < config.activities.length - 1) {
         data.push([]);
