@@ -61,25 +61,6 @@
         ]
       },
       {
-        "name": "Treinamento e formação contínua",
-        "costItems": [
-          {
-            "tipo": "Básico",
-            "item": "Consultoria para esboço de material didático sobre gestão",
-            "valor": 7000,
-            "unidade": "por mês"
-          }
-        ],
-        "costItemsBom": [
-          {
-            "tipo": "BOM",
-            "item": "Material didático sobre gestão organizacional (consultoria, diagramação, impressão)",
-            "valor": 7000,
-            "unidade": "por mês"
-          }
-        ]
-      },
-      {
         "name": "Instrumentos de governança",
         "costItems": [
           {
