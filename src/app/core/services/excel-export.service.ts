@@ -50,7 +50,15 @@ export class ExcelExportService {
       bookType: 'xlsx',
       type: 'array',
     });
-    this.saveAsExcelFile(excelBuffer, 'calculadora_terras_indigenas');
+
+    const terraIndigena = resultado.terraIndigena.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_.-]/g, '');
+    const tipoCustoString = tipoCusto === TipoCusto.Recorrente ? 'Recorrente' : 'NaoRecorrente';
+    const tipoResultadoString = tipoResultadoBom ? 'Bom' : 'Basico';
+    const date = new Date().toISOString().split('T')[0];
+
+    const filename = `Gestao_${terraIndigena}_${tipoCustoString}_${tipoResultadoString}_${date}.xlsx`;
+
+    this.saveAsExcelFile(excelBuffer, filename);
   }
 
   private createSheet(resultado: any, tipoResultadoBom: boolean, config: SheetConfig, tipoCusto: number): XLSX.WorkSheet {
@@ -193,7 +201,7 @@ export class ExcelExportService {
     });
     saveAs(
       data,
-      fileName + '_export_' + new Date().getTime() + '.xlsx'
+      fileName
     );
   }
 }
