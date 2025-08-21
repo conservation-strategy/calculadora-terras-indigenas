@@ -110,9 +110,7 @@ export class ExcelExportService {
         const fill = dataRowCounter % 2 === 0 ? grayFill : whiteFill;
         const style = { fill };
         const currentRow = data.length + 1;
-        const formula = `
-          C${currentRow}*E${currentRow}${item.unidade === 'por mês' && tipoCusto === TipoCusto.Recorrente ? '*12' : item.unidade === 'por dia' && tipoCusto === TipoCusto.Recorrente ? '*365' : ''}
-        `;
+        const formula = `C${currentRow}*E${currentRow}${item.unidade === 'por mês' && tipoCusto === TipoCusto.Recorrente ? '*12' : item.unidade === 'por dia' && tipoCusto === TipoCusto.Recorrente ? '*365' : ''}`;
         const rowData = [
           { v: item.tipo, t: 's', s: style },
           { v: item.item, t: 's', s: style },
