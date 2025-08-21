@@ -35,25 +35,25 @@
         ],
         "costItemsBom": [
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Equipamentos: nobreak, inversor, projetor, câmera profissional, equipamentos para ilhas de edição",
             "valor": 1000,
             "unidade": "unitário"
           },
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Veículos: caminhão, ônibus, barcos, motores",
             "valor": 5000,
             "unidade": "por mês"
           },
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Mobília: mesa de reunião, cadeiras, ar condicionado",
             "valor": 1000,
             "unidade": "unitário"
           },
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Outros: materiais elétricos, cerca elétrica, materiais de construção, arquiteto, equipamentos para espaço da produção, reformas, balsa",
             "valor": 1000,
             "unidade": "unitário"
@@ -78,7 +78,7 @@
         ],
         "costItemsBom": [
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Atualização do PGTA e Protocolo de Consulta",
             "valor": 1000,
             "unidade": "unitário"
@@ -105,7 +105,7 @@
         ],
         "costItemsBom": [
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Documento completo de apoio com impressão e diagramação",
             "valor": 500,
             "unidade": "por tiragem"
@@ -124,7 +124,7 @@
         ],
         "costItemsBom": [
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Documento completo de apoio com impressão e diagramação",
             "valor": 500,
             "unidade": "por tiragem"
@@ -143,7 +143,7 @@
         ],
         "costItemsBom": [
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Material didático finalizado com impressão e diagramação",
             "valor": 500,
             "unidade": "por tiragem"
@@ -162,7 +162,7 @@
         ],
         "costItemsBom": [
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Infraestrutura por sub-região e meios de transporte para fiscalização",
             "valor": 5000,
             "unidade": "por mês"
@@ -201,13 +201,13 @@
         ],
         "costItemsBom": [
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Implementação de instrumento de divulgação cultural (rádio, site, podcast)",
             "valor": 1000,
             "unidade": "por ano"
           },
           {
-            "tipo": "BOM",
+            "tipo": "Bom",
             "item": "Equipamentos audiovisuais, material gráfico e internet",
             "valor": 150,
             "unidade": "por mês"
@@ -244,10 +244,10 @@
           { "tipo": "Básico", "item": "Outros: material de construção, sistema de irrigação, placa solar, construção de feiras, consultoria", "valor": 7000, "unidade": "por mês" }
         ],
         "costItemsBom": [
-          { "tipo": "BOM", "item": "Contrato de comercialização (PNAE, Origens, etc.)", "valor": 1000, "unidade": "unitário" },
-          { "tipo": "BOM", "item": "Selo de certificação (Origens, orgânico, etc.)", "valor": 1000, "unidade": "unitário" },
-          { "tipo": "BOM", "item": "Estrutura para viabilizar produção em todas as etapas", "valor": 1000, "unidade": "unitário" },
-          { "tipo": "BOM", "item": "Duas ou mais cadeias produtivas estruturadas", "valor": 1000, "unidade": "unitário" }
+          { "tipo": "Bom", "item": "Contrato de comercialização (PNAE, Origens, etc.)", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Selo de certificação (Origens, orgânico, etc.)", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Estrutura para viabilizar produção em todas as etapas", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Duas ou mais cadeias produtivas estruturadas", "valor": 1000, "unidade": "unitário" }
         ]
       },
       {
@@ -274,8 +274,8 @@
           { "tipo": "Básico", "item": "Equipamentos e materiais (galinheiros, bombas, caixas d’água, etc.)", "valor": 120, "unidade": "por mês" }
         ],
         "costItemsBom": [
-          { "tipo": "BOM", "item": "Banco de sementes", "valor": 1000, "unidade": "unitário" },
-          { "tipo": "BOM", "item": "Certificação sobre o modo de produção", "valor": 1000, "unidade": "unitário" }
+          { "tipo": "Bom", "item": "Banco de sementes", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Certificação sobre o modo de produção", "valor": 1000, "unidade": "unitário" }
         ]
       },
       {
@@ -284,7 +284,7 @@
           { "tipo": "Básico", "item": "Esboço de material didático de apoio", "valor": 1000, "unidade": "unitário" }
         ],
         "costItemsBom": [
-          { "tipo": "BOM", "item": "Material didático finalizado com impressão e diagramação", "valor": 500, "unidade": "por tiragem" }
+          { "tipo": "Bom", "item": "Material didático finalizado com impressão e diagramação", "valor": 500, "unidade": "por tiragem" }
         ]
       },
       {
@@ -310,9 +310,9 @@
           { "tipo": "Básico", "item": "Infraestrutura para armazenamento ou comercialização de produtos", "valor": 1000, "unidade": "unitário" }
         ],
         "costItemsBom": [
-          { "tipo": "BOM", "item": "Infraestrutura de base para expedições", "valor": 1000, "unidade": "unitário" },
-          { "tipo": "BOM", "item": "Sistema de energia fotovoltaica", "valor": 250, "unidade": "por mês" },
-          { "tipo": "BOM", "item": "Poços artesianos, sistema de água e esgoto", "valor": 120, "unidade": "por mês" }
+          { "tipo": "Bom", "item": "Infraestrutura de base para expedições", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Sistema de energia fotovoltaica", "valor": 250, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Poços artesianos, sistema de água e esgoto", "valor": 120, "unidade": "por mês" }
         ]
       }
     ]
@@ -331,9 +331,9 @@
           { "tipo": "Básico", "item": "Construção de casa de saúde ou farmácia indígena", "valor": 1000, "unidade": "unitário" }
         ],
         "costItemsBom": [
-          { "tipo": "BOM", "item": "Implantação de espaço para parteiras e cuidadores tradicionais", "valor": 1000, "unidade": "unitário" },
-          { "tipo": "BOM", "item": "Formação sobre plantas medicinais e práticas tradicionais", "valor": 1000, "unidade": "unitário" },
-          { "tipo": "BOM", "item": "Infraestrutura de saneamento: fossa, banheiro, lavatório, sistema de água", "valor": 120, "unidade": "por mês" }
+          { "tipo": "Bom", "item": "Implantação de espaço para parteiras e cuidadores tradicionais", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Formação sobre plantas medicinais e práticas tradicionais", "valor": 1000, "unidade": "unitário" },
+          { "tipo": "Bom", "item": "Infraestrutura de saneamento: fossa, banheiro, lavatório, sistema de água", "valor": 120, "unidade": "por mês" }
         ]
       }
     ]
@@ -352,8 +352,8 @@
           { "tipo": "Básico", "item": "Aquisição de materiais pedagógicos específicos", "valor": 1000, "unidade": "unitário" }
         ],
         "costItemsBom": [
-          { "tipo": "BOM", "item": "Produção de material didático tradicional (consultoria, impressão, audiovisual, etc.)", "valor": 7000, "unidade": "por mês" },
-          { "tipo": "BOM", "item": "Apoio à formação de professores indígenas", "valor": 1000, "unidade": "unitário" }
+          { "tipo": "Bom", "item": "Produção de material didático tradicional (consultoria, impressão, audiovisual, etc.)", "valor": 7000, "unidade": "por mês" },
+          { "tipo": "Bom", "item": "Apoio à formação de professores indígenas", "valor": 1000, "unidade": "unitário" }
         ]
       }
     ]
