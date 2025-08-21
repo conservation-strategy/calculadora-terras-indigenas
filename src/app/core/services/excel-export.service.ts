@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as XLSX from 'xlsx';
+import * as XLSX from 'xlsx-js-style';
 import { saveAs } from 'file-saver';
 import sheetConfig from '../../../assets/json/excel-export-config.json';
 import sheetConfigNaoRecorrente from '../../../assets/json/excel-export-config-nao-recorrente.json';
@@ -55,76 +55,88 @@ export class ExcelExportService {
 
   private createSheet(resultado: any, tipoResultadoBom: boolean, config: SheetConfig, tipoCusto: number): XLSX.WorkSheet {
     const data: any[][] = [];
+    const labelStyle = { font: { italic: true, color: { rgb: '808080' } } };
 
     data.push([config.header]);
     data.push([]);
 
     if (resultado.terraIndigena) {
-      data.push(['Terra Indígena:', resultado.terraIndigena]);
+      data.push([{ v: 'Terra Indígena:', t: 's', s: labelStyle }, resultado.terraIndigena]);
     }
-    data.push(['Tipo de Resultado:', tipoResultadoBom ? 'Bom' : 'Básico']);
-    data.push(['Data de Geração:', new Date().toLocaleDateString('pt-BR')]);
+    data.push([{ v: 'Tipo de Resultado:', t: 's', s: labelStyle }, tipoResultadoBom ? 'Bom' : 'Básico']);
+    data.push([{ v: 'Data de Geração:', t: 's', s: labelStyle }, new Date().toLocaleDateString('pt-BR')]);
     data.push([]);
 
-    data.push(['INSTRUÇÃO:']);
+    data.push([{ v: 'INSTRUÇÃO:', t: 's', s: labelStyle }]);
     data.push(['O usuário deve alterar as quantidades para alcançar o valor sugerido. O usuário pode editar também os valores unitários sugeridos']);
     data.push([]);
 
-    data.push(['Objetivo de gestão', 'Item de Custo', 'Valor Unitário (R$)', 'Unidade de Medida', 'Quantidade', 'Valor Total (R$)']);
+    const headers = [
+      'Objetivo de gestão',
+      'Item de Custo',
+      'Valor Unitário (R$)',
+      'Unidade de Medida',
+      'Quantidade',
+      'Valor Total (R$)',
+    ];
+    const headerStyle = {
+      font: { bold: true, color: { rgb: 'ffffff' } },
+      fill: { patternType: 'solid', fgColor: { rgb: 'c64c2f' } },
+    };
+    data.push(headers.map(h => ({ v: h, t: 's', s: headerStyle })));
 
     const activitySubtotalRows: number[] = [];
+    const whiteFill = { patternType: 'solid', fgColor: { rgb: 'ffffff' } };
+    const grayFill = { patternType: 'solid', fgColor: { rgb: 'f2f1f1' } };
+    let dataRowCounter = 0;
+    const boldStyle = { font: { bold: true } };
 
     config.activities.forEach((activity, index) => {
       data.push([]);
-      data.push([activity.name]);
+      data.push([{ v: activity.name, t: 's', s: boldStyle }]);
       data.push([]);
 
       const activityStartRow = data.length + 1;
 
-      activity.costItems.forEach((item) => {
+      const processCostItem = (item: CostItem) => {
+        const fill = dataRowCounter % 2 === 0 ? grayFill : whiteFill;
+        const style = { fill };
         const currentRow = data.length + 1;
         const formula = `C${currentRow}*E${currentRow}${item.unidade === 'por mês' && tipoCusto === TipoCusto.Recorrente ? '*12' : ''}`;
-        data.push([
-          item.tipo,
-          item.item,
-          { t: 'n', v: item.valor, z: '#,##0' },
-          item.unidade,
-          1,
-          { t: 'n', f: formula, z: '#,##0' }
-        ]);
-      });
+        const rowData = [
+          { v: item.tipo, t: 's', s: style },
+          { v: item.item, t: 's', s: style },
+          { t: 'n', v: item.valor, z: '#,##0', s: style },
+          { v: item.unidade, t: 's', s: style },
+          { t: 'n', v: 1, z: '#,##0', s: style },
+          { t: 'n', f: formula, z: '#,##0', s: style }
+        ];
+        data.push(rowData);
+        dataRowCounter++;
+      };
+
+      activity.costItems.forEach(processCostItem);
 
       if (tipoResultadoBom && activity.costItemsBom) {
-        activity.costItemsBom.forEach((item) => {
-          const currentRow = data.length + 1;
-          const formula = `C${currentRow}*E${currentRow}${item.unidade === 'por mês' && tipoCusto === TipoCusto.Recorrente ? '*12' : ''}`;
-          data.push([
-            item.tipo,
-            item.item,
-            { t: 'n', v: item.valor, z: '#,##0' },
-            item.unidade,
-            1,
-            { t: 'n', f: formula, z: '#,##0' }
-          ]);
-        });
+        activity.costItemsBom.forEach(processCostItem);
       }
 
       const activityEndRow = data.length;
       data.push([]);
       const subtotalRow = data.length + 1;
       activitySubtotalRows.push(subtotalRow);
-      data.push(['', 'Total/ano da Atividade', '', '', '', { t: 'n', f: `SUM(F${activityStartRow}:F${activityEndRow})`, z: '#,##0' }]);
+      data.push(['', { v: 'Total/ano da Atividade', t: 's', s: boldStyle }, '', '', '', { t: 'n', f: `SUM(F${activityStartRow}:F${activityEndRow})`, z: '#,##0', s: boldStyle }]);
 
       const calculatedValue = this.getActivityCalculatedValue(
         resultado,
         activity.name,
         config.eixoId
       );
-      data.push(['', 'Total/ano sugerido', '', '', '', { t: 'n', v: Math.round(calculatedValue), z: '#,##0' }]);
+      data.push(['', { v: 'Total/ano sugerido', t: 's', s: boldStyle }, '', '', '', { t: 'n', v: Math.round(calculatedValue), z: '#,##0', s: boldStyle }]);
 
       if (index < config.activities.length - 1) {
         data.push([]);
-        data.push(['', '---', '---', '---', '---', '---']);
+        // data.push(['', '---', '---', '---', '---', '---']);
       }
     });
 
@@ -132,7 +144,7 @@ export class ExcelExportService {
     data.push(['', '---', '---', '---', '---', '---']);
     data.push([]);
     const totalFormula = activitySubtotalRows.map(row => `F${row}`).join('+');
-    data.push(['', config.totalHeader, '', '', '', { t: 'n', f: totalFormula, z: '#,##0' }]);
+    data.push(['', { v: config.totalHeader, t: 's', s: boldStyle }, '', '', '', { t: 'n', f: totalFormula, z: '#,##0', s: boldStyle }]);
 
     const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(data);
 
