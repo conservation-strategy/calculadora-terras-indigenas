@@ -13,6 +13,7 @@ interface CostItem {
 }
 
 interface ActivityConfig {
+  id: number;
   name: string;
   costItems: CostItem[];
   costItemsBom?: CostItem[];
@@ -138,7 +139,7 @@ export class ExcelExportService {
 
       const calculatedValue = this.getActivityCalculatedValue(
         resultado,
-        activity.name,
+        activity.id,
         config.eixoId
       );  
       const totalSugeridoText = tipoCusto === TipoCusto.Recorrente ? 'Total/ano sugerido pela calculadora' : 'Total sugerido pela calculadora';
@@ -172,19 +173,19 @@ export class ExcelExportService {
 
   private getActivityCalculatedValue(
     resultado: any,
-    activityName: string,
+    activityId: number,
     eixoId: number
   ): number {
     if (resultado?.eixos?.length) {
       const eixo = resultado.eixos.find((e: any) => e.id === eixoId);
       if (eixo) {
         const atividade = eixo.atividades.find(
-          (a: any) => a.nome.trim().toLowerCase() === activityName.trim().toLowerCase()
+          (a: any) => a.id === activityId
         );
         if (atividade) {
           return atividade.valor;
         } else {
-          console.warn(`Activity "${activityName}" not found in eixo "${eixo.nome}" (ID: ${eixoId})`);
+          console.warn(`Activity "${activityId}" not found in eixo "${eixo.nome}" (ID: ${eixoId})`);
         }
       } else {
         console.warn(`Eixo with ID ${eixoId} not found in resultado.`);

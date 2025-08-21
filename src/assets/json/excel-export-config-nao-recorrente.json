@@ -6,6 +6,7 @@
     "eixoId": 1,
     "activities": [
       {
+        "id": 1,
         "name": "Infraestrutura das associações",
         "costItems": [
           {
@@ -61,6 +62,7 @@
         ]
       },
       {
+        "id": 6,
         "name": "Instrumentos de governança",
         "costItems": [
           {
@@ -94,6 +96,7 @@
     "eixoId": 2,
     "activities": [
       {
+        "id": 8,
         "name": "Diagnóstico de ameaças",
         "costItems": [
           {
@@ -113,6 +116,7 @@
         ]
       },
       {
+        "id": 10,
         "name": "Monitoramento e manejo ambiental",
         "costItems": [
           {
@@ -132,6 +136,7 @@
         ]
       },
       {
+        "id": 11,
         "name": "Capacitações e materiais",
         "costItems": [
           {
@@ -151,6 +156,7 @@
         ]
       },
       {
+        "id": 12,
         "name": "Equipamentos",
         "costItems": [
           {
@@ -170,6 +176,7 @@
         ]
       },
       {
+        "id": 13,
         "name": "Corpo técnico",
         "costItems": [
           {
@@ -190,6 +197,7 @@
     "eixoId": 3,
     "activities": [
       {
+        "id": 14,
         "name": "Cultura tradicional",
         "costItems": [
           {
@@ -215,6 +223,7 @@
         ]
       },
       {
+        "id": 16,
         "name": "Corpo técnico cultural",
         "costItems": [
           {
@@ -235,6 +244,7 @@
     "eixoId": 4,
     "activities": [
       {
+        "id": 17,
         "name": "Alternativas econômicas sustentáveis",
         "costItems": [
           { "tipo": "Básico", "item": "Diagnóstico do potencial dos produtos/serviços da TI", "valor": 1000, "unidade": "unitário" },
@@ -251,6 +261,7 @@
         ]
       },
       {
+        "id": 18,
         "name": "Corpo técnico/Geração de renda",
         "costItems": [
           { "tipo": "Ambos", "item": "Equipe técnica para alternativas econômicas", "valor": 3500, "unidade": "unitário" }
@@ -266,6 +277,7 @@
     "eixoId": 5,
     "activities": [
       {
+        "id": 19,
         "name": "Soberania alimentar",
         "costItems": [
           { "tipo": "Básico", "item": "Roça por família ou comunitária", "valor": 1000, "unidade": "unitário" },
@@ -279,6 +291,7 @@
         ]
       },
       {
+        "id": 20,
         "name": "Capacitações em soberania alimentar",
         "costItems": [
           { "tipo": "Básico", "item": "Esboço de material didático de apoio", "valor": 1000, "unidade": "unitário" }
@@ -288,6 +301,7 @@
         ]
       },
       {
+        "id": 21,
         "name": "Corpo técnico/Soberania alimentar",
         "costItems": [
           { "tipo": "Ambos", "item": "Equipe para ações de soberania alimentar", "valor": 3500, "unidade": "unitário" }
@@ -303,6 +317,7 @@
     "eixoId": 6,
     "activities": [
       {
+        "id": 0,
         "name": "Infraestrutura complementar",
         "costItems": [
           { "tipo": "Básico", "item": "Construção ou reforma de sede ou base", "valor": 1000, "unidade": "unitário" },
@@ -324,6 +339,7 @@
     "eixoId": 7,
     "activities": [
       {
+        "id": 26,
         "name": "Saúde complementar",
         "costItems": [
           { "tipo": "Básico", "item": "Diagnóstico sobre situação sanitária, doenças prevalentes e cuidados tradicionais", "valor": 1000, "unidade": "unitário" },
@@ -345,6 +361,7 @@
     "eixoId": 8,
     "activities": [
       {
+        "id": 28,
         "name": "Educação complementar",
         "costItems": [
           { "tipo": "Básico", "item": "Diagnóstico da situação educacional indígena na TI", "valor": 1000, "unidade": "unitário" },

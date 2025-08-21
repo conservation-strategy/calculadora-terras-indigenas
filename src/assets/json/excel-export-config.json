@@ -3,9 +3,10 @@
     "sheetName": "Rec - Governança",
     "header": "Detalhamento de custos recorrentes para o eixo Governança",
     "eixoId": 1,
-    "totalHeader": "TOTAL GERAL GOVERNANÇA",
+    "totalHeader": "Total do eixo Governança",
     "activities": [
       {
+        "id": 1,
         "name": "Infraestrutura das associações",
         "costItems": [
           { "tipo": "Básico", "item": "Manutenção de equipamentos e veículos", "valor": 2000, "unidade": "por evento" },
@@ -21,6 +22,7 @@
         ]
       },
       {
+        "id": 2,
         "name": "Funcionamento das associações",
         "costItems": [
           { "tipo": "Básico", "item": "Tarifa bancária", "valor": 1000, "unidade": "unitário" },
@@ -60,10 +62,11 @@
     "sheetName": "Rec - Fiscalização",
     "header": "Detalhamento de custos recorrentes para o eixo Fiscalização e Proteção",
     "eixoId": 2,
-    "totalHeader": "TOTAL GERAL FISCALIZAÇÃO E PROTEÇÃO",
+    "totalHeader": "Total do eixo Fiscalização e Proteção",
     "activities": [
       {
-        "name": "Elaboração e atualização de diagnóstico",
+        "id": 8,
+        "name": "Elaboração e atualização de diagnóstico dos vetores de ameaça e plano de fiscalização",
         "costItems": [
           { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
           { "tipo": "Básico", "item": "Frete aéreo, fluvial e terrestre", "valor": 3000, "unidade": "por operação" },
@@ -78,7 +81,8 @@
         ]
       },
       {
-        "name": "Fiscalização e monitoramento territorial",
+        "id": 9,
+        "name": "Fiscalização e monitoramento territorial (atividades ilegais - desmatamento, garimpo, madeira, estradas)",
         "costItems": [
           { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
           { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
@@ -96,7 +100,8 @@
         ]
       },
       {
-        "name": "Monitoramento e manejo ambiental",
+        "id": 10,
+        "name": "Monitoramento e manejo ambiental (qualidade ambiental)",
         "costItems": [
           { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
           { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
@@ -110,7 +115,8 @@
         ]
       },
       {
-        "name": "Capacitações em fiscalização e proteção ambiental",
+        "id": 11,
+        "name": "Capacitações e elaboração de materiais relacionados à fiscalização territorial e proteção ambiental",
         "costItems": [
           { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
           { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
@@ -126,6 +132,7 @@
         ]
       },
       {
+        "id": 12,
         "name": "Equipamentos",
         "costItems": [
           { "tipo": "Básico", "item": "Manutenção dos equipamentos e veículos utilizados", "valor": 2000, "unidade": "por evento" }
@@ -136,7 +143,8 @@
         ]
       },
       {
-        "name": "Corpo técnico/Fiscalização",
+        "id": 13,
+        "name": "Corpo técnico/Fiscalização e Proteção",
         "costItems": [
           { "tipo": "Básico", "item": "Salário dos agentes ambientais indígenas", "valor": 3500, "unidade": "por mês" }
         ],
@@ -150,9 +158,10 @@
     "sheetName": "Rec - Fortalecimento",
     "header": "Detalhamento de custos recorrentes para o eixo Fortalecimento cultural",
     "eixoId": 3,
-    "totalHeader": "TOTAL GERAL FORTALECIMENTO CULTURAL",
+    "totalHeader": "Total do eixo Fortalecimento Cultural",
     "activities": [
       {
+        "id": 14,
         "name": "Atividades culturais tradicionais",
         "costItems": [
           { "tipo": "Básico", "item": "Combustível", "valor": 1000, "unidade": "unitário" },
@@ -171,6 +180,7 @@
         ]
       },
       {
+        "id": 15,
         "name": "Atividades interculturais",
         "costItems": [
           { "tipo": "Básico", "item": "Passagem aérea e terrestre", "valor": 1000, "unidade": "por trecho" },
@@ -187,6 +197,7 @@
         ]
       },
       {
+        "id": 16,
         "name": "Corpo técnico/Cultura",
         "costItems": [
           { "tipo": "Básico", "item": "Salário agente cultural", "valor": 3500, "unidade": "por mês" }
@@ -201,9 +212,10 @@
     "sheetName": "Rec - Geração de Renda",
     "header": "Detalhamento de custos recorrentes para o eixo Geração de renda",
     "eixoId": 4,
-    "totalHeader": "TOTAL GERAL GERAÇÃO DE RENDA",
+    "totalHeader": "Total do eixo Geração de renda",
     "activities": [
       {
+        "id": 17,
         "name": "Apoio a alternativas econômicas sustentáveis",
         "costItems": [
           { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
@@ -231,6 +243,7 @@
         ]
       },
       {
+        "id": 18,
         "name": "Corpo técnico/Geração de renda",
         "costItems": [
           { "tipo": "Básico", "item": "Salário de pessoal vinculado à assessoria técnica", "valor": 7000, "unidade": "por mês" }
@@ -245,9 +258,10 @@
     "sheetName": "Rec - Soberania Alimentar",
     "header": "Detalhamento de custos recorrentes para o eixo Soberania alimentar",
     "eixoId": 5,
-    "totalHeader": "TOTAL GERAL SOBERANIA ALIMENTAR",
+    "totalHeader": "Total do eixo Soberania alimentar",
     "activities": [
       {
+        "id": 19,
         "name": "Iniciativas relacionadas à soberania alimentar",
         "costItems": [
           { "tipo": "Básico", "item": "Material e insumos de campo", "valor": 1000, "unidade": "unitário" },
@@ -263,6 +277,7 @@
         ]
       },
       {
+        "id": 20,
         "name": "Capacitações relacionadas a soberania alimentar",
         "costItems": [
           { "tipo": "Básico", "item": "Alimentação", "valor": 60, "unidade": "por dia" },
@@ -276,6 +291,7 @@
         ]
       },
       {
+        "id": 21,
         "name": "Corpo técnico/Soberania Alimentar",
         "costItems": [
           { "tipo": "Básico", "item": "Salário de pessoal vinculado às ações de soberania alimentar", "valor": 3500, "unidade": "por mês" }
@@ -288,9 +304,10 @@
     "sheetName": "Rec - Infraestruturas",
     "header": "Detalhamento de custos recorrentes para o eixo Infraestruturas complementares",
     "eixoId": 6,
-    "totalHeader": "TOTAL GERAL INFRAESTRUTURAS COMPLEMENTARES",
+    "totalHeader": "Total do eixo Infraestruturas complementares",
     "activities": [
       {
+        "id": 22,
         "name": "Acesso a energia",
         "costItems": [
           { "tipo": "Básico", "item": "Manutenção da infraestrutura de energia (placa solar, motor de luz)", "valor": 2000, "unidade": "por evento" },
@@ -302,6 +319,7 @@
         ]
       },
       {
+        "id": 23,
         "name": "Acesso à comunicação",
         "costItems": [
           { "tipo": "Básico", "item": "Manutenção anual dos equipamentos de rádio e internet", "valor": 2000, "unidade": "por evento" },
@@ -313,6 +331,7 @@
         ]
       },
       {
+        "id": 24,
         "name": "Acesso a transporte",
         "costItems": [
           { "tipo": "Básico", "item": "Mutirão comunitário anual para limpeza de vias", "valor": 1000, "unidade": "unitário" },
@@ -325,6 +344,7 @@
         ]
       },
       {
+        "id": 25,
         "name": "Corpo técnico/Infraestruturas complementares",
         "costItems": [
           { "tipo": "Básico", "item": "Salário de pessoa referência para infraestrutura", "valor": 3500, "unidade": "por mês" }
@@ -340,9 +360,10 @@
     "sheetName": "Rec - Saúde e Saneamento",
     "header": "Detalhamento de custos recorrentes para o eixo Saúde e saneamento complementar",
     "eixoId": 7,
-    "totalHeader": "TOTAL GERAL SAÚDE E SANEAMENTO COMPLEMENTAR",
+    "totalHeader": "Total do eixo Saúde e saneamento complementar",
     "activities": [
       {
+        "id": 26,
         "name": "Iniciativas complementares à assistência usual do governo relacionadas à saúde",
         "costItems": [
           { "tipo": "Básico", "item": "Oficina sobre cuidadores tradicionais (raizeiros, fitoterápicos)", "valor": 1000, "unidade": "unitário" },
@@ -361,6 +382,7 @@
         ]
       },
       {
+        "id": 27,
         "name": "Iniciativas complementares à assistência usual do governo relacionadas a saneamento",
         "costItems": [
           { "tipo": "Básico", "item": "Oficina sobre descarte e separação do lixo", "valor": 1000, "unidade": "unitário" },
@@ -378,9 +400,10 @@
     "sheetName": "Rec - Educação",
     "header": "Detalhamento de custos recorrentes para o eixo educação complementar",
     "eixoId": 8,
-    "totalHeader": "TOTAL GERAL EDUCAÇÃO COMPLEMENTAR",
+    "totalHeader": "Total do eixo Educação complementar",
     "activities": [
       {
+        "id": 28,
         "name": "Iniciativas complementares à educação usual implementada pelo governo",
         "costItems": [
           { "tipo": "Básico", "item": "Três bolsas complementares por TI", "valor": 1000, "unidade": "unitário" }
@@ -390,6 +413,7 @@
         ]
       },
       {
+        "id": 29,
         "name": "Processos formativos voltados à educação e elaboração de materiais didáticos diferenciados",
         "costItems": [
           { "tipo": "Básico", "item": "Formação para professores indígenas", "valor": 1000, "unidade": "unitário" },
