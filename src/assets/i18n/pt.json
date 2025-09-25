@@ -170,7 +170,8 @@
       "good-management": "Investimento para gestão boa",
       "total-cost": "Custo Total",
       "per-year": "/ano",
-      "download-pdf": "Download PDF",
+      "download-pdf": "Baixar PDF",
+      "download-sheet": "Baixar Planilha",
       "territory": "Território",
       "land-size": "Tamanho",
       "peoples": "Número de povos",
@@ -196,7 +197,7 @@
     },
     "section-result": {
       "title": "Resultados",
-      "download-pdf": "Download PDF",
+      "download-pdf": "Baixar PDF",
       "estimated-cost": "O custo previsto para as Terras Indígenas",
       "for-thematics-axis": "para o eixos temáticos ",
       "with-level": "com o nível de implementação",
